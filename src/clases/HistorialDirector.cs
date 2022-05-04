@@ -4,5 +4,6 @@ public class HistorialDirector
 {
 	public HistorialDirector()
 	{
+		private 
 	}
 }
