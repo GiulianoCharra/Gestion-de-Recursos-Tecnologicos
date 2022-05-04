@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gestión_de_Recursos_Tecnológicos.Clases.Clases
+namespace Gestión_de_Recursos_Tecnológicos.Clases;
+
+internal class RecursoTecnologico
 {
-    internal class RecursoTecnologico
-    {
-    }
 }
