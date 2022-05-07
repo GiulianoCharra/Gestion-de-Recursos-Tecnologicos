@@ -16,23 +16,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             InitializeComponent();
         }
-                        
-        private void btn_menu_Click(object sender, EventArgs e)
-        {
-            Button buttonAux = this.button1;
-            if (MenuVertical.Width == 250)
-            {
-                ajustarAnchoBoton(this.MenuVertical, 55);
-                this.MenuVertical.Width = 60;
-                
-            }
-            else
-            {
-                ajustarAnchoBoton(this.MenuVertical, 245);
-                this.MenuVertical.Width = 250;
-            }
-        }
-
+        
         /// <summary>
         /// Reajusta el ancho de los botoner de un contenedor
         /// </summary>
@@ -55,6 +39,22 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         private void VentanaPrueba_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            //Button buttonAux = this.button1;
+            if (MenuVertical.Width == 250)
+            {
+                //ajustarAnchoBoton(this.MenuVertical, 55);
+                this.MenuVertical.Width = 60;
+
+            }
+            else
+            {
+                //ajustarAnchoBoton(this.MenuVertical, 245);
+                this.MenuVertical.Width = 250;
+            }
         }
     }
 }
