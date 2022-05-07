@@ -16,6 +16,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         public VentanaPrueba()
         {
             InitializeComponent();
+            manejoSubMenu();
         }
         
         /// <summary>
@@ -24,12 +25,40 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         /// <param name="container">Contenedor que contiene botones</param>
         /// <param name="w">el nuevo ancho que tendran los botones</param>
         private void ajustarAnchoBoton(Control container, int w)
-        {
+        {            
             foreach (Control b in container.Controls)
             {
                 if (b is IconButton)
                     b.Width = w;
             }
+        }
+
+        private void manejoSubMenu()
+        {
+            this.panelSubActividad1.Visible = false;
+            this.panelSubActividad2.Visible = false;
+            this.panelSubActividad3.Visible = false;
+            this.panelListIntegrantes.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
+        private void hideSubMenu()
+        {
+            if (panelSubActividad1.Visible == true)
+                panelSubActividad1.Visible = false;
+
         }
 
         private void Button6_Click(object sender, EventArgs e)
@@ -47,8 +76,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             IconButton buttonAux = this.iconButton1;
             if (MenuVertical.Width == 250)
             {
-                ajustarAnchoBoton(this.MenuVertical, 55);
-                this.MenuVertical.Width = 60;
+                ajustarAnchoBoton(this.MenuVertical, 100);
+                this.MenuVertical.Width = 105;
 
             }
             else
