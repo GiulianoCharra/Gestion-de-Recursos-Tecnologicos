@@ -140,5 +140,8 @@
   <ItemGroup>
     <None Include="Resources\Logo_homero.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utn_frc_logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
