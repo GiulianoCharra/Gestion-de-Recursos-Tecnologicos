@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Modelo
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public Modelo()
-	{
-		private int id_modelo;
-		private string nombre;
-		private string descripcion;
-	}
+    internal class Modelo
+    {
+        private int id_modelo;
+        private string nombre;
+        private string descripcion;
+    }
 }

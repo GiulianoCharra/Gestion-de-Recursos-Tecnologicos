@@ -1,0 +1,1877 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GestionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO">
+          <Key>
+            <PropertyRef Name="id_caracteristica" />
+            <PropertyRef Name="id_tipo_recurso_tecnologico" />
+          </Key>
+          <Property Name="id_caracteristica" Type="int" Nullable="false" />
+          <Property Name="id_tipo_recurso_tecnologico" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CARACTERISTICAS">
+          <Key>
+            <PropertyRef Name="id_caracteristica" />
+          </Key>
+          <Property Name="id_caracteristica" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_unidad_medida" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CENTRO_INVESTIGACION">
+          <Key>
+            <PropertyRef Name="id_centro_investigacion" />
+          </Key>
+          <Property Name="id_centro_investigacion" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sigla" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fecha_inicio" Type="smalldatetime" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="actividad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="reglamento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tiempo_antelacion" Type="time" Precision="7" Nullable="false" />
+          <Property Name="id_facultad" Type="int" Nullable="false" />
+          <Property Name="fecha_baja" Type="date" />
+        </EntityType>
+        <EntityType Name="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
+          <Key>
+            <PropertyRef Name="id_centro_investigacion" />
+            <PropertyRef Name="id_recurso_tecnologico" />
+          </Key>
+          <Property Name="id_centro_investigacion" Type="int" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CIENTIFICOS">
+          <Key>
+            <PropertyRef Name="id_cientificos" />
+          </Key>
+          <Property Name="id_cientificos" Type="int" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="int" />
+        </EntityType>
+        <EntityType Name="DIRECTORES">
+          <Key>
+            <PropertyRef Name="id_director" />
+          </Key>
+          <Property Name="id_director" Type="int" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="int" />
+        </EntityType>
+        <EntityType Name="DISPONIBILIDAD">
+          <Key>
+            <PropertyRef Name="id_recurso_tecnologico" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="hora_inicio" Type="time" Precision="7" />
+          <Property Name="hora_fin" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="ESTADOS">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FACULTAD">
+          <Key>
+            <PropertyRef Name="id_facultad" />
+          </Key>
+          <Property Name="id_facultad" Type="int" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_responsable_CyT" Type="int" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_DIRECTORES">
+          <Key>
+            <PropertyRef Name="id_historial_director" />
+          </Key>
+          <Property Name="id_historial_director" Type="int" Nullable="false" />
+          <Property Name="id_director" Type="int" Nullable="false" />
+          <Property Name="fecha_desde" Type="smalldatetime" Nullable="false" />
+          <Property Name="fecha_hasta" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_RECURSO_TECNOLOGICO">
+          <Key>
+            <PropertyRef Name="id_historial_recurso_tecnologico" />
+            <PropertyRef Name="id_recurso_tecnologico" />
+          </Key>
+          <Property Name="id_historial_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="fecha_hora_desde" Type="smalldatetime" Nullable="false" />
+          <Property Name="fecha_hora_hasta" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="MANTENIMIENTO">
+          <Key>
+            <PropertyRef Name="id_mantenimiento" />
+          </Key>
+          <Property Name="id_mantenimiento" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="hora_inicio" Type="time" Precision="7" Nullable="false" />
+          <Property Name="hora_fin" Type="time" Precision="7" Nullable="false" />
+          <Property Name="id_tipo_mantenimiento" Type="int" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MARCAS">
+          <Key>
+            <PropertyRef Name="id_marca" />
+          </Key>
+          <Property Name="id_marca" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varbinary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MODELOS">
+          <Key>
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PERMISOS">
+          <Key>
+            <PropertyRef Name="id_permisos" />
+          </Key>
+          <Property Name="id_permisos" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERSONAL_CIENTIFICO">
+          <Key>
+            <PropertyRef Name="legajo" />
+          </Key>
+          <Property Name="legajo" Type="int" Nullable="false" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="dni" Type="varchar" MaxLength="50" />
+          <Property Name="email_institucional" Type="varchar" MaxLength="50" />
+          <Property Name="email_personal" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="id_rol_personal_cientifico" Type="int" />
+        </EntityType>
+        <EntityType Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+          <Key>
+            <PropertyRef Name="id_centro_investigacion" />
+            <PropertyRef Name="id_personal_cientifico" />
+          </Key>
+          <Property Name="id_centro_investigacion" Type="int" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="int" Nullable="false" />
+          <Property Name="fecha_desde" Type="smalldatetime" Nullable="false" />
+          <Property Name="fecha_hasta" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+          <Key>
+            <PropertyRef Name="id_recurso_tecnologico" />
+            <PropertyRef Name="id_caracteristica" />
+          </Key>
+          <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_caracteristica" Type="int" Nullable="false" />
+          <Property Name="valor" Type="int" />
+        </EntityType>
+        <EntityType Name="RECURSOS_TECNOLOGICOS">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha_alta" Type="smalldatetime" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="id_marca" Type="int" Nullable="false" />
+          <Property Name="imagen" Type="image" />
+          <Property Name="id_tipo_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_responsable_tecnico" Type="int" />
+        </EntityType>
+        <EntityType Name="RESPONSABLES_TECNICOS">
+          <Key>
+            <PropertyRef Name="id_responsable_tecnico" />
+          </Key>
+          <Property Name="id_responsable_tecnico" Type="int" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROL_PERSONAL_CIENTIFICO">
+          <Key>
+            <PropertyRef Name="id_rol_personal_cientifico" />
+          </Key>
+          <Property Name="id_rol_personal_cientifico" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TIPOS_MANTENIMIENTOS">
+          <Key>
+            <PropertyRef Name="id_tipo_mantenimiento" />
+          </Key>
+          <Property Name="id_tipo_mantenimiento" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TIPOS_RECURSOS_TECNOLOGICOS">
+          <Key>
+            <PropertyRef Name="id_tipo_recurso_tecnologico" />
+          </Key>
+          <Property Name="id_tipo_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TURNO">
+          <Key>
+            <PropertyRef Name="id_turno" />
+          </Key>
+          <Property Name="id_turno" Type="int" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_cientifico" Type="int" />
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="fecha_hora_inicio" Type="smalldatetime" />
+          <Property Name="fecha_hora_fin" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="UNIDADES_MEDIDAS">
+          <Key>
+            <PropertyRef Name="id_unidad_medida" />
+          </Key>
+          <Property Name="id_unidad_medida" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="usuario" />
+          </Key>
+          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO_CARACTERISTICAS">
+          <End Role="CARACTERISTICAS" Type="Self.CARACTERISTICAS" Multiplicity="1" />
+          <End Role="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" Type="Self.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARACTERISTICAS">
+              <PropertyRef Name="id_caracteristica" />
+            </Principal>
+            <Dependent Role="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_caracteristica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO_TIPOS_RECURSOS_TECNOLOGICOS">
+          <End Role="TIPOS_RECURSOS_TECNOLOGICOS" Type="Self.TIPOS_RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" Type="Self.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOS_RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_tipo_recurso_tecnologico" />
+            </Principal>
+            <Dependent Role="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_tipo_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CARACTERISTICAS_UNIDADES_MEDIDAS">
+          <End Role="UNIDADES_MEDIDAS" Type="Self.UNIDADES_MEDIDAS" Multiplicity="0..1" />
+          <End Role="CARACTERISTICAS" Type="Self.CARACTERISTICAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UNIDADES_MEDIDAS">
+              <PropertyRef Name="id_unidad_medida" />
+            </Principal>
+            <Dependent Role="CARACTERISTICAS">
+              <PropertyRef Name="id_unidad_medida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CENTRO_INVESTIGACION_FACULTAD">
+          <End Role="FACULTAD" Type="Self.FACULTAD" Multiplicity="1" />
+          <End Role="CENTRO_INVESTIGACION" Type="Self.CENTRO_INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FACULTAD">
+              <PropertyRef Name="id_facultad" />
+            </Principal>
+            <Dependent Role="CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_facultad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO_CENTRO_INVESTIGACION">
+          <End Role="CENTRO_INVESTIGACION" Type="Self.CENTRO_INVESTIGACION" Multiplicity="1" />
+          <End Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Type="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_centro_investigacion" />
+            </Principal>
+            <Dependent Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_centro_investigacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Type="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIENTIFICOS_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="CIENTIFICOS" Type="Self.CIENTIFICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="CIENTIFICOS">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIRECTORES_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="DIRECTORES" Type="Self.DIRECTORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="DIRECTORES">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="DISPONIBILIDAD" Type="Self.DISPONIBILIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="DISPONIBILIDAD">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACULTAD_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="FACULTAD" Type="Self.FACULTAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="FACULTAD">
+              <PropertyRef Name="id_responsable_CyT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_DIRECTORES_DIRECTORES">
+          <End Role="DIRECTORES" Type="Self.DIRECTORES" Multiplicity="1" />
+          <End Role="HISTORIAL_DIRECTORES" Type="Self.HISTORIAL_DIRECTORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIRECTORES">
+              <PropertyRef Name="id_director" />
+            </Principal>
+            <Dependent Role="HISTORIAL_DIRECTORES">
+              <PropertyRef Name="id_director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1">
+          <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
+          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOS">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="MANTENIMIENTO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS">
+          <End Role="TIPOS_MANTENIMIENTOS" Type="Self.TIPOS_MANTENIMIENTOS" Multiplicity="1" />
+          <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOS_MANTENIMIENTOS">
+              <PropertyRef Name="id_tipo_mantenimiento" />
+            </Principal>
+            <Dependent Role="MANTENIMIENTO">
+              <PropertyRef Name="id_tipo_mantenimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO">
+          <End Role="ROL_PERSONAL_CIENTIFICO" Type="Self.ROL_PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL_PERSONAL_CIENTIFICO">
+              <PropertyRef Name="id_rol_personal_cientifico" />
+            </Principal>
+            <Dependent Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="id_rol_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION">
+          <End Role="CENTRO_INVESTIGACION" Type="Self.CENTRO_INVESTIGACION" Multiplicity="1" />
+          <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Type="Self.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_centro_investigacion" />
+            </Principal>
+            <Dependent Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_centro_investigacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="1" />
+          <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Type="Self.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS">
+          <End Role="CARACTERISTICAS" Type="Self.CARACTERISTICAS" Multiplicity="1" />
+          <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Type="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARACTERISTICAS">
+              <PropertyRef Name="id_caracteristica" />
+            </Principal>
+            <Dependent Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+              <PropertyRef Name="id_caracteristica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Type="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_MARCAS">
+          <End Role="MARCAS" Type="Self.MARCAS" Multiplicity="1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARCAS">
+              <PropertyRef Name="id_marca" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_MODELOS">
+          <End Role="MODELOS" Type="Self.MODELOS" Multiplicity="1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MODELOS">
+              <PropertyRef Name="id_modelo" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
+          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="0..1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESPONSABLES_TECNICOS">
+              <PropertyRef Name="id_responsable_tecnico" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_responsable_tecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS">
+          <End Role="TIPOS_RECURSOS_TECNOLOGICOS" Type="Self.TIPOS_RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOS_RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_tipo_recurso_tecnologico" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_tipo_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="1" />
+          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="RESPONSABLES_TECNICOS">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TURNO_CIENTIFICOS">
+          <End Role="CIENTIFICOS" Type="Self.CIENTIFICOS" Multiplicity="0..1" />
+          <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIENTIFICOS">
+              <PropertyRef Name="id_cientificos" />
+            </Principal>
+            <Dependent Role="TURNO">
+              <PropertyRef Name="id_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TURNO_ESTADOS">
+          <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
+          <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOS">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="TURNO">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TURNO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="TURNO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_ESTADOS">
+          <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOS">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="GestionModelStoreContainer">
+          <EntitySet Name="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" EntityType="Self.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CARACTERISTICAS" EntityType="Self.CARACTERISTICAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CENTRO_INVESTIGACION" EntityType="Self.CENTRO_INVESTIGACION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" EntityType="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CIENTIFICOS" EntityType="Self.CIENTIFICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIRECTORES" EntityType="Self.DIRECTORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DISPONIBILIDAD" EntityType="Self.DISPONIBILIDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTADOS" EntityType="Self.ESTADOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACULTAD" EntityType="Self.FACULTAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIAL_DIRECTORES" EntityType="Self.HISTORIAL_DIRECTORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIAL_RECURSO_TECNOLOGICO" EntityType="Self.HISTORIAL_RECURSO_TECNOLOGICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MANTENIMIENTO" EntityType="Self.MANTENIMIENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MARCAS" EntityType="Self.MARCAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MODELOS" EntityType="Self.MODELOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERMISOS" EntityType="Self.PERMISOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONAL_CIENTIFICO" EntityType="Self.PERSONAL_CIENTIFICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" EntityType="Self.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntityType="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECURSOS_TECNOLOGICOS" EntityType="Self.RECURSOS_TECNOLOGICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESPONSABLES_TECNICOS" EntityType="Self.RESPONSABLES_TECNICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROL_PERSONAL_CIENTIFICO" EntityType="Self.ROL_PERSONAL_CIENTIFICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPOS_MANTENIMIENTOS" EntityType="Self.TIPOS_MANTENIMIENTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPOS_RECURSOS_TECNOLOGICOS" EntityType="Self.TIPOS_RECURSOS_TECNOLOGICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TURNO" EntityType="Self.TURNO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UNIDADES_MEDIDAS" EntityType="Self.UNIDADES_MEDIDAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO_CARACTERISTICAS" Association="Self.FK_CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO_CARACTERISTICAS">
+            <End Role="CARACTERISTICAS" EntitySet="CARACTERISTICAS" />
+            <End Role="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" EntitySet="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO_TIPOS_RECURSOS_TECNOLOGICOS" Association="Self.FK_CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO_TIPOS_RECURSOS_TECNOLOGICOS">
+            <End Role="TIPOS_RECURSOS_TECNOLOGICOS" EntitySet="TIPOS_RECURSOS_TECNOLOGICOS" />
+            <End Role="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" EntitySet="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CARACTERISTICAS_UNIDADES_MEDIDAS" Association="Self.FK_CARACTERISTICAS_UNIDADES_MEDIDAS">
+            <End Role="UNIDADES_MEDIDAS" EntitySet="UNIDADES_MEDIDAS" />
+            <End Role="CARACTERISTICAS" EntitySet="CARACTERISTICAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CENTRO_INVESTIGACION_FACULTAD" Association="Self.FK_CENTRO_INVESTIGACION_FACULTAD">
+            <End Role="FACULTAD" EntitySet="FACULTAD" />
+            <End Role="CENTRO_INVESTIGACION" EntitySet="CENTRO_INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO_CENTRO_INVESTIGACION" Association="Self.FK_CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO_CENTRO_INVESTIGACION">
+            <End Role="CENTRO_INVESTIGACION" EntitySet="CENTRO_INVESTIGACION" />
+            <End Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" EntitySet="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" Association="Self.FK_CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" EntitySet="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIENTIFICOS_PERSONAL_CIENTIFICO" Association="Self.FK_CIENTIFICOS_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="CIENTIFICOS" EntitySet="CIENTIFICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIRECTORES_PERSONAL_CIENTIFICO" Association="Self.FK_DIRECTORES_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="DIRECTORES" EntitySet="DIRECTORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" Association="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="DISPONIBILIDAD" EntitySet="DISPONIBILIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACULTAD_PERSONAL_CIENTIFICO" Association="Self.FK_FACULTAD_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="FACULTAD" EntitySet="FACULTAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_DIRECTORES_DIRECTORES" Association="Self.FK_HISTORIAL_DIRECTORES_DIRECTORES">
+            <End Role="DIRECTORES" EntitySet="DIRECTORES" />
+            <End Role="HISTORIAL_DIRECTORES" EntitySet="HISTORIAL_DIRECTORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1">
+            <End Role="ESTADOS" EntitySet="ESTADOS" />
+            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" Association="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS" Association="Self.FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS">
+            <End Role="TIPOS_MANTENIMIENTOS" EntitySet="TIPOS_MANTENIMIENTOS" />
+            <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO" Association="Self.FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO">
+            <End Role="ROL_PERSONAL_CIENTIFICO" EntitySet="ROL_PERSONAL_CIENTIFICO" />
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION" Association="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION">
+            <End Role="CENTRO_INVESTIGACION" EntitySet="CENTRO_INVESTIGACION" />
+            <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" EntitySet="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO" Association="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" EntitySet="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS" Association="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS">
+            <End Role="CARACTERISTICAS" EntitySet="CARACTERISTICAS" />
+            <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntitySet="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS" Association="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntitySet="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_MARCAS" Association="Self.FK_RECURSOS_TECNOLOGICOS_MARCAS">
+            <End Role="MARCAS" EntitySet="MARCAS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_MODELOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_MODELOS">
+            <End Role="MODELOS" EntitySet="MODELOS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
+            <End Role="RESPONSABLES_TECNICOS" EntitySet="RESPONSABLES_TECNICOS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS">
+            <End Role="TIPOS_RECURSOS_TECNOLOGICOS" EntitySet="TIPOS_RECURSOS_TECNOLOGICOS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO" Association="Self.FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="RESPONSABLES_TECNICOS" EntitySet="RESPONSABLES_TECNICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TURNO_CIENTIFICOS" Association="Self.FK_TURNO_CIENTIFICOS">
+            <End Role="CIENTIFICOS" EntitySet="CIENTIFICOS" />
+            <End Role="TURNO" EntitySet="TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TURNO_ESTADOS" Association="Self.FK_TURNO_ESTADOS">
+            <End Role="ESTADOS" EntitySet="ESTADOS" />
+            <End Role="TURNO" EntitySet="TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TURNO_RECURSOS_TECNOLOGICOS" Association="Self.FK_TURNO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="TURNO" EntitySet="TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_ESTADOS" Association="Self.FK_USUARIOS_ESTADOS">
+            <End Role="ESTADOS" EntitySet="ESTADOS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GestionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CARACTERISTICA">
+          <Key>
+            <PropertyRef Name="id_caracteristica" />
+          </Key>
+          <Property Name="id_caracteristica" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_unidad_medida" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UNIDADES_MEDIDAS" Relationship="Self.FK_CARACTERISTICAS_UNIDADES_MEDIDAS" FromRole="CARACTERISTICAS" ToRole="UNIDADES_MEDIDAS" />
+          <NavigationProperty Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Relationship="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS" FromRole="CARACTERISTICAS" ToRole="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          <NavigationProperty Name="TIPOS_RECURSOS_TECNOLOGICOS" Relationship="Self.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" FromRole="CARACTERISTICAS" ToRole="TIPOS_RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="CENTRO_INVESTIGACION">
+          <Key>
+            <PropertyRef Name="id_centro_investigacion" />
+          </Key>
+          <Property Name="id_centro_investigacion" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sigla" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="actividad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="reglamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tiempo_antelacion" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="id_facultad" Type="Int32" Nullable="false" />
+          <Property Name="fecha_baja" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FACULTAD" Relationship="Self.FK_CENTRO_INVESTIGACION_FACULTAD" FromRole="CENTRO_INVESTIGACION" ToRole="FACULTAD" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Relationship="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION" FromRole="CENTRO_INVESTIGACION" ToRole="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" FromRole="CENTRO_INVESTIGACION" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="CIENTIFICO">
+          <Key>
+            <PropertyRef Name="id_cientificos" />
+          </Key>
+          <Property Name="id_cientificos" Type="Int32" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="Int32" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_CIENTIFICOS_PERSONAL_CIENTIFICO" FromRole="CIENTIFICOS" ToRole="PERSONAL_CIENTIFICO" />
+          <NavigationProperty Name="TURNOes" Relationship="Self.FK_TURNO_CIENTIFICOS" FromRole="CIENTIFICOS" ToRole="TURNO" />
+        </EntityType>
+        <EntityType Name="DIRECTORE">
+          <Key>
+            <PropertyRef Name="id_director" />
+          </Key>
+          <Property Name="id_director" Type="Int32" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="Int32" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_DIRECTORES_PERSONAL_CIENTIFICO" FromRole="DIRECTORES" ToRole="PERSONAL_CIENTIFICO" />
+          <NavigationProperty Name="HISTORIAL_DIRECTORES" Relationship="Self.FK_HISTORIAL_DIRECTORES_DIRECTORES" FromRole="DIRECTORES" ToRole="HISTORIAL_DIRECTORES" />
+        </EntityType>
+        <EntityType Name="DISPONIBILIDAD">
+          <Key>
+            <PropertyRef Name="id_recurso_tecnologico" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hora_inicio" Type="Time" Precision="7" />
+          <Property Name="hora_fin" Type="Time" Precision="7" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" FromRole="DISPONIBILIDAD" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="ESTADO">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HISTORIAL_RECURSO_TECNOLOGICO" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1" FromRole="ESTADOS" ToRole="HISTORIAL_RECURSO_TECNOLOGICO" />
+          <NavigationProperty Name="TURNOes" Relationship="Self.FK_TURNO_ESTADOS" FromRole="ESTADOS" ToRole="TURNO" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_USUARIOS_ESTADOS" FromRole="ESTADOS" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="FACULTAD">
+          <Key>
+            <PropertyRef Name="id_facultad" />
+          </Key>
+          <Property Name="id_facultad" Type="Int32" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_responsable_CyT" Type="Int32" />
+          <NavigationProperty Name="CENTRO_INVESTIGACION" Relationship="Self.FK_CENTRO_INVESTIGACION_FACULTAD" FromRole="FACULTAD" ToRole="CENTRO_INVESTIGACION" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_FACULTAD_PERSONAL_CIENTIFICO" FromRole="FACULTAD" ToRole="PERSONAL_CIENTIFICO" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_DIRECTORES">
+          <Key>
+            <PropertyRef Name="id_historial_director" />
+          </Key>
+          <Property Name="id_historial_director" Type="Int32" Nullable="false" />
+          <Property Name="id_director" Type="Int32" Nullable="false" />
+          <Property Name="fecha_desde" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_hasta" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="DIRECTORE" Relationship="Self.FK_HISTORIAL_DIRECTORES_DIRECTORES" FromRole="HISTORIAL_DIRECTORES" ToRole="DIRECTORES" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_RECURSO_TECNOLOGICO">
+          <Key>
+            <PropertyRef Name="id_historial_recurso_tecnologico" />
+            <PropertyRef Name="id_recurso_tecnologico" />
+          </Key>
+          <Property Name="id_historial_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="fecha_hora_desde" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_hora_hasta" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="ESTADO" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1" FromRole="HISTORIAL_RECURSO_TECNOLOGICO" ToRole="ESTADOS" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" FromRole="HISTORIAL_RECURSO_TECNOLOGICO" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="MANTENIMIENTO">
+          <Key>
+            <PropertyRef Name="id_mantenimiento" />
+          </Key>
+          <Property Name="id_mantenimiento" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hora_inicio" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="hora_fin" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="id_tipo_mantenimiento" Type="Int32" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" FromRole="MANTENIMIENTO" ToRole="RECURSOS_TECNOLOGICOS" />
+          <NavigationProperty Name="TIPOS_MANTENIMIENTOS" Relationship="Self.FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS" FromRole="MANTENIMIENTO" ToRole="TIPOS_MANTENIMIENTOS" />
+        </EntityType>
+        <EntityType Name="MARCA">
+          <Key>
+            <PropertyRef Name="id_marca" />
+          </Key>
+          <Property Name="id_marca" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="Binary" MaxLength="50" FixedLength="false" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_MARCAS" FromRole="MARCAS" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="MODELO">
+          <Key>
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_MODELOS" FromRole="MODELOS" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="PERMISO">
+          <Key>
+            <PropertyRef Name="id_permisos" />
+          </Key>
+          <Property Name="id_permisos" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERSONAL_CIENTIFICO">
+          <Key>
+            <PropertyRef Name="legajo" />
+          </Key>
+          <Property Name="legajo" Type="Int32" Nullable="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_institucional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_personal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_rol_personal_cientifico" Type="Int32" />
+          <NavigationProperty Name="CIENTIFICOS" Relationship="Self.FK_CIENTIFICOS_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO" ToRole="CIENTIFICOS" />
+          <NavigationProperty Name="DIRECTORES" Relationship="Self.FK_DIRECTORES_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO" ToRole="DIRECTORES" />
+          <NavigationProperty Name="FACULTADs" Relationship="Self.FK_FACULTAD_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO" ToRole="FACULTAD" />
+          <NavigationProperty Name="ROL_PERSONAL_CIENTIFICO" Relationship="Self.FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO" ToRole="ROL_PERSONAL_CIENTIFICO" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Relationship="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO" ToRole="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          <NavigationProperty Name="RESPONSABLES_TECNICOS" Relationship="Self.FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO" ToRole="RESPONSABLES_TECNICOS" />
+        </EntityType>
+        <EntityType Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+          <Key>
+            <PropertyRef Name="id_centro_investigacion" />
+            <PropertyRef Name="id_personal_cientifico" />
+          </Key>
+          <Property Name="id_centro_investigacion" Type="Int32" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="Int32" Nullable="false" />
+          <Property Name="fecha_desde" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_hasta" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CENTRO_INVESTIGACION" Relationship="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION" FromRole="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" ToRole="CENTRO_INVESTIGACION" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO" FromRole="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" ToRole="PERSONAL_CIENTIFICO" />
+        </EntityType>
+        <EntityType Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+          <Key>
+            <PropertyRef Name="id_recurso_tecnologico" />
+            <PropertyRef Name="id_caracteristica" />
+          </Key>
+          <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_caracteristica" Type="Int32" Nullable="false" />
+          <Property Name="valor" Type="Int32" />
+          <NavigationProperty Name="CARACTERISTICA" Relationship="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS" FromRole="RECURSO_TECNOLOGICO_X_CARACTERISTICA" ToRole="CARACTERISTICAS" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS" FromRole="RECURSO_TECNOLOGICO_X_CARACTERISTICA" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="RECURSOS_TECNOLOGICOS">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha_alta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="id_marca" Type="Int32" Nullable="false" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="id_tipo_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_responsable_tecnico" Type="Int32" />
+          <NavigationProperty Name="DISPONIBILIDADs" Relationship="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="DISPONIBILIDAD" />
+          <NavigationProperty Name="HISTORIAL_RECURSO_TECNOLOGICO" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="HISTORIAL_RECURSO_TECNOLOGICO" />
+          <NavigationProperty Name="MANTENIMIENTOes" Relationship="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="MANTENIMIENTO" />
+          <NavigationProperty Name="MARCA" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_MARCAS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="MARCAS" />
+          <NavigationProperty Name="MODELO" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_MODELOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="MODELOS" />
+          <NavigationProperty Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Relationship="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          <NavigationProperty Name="RESPONSABLES_TECNICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="RESPONSABLES_TECNICOS" />
+          <NavigationProperty Name="TIPOS_RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="TIPOS_RECURSOS_TECNOLOGICOS" />
+          <NavigationProperty Name="TURNOes" Relationship="Self.FK_TURNO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="TURNO" />
+          <NavigationProperty Name="CENTRO_INVESTIGACION" Relationship="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" FromRole="RECURSOS_TECNOLOGICOS" ToRole="CENTRO_INVESTIGACION" />
+        </EntityType>
+        <EntityType Name="RESPONSABLES_TECNICOS">
+          <Key>
+            <PropertyRef Name="id_responsable_tecnico" />
+          </Key>
+          <Property Name="id_responsable_tecnico" Type="Int32" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO" FromRole="RESPONSABLES_TECNICOS" ToRole="PERSONAL_CIENTIFICO" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" FromRole="RESPONSABLES_TECNICOS" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="ROL_PERSONAL_CIENTIFICO">
+          <Key>
+            <PropertyRef Name="id_rol_personal_cientifico" />
+          </Key>
+          <Property Name="id_rol_personal_cientifico" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO" FromRole="ROL_PERSONAL_CIENTIFICO" ToRole="PERSONAL_CIENTIFICO" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TIPOS_MANTENIMIENTOS">
+          <Key>
+            <PropertyRef Name="id_tipo_mantenimiento" />
+          </Key>
+          <Property Name="id_tipo_mantenimiento" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MANTENIMIENTOes" Relationship="Self.FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS" FromRole="TIPOS_MANTENIMIENTOS" ToRole="MANTENIMIENTO" />
+        </EntityType>
+        <EntityType Name="TIPOS_RECURSOS_TECNOLOGICOS">
+          <Key>
+            <PropertyRef Name="id_tipo_recurso_tecnologico" />
+          </Key>
+          <Property Name="id_tipo_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS" FromRole="TIPOS_RECURSOS_TECNOLOGICOS" ToRole="RECURSOS_TECNOLOGICOS" />
+          <NavigationProperty Name="CARACTERISTICAS" Relationship="Self.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" FromRole="TIPOS_RECURSOS_TECNOLOGICOS" ToRole="CARACTERISTICAS" />
+        </EntityType>
+        <EntityType Name="TURNO">
+          <Key>
+            <PropertyRef Name="id_turno" />
+          </Key>
+          <Property Name="id_turno" Type="Int32" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_cientifico" Type="Int32" />
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="fecha_hora_inicio" Type="DateTime" Precision="0" />
+          <Property Name="fecha_hora_fin" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CIENTIFICO" Relationship="Self.FK_TURNO_CIENTIFICOS" FromRole="TURNO" ToRole="CIENTIFICOS" />
+          <NavigationProperty Name="ESTADO" Relationship="Self.FK_TURNO_ESTADOS" FromRole="TURNO" ToRole="ESTADOS" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_TURNO_RECURSOS_TECNOLOGICOS" FromRole="TURNO" ToRole="RECURSOS_TECNOLOGICOS" />
+        </EntityType>
+        <EntityType Name="UNIDADES_MEDIDAS">
+          <Key>
+            <PropertyRef Name="id_unidad_medida" />
+          </Key>
+          <Property Name="id_unidad_medida" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CARACTERISTICAS" Relationship="Self.FK_CARACTERISTICAS_UNIDADES_MEDIDAS" FromRole="UNIDADES_MEDIDAS" ToRole="CARACTERISTICAS" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="usuario1" />
+          </Key>
+          <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ESTADO" Relationship="Self.FK_USUARIOS_ESTADOS" FromRole="USUARIOS" ToRole="ESTADOS" />
+        </EntityType>
+        <Association Name="FK_CARACTERISTICAS_UNIDADES_MEDIDAS">
+          <End Role="UNIDADES_MEDIDAS" Type="Self.UNIDADES_MEDIDAS" Multiplicity="0..1" />
+          <End Role="CARACTERISTICAS" Type="Self.CARACTERISTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UNIDADES_MEDIDAS">
+              <PropertyRef Name="id_unidad_medida" />
+            </Principal>
+            <Dependent Role="CARACTERISTICAS">
+              <PropertyRef Name="id_unidad_medida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS">
+          <End Role="CARACTERISTICAS" Type="Self.CARACTERISTICA" Multiplicity="1" />
+          <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Type="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARACTERISTICAS">
+              <PropertyRef Name="id_caracteristica" />
+            </Principal>
+            <Dependent Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+              <PropertyRef Name="id_caracteristica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CENTRO_INVESTIGACION_FACULTAD">
+          <End Role="FACULTAD" Type="Self.FACULTAD" Multiplicity="1" />
+          <End Role="CENTRO_INVESTIGACION" Type="Self.CENTRO_INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FACULTAD">
+              <PropertyRef Name="id_facultad" />
+            </Principal>
+            <Dependent Role="CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_facultad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION">
+          <End Role="CENTRO_INVESTIGACION" Type="Self.CENTRO_INVESTIGACION" Multiplicity="1" />
+          <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Type="Self.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_centro_investigacion" />
+            </Principal>
+            <Dependent Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_centro_investigacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIENTIFICOS_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="CIENTIFICOS" Type="Self.CIENTIFICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="CIENTIFICOS">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TURNO_CIENTIFICOS">
+          <End Role="CIENTIFICOS" Type="Self.CIENTIFICO" Multiplicity="0..1" />
+          <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIENTIFICOS">
+              <PropertyRef Name="id_cientificos" />
+            </Principal>
+            <Dependent Role="TURNO">
+              <PropertyRef Name="id_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIRECTORES_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="DIRECTORES" Type="Self.DIRECTORE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="DIRECTORES">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_DIRECTORES_DIRECTORES">
+          <End Role="DIRECTORES" Type="Self.DIRECTORE" Multiplicity="1" />
+          <End Role="HISTORIAL_DIRECTORES" Type="Self.HISTORIAL_DIRECTORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIRECTORES">
+              <PropertyRef Name="id_director" />
+            </Principal>
+            <Dependent Role="HISTORIAL_DIRECTORES">
+              <PropertyRef Name="id_director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="DISPONIBILIDAD" Type="Self.DISPONIBILIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="DISPONIBILIDAD">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1">
+          <End Role="ESTADOS" Type="Self.ESTADO" Multiplicity="1" />
+          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOS">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TURNO_ESTADOS">
+          <End Role="ESTADOS" Type="Self.ESTADO" Multiplicity="1" />
+          <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOS">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="TURNO">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_ESTADOS">
+          <End Role="ESTADOS" Type="Self.ESTADO" Multiplicity="1" />
+          <End Role="USUARIOS" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOS">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACULTAD_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="FACULTAD" Type="Self.FACULTAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="FACULTAD">
+              <PropertyRef Name="id_responsable_CyT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="MANTENIMIENTO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS">
+          <End Role="TIPOS_MANTENIMIENTOS" Type="Self.TIPOS_MANTENIMIENTOS" Multiplicity="1" />
+          <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOS_MANTENIMIENTOS">
+              <PropertyRef Name="id_tipo_mantenimiento" />
+            </Principal>
+            <Dependent Role="MANTENIMIENTO">
+              <PropertyRef Name="id_tipo_mantenimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_MARCAS">
+          <End Role="MARCAS" Type="Self.MARCA" Multiplicity="1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARCAS">
+              <PropertyRef Name="id_marca" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_MODELOS">
+          <End Role="MODELOS" Type="Self.MODELO" Multiplicity="1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MODELOS">
+              <PropertyRef Name="id_modelo" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO">
+          <End Role="ROL_PERSONAL_CIENTIFICO" Type="Self.ROL_PERSONAL_CIENTIFICO" Multiplicity="0..1" />
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL_PERSONAL_CIENTIFICO">
+              <PropertyRef Name="id_rol_personal_cientifico" />
+            </Principal>
+            <Dependent Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="id_rol_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="1" />
+          <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Type="Self.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO">
+          <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="1" />
+          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAL_CIENTIFICO">
+              <PropertyRef Name="legajo" />
+            </Principal>
+            <Dependent Role="RESPONSABLES_TECNICOS">
+              <PropertyRef Name="id_personal_cientifico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Type="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
+          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="0..1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESPONSABLES_TECNICOS">
+              <PropertyRef Name="id_responsable_tecnico" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_responsable_tecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS">
+          <End Role="TIPOS_RECURSOS_TECNOLOGICOS" Type="Self.TIPOS_RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOS_RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_tipo_recurso_tecnologico" />
+            </Principal>
+            <Dependent Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="id_tipo_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TURNO_RECURSOS_TECNOLOGICOS">
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
+          <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECURSOS_TECNOLOGICOS">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="TURNO">
+              <PropertyRef Name="id_recurso_tecnologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO">
+          <End Role="CARACTERISTICAS" Type="Self.CARACTERISTICA" Multiplicity="*" />
+          <End Role="TIPOS_RECURSOS_TECNOLOGICOS" Type="Self.TIPOS_RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+        </Association>
+        <Association Name="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
+          <End Role="CENTRO_INVESTIGACION" Type="Self.CENTRO_INVESTIGACION" Multiplicity="*" />
+          <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Gestión_de_Recursos_TecnológicosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CARACTERISTICAS" EntityType="Self.CARACTERISTICA" />
+          <EntitySet Name="CENTRO_INVESTIGACION" EntityType="Self.CENTRO_INVESTIGACION" />
+          <EntitySet Name="CIENTIFICOS" EntityType="Self.CIENTIFICO" />
+          <EntitySet Name="DIRECTORES" EntityType="Self.DIRECTORE" />
+          <EntitySet Name="DISPONIBILIDADs" EntityType="Self.DISPONIBILIDAD" />
+          <EntitySet Name="ESTADOS" EntityType="Self.ESTADO" />
+          <EntitySet Name="FACULTADs" EntityType="Self.FACULTAD" />
+          <EntitySet Name="HISTORIAL_DIRECTORES" EntityType="Self.HISTORIAL_DIRECTORES" />
+          <EntitySet Name="HISTORIAL_RECURSO_TECNOLOGICO" EntityType="Self.HISTORIAL_RECURSO_TECNOLOGICO" />
+          <EntitySet Name="MANTENIMIENTOes" EntityType="Self.MANTENIMIENTO" />
+          <EntitySet Name="MARCAS" EntityType="Self.MARCA" />
+          <EntitySet Name="MODELOS" EntityType="Self.MODELO" />
+          <EntitySet Name="PERMISOS" EntityType="Self.PERMISO" />
+          <EntitySet Name="PERSONAL_CIENTIFICO" EntityType="Self.PERSONAL_CIENTIFICO" />
+          <EntitySet Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" EntityType="Self.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          <EntitySet Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntityType="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          <EntitySet Name="RECURSOS_TECNOLOGICOS" EntityType="Self.RECURSOS_TECNOLOGICOS" />
+          <EntitySet Name="RESPONSABLES_TECNICOS" EntityType="Self.RESPONSABLES_TECNICOS" />
+          <EntitySet Name="ROL_PERSONAL_CIENTIFICO" EntityType="Self.ROL_PERSONAL_CIENTIFICO" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TIPOS_MANTENIMIENTOS" EntityType="Self.TIPOS_MANTENIMIENTOS" />
+          <EntitySet Name="TIPOS_RECURSOS_TECNOLOGICOS" EntityType="Self.TIPOS_RECURSOS_TECNOLOGICOS" />
+          <EntitySet Name="TURNOes" EntityType="Self.TURNO" />
+          <EntitySet Name="UNIDADES_MEDIDAS" EntityType="Self.UNIDADES_MEDIDAS" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIO" />
+          <AssociationSet Name="FK_CARACTERISTICAS_UNIDADES_MEDIDAS" Association="Self.FK_CARACTERISTICAS_UNIDADES_MEDIDAS">
+            <End Role="UNIDADES_MEDIDAS" EntitySet="UNIDADES_MEDIDAS" />
+            <End Role="CARACTERISTICAS" EntitySet="CARACTERISTICAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS" Association="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS">
+            <End Role="CARACTERISTICAS" EntitySet="CARACTERISTICAS" />
+            <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntitySet="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CENTRO_INVESTIGACION_FACULTAD" Association="Self.FK_CENTRO_INVESTIGACION_FACULTAD">
+            <End Role="FACULTAD" EntitySet="FACULTADs" />
+            <End Role="CENTRO_INVESTIGACION" EntitySet="CENTRO_INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION" Association="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION">
+            <End Role="CENTRO_INVESTIGACION" EntitySet="CENTRO_INVESTIGACION" />
+            <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" EntitySet="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIENTIFICOS_PERSONAL_CIENTIFICO" Association="Self.FK_CIENTIFICOS_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="CIENTIFICOS" EntitySet="CIENTIFICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TURNO_CIENTIFICOS" Association="Self.FK_TURNO_CIENTIFICOS">
+            <End Role="CIENTIFICOS" EntitySet="CIENTIFICOS" />
+            <End Role="TURNO" EntitySet="TURNOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIRECTORES_PERSONAL_CIENTIFICO" Association="Self.FK_DIRECTORES_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="DIRECTORES" EntitySet="DIRECTORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_DIRECTORES_DIRECTORES" Association="Self.FK_HISTORIAL_DIRECTORES_DIRECTORES">
+            <End Role="DIRECTORES" EntitySet="DIRECTORES" />
+            <End Role="HISTORIAL_DIRECTORES" EntitySet="HISTORIAL_DIRECTORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" Association="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="DISPONIBILIDAD" EntitySet="DISPONIBILIDADs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1">
+            <End Role="ESTADOS" EntitySet="ESTADOS" />
+            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TURNO_ESTADOS" Association="Self.FK_TURNO_ESTADOS">
+            <End Role="ESTADOS" EntitySet="ESTADOS" />
+            <End Role="TURNO" EntitySet="TURNOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_ESTADOS" Association="Self.FK_USUARIOS_ESTADOS">
+            <End Role="ESTADOS" EntitySet="ESTADOS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACULTAD_PERSONAL_CIENTIFICO" Association="Self.FK_FACULTAD_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="FACULTAD" EntitySet="FACULTADs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" Association="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS" Association="Self.FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS">
+            <End Role="TIPOS_MANTENIMIENTOS" EntitySet="TIPOS_MANTENIMIENTOS" />
+            <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_MARCAS" Association="Self.FK_RECURSOS_TECNOLOGICOS_MARCAS">
+            <End Role="MARCAS" EntitySet="MARCAS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_MODELOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_MODELOS">
+            <End Role="MODELOS" EntitySet="MODELOS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO" Association="Self.FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO">
+            <End Role="ROL_PERSONAL_CIENTIFICO" EntitySet="ROL_PERSONAL_CIENTIFICO" />
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO" Association="Self.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" EntitySet="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO" Association="Self.FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO">
+            <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
+            <End Role="RESPONSABLES_TECNICOS" EntitySet="RESPONSABLES_TECNICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS" Association="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntitySet="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
+            <End Role="RESPONSABLES_TECNICOS" EntitySet="RESPONSABLES_TECNICOS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS">
+            <End Role="TIPOS_RECURSOS_TECNOLOGICOS" EntitySet="TIPOS_RECURSOS_TECNOLOGICOS" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TURNO_RECURSOS_TECNOLOGICOS" Association="Self.FK_TURNO_RECURSOS_TECNOLOGICOS">
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+            <End Role="TURNO" EntitySet="TURNOes" />
+          </AssociationSet>
+          <AssociationSet Name="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" Association="Self.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO">
+            <End Role="CARACTERISTICAS" EntitySet="CARACTERISTICAS" />
+            <End Role="TIPOS_RECURSOS_TECNOLOGICOS" EntitySet="TIPOS_RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <AssociationSet Name="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Association="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
+            <End Role="CENTRO_INVESTIGACION" EntitySet="CENTRO_INVESTIGACION" />
+            <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GestionModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GestionModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GestionModelStoreContainer" CdmEntityContainer="Gestión_de_Recursos_TecnológicosEntities">
+          <EntitySetMapping Name="CARACTERISTICAS">
+            <EntityTypeMapping TypeName="GestionModel.CARACTERISTICA">
+              <MappingFragment StoreEntitySet="CARACTERISTICAS">
+                <ScalarProperty Name="id_caracteristica" ColumnName="id_caracteristica" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_unidad_medida" ColumnName="id_unidad_medida" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CENTRO_INVESTIGACION">
+            <EntityTypeMapping TypeName="GestionModel.CENTRO_INVESTIGACION">
+              <MappingFragment StoreEntitySet="CENTRO_INVESTIGACION">
+                <ScalarProperty Name="id_centro_investigacion" ColumnName="id_centro_investigacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="sigla" ColumnName="sigla" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="actividad" ColumnName="actividad" />
+                <ScalarProperty Name="reglamento" ColumnName="reglamento" />
+                <ScalarProperty Name="tiempo_antelacion" ColumnName="tiempo_antelacion" />
+                <ScalarProperty Name="id_facultad" ColumnName="id_facultad" />
+                <ScalarProperty Name="fecha_baja" ColumnName="fecha_baja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CIENTIFICOS">
+            <EntityTypeMapping TypeName="GestionModel.CIENTIFICO">
+              <MappingFragment StoreEntitySet="CIENTIFICOS">
+                <ScalarProperty Name="id_cientificos" ColumnName="id_cientificos" />
+                <ScalarProperty Name="id_personal_cientifico" ColumnName="id_personal_cientifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIRECTORES">
+            <EntityTypeMapping TypeName="GestionModel.DIRECTORE">
+              <MappingFragment StoreEntitySet="DIRECTORES">
+                <ScalarProperty Name="id_director" ColumnName="id_director" />
+                <ScalarProperty Name="id_personal_cientifico" ColumnName="id_personal_cientifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DISPONIBILIDADs">
+            <EntityTypeMapping TypeName="GestionModel.DISPONIBILIDAD">
+              <MappingFragment StoreEntitySet="DISPONIBILIDAD">
+                <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADOS">
+            <EntityTypeMapping TypeName="GestionModel.ESTADO">
+              <MappingFragment StoreEntitySet="ESTADOS">
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACULTADs">
+            <EntityTypeMapping TypeName="GestionModel.FACULTAD">
+              <MappingFragment StoreEntitySet="FACULTAD">
+                <ScalarProperty Name="id_facultad" ColumnName="id_facultad" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_responsable_CyT" ColumnName="id_responsable_CyT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIAL_DIRECTORES">
+            <EntityTypeMapping TypeName="GestionModel.HISTORIAL_DIRECTORES">
+              <MappingFragment StoreEntitySet="HISTORIAL_DIRECTORES">
+                <ScalarProperty Name="id_historial_director" ColumnName="id_historial_director" />
+                <ScalarProperty Name="id_director" ColumnName="id_director" />
+                <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
+                <ScalarProperty Name="fecha_hasta" ColumnName="fecha_hasta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIAL_RECURSO_TECNOLOGICO">
+            <EntityTypeMapping TypeName="GestionModel.HISTORIAL_RECURSO_TECNOLOGICO">
+              <MappingFragment StoreEntitySet="HISTORIAL_RECURSO_TECNOLOGICO">
+                <ScalarProperty Name="id_historial_recurso_tecnologico" ColumnName="id_historial_recurso_tecnologico" />
+                <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="fecha_hora_desde" ColumnName="fecha_hora_desde" />
+                <ScalarProperty Name="fecha_hora_hasta" ColumnName="fecha_hora_hasta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MANTENIMIENTOes">
+            <EntityTypeMapping TypeName="GestionModel.MANTENIMIENTO">
+              <MappingFragment StoreEntitySet="MANTENIMIENTO">
+                <ScalarProperty Name="id_mantenimiento" ColumnName="id_mantenimiento" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="id_tipo_mantenimiento" ColumnName="id_tipo_mantenimiento" />
+                <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MARCAS">
+            <EntityTypeMapping TypeName="GestionModel.MARCA">
+              <MappingFragment StoreEntitySet="MARCAS">
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MODELOS">
+            <EntityTypeMapping TypeName="GestionModel.MODELO">
+              <MappingFragment StoreEntitySet="MODELOS">
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERMISOS">
+            <EntityTypeMapping TypeName="GestionModel.PERMISO">
+              <MappingFragment StoreEntitySet="PERMISOS">
+                <ScalarProperty Name="id_permisos" ColumnName="id_permisos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONAL_CIENTIFICO">
+            <EntityTypeMapping TypeName="GestionModel.PERSONAL_CIENTIFICO">
+              <MappingFragment StoreEntitySet="PERSONAL_CIENTIFICO">
+                <ScalarProperty Name="legajo" ColumnName="legajo" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="email_institucional" ColumnName="email_institucional" />
+                <ScalarProperty Name="email_personal" ColumnName="email_personal" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="id_rol_personal_cientifico" ColumnName="id_rol_personal_cientifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+            <EntityTypeMapping TypeName="GestionModel.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+              <MappingFragment StoreEntitySet="PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION">
+                <ScalarProperty Name="id_centro_investigacion" ColumnName="id_centro_investigacion" />
+                <ScalarProperty Name="id_personal_cientifico" ColumnName="id_personal_cientifico" />
+                <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
+                <ScalarProperty Name="fecha_hasta" ColumnName="fecha_hasta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+            <EntityTypeMapping TypeName="GestionModel.RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+              <MappingFragment StoreEntitySet="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
+                <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+                <ScalarProperty Name="id_caracteristica" ColumnName="id_caracteristica" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECURSOS_TECNOLOGICOS">
+            <EntityTypeMapping TypeName="GestionModel.RECURSOS_TECNOLOGICOS">
+              <MappingFragment StoreEntitySet="RECURSOS_TECNOLOGICOS">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fecha_alta" ColumnName="fecha_alta" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="id_tipo_recurso_tecnologico" ColumnName="id_tipo_recurso_tecnologico" />
+                <ScalarProperty Name="id_responsable_tecnico" ColumnName="id_responsable_tecnico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESPONSABLES_TECNICOS">
+            <EntityTypeMapping TypeName="GestionModel.RESPONSABLES_TECNICOS">
+              <MappingFragment StoreEntitySet="RESPONSABLES_TECNICOS">
+                <ScalarProperty Name="id_responsable_tecnico" ColumnName="id_responsable_tecnico" />
+                <ScalarProperty Name="id_personal_cientifico" ColumnName="id_personal_cientifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROL_PERSONAL_CIENTIFICO">
+            <EntityTypeMapping TypeName="GestionModel.ROL_PERSONAL_CIENTIFICO">
+              <MappingFragment StoreEntitySet="ROL_PERSONAL_CIENTIFICO">
+                <ScalarProperty Name="id_rol_personal_cientifico" ColumnName="id_rol_personal_cientifico" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GestionModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOS_MANTENIMIENTOS">
+            <EntityTypeMapping TypeName="GestionModel.TIPOS_MANTENIMIENTOS">
+              <MappingFragment StoreEntitySet="TIPOS_MANTENIMIENTOS">
+                <ScalarProperty Name="id_tipo_mantenimiento" ColumnName="id_tipo_mantenimiento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOS_RECURSOS_TECNOLOGICOS">
+            <EntityTypeMapping TypeName="GestionModel.TIPOS_RECURSOS_TECNOLOGICOS">
+              <MappingFragment StoreEntitySet="TIPOS_RECURSOS_TECNOLOGICOS">
+                <ScalarProperty Name="id_tipo_recurso_tecnologico" ColumnName="id_tipo_recurso_tecnologico" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TURNOes">
+            <EntityTypeMapping TypeName="GestionModel.TURNO">
+              <MappingFragment StoreEntitySet="TURNO">
+                <ScalarProperty Name="id_turno" ColumnName="id_turno" />
+                <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+                <ScalarProperty Name="id_cientifico" ColumnName="id_cientifico" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="fecha_hora_inicio" ColumnName="fecha_hora_inicio" />
+                <ScalarProperty Name="fecha_hora_fin" ColumnName="fecha_hora_fin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UNIDADES_MEDIDAS">
+            <EntityTypeMapping TypeName="GestionModel.UNIDADES_MEDIDAS">
+              <MappingFragment StoreEntitySet="UNIDADES_MEDIDAS">
+                <ScalarProperty Name="id_unidad_medida" ColumnName="id_unidad_medida" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="GestionModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" TypeName="GestionModel.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" StoreEntitySet="CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO">
+            <EndProperty Name="CARACTERISTICAS">
+              <ScalarProperty Name="id_caracteristica" ColumnName="id_caracteristica" />
+            </EndProperty>
+            <EndProperty Name="TIPOS_RECURSOS_TECNOLOGICOS">
+              <ScalarProperty Name="id_tipo_recurso_tecnologico" ColumnName="id_tipo_recurso_tecnologico" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" TypeName="GestionModel.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" StoreEntitySet="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
+            <EndProperty Name="CENTRO_INVESTIGACION">
+              <ScalarProperty Name="id_centro_investigacion" ColumnName="id_centro_investigacion" />
+            </EndProperty>
+            <EndProperty Name="RECURSOS_TECNOLOGICOS">
+              <ScalarProperty Name="codigo" ColumnName="id_recurso_tecnologico" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GestionModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GestionModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GestionModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GestionModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GestionModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GestionModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GestionModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GestionModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GestionModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

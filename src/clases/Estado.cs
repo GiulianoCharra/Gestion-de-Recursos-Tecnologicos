@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Estado
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public Estado()
-	{
-		private int id_estado;
-		private string ambito;
-		private string nombre;
-	}
+    internal class Estado
+    {
+        private int id_estado;
+        private string ambito;
+        private string nombre;
+        private string descripcion;
+    }
 }

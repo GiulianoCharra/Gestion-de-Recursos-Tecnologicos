@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="235d2ab7a64546f58fba85562fee06da" Name="Diagram1">
+        <EntityTypeShape EntityType="GestionModel.CARACTERISTICA" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.CENTRO_INVESTIGACION" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.CIENTIFICO" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.DIRECTORE" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.DISPONIBILIDAD" Width="1.5" PointX="12" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.ESTADO" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.FACULTAD" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.HISTORIAL_DIRECTORES" Width="1.5" PointX="7.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.HISTORIAL_RECURSO_TECNOLOGICO" Width="1.5" PointX="12" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.MANTENIMIENTO" Width="1.5" PointX="12" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.MARCA" Width="1.5" PointX="7.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.MODELO" Width="1.5" PointX="7.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.PERMISO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.PERSONAL_CIENTIFICO" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION" Width="1.5" PointX="9.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Width="1.5" PointX="15" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.RECURSOS_TECNOLOGICOS" Width="1.5" PointX="9.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.RESPONSABLES_TECNICOS" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.ROL_PERSONAL_CIENTIFICO" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.sysdiagram" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.TIPOS_MANTENIMIENTOS" Width="1.5" PointX="9.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.TIPOS_RECURSOS_TECNOLOGICOS" Width="1.5" PointX="7.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.TURNO" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.UNIDADES_MEDIDAS" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionModel.USUARIO" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="GestionModel.FK_CARACTERISTICAS_UNIDADES_MEDIDAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_CARACTERISTICAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_CENTRO_INVESTIGACION_FACULTAD" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_CENTRO_INVESTIGACION" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_CIENTIFICOS_PERSONAL_CIENTIFICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_TURNO_CIENTIFICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_DIRECTORES_PERSONAL_CIENTIFICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_HISTORIAL_DIRECTORES_DIRECTORES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS1" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_TURNO_ESTADOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_USUARIOS_ESTADOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_FACULTAD_PERSONAL_CIENTIFICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_MANTENIMIENTO_TIPOS_MANTENIMIENTOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RECURSOS_TECNOLOGICOS_MARCAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RECURSOS_TECNOLOGICOS_MODELOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_PERSONAL_CIENTIFICO_ROL_PERSONAL_CIENTIFICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION_PERSONAL_CIENTIFICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.FK_TURNO_RECURSOS_TECNOLOGICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.CARACTERISTICA_X_TIPO_RECURSO_TECNOLOGICO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionModel.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

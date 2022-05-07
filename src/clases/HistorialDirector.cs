@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class HistorialDirector
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public HistorialDirector()
-	{
-		private 
-	}
+    internal class HistorialDirector
+    {
+        private int id_historial_director;
+        private Director director;
+        private DateTime fecha_inicio;
+        private DateTime fecha_fin;
+    }
 }

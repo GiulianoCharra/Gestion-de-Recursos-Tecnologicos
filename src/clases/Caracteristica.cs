@@ -1,13 +1,16 @@
 ﻿using System;
-using src.clases.UnidadMedida;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Caracteristica
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public Caracteristica()
-	{
-		private int id_caracteristica;
-		private string nombre;
-		private UnidadMedida unidad;
-		private string descripcion;
-	}
+    internal class Caracteristica
+    {
+        private int id_caracteristica;
+        private string nombre;
+        private string descripcion;
+        private UnidadMedida unidadMedida;
+    }
 }

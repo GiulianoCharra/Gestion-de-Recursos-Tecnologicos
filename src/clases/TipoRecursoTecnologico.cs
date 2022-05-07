@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class TipoRecursoTecnologico
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public TipoRecursoTecnologico()
-	{
-		private int id_tipo_recurso_tecnologico;
-		private string nombre;
-		private string descripcion;
-		private Caracteristicas[] caracteristicas;
-	}
+    internal class TipoRecursoTecnologico
+    {
+        private int id_tipo_recurso_mantenimiento;
+        private string nombre;
+        private string descripcion;
+    }
 }

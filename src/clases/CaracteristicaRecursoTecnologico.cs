@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class CaracteristicaRecursoTecnologico
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public CaracteristicaRecursoTecnologico()
-	{
-		private RecursoTecnologico recurso_tecnologico;
-		private Caracteristica carqacteristica;
-		private int valor;
-	}
+    internal class CaracteristicaRecursoTecnologico
+    {
+        private Caracteristica caracteristica;
+        private RecursoTecnologico recursoTecnologico;
+        private int valor;
+    }
 }

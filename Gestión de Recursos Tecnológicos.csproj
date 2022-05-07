@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,9 +51,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +74,126 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="src\clases\Caracteristica.cs" />
+    <Compile Include="src\clases\CaracteristicaRecursoTecnologico.cs" />
+    <Compile Include="src\clases\CentroInvestigacion.cs" />
+    <Compile Include="src\clases\Cientifico.cs" />
+    <Compile Include="src\clases\Director.cs" />
+    <Compile Include="src\clases\Estado.cs" />
+    <Compile Include="src\clases\Facultad.cs" />
+    <Compile Include="src\clases\HistorialDirector.cs" />
+    <Compile Include="src\clases\HistorialRecursoTecnologico.cs" />
+    <Compile Include="src\clases\Mantenimiento.cs" />
+    <Compile Include="src\clases\Marca.cs" />
+    <Compile Include="src\clases\Modelo.cs" />
+    <Compile Include="src\clases\Permiso.cs" />
+    <Compile Include="src\clases\PersonalCientifico.cs" />
+    <Compile Include="src\clases\RecursoTecnologico.cs" />
+    <Compile Include="src\clases\ResponsableTecnico.cs" />
+    <Compile Include="src\clases\Sesion.cs" />
+    <Compile Include="src\clases\TipoMantenimiento.cs" />
+    <Compile Include="src\clases\TipoRecursoTecnologico.cs" />
+    <Compile Include="src\clases\Turno.cs" />
+    <Compile Include="src\clases\UnidadMedida.cs" />
+    <Compile Include="src\clases\Usuario.cs" />
+    <Compile Include="src\entities\CARACTERISTICA.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\CENTRO_INVESTIGACION.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\CIENTIFICO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\DIRECTORE.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\DISPONIBILIDAD.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\ESTADO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\FACULTAD.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\gestionModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\gestionModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\gestionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\HISTORIAL_DIRECTORES.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\HISTORIAL_RECURSO_TECNOLOGICO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\MANTENIMIENTO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\MARCA.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\MODELO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\PERMISO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\PERSONAL_CIENTIFICO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\RECURSOS_TECNOLOGICOS.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\RECURSO_TECNOLOGICO_X_CARACTERISTICA.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\RESPONSABLES_TECNICOS.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\ROL_PERSONAL_CIENTIFICO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\sp_helpdiagrams_Result.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\sysdiagram.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\TIPOS_MANTENIMIENTOS.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\TIPOS_RECURSOS_TECNOLOGICOS.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\TURNO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\UNIDADES_MEDIDAS.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\USUARIO.cs">
+      <DependentUpon>gestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Ventanas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +202,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="obj\Debug\Gestión_de_Recursos_Tecnológicos.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +212,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="bin\Debug\Gestión de Recursos Tecnológicos.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.SuggestedBindingRedirects.cache" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,18 +231,64 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="src\entities\gestionModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>gestionModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="src\entities\gestionModel.edmx.diagram">
+      <DependentUpon>gestionModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Clases\Clases\" />
-    <Folder Include="Clases\Entidades\" />
-    <Folder Include="Clases\Soporte\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="src\db\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Gestión de Recursos Tecnológicos.exe" />
+    <Content Include="bin\Debug\Gestión de Recursos Tecnológicos.pdb" />
+    <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.exe" />
+    <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.pdb" />
+    <Content Include="obj\Debug\TempPE\Clases.Entidades.Database1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Clases.Entidades.DataClasses1.designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\DataSet1.Designer.cs.dll" />
+    <Content Include="src\entities\gestionModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>gestionModel.edmx</DependentUpon>
+      <LastGenOutput>gestionModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="src\entities\gestionModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>gestionModel.edmx</DependentUpon>
+      <LastGenOutput>gestionModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

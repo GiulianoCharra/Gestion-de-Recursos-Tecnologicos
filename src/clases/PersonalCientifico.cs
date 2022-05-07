@@ -1,13 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class PersonalCientifico
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public PersonalCientifico()
-	{
-		private int legajo; 
-		private String nombres;
-		private String apellidos;
-		private String email_personal;
-
-	}
+    internal class PersonalCientifico
+    {
+        private int legajo;
+        private string nombres;
+        private string apellidos;
+        private string dni;
+        private string email_personal;
+        private string email_institucional;
+        private int telefono;
+    }
 }

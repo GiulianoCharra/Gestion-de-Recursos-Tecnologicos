@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-    internal class Director
+    internal class Sesion
     {
-        private PersonalCientifico personalCientifico;
+        private int id_secion;
+        private Usuario usuario;
+        private DateTime fecha_hora_inicio;
+        private DateTime fecha_hora_fin;
     }
 }

@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class UnidadMedida
+namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-	public UnidadMedida()
-	{
-		private int id_unidad_medida;
-		private string nombre;
-		private string descripcion;
-	}
+    internal class UnidadMedida
+    {
+        private int id_unidad_medida;
+        private string nombre;
+        private string descripcion;
+    }
 }

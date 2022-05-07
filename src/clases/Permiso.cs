@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-    internal class Director
+    internal class Permiso
     {
-        private PersonalCientifico personalCientifico;
     }
 }
