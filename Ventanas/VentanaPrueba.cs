@@ -39,8 +39,10 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             this.panelSubActividad2.Visible = false;
             this.panelSubActividad3.Visible = false;
             this.panelListIntegrantes.Visible = false;
+            //si se agregan mas paneles de sub menu
         }
 
+        //el siguente se lo va usar en los button para mostrar y ocultar los botones sub menu
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
