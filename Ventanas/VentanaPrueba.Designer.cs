@@ -39,6 +39,7 @@
             this.btn_Inicio = new FontAwesome.Sharp.IconButton();
             this.Logo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panelBarra.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +74,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.Gray;
+            this.MenuVertical.Controls.Add(this.iconButton4);
             this.MenuVertical.Controls.Add(this.btn);
             this.MenuVertical.Controls.Add(this.iconButton3);
             this.MenuVertical.Controls.Add(this.iconButton2);
@@ -181,6 +183,21 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // iconButton4
+            // 
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Cat;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(0, 267);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(244, 30);
+            this.iconButton4.TabIndex = 8;
+            this.iconButton4.Text = "Integrantes";
+            this.iconButton4.UseVisualStyleBackColor = true;
+            // 
             // VentanaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,5 +229,6 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btn;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }
