@@ -58,7 +58,13 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             if (panelSubActividad1.Visible == true)
                 panelSubActividad1.Visible = false;
-
+            if(panelSubActividad2.Visible == true)
+                panelSubActividad2.Visible = false;
+            if(panelSubActividad3.Visible == true)
+                panelSubActividad3.Visible = false;
+            if(panelListIntegrantes.Visible == true)
+                panelListIntegrantes.Visible = false;
+            //si se agrega mas paneles de sub menu
         }
 
         private void Button6_Click(object sender, EventArgs e)
