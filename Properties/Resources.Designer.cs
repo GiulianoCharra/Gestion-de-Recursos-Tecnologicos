@@ -69,5 +69,15 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap utn_frc_logo {
+            get {
+                object obj = ResourceManager.GetObject("utn_frc_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
