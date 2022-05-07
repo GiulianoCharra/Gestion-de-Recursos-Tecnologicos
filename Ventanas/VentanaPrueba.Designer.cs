@@ -33,7 +33,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.btn = new FontAwesome.Sharp.IconButton();
+            this.btn_menu = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -75,7 +75,7 @@
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.Gray;
             this.MenuVertical.Controls.Add(this.iconButton4);
-            this.MenuVertical.Controls.Add(this.btn);
+            this.MenuVertical.Controls.Add(this.btn_menu);
             this.MenuVertical.Controls.Add(this.iconButton3);
             this.MenuVertical.Controls.Add(this.iconButton2);
             this.MenuVertical.Controls.Add(this.iconButton1);
@@ -102,21 +102,21 @@
             this.iconButton4.Text = "Integrantes";
             this.iconButton4.UseVisualStyleBackColor = true;
             // 
-            // btn
+            // btn_menu
             // 
-            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn.FlatAppearance.BorderSize = 0;
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn.IconChar = FontAwesome.Sharp.IconChar.Spider;
-            this.btn.IconColor = System.Drawing.Color.Black;
-            this.btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn.IconSize = 30;
-            this.btn.Location = new System.Drawing.Point(220, 0);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(30, 30);
-            this.btn.TabIndex = 3;
-            this.btn.UseVisualStyleBackColor = true;
-            this.btn.Click += new System.EventHandler(this.btn_Click);
+            this.btn_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_menu.FlatAppearance.BorderSize = 0;
+            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btn_menu.IconColor = System.Drawing.Color.Black;
+            this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_menu.IconSize = 30;
+            this.btn_menu.Location = new System.Drawing.Point(220, 0);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(30, 30);
+            this.btn_menu.TabIndex = 3;
+            this.btn_menu.UseVisualStyleBackColor = true;
+            this.btn_menu.Click += new System.EventHandler(this.btn_Click);
             // 
             // iconButton3
             // 
@@ -228,7 +228,7 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btn;
+        private FontAwesome.Sharp.IconButton btn_menu;
         private FontAwesome.Sharp.IconButton iconButton4;
     }
 }
