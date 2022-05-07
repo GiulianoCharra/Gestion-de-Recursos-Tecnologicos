@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrueba));
             this.panelBarra = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
@@ -226,7 +225,7 @@
             this.panelCentral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCentral.BackColor = System.Drawing.Color.Silver;
+            this.panelCentral.BackColor = System.Drawing.Color.Gray;
             this.panelCentral.Controls.Add(this.pictureBox1);
             this.panelCentral.Location = new System.Drawing.Point(259, 30);
             this.panelCentral.Name = "panelCentral";
@@ -254,12 +253,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(831, 324);
+            this.pictureBox1.Location = new System.Drawing.Point(260, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(426, 238);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
