@@ -16,5 +16,10 @@ namespace Gestión_de_Recursos_Tecnológicos
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
