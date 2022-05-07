@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,12 +27,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             foreach (Control b in container.Controls)
             {
-                if (b is Button)
+                if (b is IconButton)
                     b.Width = w;
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Button6_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -43,16 +44,16 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void btn_Click(object sender, EventArgs e)
         {
-            //Button buttonAux = this.button1;
+            IconButton buttonAux = this.iconButton1;
             if (MenuVertical.Width == 250)
             {
-                //ajustarAnchoBoton(this.MenuVertical, 55);
+                ajustarAnchoBoton(this.MenuVertical, 55);
                 this.MenuVertical.Width = 60;
 
             }
             else
             {
-                //ajustarAnchoBoton(this.MenuVertical, 245);
+                ajustarAnchoBoton(this.MenuVertical, 245);
                 this.MenuVertical.Width = 250;
             }
         }
