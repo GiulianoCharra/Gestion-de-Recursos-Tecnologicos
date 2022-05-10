@@ -40,6 +40,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             this.panelSubActividad3.Visible = false;
             this.panelListIntegrantes.Visible = false;
             //si se agregan mas paneles de sub menu
+            adjuntar();
         }
 
         //el siguente se lo va usar en los button para mostrar y ocultar los botones sub menu
@@ -81,17 +82,81 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void btn_Click(object sender, EventArgs e)
         {
+            //int Px=panelCentral.Location.X;
+            //int Py=panelCentral.Location.Y;
+                        
             IconButton buttonAux = this.iconButton1;
             if (MenuVertical.Width == 250)
             {
                 ajustarAnchoBoton(this.MenuVertical, 100);
                 this.MenuVertical.Width = 105;
+                //panelCentral.Location = new Point(Px-145,Py);
+                //panelCentral.Size = new Size(1073, 461);
 
             }
             else
             {
                 ajustarAnchoBoton(this.MenuVertical, 245);
                 this.MenuVertical.Width = 250;
+                //panelCentral.Location = new Point(Px+145,Py);
+                //panelCentral.Size = new Size(928,461);
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubActividad1);
+            //
+            //
+            //
+            //
+            adjuntar();
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            /*
+             escribir codigo
+             */
+            hideSubMenu();
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            /*
+             escribir codigo
+             */
+            hideSubMenu();
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            /*
+             escribir codigo
+             */
+            hideSubMenu();
+        }
+
+        private void adjuntar()
+        {
+            if (panelSubActividad1.Visible == false)
+            {
+                btn_activivdad2.Location = new Point(3, 195);
+                if (panelSubActividad2.Visible == false)
+                {
+                    btn_actividad3.Location = new Point(3, 230);
+                    if (panelSubActividad3.Visible == false)
+                        btn_integrantes.Location = new Point(3, 265);
+                    else
+                        btn_integrantes.Location = new Point(3, 558);
+                }
+
+            }
+            else
+            {
+                btn_activivdad2.Location = new Point(3,291);
+                btn_actividad3.Location = new Point(3,326);
+                btn_integrantes.Location = new Point(3,361);
             }
         }
     }
