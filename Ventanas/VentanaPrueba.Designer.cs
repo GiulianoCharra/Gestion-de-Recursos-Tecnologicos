@@ -31,46 +31,46 @@
             this.panelBarra = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panelSubActividad1 = new System.Windows.Forms.Panel();
-            this.panelSubActividad2 = new System.Windows.Forms.Panel();
-            this.panelSubActividad3 = new System.Windows.Forms.Panel();
             this.panelListIntegrantes = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelSubActividad3 = new System.Windows.Forms.Panel();
             this.iconButton11 = new FontAwesome.Sharp.IconButton();
             this.iconButton12 = new FontAwesome.Sharp.IconButton();
             this.iconButton13 = new FontAwesome.Sharp.IconButton();
+            this.panelSubActividad2 = new System.Windows.Forms.Panel();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
+            this.panelSubActividad1 = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.btn_integrantes = new FontAwesome.Sharp.IconButton();
             this.btn_menu = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btn_actividad3 = new FontAwesome.Sharp.IconButton();
+            this.btn_activivdad2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btn_Inicio = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelBarra.SuspendLayout();
             this.MenuVertical.SuspendLayout();
-            this.panelSubActividad1.SuspendLayout();
-            this.panelSubActividad2.SuspendLayout();
-            this.panelSubActividad3.SuspendLayout();
             this.panelListIntegrantes.SuspendLayout();
+            this.panelSubActividad3.SuspendLayout();
+            this.panelSubActividad2.SuspendLayout();
+            this.panelSubActividad1.SuspendLayout();
             this.panelCentral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarra
@@ -107,10 +107,10 @@
             this.MenuVertical.Controls.Add(this.panelSubActividad3);
             this.MenuVertical.Controls.Add(this.panelSubActividad2);
             this.MenuVertical.Controls.Add(this.panelSubActividad1);
-            this.MenuVertical.Controls.Add(this.iconButton4);
+            this.MenuVertical.Controls.Add(this.btn_integrantes);
             this.MenuVertical.Controls.Add(this.btn_menu);
-            this.MenuVertical.Controls.Add(this.iconButton3);
-            this.MenuVertical.Controls.Add(this.iconButton2);
+            this.MenuVertical.Controls.Add(this.btn_actividad3);
+            this.MenuVertical.Controls.Add(this.btn_activivdad2);
             this.MenuVertical.Controls.Add(this.iconButton1);
             this.MenuVertical.Controls.Add(this.btn_Inicio);
             this.MenuVertical.Controls.Add(this.PanelLogo);
@@ -119,39 +119,6 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(250, 544);
             this.MenuVertical.TabIndex = 1;
-            // 
-            // panelSubActividad1
-            // 
-            this.panelSubActividad1.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubActividad1.Controls.Add(this.iconButton7);
-            this.panelSubActividad1.Controls.Add(this.iconButton6);
-            this.panelSubActividad1.Controls.Add(this.iconButton5);
-            this.panelSubActividad1.Location = new System.Drawing.Point(3, 189);
-            this.panelSubActividad1.Name = "panelSubActividad1";
-            this.panelSubActividad1.Size = new System.Drawing.Size(227, 96);
-            this.panelSubActividad1.TabIndex = 3;
-            // 
-            // panelSubActividad2
-            // 
-            this.panelSubActividad2.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubActividad2.Controls.Add(this.iconButton8);
-            this.panelSubActividad2.Controls.Add(this.iconButton9);
-            this.panelSubActividad2.Controls.Add(this.iconButton10);
-            this.panelSubActividad2.Location = new System.Drawing.Point(3, 322);
-            this.panelSubActividad2.Name = "panelSubActividad2";
-            this.panelSubActividad2.Size = new System.Drawing.Size(227, 96);
-            this.panelSubActividad2.TabIndex = 9;
-            // 
-            // panelSubActividad3
-            // 
-            this.panelSubActividad3.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubActividad3.Controls.Add(this.iconButton11);
-            this.panelSubActividad3.Controls.Add(this.iconButton12);
-            this.panelSubActividad3.Controls.Add(this.iconButton13);
-            this.panelSubActividad3.Location = new System.Drawing.Point(3, 456);
-            this.panelSubActividad3.Name = "panelSubActividad3";
-            this.panelSubActividad3.Size = new System.Drawing.Size(227, 96);
-            this.panelSubActividad3.TabIndex = 4;
             // 
             // panelListIntegrantes
             // 
@@ -166,41 +133,14 @@
             this.panelListIntegrantes.Size = new System.Drawing.Size(227, 141);
             this.panelListIntegrantes.TabIndex = 3;
             // 
-            // label1
+            // label6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Edu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Edu";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Edu";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Edu";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Edu";
             // 
             // label5
             // 
@@ -211,57 +151,52 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Edu";
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Edu";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Edu";
             // 
-            // panelCentral
+            // label3
             // 
-            this.panelCentral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCentral.BackColor = System.Drawing.Color.Gray;
-            this.panelCentral.Controls.Add(this.pictureBox1);
-            this.panelCentral.Location = new System.Drawing.Point(259, 30);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(928, 461);
-            this.panelCentral.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Edu";
             // 
-            // panel4
+            // label2
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(256, 497);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(925, 72);
-            this.panel4.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Edu";
             // 
-            // pictureBox2
+            // label1
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.utn_frc_logo;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(497, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(425, 71);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Edu";
             // 
-            // pictureBox1
+            // panelSubActividad3
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(260, 83);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(426, 238);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.panelSubActividad3.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubActividad3.Controls.Add(this.iconButton11);
+            this.panelSubActividad3.Controls.Add(this.iconButton12);
+            this.panelSubActividad3.Controls.Add(this.iconButton13);
+            this.panelSubActividad3.Location = new System.Drawing.Point(3, 456);
+            this.panelSubActividad3.Name = "panelSubActividad3";
+            this.panelSubActividad3.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad3.TabIndex = 4;
             // 
             // iconButton11
             // 
@@ -317,6 +252,17 @@
             this.iconButton13.Text = "Inicio";
             this.iconButton13.UseVisualStyleBackColor = true;
             // 
+            // panelSubActividad2
+            // 
+            this.panelSubActividad2.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubActividad2.Controls.Add(this.iconButton8);
+            this.panelSubActividad2.Controls.Add(this.iconButton9);
+            this.panelSubActividad2.Controls.Add(this.iconButton10);
+            this.panelSubActividad2.Location = new System.Drawing.Point(3, 322);
+            this.panelSubActividad2.Name = "panelSubActividad2";
+            this.panelSubActividad2.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad2.TabIndex = 9;
+            // 
             // iconButton8
             // 
             this.iconButton8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -371,6 +317,17 @@
             this.iconButton10.Text = "Inicio";
             this.iconButton10.UseVisualStyleBackColor = true;
             // 
+            // panelSubActividad1
+            // 
+            this.panelSubActividad1.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubActividad1.Controls.Add(this.iconButton7);
+            this.panelSubActividad1.Controls.Add(this.iconButton6);
+            this.panelSubActividad1.Controls.Add(this.iconButton5);
+            this.panelSubActividad1.Location = new System.Drawing.Point(3, 189);
+            this.panelSubActividad1.Name = "panelSubActividad1";
+            this.panelSubActividad1.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad1.TabIndex = 3;
+            // 
             // iconButton7
             // 
             this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -388,6 +345,7 @@
             this.iconButton7.TabIndex = 5;
             this.iconButton7.Text = "Inicio";
             this.iconButton7.UseVisualStyleBackColor = true;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
             // iconButton6
             // 
@@ -406,6 +364,7 @@
             this.iconButton6.TabIndex = 5;
             this.iconButton6.Text = "Inicio";
             this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // iconButton5
             // 
@@ -424,22 +383,23 @@
             this.iconButton5.TabIndex = 5;
             this.iconButton5.Text = "Inicio";
             this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
-            // iconButton4
+            // btn_integrantes
             // 
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Cat;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(3, 558);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton4.Size = new System.Drawing.Size(227, 30);
-            this.iconButton4.TabIndex = 8;
-            this.iconButton4.Text = "Integrantes";
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.btn_integrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_integrantes.IconChar = FontAwesome.Sharp.IconChar.Cat;
+            this.btn_integrantes.IconColor = System.Drawing.Color.Black;
+            this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_integrantes.IconSize = 30;
+            this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_integrantes.Location = new System.Drawing.Point(3, 558);
+            this.btn_integrantes.Name = "btn_integrantes";
+            this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_integrantes.Size = new System.Drawing.Size(227, 30);
+            this.btn_integrantes.TabIndex = 8;
+            this.btn_integrantes.Text = "Integrantes";
+            this.btn_integrantes.UseVisualStyleBackColor = true;
             // 
             // btn_menu
             // 
@@ -458,37 +418,37 @@
             this.btn_menu.UseVisualStyleBackColor = true;
             this.btn_menu.Click += new System.EventHandler(this.btn_Click);
             // 
-            // iconButton3
+            // btn_actividad3
             // 
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Cat;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(3, 424);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(227, 30);
-            this.iconButton3.TabIndex = 7;
-            this.iconButton3.Text = "actividad 3";
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btn_actividad3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actividad3.IconChar = FontAwesome.Sharp.IconChar.Cat;
+            this.btn_actividad3.IconColor = System.Drawing.Color.Black;
+            this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_actividad3.IconSize = 30;
+            this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_actividad3.Location = new System.Drawing.Point(3, 424);
+            this.btn_actividad3.Name = "btn_actividad3";
+            this.btn_actividad3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_actividad3.Size = new System.Drawing.Size(227, 30);
+            this.btn_actividad3.TabIndex = 7;
+            this.btn_actividad3.Text = "actividad 3";
+            this.btn_actividad3.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // btn_activivdad2
             // 
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Spider;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(3, 291);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(227, 30);
-            this.iconButton2.TabIndex = 6;
-            this.iconButton2.Text = "actividad 2";
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btn_activivdad2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_activivdad2.IconChar = FontAwesome.Sharp.IconChar.Spider;
+            this.btn_activivdad2.IconColor = System.Drawing.Color.Black;
+            this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_activivdad2.IconSize = 30;
+            this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_activivdad2.Location = new System.Drawing.Point(3, 291);
+            this.btn_activivdad2.Name = "btn_activivdad2";
+            this.btn_activivdad2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_activivdad2.Size = new System.Drawing.Size(227, 30);
+            this.btn_activivdad2.TabIndex = 6;
+            this.btn_activivdad2.Text = "actividad 2";
+            this.btn_activivdad2.UseVisualStyleBackColor = true;
             // 
             // iconButton1
             // 
@@ -505,6 +465,7 @@
             this.iconButton1.TabIndex = 5;
             this.iconButton1.Text = "Actividad 1";
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btn_Inicio
             // 
@@ -531,6 +492,49 @@
             this.PanelLogo.Size = new System.Drawing.Size(232, 85);
             this.PanelLogo.TabIndex = 2;
             // 
+            // panelCentral
+            // 
+            this.panelCentral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCentral.BackColor = System.Drawing.Color.Gray;
+            this.panelCentral.Controls.Add(this.pictureBox1);
+            this.panelCentral.Location = new System.Drawing.Point(259, 30);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(928, 461);
+            this.panelCentral.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(260, 83);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(426, 238);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Location = new System.Drawing.Point(256, 497);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(925, 72);
+            this.panel4.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.utn_frc_logo;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(497, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(425, 71);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // VentanaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,15 +550,15 @@
             this.Load += new System.EventHandler(this.VentanaPrueba_Load);
             this.panelBarra.ResumeLayout(false);
             this.MenuVertical.ResumeLayout(false);
-            this.panelSubActividad1.ResumeLayout(false);
-            this.panelSubActividad2.ResumeLayout(false);
-            this.panelSubActividad3.ResumeLayout(false);
             this.panelListIntegrantes.ResumeLayout(false);
             this.panelListIntegrantes.PerformLayout();
+            this.panelSubActividad3.ResumeLayout(false);
+            this.panelSubActividad2.ResumeLayout(false);
+            this.panelSubActividad1.ResumeLayout(false);
             this.panelCentral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -567,11 +571,11 @@
         private System.Windows.Forms.Button button6;
         private FontAwesome.Sharp.IconButton btn_Inicio;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btn_actividad3;
+        private FontAwesome.Sharp.IconButton btn_activivdad2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btn_menu;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btn_integrantes;
         private System.Windows.Forms.Panel panelSubActividad1;
         private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton6;
