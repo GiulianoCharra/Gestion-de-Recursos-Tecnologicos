@@ -405,7 +405,7 @@
             // 
             this.btn_menu.FlatAppearance.BorderSize = 0;
             this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btn_menu.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
             this.btn_menu.IconColor = System.Drawing.Color.Black;
             this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_menu.IconSize = 30;
@@ -517,11 +517,12 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(256, 497);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(250, 502);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(925, 72);
+            this.panel4.Size = new System.Drawing.Size(934, 72);
             this.panel4.TabIndex = 4;
             // 
             // pictureBox2
@@ -529,7 +530,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.utn_frc_logo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(497, 1);
+            this.pictureBox2.Location = new System.Drawing.Point(506, 1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(425, 71);
             this.pictureBox2.TabIndex = 5;
@@ -539,7 +540,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1184, 574);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelCentral);
