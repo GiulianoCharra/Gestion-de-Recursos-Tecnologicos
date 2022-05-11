@@ -84,20 +84,22 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             //int Px=panelCentral.Location.X;
             //int Py=panelCentral.Location.Y;
-                        
+                                    
             IconButton buttonAux = this.iconButton1;
             if (MenuVertical.Width == 250)
             {
                 ajustarAnchoBoton(this.MenuVertical, 100);
                 this.MenuVertical.Width = 105;
-                //panelCentral.Location = new Point(Px-145,Py);
-                //panelCentral.Size = new Size(1073, 461);
+                btn_menu.IconChar = IconChar.AngleDoubleRight;
+                //panelCentral.Location = new Point(Px-145,Py);                
+                //panelCentral.Size = new Size(1073, 461);                
 
             }
             else
             {
                 ajustarAnchoBoton(this.MenuVertical, 245);
                 this.MenuVertical.Width = 250;
+                btn_menu.IconChar = IconChar.AngleDoubleLeft;
                 //panelCentral.Location = new Point(Px+145,Py);
                 //panelCentral.Size = new Size(928,461);
             }
@@ -115,6 +117,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
+            openChildForm(new frm_recursoTecnologico());
             /*
              escribir codigo
              */
@@ -158,6 +161,20 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 btn_actividad3.Location = new Point(3,326);
                 btn_integrantes.Location = new Point(3,361);
             }
+        }
+
+        private Form activeForm=null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelCentral.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }
