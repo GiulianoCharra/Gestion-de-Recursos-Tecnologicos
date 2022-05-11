@@ -21,8 +21,8 @@ namespace Gestión_de_Recursos_Tecnológicos
         {
 
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
