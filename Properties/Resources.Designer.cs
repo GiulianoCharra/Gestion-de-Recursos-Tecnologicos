@@ -73,6 +73,16 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_homero_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Logo_homero-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap utn_frc_logo {
             get {
                 object obj = ResourceManager.GetObject("utn_frc_logo", resourceCulture);
