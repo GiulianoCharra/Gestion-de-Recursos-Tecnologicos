@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panelBarra = new System.Windows.Forms.Panel();
+            this.btn_maximizar = new FontAwesome.Sharp.IconButton();
+            this.btn_minimizar = new FontAwesome.Sharp.IconButton();
+            this.btn_close = new FontAwesome.Sharp.IconButton();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.panelListIntegrantes = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_maximizar = new FontAwesome.Sharp.IconButton();
-            this.btn_minimizar = new FontAwesome.Sharp.IconButton();
-            this.btn_close = new FontAwesome.Sharp.IconButton();
             this.panelBarra.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.panelListIntegrantes.SuspendLayout();
@@ -87,10 +87,61 @@
             this.panelBarra.Size = new System.Drawing.Size(1184, 33);
             this.panelBarra.TabIndex = 0;
             // 
+            // btn_maximizar
+            // 
+            this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_maximizar.FlatAppearance.BorderSize = 0;
+            this.btn_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_maximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btn_maximizar.IconColor = System.Drawing.Color.DarkGray;
+            this.btn_maximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_maximizar.IconSize = 30;
+            this.btn_maximizar.Location = new System.Drawing.Point(1119, 1);
+            this.btn_maximizar.Name = "btn_maximizar";
+            this.btn_maximizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_maximizar.Size = new System.Drawing.Size(30, 30);
+            this.btn_maximizar.TabIndex = 13;
+            this.btn_maximizar.UseVisualStyleBackColor = true;
+            this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click);
+            // 
+            // btn_minimizar
+            // 
+            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btn_minimizar.IconColor = System.Drawing.Color.DarkGray;
+            this.btn_minimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_minimizar.IconSize = 30;
+            this.btn_minimizar.Location = new System.Drawing.Point(1083, 1);
+            this.btn_minimizar.Name = "btn_minimizar";
+            this.btn_minimizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
+            this.btn_minimizar.TabIndex = 11;
+            this.btn_minimizar.UseVisualStyleBackColor = true;
+            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btn_close.IconColor = System.Drawing.Color.DarkGray;
+            this.btn_close.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_close.IconSize = 30;
+            this.btn_close.Location = new System.Drawing.Point(1155, 1);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_close.TabIndex = 12;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // MenuVertical
             // 
             this.MenuVertical.AutoScroll = true;
-            this.MenuVertical.BackColor = System.Drawing.Color.Gray;
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.MenuVertical.Controls.Add(this.panelListIntegrantes);
             this.MenuVertical.Controls.Add(this.panelSubActividad3);
             this.MenuVertical.Controls.Add(this.panelSubActividad2);
@@ -105,7 +156,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 33);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 541);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 848);
             this.MenuVertical.TabIndex = 1;
             // 
             // panelListIntegrantes
@@ -388,6 +439,7 @@
             this.btn_integrantes.TabIndex = 8;
             this.btn_integrantes.Text = "Integrantes";
             this.btn_integrantes.UseVisualStyleBackColor = true;
+            this.btn_integrantes.Click += new System.EventHandler(this.btn_integrantes_Click);
             // 
             // btn_menu
             // 
@@ -475,29 +527,29 @@
             // 
             // PanelLogo
             // 
-            this.PanelLogo.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero;
+            this.PanelLogo.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 32);
+            this.PanelLogo.Location = new System.Drawing.Point(3, 36);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(232, 85);
             this.PanelLogo.TabIndex = 2;
             // 
             // panelCentral
             // 
-            this.panelCentral.BackColor = System.Drawing.Color.Gray;
+            this.panelCentral.BackColor = System.Drawing.Color.Transparent;
             this.panelCentral.Controls.Add(this.pictureBox1);
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentral.Location = new System.Drawing.Point(250, 33);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(934, 541);
+            this.panelCentral.Size = new System.Drawing.Size(934, 848);
             this.panelCentral.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero;
+            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(263, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(263, 277);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(426, 238);
             this.pictureBox1.TabIndex = 2;
@@ -508,7 +560,7 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(250, 502);
+            this.panel4.Location = new System.Drawing.Point(250, 809);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(934, 72);
             this.panel4.TabIndex = 4;
@@ -524,63 +576,12 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // btn_maximizar
-            // 
-            this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_maximizar.FlatAppearance.BorderSize = 0;
-            this.btn_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_maximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btn_maximizar.IconColor = System.Drawing.Color.DarkGray;
-            this.btn_maximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_maximizar.IconSize = 30;
-            this.btn_maximizar.Location = new System.Drawing.Point(1119, 1);
-            this.btn_maximizar.Name = "btn_maximizar";
-            this.btn_maximizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_maximizar.Size = new System.Drawing.Size(30, 30);
-            this.btn_maximizar.TabIndex = 13;
-            this.btn_maximizar.UseVisualStyleBackColor = true;
-            this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click);
-            // 
-            // btn_minimizar
-            // 
-            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_minimizar.FlatAppearance.BorderSize = 0;
-            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btn_minimizar.IconColor = System.Drawing.Color.DarkGray;
-            this.btn_minimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_minimizar.IconSize = 30;
-            this.btn_minimizar.Location = new System.Drawing.Point(1083, 1);
-            this.btn_minimizar.Name = "btn_minimizar";
-            this.btn_minimizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
-            this.btn_minimizar.TabIndex = 11;
-            this.btn_minimizar.UseVisualStyleBackColor = true;
-            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btn_close.IconColor = System.Drawing.Color.DarkGray;
-            this.btn_close.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_close.IconSize = 30;
-            this.btn_close.Location = new System.Drawing.Point(1155, 1);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_close.Size = new System.Drawing.Size(30, 30);
-            this.btn_close.TabIndex = 12;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
             // VentanaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1184, 574);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1184, 881);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.MenuVertical);
