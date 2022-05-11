@@ -18,7 +18,27 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             InitializeComponent();
             manejoSubMenu();
         }
-        
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_minimizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Minimized;
+            else if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_maximizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Normal;
+        }
         /// <summary>
         /// Reajusta el ancho de los botoner de un contenedor
         /// </summary>
@@ -39,8 +59,11 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             this.panelSubActividad2.Visible = false;
             this.panelSubActividad3.Visible = false;
             this.panelListIntegrantes.Visible = false;
+            btn_activivdad2.Location = new Point(3, 195);
+            btn_actividad3.Location = new Point(3, 230);
+            btn_integrantes.Location = new Point(3, 265);
             //si se agregan mas paneles de sub menu
-            adjuntar();
+            //adjuntar();
         }
 
         //el siguente se lo va usar en los button para mostrar y ocultar los botones sub menu
@@ -112,7 +135,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //
-            adjuntar();
+            adjuntar();            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -121,7 +144,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             /*
              escribir codigo
              */
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void iconButton6_Click(object sender, EventArgs e)
@@ -129,7 +152,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             /*
              escribir codigo
              */
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void iconButton7_Click(object sender, EventArgs e)
@@ -137,7 +160,25 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             /*
              escribir codigo
              */
-            hideSubMenu();
+            //hideSubMenu();
+        }
+
+        private void btn_activivdad2_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubActividad2);
+            //
+            //
+            //            
+            adjuntar();
+        }
+
+        private void btn_actividad3_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubActividad3);
+            //
+            //
+            //            
+            adjuntar();
         }
 
         private void adjuntar()
@@ -149,17 +190,27 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 {
                     btn_actividad3.Location = new Point(3, 230);
                     if (panelSubActividad3.Visible == false)
+                    {
                         btn_integrantes.Location = new Point(3, 265);
+                    }
                     else
-                        btn_integrantes.Location = new Point(3, 558);
+                    {
+                        panelSubActividad3.Location = new Point(3, 265);
+                        btn_integrantes.Location = new Point(3, 366);
+                    }                        
                 }
-
+                else
+                {   
+                    panelSubActividad2.Location = new Point(3, 230);//322
+                    btn_actividad3.Location = new Point(3, 331);
+                    btn_integrantes.Location = new Point(3, 366);
+                }                
             }
             else
             {
-                btn_activivdad2.Location = new Point(3,291);
-                btn_actividad3.Location = new Point(3,326);
-                btn_integrantes.Location = new Point(3,361);
+                btn_activivdad2.Location = new Point(3, 291);
+                btn_actividad3.Location = new Point(3, 326);
+                btn_integrantes.Location = new Point(3, 361);
             }
         }
 
@@ -175,6 +226,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             panelCentral.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
-        }
+        }        
     }
 }
