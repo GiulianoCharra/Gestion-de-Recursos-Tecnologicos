@@ -88,7 +88,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 panelSubActividad2.Visible = false;
             if(panelSubActividad3.Visible == true)
                 panelSubActividad3.Visible = false;
-            if(panelListIntegrantes.Visible == true)
+            if (panelListIntegrantes.Visible == true)
                 panelListIntegrantes.Visible = false;
             //si se agrega mas paneles de sub menu
         }
@@ -180,7 +180,17 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //            
             adjuntar();
         }
-
+        
+        private void btn_integrantes_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelListIntegrantes);
+            //
+            //
+            //            
+            adjuntar();
+            //hideSubMenu();                        
+        }
+        
         private void adjuntar()
         {
             if (panelSubActividad1.Visible == false)
@@ -192,6 +202,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                     if (panelSubActividad3.Visible == false)
                     {
                         btn_integrantes.Location = new Point(3, 265);
+                        if (panelListIntegrantes.Visible == true)
+                            panelListIntegrantes.Location = new Point(3, 300);
                     }
                     else
                     {
@@ -201,7 +213,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 }
                 else
                 {   
-                    panelSubActividad2.Location = new Point(3, 230);//322
+                    panelSubActividad2.Location = new Point(3, 230);
                     btn_actividad3.Location = new Point(3, 331);
                     btn_integrantes.Location = new Point(3, 366);
                 }                
@@ -226,6 +238,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             panelCentral.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
-        }        
+        }
     }
 }
