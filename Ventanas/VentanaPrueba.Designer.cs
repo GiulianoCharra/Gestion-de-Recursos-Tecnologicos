@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelBarra = new System.Windows.Forms.Panel();
-            this.btn_maximizar = new FontAwesome.Sharp.IconButton();
-            this.btn_minimizar = new FontAwesome.Sharp.IconButton();
-            this.btn_close = new FontAwesome.Sharp.IconButton();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.panelListIntegrantes = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,14 +39,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSubActividad3 = new System.Windows.Forms.Panel();
+            this.panelSubActividad2 = new System.Windows.Forms.Panel();
+            this.panelSubActividad1 = new System.Windows.Forms.Panel();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.panelFromInferior = new System.Windows.Forms.Panel();
+            this.lbl_hora = new System.Windows.Forms.Label();
+            this.lbl_fecha = new System.Windows.Forms.Label();
+            this.fechaActual = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButton11 = new FontAwesome.Sharp.IconButton();
             this.iconButton12 = new FontAwesome.Sharp.IconButton();
             this.iconButton13 = new FontAwesome.Sharp.IconButton();
-            this.panelSubActividad2 = new System.Windows.Forms.Panel();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.panelSubActividad1 = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -56,13 +61,12 @@
             this.btn_menu = new FontAwesome.Sharp.IconButton();
             this.btn_actividad3 = new FontAwesome.Sharp.IconButton();
             this.btn_activivdad2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btn_actividad1 = new FontAwesome.Sharp.IconButton();
             this.btn_Inicio = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_maximizar = new FontAwesome.Sharp.IconButton();
+            this.btn_minimizar = new FontAwesome.Sharp.IconButton();
+            this.btn_close = new FontAwesome.Sharp.IconButton();
             this.panelBarra.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.panelListIntegrantes.SuspendLayout();
@@ -70,14 +74,14 @@
             this.panelSubActividad2.SuspendLayout();
             this.panelSubActividad1.SuspendLayout();
             this.panelCentral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.panelFromInferior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarra
             // 
-            this.panelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(112)))));
             this.panelBarra.Controls.Add(this.btn_maximizar);
             this.panelBarra.Controls.Add(this.btn_minimizar);
             this.panelBarra.Controls.Add(this.btn_close);
@@ -87,61 +91,10 @@
             this.panelBarra.Size = new System.Drawing.Size(1184, 33);
             this.panelBarra.TabIndex = 0;
             // 
-            // btn_maximizar
-            // 
-            this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_maximizar.FlatAppearance.BorderSize = 0;
-            this.btn_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_maximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btn_maximizar.IconColor = System.Drawing.Color.DarkGray;
-            this.btn_maximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_maximizar.IconSize = 30;
-            this.btn_maximizar.Location = new System.Drawing.Point(1119, 1);
-            this.btn_maximizar.Name = "btn_maximizar";
-            this.btn_maximizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_maximizar.Size = new System.Drawing.Size(30, 30);
-            this.btn_maximizar.TabIndex = 13;
-            this.btn_maximizar.UseVisualStyleBackColor = true;
-            this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click);
-            // 
-            // btn_minimizar
-            // 
-            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_minimizar.FlatAppearance.BorderSize = 0;
-            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btn_minimizar.IconColor = System.Drawing.Color.DarkGray;
-            this.btn_minimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_minimizar.IconSize = 30;
-            this.btn_minimizar.Location = new System.Drawing.Point(1083, 1);
-            this.btn_minimizar.Name = "btn_minimizar";
-            this.btn_minimizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
-            this.btn_minimizar.TabIndex = 11;
-            this.btn_minimizar.UseVisualStyleBackColor = true;
-            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btn_close.IconColor = System.Drawing.Color.DarkGray;
-            this.btn_close.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_close.IconSize = 30;
-            this.btn_close.Location = new System.Drawing.Point(1155, 1);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_close.Size = new System.Drawing.Size(30, 30);
-            this.btn_close.TabIndex = 12;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
             // MenuVertical
             // 
             this.MenuVertical.AutoScroll = true;
-            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(0)))), ((int)(((byte)(214)))));
             this.MenuVertical.Controls.Add(this.panelListIntegrantes);
             this.MenuVertical.Controls.Add(this.panelSubActividad3);
             this.MenuVertical.Controls.Add(this.panelSubActividad2);
@@ -150,13 +103,13 @@
             this.MenuVertical.Controls.Add(this.btn_menu);
             this.MenuVertical.Controls.Add(this.btn_actividad3);
             this.MenuVertical.Controls.Add(this.btn_activivdad2);
-            this.MenuVertical.Controls.Add(this.iconButton1);
+            this.MenuVertical.Controls.Add(this.btn_actividad1);
             this.MenuVertical.Controls.Add(this.btn_Inicio);
             this.MenuVertical.Controls.Add(this.PanelLogo);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 33);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 848);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 528);
             this.MenuVertical.TabIndex = 1;
             // 
             // panelListIntegrantes
@@ -167,9 +120,9 @@
             this.panelListIntegrantes.Controls.Add(this.label3);
             this.panelListIntegrantes.Controls.Add(this.label2);
             this.panelListIntegrantes.Controls.Add(this.label1);
-            this.panelListIntegrantes.Location = new System.Drawing.Point(3, 588);
+            this.panelListIntegrantes.Location = new System.Drawing.Point(3, 590);
             this.panelListIntegrantes.Name = "panelListIntegrantes";
-            this.panelListIntegrantes.Size = new System.Drawing.Size(227, 141);
+            this.panelListIntegrantes.Size = new System.Drawing.Size(192, 141);
             this.panelListIntegrantes.TabIndex = 3;
             // 
             // label6
@@ -232,10 +185,104 @@
             this.panelSubActividad3.Controls.Add(this.iconButton11);
             this.panelSubActividad3.Controls.Add(this.iconButton12);
             this.panelSubActividad3.Controls.Add(this.iconButton13);
-            this.panelSubActividad3.Location = new System.Drawing.Point(3, 456);
+            this.panelSubActividad3.Location = new System.Drawing.Point(3, 458);
             this.panelSubActividad3.Name = "panelSubActividad3";
             this.panelSubActividad3.Size = new System.Drawing.Size(227, 96);
             this.panelSubActividad3.TabIndex = 4;
+            // 
+            // panelSubActividad2
+            // 
+            this.panelSubActividad2.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubActividad2.Controls.Add(this.iconButton8);
+            this.panelSubActividad2.Controls.Add(this.iconButton9);
+            this.panelSubActividad2.Controls.Add(this.iconButton10);
+            this.panelSubActividad2.Location = new System.Drawing.Point(3, 324);
+            this.panelSubActividad2.Name = "panelSubActividad2";
+            this.panelSubActividad2.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad2.TabIndex = 9;
+            // 
+            // panelSubActividad1
+            // 
+            this.panelSubActividad1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(0)))), ((int)(((byte)(252)))));
+            this.panelSubActividad1.Controls.Add(this.iconButton7);
+            this.panelSubActividad1.Controls.Add(this.iconButton6);
+            this.panelSubActividad1.Controls.Add(this.iconButton5);
+            this.panelSubActividad1.Location = new System.Drawing.Point(3, 191);
+            this.panelSubActividad1.Name = "panelSubActividad1";
+            this.panelSubActividad1.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad1.TabIndex = 3;
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.Transparent;
+            this.panelCentral.Controls.Add(this.pictureBox1);
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCentral.Location = new System.Drawing.Point(250, 33);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(934, 528);
+            this.panelCentral.TabIndex = 3;
+            // 
+            // panelFromInferior
+            // 
+            this.panelFromInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(112)))));
+            this.panelFromInferior.Controls.Add(this.lbl_fecha);
+            this.panelFromInferior.Controls.Add(this.lbl_hora);
+            this.panelFromInferior.Controls.Add(this.pictureBox2);
+            this.panelFromInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFromInferior.Location = new System.Drawing.Point(250, 489);
+            this.panelFromInferior.Name = "panelFromInferior";
+            this.panelFromInferior.Size = new System.Drawing.Size(934, 72);
+            this.panelFromInferior.TabIndex = 4;
+            // 
+            // lbl_hora
+            // 
+            this.lbl_hora.AutoSize = true;
+            this.lbl_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hora.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_hora.Location = new System.Drawing.Point(14, 5);
+            this.lbl_hora.Name = "lbl_hora";
+            this.lbl_hora.Size = new System.Drawing.Size(72, 31);
+            this.lbl_hora.TabIndex = 6;
+            this.lbl_hora.Text = "hora";
+            // 
+            // lbl_fecha
+            // 
+            this.lbl_fecha.AutoSize = true;
+            this.lbl_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha.ForeColor = System.Drawing.Color.Silver;
+            this.lbl_fecha.Location = new System.Drawing.Point(16, 39);
+            this.lbl_fecha.Name = "lbl_fecha";
+            this.lbl_fecha.Size = new System.Drawing.Size(54, 20);
+            this.lbl_fecha.TabIndex = 7;
+            this.lbl_fecha.Text = "fecha";
+            // 
+            // fechaActual
+            // 
+            this.fechaActual.Enabled = true;
+            this.fechaActual.Tick += new System.EventHandler(this.fechaActual_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.utn_frc_logo_removebg_preview;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(506, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(425, 71);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_solo_removebg_preview;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(263, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(429, 299);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // iconButton11
             // 
@@ -291,17 +338,6 @@
             this.iconButton13.Text = "Inicio";
             this.iconButton13.UseVisualStyleBackColor = true;
             // 
-            // panelSubActividad2
-            // 
-            this.panelSubActividad2.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubActividad2.Controls.Add(this.iconButton8);
-            this.panelSubActividad2.Controls.Add(this.iconButton9);
-            this.panelSubActividad2.Controls.Add(this.iconButton10);
-            this.panelSubActividad2.Location = new System.Drawing.Point(3, 322);
-            this.panelSubActividad2.Name = "panelSubActividad2";
-            this.panelSubActividad2.Size = new System.Drawing.Size(227, 96);
-            this.panelSubActividad2.TabIndex = 9;
-            // 
             // iconButton8
             // 
             this.iconButton8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -356,17 +392,6 @@
             this.iconButton10.Text = "Inicio";
             this.iconButton10.UseVisualStyleBackColor = true;
             // 
-            // panelSubActividad1
-            // 
-            this.panelSubActividad1.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubActividad1.Controls.Add(this.iconButton7);
-            this.panelSubActividad1.Controls.Add(this.iconButton6);
-            this.panelSubActividad1.Controls.Add(this.iconButton5);
-            this.panelSubActividad1.Location = new System.Drawing.Point(3, 189);
-            this.panelSubActividad1.Name = "panelSubActividad1";
-            this.panelSubActividad1.Size = new System.Drawing.Size(227, 96);
-            this.panelSubActividad1.TabIndex = 3;
-            // 
             // iconButton7
             // 
             this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -410,6 +435,7 @@
             this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton5.FlatAppearance.BorderSize = 0;
             this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.ForeColor = System.Drawing.Color.Black;
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -432,7 +458,7 @@
             this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_integrantes.IconSize = 30;
             this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_integrantes.Location = new System.Drawing.Point(3, 558);
+            this.btn_integrantes.Location = new System.Drawing.Point(3, 560);
             this.btn_integrantes.Name = "btn_integrantes";
             this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_integrantes.Size = new System.Drawing.Size(227, 30);
@@ -466,7 +492,7 @@
             this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad3.IconSize = 30;
             this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividad3.Location = new System.Drawing.Point(3, 424);
+            this.btn_actividad3.Location = new System.Drawing.Point(3, 426);
             this.btn_actividad3.Name = "btn_actividad3";
             this.btn_actividad3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_actividad3.Size = new System.Drawing.Size(227, 30);
@@ -483,7 +509,7 @@
             this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_activivdad2.IconSize = 30;
             this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_activivdad2.Location = new System.Drawing.Point(3, 291);
+            this.btn_activivdad2.Location = new System.Drawing.Point(3, 293);
             this.btn_activivdad2.Name = "btn_activivdad2";
             this.btn_activivdad2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_activivdad2.Size = new System.Drawing.Size(227, 30);
@@ -492,32 +518,33 @@
             this.btn_activivdad2.UseVisualStyleBackColor = true;
             this.btn_activivdad2.Click += new System.EventHandler(this.btn_activivdad2_Click);
             // 
-            // iconButton1
+            // btn_actividad1
             // 
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Hippo;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(3, 159);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(227, 30);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "Actividad 1";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btn_actividad1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actividad1.IconChar = FontAwesome.Sharp.IconChar.Hippo;
+            this.btn_actividad1.IconColor = System.Drawing.Color.Black;
+            this.btn_actividad1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_actividad1.IconSize = 30;
+            this.btn_actividad1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_actividad1.Location = new System.Drawing.Point(3, 161);
+            this.btn_actividad1.Name = "btn_actividad1";
+            this.btn_actividad1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_actividad1.Size = new System.Drawing.Size(227, 30);
+            this.btn_actividad1.TabIndex = 5;
+            this.btn_actividad1.Text = "Actividad 1";
+            this.btn_actividad1.UseVisualStyleBackColor = true;
+            this.btn_actividad1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btn_Inicio
             // 
             this.btn_Inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Inicio.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Inicio.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btn_Inicio.IconColor = System.Drawing.Color.Black;
             this.btn_Inicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Inicio.IconSize = 30;
             this.btn_Inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Inicio.Location = new System.Drawing.Point(3, 123);
+            this.btn_Inicio.Location = new System.Drawing.Point(3, 125);
             this.btn_Inicio.Name = "btn_Inicio";
             this.btn_Inicio.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Inicio.Size = new System.Drawing.Size(227, 30);
@@ -529,60 +556,69 @@
             // 
             this.PanelLogo.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Location = new System.Drawing.Point(3, 36);
+            this.PanelLogo.Location = new System.Drawing.Point(3, 35);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(232, 85);
             this.PanelLogo.TabIndex = 2;
             // 
-            // panelCentral
+            // btn_maximizar
             // 
-            this.panelCentral.BackColor = System.Drawing.Color.Transparent;
-            this.panelCentral.Controls.Add(this.pictureBox1);
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCentral.Location = new System.Drawing.Point(250, 33);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(934, 848);
-            this.panelCentral.TabIndex = 3;
+            this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_maximizar.FlatAppearance.BorderSize = 0;
+            this.btn_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_maximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btn_maximizar.IconColor = System.Drawing.Color.White;
+            this.btn_maximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_maximizar.IconSize = 30;
+            this.btn_maximizar.Location = new System.Drawing.Point(1119, 1);
+            this.btn_maximizar.Name = "btn_maximizar";
+            this.btn_maximizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_maximizar.Size = new System.Drawing.Size(30, 30);
+            this.btn_maximizar.TabIndex = 13;
+            this.btn_maximizar.UseVisualStyleBackColor = true;
+            this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click);
             // 
-            // pictureBox1
+            // btn_minimizar
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(263, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(426, 238);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btn_minimizar.IconColor = System.Drawing.Color.White;
+            this.btn_minimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_minimizar.IconSize = 30;
+            this.btn_minimizar.Location = new System.Drawing.Point(1083, 1);
+            this.btn_minimizar.Name = "btn_minimizar";
+            this.btn_minimizar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
+            this.btn_minimizar.TabIndex = 11;
+            this.btn_minimizar.UseVisualStyleBackColor = true;
+            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
             // 
-            // panel4
+            // btn_close
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(250, 809);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(934, 72);
-            this.panel4.TabIndex = 4;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.utn_frc_logo;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(506, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(425, 71);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btn_close.IconColor = System.Drawing.Color.White;
+            this.btn_close.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_close.IconSize = 30;
+            this.btn_close.Location = new System.Drawing.Point(1155, 1);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_close.TabIndex = 12;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // VentanaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1184, 881);
-            this.Controls.Add(this.panel4);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(0)))), ((int)(((byte)(252)))));
+            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.panelFromInferior);
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.panelBarra);
@@ -597,9 +633,10 @@
             this.panelSubActividad2.ResumeLayout(false);
             this.panelSubActividad1.ResumeLayout(false);
             this.panelCentral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
+            this.panelFromInferior.ResumeLayout(false);
+            this.panelFromInferior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,7 +650,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btn_actividad3;
         private FontAwesome.Sharp.IconButton btn_activivdad2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btn_actividad1;
         private FontAwesome.Sharp.IconButton btn_menu;
         private FontAwesome.Sharp.IconButton btn_integrantes;
         private System.Windows.Forms.Panel panelSubActividad1;
@@ -636,10 +673,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelCentral;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelFromInferior;
         private System.Windows.Forms.PictureBox pictureBox2;
         private FontAwesome.Sharp.IconButton btn_maximizar;
         private FontAwesome.Sharp.IconButton btn_minimizar;
         private FontAwesome.Sharp.IconButton btn_close;
+        private System.Windows.Forms.Label lbl_fecha;
+        private System.Windows.Forms.Label lbl_hora;
+        private System.Windows.Forms.Timer fechaActual;
     }
 }
