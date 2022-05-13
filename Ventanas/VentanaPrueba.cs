@@ -105,29 +105,33 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void btn_Click(object sender, EventArgs e)
         {
-            //int Px=panelCentral.Location.X;
-            //int Py=panelCentral.Location.Y;
-                                    
-            IconButton buttonAux = this.iconButton1;
+            IconButton buttonAux = this.btn_actividad1;
             if (MenuVertical.Width == 250)
             {
                 ajustarAnchoBoton(this.MenuVertical, 100);
                 this.MenuVertical.Width = 105;
                 btn_menu.IconChar = IconChar.AngleDoubleRight;
-                //panelCentral.Location = new Point(Px-145,Py);                
-                //panelCentral.Size = new Size(1073, 461);                
-
+                btn_Inicio.Text = "";
+                btn_Inicio.ImageAlign=ContentAlignment.MiddleCenter;                
+                btn_actividad1.ImageAlign = ContentAlignment.MiddleCenter;
+                btn_activivdad2.ImageAlign = ContentAlignment.MiddleCenter;
+                btn_actividad3.ImageAlign = ContentAlignment.MiddleCenter;
+                btn_integrantes.ImageAlign = ContentAlignment.MiddleCenter;
             }
             else
             {
                 ajustarAnchoBoton(this.MenuVertical, 245);
                 this.MenuVertical.Width = 250;
                 btn_menu.IconChar = IconChar.AngleDoubleLeft;
-                //panelCentral.Location = new Point(Px+145,Py);
-                //panelCentral.Size = new Size(928,461);
+                btn_Inicio.Text = "Inicio";
+                btn_Inicio.ImageAlign=ContentAlignment.MiddleLeft;
+                btn_actividad1.ImageAlign = ContentAlignment.MiddleLeft;
+                btn_activivdad2.ImageAlign = ContentAlignment.MiddleLeft;
+                btn_actividad3.ImageAlign = ContentAlignment.MiddleLeft;
+                btn_integrantes.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-
+        
         private void iconButton1_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubActividad1);
@@ -187,8 +191,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //            
-            adjuntar();
-            //hideSubMenu();                        
+            adjuntar();                      
         }
         
         private void adjuntar()
@@ -238,6 +241,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             panelCentral.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void fechaActual_Tick(object sender, EventArgs e)
+        {
+            lbl_hora.Text = DateTime.Now.ToLongTimeString();
+            lbl_fecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
