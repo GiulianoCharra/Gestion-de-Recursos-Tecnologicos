@@ -93,6 +93,26 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profe_german {
+            get {
+                object obj = ResourceManager.GetObject("profe_german", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spiderman_perfil {
+            get {
+                object obj = ResourceManager.GetObject("spiderman_perfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap utn_frc_logo {
             get {
                 object obj = ResourceManager.GetObject("utn_frc_logo", resourceCulture);
