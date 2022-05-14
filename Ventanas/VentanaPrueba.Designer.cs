@@ -105,9 +105,9 @@
             this.MenuVertical.Controls.Add(this.panelListIntegrantes);
             this.MenuVertical.Controls.Add(this.panelSubActividad3);
             this.MenuVertical.Controls.Add(this.panelSubActividad2);
+            this.MenuVertical.Controls.Add(this.btn_menu);
             this.MenuVertical.Controls.Add(this.panelSubActividad1);
             this.MenuVertical.Controls.Add(this.btn_integrantes);
-            this.MenuVertical.Controls.Add(this.btn_menu);
             this.MenuVertical.Controls.Add(this.btn_actividad3);
             this.MenuVertical.Controls.Add(this.btn_activivdad2);
             this.MenuVertical.Controls.Add(this.btn_actividad1);
@@ -127,7 +127,7 @@
             this.panelListIntegrantes.Controls.Add(this.label3);
             this.panelListIntegrantes.Controls.Add(this.label2);
             this.panelListIntegrantes.Controls.Add(this.label1);
-            this.panelListIntegrantes.Location = new System.Drawing.Point(3, 1030);
+            this.panelListIntegrantes.Location = new System.Drawing.Point(3, 587);
             this.panelListIntegrantes.Name = "panelListIntegrantes";
             this.panelListIntegrantes.Size = new System.Drawing.Size(192, 141);
             this.panelListIntegrantes.TabIndex = 3;
@@ -192,7 +192,7 @@
             this.panelSubActividad3.Controls.Add(this.iconButton11);
             this.panelSubActividad3.Controls.Add(this.iconButton12);
             this.panelSubActividad3.Controls.Add(this.iconButton13);
-            this.panelSubActividad3.Location = new System.Drawing.Point(3, 898);
+            this.panelSubActividad3.Location = new System.Drawing.Point(3, 455);
             this.panelSubActividad3.Name = "panelSubActividad3";
             this.panelSubActividad3.Size = new System.Drawing.Size(227, 96);
             this.panelSubActividad3.TabIndex = 4;
@@ -203,7 +203,7 @@
             this.panelSubActividad2.Controls.Add(this.iconButton8);
             this.panelSubActividad2.Controls.Add(this.iconButton9);
             this.panelSubActividad2.Controls.Add(this.iconButton10);
-            this.panelSubActividad2.Location = new System.Drawing.Point(3, 764);
+            this.panelSubActividad2.Location = new System.Drawing.Point(3, 321);
             this.panelSubActividad2.Name = "panelSubActividad2";
             this.panelSubActividad2.Size = new System.Drawing.Size(227, 96);
             this.panelSubActividad2.TabIndex = 9;
@@ -214,7 +214,7 @@
             this.panelSubActividad1.Controls.Add(this.iconButton7);
             this.panelSubActividad1.Controls.Add(this.iconButton6);
             this.panelSubActividad1.Controls.Add(this.iconButton5);
-            this.panelSubActividad1.Location = new System.Drawing.Point(3, 631);
+            this.panelSubActividad1.Location = new System.Drawing.Point(3, 188);
             this.panelSubActividad1.Name = "panelSubActividad1";
             this.panelSubActividad1.Size = new System.Drawing.Size(227, 96);
             this.panelSubActividad1.TabIndex = 3;
@@ -515,7 +515,7 @@
             this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_integrantes.IconSize = 30;
             this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_integrantes.Location = new System.Drawing.Point(3, 1000);
+            this.btn_integrantes.Location = new System.Drawing.Point(3, 557);
             this.btn_integrantes.Name = "btn_integrantes";
             this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_integrantes.Size = new System.Drawing.Size(227, 30);
@@ -533,7 +533,7 @@
             this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_menu.IconSize = 30;
             this.btn_menu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_menu.Location = new System.Drawing.Point(3, 440);
+            this.btn_menu.Location = new System.Drawing.Point(0, 0);
             this.btn_menu.Name = "btn_menu";
             this.btn_menu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.btn_menu.Size = new System.Drawing.Size(227, 30);
@@ -549,7 +549,7 @@
             this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad3.IconSize = 30;
             this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividad3.Location = new System.Drawing.Point(3, 866);
+            this.btn_actividad3.Location = new System.Drawing.Point(3, 423);
             this.btn_actividad3.Name = "btn_actividad3";
             this.btn_actividad3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_actividad3.Size = new System.Drawing.Size(227, 30);
@@ -566,7 +566,7 @@
             this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_activivdad2.IconSize = 30;
             this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_activivdad2.Location = new System.Drawing.Point(3, 733);
+            this.btn_activivdad2.Location = new System.Drawing.Point(3, 290);
             this.btn_activivdad2.Name = "btn_activivdad2";
             this.btn_activivdad2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_activivdad2.Size = new System.Drawing.Size(227, 30);
@@ -583,7 +583,7 @@
             this.btn_actividad1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad1.IconSize = 30;
             this.btn_actividad1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividad1.Location = new System.Drawing.Point(3, 601);
+            this.btn_actividad1.Location = new System.Drawing.Point(3, 158);
             this.btn_actividad1.Name = "btn_actividad1";
             this.btn_actividad1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_actividad1.Size = new System.Drawing.Size(227, 30);
@@ -601,7 +601,7 @@
             this.btn_Inicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Inicio.IconSize = 30;
             this.btn_Inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Inicio.Location = new System.Drawing.Point(3, 565);
+            this.btn_Inicio.Location = new System.Drawing.Point(3, 122);
             this.btn_Inicio.Name = "btn_Inicio";
             this.btn_Inicio.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Inicio.Size = new System.Drawing.Size(227, 30);
@@ -614,7 +614,7 @@
             // 
             this.PanelLogo.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Location = new System.Drawing.Point(3, 475);
+            this.PanelLogo.Location = new System.Drawing.Point(0, 31);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(232, 85);
             this.PanelLogo.TabIndex = 2;
