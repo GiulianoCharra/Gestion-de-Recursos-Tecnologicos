@@ -32,12 +32,6 @@
             this.panelBarra = new System.Windows.Forms.Panel();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.panelListIntegrantes = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelSubActividad3 = new System.Windows.Forms.Panel();
             this.panelSubActividad2 = new System.Windows.Forms.Panel();
             this.panelSubActividad1 = new System.Windows.Forms.Panel();
@@ -75,7 +69,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelBarra.SuspendLayout();
             this.MenuVertical.SuspendLayout();
-            this.panelListIntegrantes.SuspendLayout();
             this.panelSubActividad3.SuspendLayout();
             this.panelSubActividad2.SuspendLayout();
             this.panelSubActividad1.SuspendLayout();
@@ -121,70 +114,12 @@
             // 
             // panelListIntegrantes
             // 
-            this.panelListIntegrantes.Controls.Add(this.label6);
-            this.panelListIntegrantes.Controls.Add(this.label5);
-            this.panelListIntegrantes.Controls.Add(this.label4);
-            this.panelListIntegrantes.Controls.Add(this.label3);
-            this.panelListIntegrantes.Controls.Add(this.label2);
-            this.panelListIntegrantes.Controls.Add(this.label1);
-            this.panelListIntegrantes.Location = new System.Drawing.Point(3, 587);
+            this.panelListIntegrantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(112)))));
+            this.panelListIntegrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelListIntegrantes.Location = new System.Drawing.Point(0, 551);
             this.panelListIntegrantes.Name = "panelListIntegrantes";
-            this.panelListIntegrantes.Size = new System.Drawing.Size(192, 141);
+            this.panelListIntegrantes.Size = new System.Drawing.Size(235, 5);
             this.panelListIntegrantes.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Edu";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Edu";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Edu";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Edu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Edu";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Edu";
             // 
             // panelSubActividad3
             // 
@@ -509,16 +444,17 @@
             // 
             // btn_integrantes
             // 
+            this.btn_integrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_integrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_integrantes.IconChar = FontAwesome.Sharp.IconChar.Cat;
             this.btn_integrantes.IconColor = System.Drawing.Color.Black;
             this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_integrantes.IconSize = 30;
             this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_integrantes.Location = new System.Drawing.Point(3, 557);
+            this.btn_integrantes.Location = new System.Drawing.Point(0, 556);
             this.btn_integrantes.Name = "btn_integrantes";
             this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_integrantes.Size = new System.Drawing.Size(227, 30);
+            this.btn_integrantes.Size = new System.Drawing.Size(235, 30);
             this.btn_integrantes.TabIndex = 8;
             this.btn_integrantes.Text = "Integrantes";
             this.btn_integrantes.UseVisualStyleBackColor = true;
@@ -699,8 +635,6 @@
             this.Load += new System.EventHandler(this.VentanaPrueba_Load);
             this.panelBarra.ResumeLayout(false);
             this.MenuVertical.ResumeLayout(false);
-            this.panelListIntegrantes.ResumeLayout(false);
-            this.panelListIntegrantes.PerformLayout();
             this.panelSubActividad3.ResumeLayout(false);
             this.panelSubActividad2.ResumeLayout(false);
             this.panelSubActividad1.ResumeLayout(false);
@@ -740,12 +674,6 @@
         private FontAwesome.Sharp.IconButton iconButton12;
         private FontAwesome.Sharp.IconButton iconButton13;
         private System.Windows.Forms.Panel panelListIntegrantes;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelCentral;
         private System.Windows.Forms.Panel panelFromInferior;
         private System.Windows.Forms.PictureBox pictureBox2;
