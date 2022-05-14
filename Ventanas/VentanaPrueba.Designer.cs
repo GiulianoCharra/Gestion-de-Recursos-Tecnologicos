@@ -614,7 +614,7 @@
             // 
             this.PanelLogo.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 31);
+            this.PanelLogo.Location = new System.Drawing.Point(3, 31);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(232, 85);
             this.PanelLogo.TabIndex = 2;
