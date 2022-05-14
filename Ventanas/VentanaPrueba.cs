@@ -112,6 +112,10 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 this.MenuVertical.Width = 105;
                 btn_menu.IconChar = IconChar.AngleDoubleRight;
                 btn_Inicio.Text = "";
+                btn_actividad1.Text = "";
+                btn_activivdad2.Text = "";
+                btn_actividad3.Text = "";
+                btn_integrantes.Text = "";
                 btn_Inicio.ImageAlign=ContentAlignment.MiddleCenter;                
                 btn_actividad1.ImageAlign = ContentAlignment.MiddleCenter;
                 btn_activivdad2.ImageAlign = ContentAlignment.MiddleCenter;
@@ -124,6 +128,10 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 this.MenuVertical.Width = 250;
                 btn_menu.IconChar = IconChar.AngleDoubleLeft;
                 btn_Inicio.Text = "Inicio";
+                btn_actividad1.Text = "Actividad";
+                btn_activivdad2.Text = "Actividad";
+                btn_actividad3.Text = "Actividad";
+                btn_integrantes.Text = "Infomarcion";
                 btn_Inicio.ImageAlign=ContentAlignment.MiddleLeft;
                 btn_actividad1.ImageAlign = ContentAlignment.MiddleLeft;
                 btn_activivdad2.ImageAlign = ContentAlignment.MiddleLeft;
@@ -248,6 +256,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             lbl_hora.Text = DateTime.Now.ToLongTimeString();
             lbl_fecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void btn_Inicio_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
         }
     }
 }
