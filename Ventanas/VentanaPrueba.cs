@@ -187,7 +187,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         
         private void btn_integrantes_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelListIntegrantes);
+            //showSubMenu(panelListIntegrantes);
+            openChildForm(new frm_Informacion());
             //
             //
             //            
