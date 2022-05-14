@@ -43,8 +43,8 @@
             this.panelSubActividad1 = new System.Windows.Forms.Panel();
             this.panelCentral = new System.Windows.Forms.Panel();
             this.panelFromInferior = new System.Windows.Forms.Panel();
-            this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_fecha = new System.Windows.Forms.Label();
+            this.lbl_hora = new System.Windows.Forms.Label();
             this.fechaActual = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -234,17 +234,6 @@
             this.panelFromInferior.Size = new System.Drawing.Size(934, 72);
             this.panelFromInferior.TabIndex = 4;
             // 
-            // lbl_hora
-            // 
-            this.lbl_hora.AutoSize = true;
-            this.lbl_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hora.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_hora.Location = new System.Drawing.Point(14, 5);
-            this.lbl_hora.Name = "lbl_hora";
-            this.lbl_hora.Size = new System.Drawing.Size(72, 31);
-            this.lbl_hora.TabIndex = 6;
-            this.lbl_hora.Text = "hora";
-            // 
             // lbl_fecha
             // 
             this.lbl_fecha.AutoSize = true;
@@ -255,6 +244,17 @@
             this.lbl_fecha.Size = new System.Drawing.Size(54, 20);
             this.lbl_fecha.TabIndex = 7;
             this.lbl_fecha.Text = "fecha";
+            // 
+            // lbl_hora
+            // 
+            this.lbl_hora.AutoSize = true;
+            this.lbl_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hora.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_hora.Location = new System.Drawing.Point(14, 5);
+            this.lbl_hora.Name = "lbl_hora";
+            this.lbl_hora.Size = new System.Drawing.Size(72, 31);
+            this.lbl_hora.TabIndex = 6;
+            this.lbl_hora.Text = "hora";
             // 
             // fechaActual
             // 
@@ -551,6 +551,7 @@
             this.btn_Inicio.TabIndex = 4;
             this.btn_Inicio.Text = "Inicio";
             this.btn_Inicio.UseVisualStyleBackColor = true;
+            this.btn_Inicio.Click += new System.EventHandler(this.btn_Inicio_Click);
             // 
             // PanelLogo
             // 
