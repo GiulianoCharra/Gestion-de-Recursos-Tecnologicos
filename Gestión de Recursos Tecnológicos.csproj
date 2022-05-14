@@ -179,5 +179,11 @@
   <ItemGroup>
     <None Include="Resources\profe_german.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UTN_LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UTN_LOGO-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
