@@ -58,10 +58,10 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             this.panelSubActividad1.Visible = false;
             this.panelSubActividad2.Visible = false;
             this.panelSubActividad3.Visible = false;
-            this.panelListIntegrantes.Visible = false;
+            //this.panelListIntegrantes.Location=new Point(3,560);
             btn_activivdad2.Location = new Point(3, 195);
             btn_actividad3.Location = new Point(3, 230);
-            btn_integrantes.Location = new Point(3, 265);
+            //btn_integrantes.Location = new Point(3, 569);
             //si se agregan mas paneles de sub menu
             //adjuntar();
         }
@@ -88,8 +88,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 panelSubActividad2.Visible = false;
             if(panelSubActividad3.Visible == true)
                 panelSubActividad3.Visible = false;
-            if (panelListIntegrantes.Visible == true)
-                panelListIntegrantes.Visible = false;
+            //if (panelListIntegrantes.Visible == true)
+            //    panelListIntegrantes.Visible = false;
             //si se agrega mas paneles de sub menu
         }
 
@@ -214,13 +214,13 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                     if (panelSubActividad3.Visible == false)
                     {
                         btn_integrantes.Location = new Point(3, 265);
-                        if (panelListIntegrantes.Visible == true)
-                            panelListIntegrantes.Location = new Point(3, 300);
+                        //if (panelListIntegrantes.Visible == true)
+                        //    panelListIntegrantes.Location = new Point(3, 300);
                     }
                     else
                     {
                         panelSubActividad3.Location = new Point(3, 265);
-                        btn_integrantes.Location = new Point(3, 366);
+                        //btn_integrantes.Location = new Point(3, 366);
                     }                        
                 }
                 else
