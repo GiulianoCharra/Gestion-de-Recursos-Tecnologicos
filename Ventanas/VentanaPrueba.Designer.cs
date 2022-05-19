@@ -67,21 +67,28 @@
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.lbl_hora = new System.Windows.Forms.Label();
             this.fechaActual = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelBarra.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.panelSubActividad3.SuspendLayout();
             this.panelSubActividad2.SuspendLayout();
             this.panelSubActividad1.SuspendLayout();
+            this.PanelLogo.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFromInferior.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarra
             // 
-            this.panelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(112)))));
+            this.panelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.panelBarra.Controls.Add(this.btn_maximizar);
             this.panelBarra.Controls.Add(this.btn_minimizar);
             this.panelBarra.Controls.Add(this.btn_close);
@@ -90,6 +97,9 @@
             this.panelBarra.Name = "panelBarra";
             this.panelBarra.Size = new System.Drawing.Size(1184, 33);
             this.panelBarra.TabIndex = 0;
+            this.panelBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarra_MouseDown);
+            this.panelBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarra_MouseMove);
+            this.panelBarra.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBarra_MouseUp);
             // 
             // btn_maximizar
             // 
@@ -145,7 +155,7 @@
             // MenuVertical
             // 
             this.MenuVertical.AutoScroll = true;
-            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(0)))), ((int)(((byte)(214)))));
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
             this.MenuVertical.Controls.Add(this.panelListIntegrantes);
             this.MenuVertical.Controls.Add(this.panelSubActividad3);
             this.MenuVertical.Controls.Add(this.panelSubActividad2);
@@ -165,11 +175,11 @@
             // 
             // panelListIntegrantes
             // 
-            this.panelListIntegrantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(112)))));
+            this.panelListIntegrantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(116)))), ((int)(((byte)(117)))));
             this.panelListIntegrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelListIntegrantes.Location = new System.Drawing.Point(0, 551);
             this.panelListIntegrantes.Name = "panelListIntegrantes";
-            this.panelListIntegrantes.Size = new System.Drawing.Size(235, 5);
+            this.panelListIntegrantes.Size = new System.Drawing.Size(233, 5);
             this.panelListIntegrantes.TabIndex = 3;
             // 
             // panelSubActividad3
@@ -188,8 +198,9 @@
             this.iconButton11.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton11.FlatAppearance.BorderSize = 0;
             this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton11.ForeColor = System.Drawing.Color.White;
             this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton11.IconColor = System.Drawing.Color.Black;
+            this.iconButton11.IconColor = System.Drawing.Color.White;
             this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton11.IconSize = 30;
             this.iconButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,8 +217,9 @@
             this.iconButton12.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton12.FlatAppearance.BorderSize = 0;
             this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton12.ForeColor = System.Drawing.Color.White;
             this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton12.IconColor = System.Drawing.Color.Black;
+            this.iconButton12.IconColor = System.Drawing.Color.White;
             this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton12.IconSize = 30;
             this.iconButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -224,8 +236,9 @@
             this.iconButton13.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton13.FlatAppearance.BorderSize = 0;
             this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton13.ForeColor = System.Drawing.Color.White;
             this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton13.IconColor = System.Drawing.Color.Black;
+            this.iconButton13.IconColor = System.Drawing.Color.White;
             this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton13.IconSize = 30;
             this.iconButton13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -253,8 +266,9 @@
             this.iconButton8.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton8.FlatAppearance.BorderSize = 0;
             this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.ForeColor = System.Drawing.Color.White;
             this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconColor = System.Drawing.Color.White;
             this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton8.IconSize = 30;
             this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,8 +285,9 @@
             this.iconButton9.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton9.FlatAppearance.BorderSize = 0;
             this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton9.ForeColor = System.Drawing.Color.White;
             this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton9.IconColor = System.Drawing.Color.Black;
+            this.iconButton9.IconColor = System.Drawing.Color.White;
             this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton9.IconSize = 30;
             this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,8 +304,9 @@
             this.iconButton10.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton10.FlatAppearance.BorderSize = 0;
             this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton10.ForeColor = System.Drawing.Color.White;
             this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton10.IconColor = System.Drawing.Color.Black;
+            this.iconButton10.IconColor = System.Drawing.Color.White;
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton10.IconSize = 30;
             this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,11 +323,11 @@
             this.btn_menu.FlatAppearance.BorderSize = 0;
             this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menu.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
-            this.btn_menu.IconColor = System.Drawing.Color.Black;
+            this.btn_menu.IconColor = System.Drawing.Color.White;
             this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_menu.IconSize = 30;
             this.btn_menu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_menu.Location = new System.Drawing.Point(0, 0);
+            this.btn_menu.Location = new System.Drawing.Point(3, 0);
             this.btn_menu.Name = "btn_menu";
             this.btn_menu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.btn_menu.Size = new System.Drawing.Size(227, 30);
@@ -321,7 +337,7 @@
             // 
             // panelSubActividad1
             // 
-            this.panelSubActividad1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(0)))), ((int)(((byte)(252)))));
+            this.panelSubActividad1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(229)))));
             this.panelSubActividad1.Controls.Add(this.iconButton7);
             this.panelSubActividad1.Controls.Add(this.iconButton6);
             this.panelSubActividad1.Controls.Add(this.iconButton5);
@@ -335,8 +351,9 @@
             this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton7.FlatAppearance.BorderSize = 0;
             this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.ForeColor = System.Drawing.Color.White;
             this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconColor = System.Drawing.Color.White;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton7.IconSize = 30;
             this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -354,8 +371,9 @@
             this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton6.FlatAppearance.BorderSize = 0;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.ForeColor = System.Drawing.Color.White;
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
+            this.iconButton6.IconColor = System.Drawing.Color.White;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton6.IconSize = 30;
             this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,9 +391,9 @@
             this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton5.FlatAppearance.BorderSize = 0;
             this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconColor = System.Drawing.Color.White;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton5.IconSize = 30;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,25 +410,27 @@
             // 
             this.btn_integrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_integrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_integrantes.ForeColor = System.Drawing.Color.White;
             this.btn_integrantes.IconChar = FontAwesome.Sharp.IconChar.Cat;
-            this.btn_integrantes.IconColor = System.Drawing.Color.Black;
+            this.btn_integrantes.IconColor = System.Drawing.Color.White;
             this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_integrantes.IconSize = 30;
             this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_integrantes.Location = new System.Drawing.Point(0, 556);
             this.btn_integrantes.Name = "btn_integrantes";
             this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_integrantes.Size = new System.Drawing.Size(235, 30);
+            this.btn_integrantes.Size = new System.Drawing.Size(233, 30);
             this.btn_integrantes.TabIndex = 8;
-            this.btn_integrantes.Text = "Integrantes";
+            this.btn_integrantes.Text = "Informacion";
             this.btn_integrantes.UseVisualStyleBackColor = true;
             this.btn_integrantes.Click += new System.EventHandler(this.btn_integrantes_Click);
             // 
             // btn_actividad3
             // 
             this.btn_actividad3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actividad3.ForeColor = System.Drawing.Color.White;
             this.btn_actividad3.IconChar = FontAwesome.Sharp.IconChar.Cat;
-            this.btn_actividad3.IconColor = System.Drawing.Color.Black;
+            this.btn_actividad3.IconColor = System.Drawing.Color.White;
             this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad3.IconSize = 30;
             this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -426,8 +446,9 @@
             // btn_activivdad2
             // 
             this.btn_activivdad2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_activivdad2.ForeColor = System.Drawing.Color.White;
             this.btn_activivdad2.IconChar = FontAwesome.Sharp.IconChar.Spider;
-            this.btn_activivdad2.IconColor = System.Drawing.Color.Black;
+            this.btn_activivdad2.IconColor = System.Drawing.Color.White;
             this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_activivdad2.IconSize = 30;
             this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -443,8 +464,9 @@
             // btn_actividad1
             // 
             this.btn_actividad1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actividad1.ForeColor = System.Drawing.Color.White;
             this.btn_actividad1.IconChar = FontAwesome.Sharp.IconChar.Hippo;
-            this.btn_actividad1.IconColor = System.Drawing.Color.Black;
+            this.btn_actividad1.IconColor = System.Drawing.Color.White;
             this.btn_actividad1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad1.IconSize = 30;
             this.btn_actividad1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -460,9 +482,9 @@
             // btn_Inicio
             // 
             this.btn_Inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Inicio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Inicio.ForeColor = System.Drawing.Color.White;
             this.btn_Inicio.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.btn_Inicio.IconColor = System.Drawing.Color.Black;
+            this.btn_Inicio.IconColor = System.Drawing.Color.White;
             this.btn_Inicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Inicio.IconSize = 30;
             this.btn_Inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -477,17 +499,21 @@
             // 
             // PanelLogo
             // 
-            this.PanelLogo.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_removebg_preview;
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelLogo.Controls.Add(this.pictureBox3);
+            this.PanelLogo.Controls.Add(this.label2);
+            this.PanelLogo.Controls.Add(this.label1);
             this.PanelLogo.Location = new System.Drawing.Point(3, 31);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(232, 85);
+            this.PanelLogo.Size = new System.Drawing.Size(227, 85);
             this.PanelLogo.TabIndex = 2;
             // 
             // panelCentral
             // 
             this.panelCentral.AutoScroll = true;
             this.panelCentral.BackColor = System.Drawing.Color.Transparent;
+            this.panelCentral.Controls.Add(this.label3);
+            this.panelCentral.Controls.Add(this.label4);
             this.panelCentral.Controls.Add(this.pictureBox1);
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentral.Location = new System.Drawing.Point(250, 33);
@@ -508,7 +534,7 @@
             // 
             // panelFromInferior
             // 
-            this.panelFromInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(112)))));
+            this.panelFromInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.panelFromInferior.Controls.Add(this.panel1);
             this.panelFromInferior.Controls.Add(this.lbl_fecha);
             this.panelFromInferior.Controls.Add(this.lbl_hora);
@@ -548,6 +574,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Castellar", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(210, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 13);
@@ -558,6 +585,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Castellar", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(210, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
@@ -568,6 +596,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Castellar", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(210, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 13);
@@ -578,6 +607,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(97, 54);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(219, 12);
@@ -588,6 +618,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Palatino Linotype", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label10.Location = new System.Drawing.Point(97, 8);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 50);
@@ -621,11 +652,67 @@
             this.fechaActual.Enabled = true;
             this.fechaActual.Tick += new System.EventHandler(this.fechaActual_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(91, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CompuMundo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(91, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "HiperMegaRed";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_solo_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(454, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(261, 39);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "HiperMegaRed";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(219, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(244, 39);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "CompuMundo";
+            // 
             // VentanaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(0)))), ((int)(((byte)(252)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.panelFromInferior);
             this.Controls.Add(this.panelCentral);
@@ -639,13 +726,17 @@
             this.panelSubActividad3.ResumeLayout(false);
             this.panelSubActividad2.ResumeLayout(false);
             this.panelSubActividad1.ResumeLayout(false);
+            this.PanelLogo.ResumeLayout(false);
+            this.PanelLogo.PerformLayout();
             this.panelCentral.ResumeLayout(false);
+            this.panelCentral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFromInferior.ResumeLayout(false);
             this.panelFromInferior.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -690,5 +781,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

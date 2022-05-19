@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 {
-    public partial class frm_Informacion : Form
+    public partial class Form2 : Form
     {
-        public frm_Informacion()
+        public Form2()
         {
             InitializeComponent();
         }
-
-        private void frm_Informacion_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

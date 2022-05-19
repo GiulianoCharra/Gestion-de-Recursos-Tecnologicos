@@ -25,12 +25,53 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             this.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        public int BordeSize { get => bordeSize; set => bordeSize = value; }
-        public Color BorderColor { get => borderColor; set => borderColor = value; }
-        public Color BorderColor2 { get => borderColor2; set => borderColor2 = value; }
-        public DashStyle BorderLineStyle { get => borderLineStyle; set => borderLineStyle = value; }
-        public DashCap BorderCapStyle { get => borderCapStyle; set => borderCapStyle = value; }
-        public float GradientAngle { get => gradientAngle; set => gradientAngle = value; }
+        public int BordeSize {
+            get => bordeSize;
+            set {
+                bordeSize = value;
+                this.Invalidate();
+            }
+        }
+        public Color BorderColor
+        {
+            get => borderColor;
+            set {
+                borderColor = value;
+                this.Invalidate();
+            }
+        }
+        public Color BorderColor2
+        {
+            get => borderColor2;
+            set {
+                borderColor2 = value;
+                this.Invalidate();
+            }
+        }
+        public DashStyle BorderLineStyle
+        {
+            get => borderLineStyle;
+            set {
+                borderLineStyle = value;
+                this.Invalidate();
+            }
+        }
+        public DashCap BorderCapStyle
+        {
+            get => borderCapStyle;
+            set {
+                borderCapStyle = value;
+                this.Invalidate();
+            }
+        }
+        public float GradientAngle
+        {
+            get => gradientAngle;
+            set {
+                gradientAngle = value;
+                this.Invalidate();
+            }
+        }
 
         protected override void OnResize(EventArgs e)
         {

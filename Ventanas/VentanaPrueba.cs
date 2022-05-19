@@ -17,6 +17,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             InitializeComponent();
             manejoSubMenu();
+            FormResize();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -108,19 +109,19 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             IconButton buttonAux = this.btn_actividad1;
             if (MenuVertical.Width == 250)
             {
-                ajustarAnchoBoton(this.MenuVertical, 100);
-                this.MenuVertical.Width = 105;
+                ajustarAnchoBoton(this.MenuVertical, 90);
+                this.MenuVertical.Width = 95;
                 btn_menu.IconChar = IconChar.AngleDoubleRight;
                 btn_Inicio.Text = "";
                 btn_actividad1.Text = "";
                 btn_activivdad2.Text = "";
                 btn_actividad3.Text = "";
-                btn_integrantes.Text = "";
+                btn_integrantes.Text = "";                
                 btn_Inicio.ImageAlign=ContentAlignment.MiddleCenter;                
                 btn_actividad1.ImageAlign = ContentAlignment.MiddleCenter;
                 btn_activivdad2.ImageAlign = ContentAlignment.MiddleCenter;
-                btn_actividad3.ImageAlign = ContentAlignment.MiddleCenter;
-                btn_integrantes.ImageAlign = ContentAlignment.MiddleCenter;
+                btn_actividad3.ImageAlign = ContentAlignment.MiddleCenter;                
+                //btn_integrantes.ImageAlign = ContentAlignment.MiddleCenter;
             }
             else
             {
@@ -135,8 +136,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 btn_Inicio.ImageAlign=ContentAlignment.MiddleLeft;
                 btn_actividad1.ImageAlign = ContentAlignment.MiddleLeft;
                 btn_activivdad2.ImageAlign = ContentAlignment.MiddleLeft;
-                btn_actividad3.ImageAlign = ContentAlignment.MiddleLeft;
-                btn_integrantes.ImageAlign = ContentAlignment.MiddleLeft;
+                btn_actividad3.ImageAlign = ContentAlignment.MiddleLeft;                
+                //btn_integrantes.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
         
@@ -161,6 +162,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
+            openChildForm(new Form2());
             /*
              escribir codigo
              */
@@ -258,10 +260,38 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             lbl_fecha.Text = DateTime.Now.ToLongDateString();
         }
 
+        private void FormResize()
+        {
+            if (activeForm != null)
+            {
+                activeForm.WindowState = FormWindowState.Normal;
+                activeForm.WindowState = FormWindowState.Maximized;
+            }
+        }
+
         private void btn_Inicio_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
                 activeForm.Close();
+        }
+
+        int m, mx, my;
+        private void panelBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+        }
+
+        private void panelBarra_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+        }
+
+        private void panelBarra_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
         }
     }
 }
