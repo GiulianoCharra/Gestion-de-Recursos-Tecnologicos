@@ -17,7 +17,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             InitializeComponent();
             manejoSubMenu();
-            FormResize();
+            FormResize();            
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -199,6 +199,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             //showSubMenu(panelListIntegrantes);
             openChildForm(new frm_Informacion());
+            panelCentral.AutoScroll = true;
+
             //
             //
             //            
@@ -293,5 +295,33 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             m = 0;
         }
+
+        //private const int BorderWidth = 6;
+        //private ResizeDirection _resizeDir = ResizeDirection.None;
+
+        //public enum ResizeDirection
+        //{
+        //    None = 0,
+        //    Left = 1,
+        //    TopLeft = 2,
+        //    Top = 3,
+        //    TopRight = 4,
+        //    Right = 5,
+        //    BottomRight = 6,
+        //    Bottom = 7,
+        //    BottomLeft = 8
+        //}
+        //public ResizeDirection Property resizeDir()
+        //{
+        //    Get{ return _resizeDir; }
+                
+        //    Set(ResizeDirection value)
+        //    {
+        //        _resizeDir = value;
+        //        Select Case value
+        //            case ResizeDirection.Left
+        //            this.Cursor = Cursors.SizeWE;
+        //    }
+        //}
     }
 }

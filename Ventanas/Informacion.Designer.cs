@@ -29,34 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Informacion));
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_izquierdo = new System.Windows.Forms.Panel();
+            this.panel_derecho = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_central = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.circularPictureBox3 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.circularPictureBox4 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.circularPictureBox5 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.circularPictureBox7 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
+            this.circularPictureBox9 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.circularPictureBox6 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,54 +70,49 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.circularPictureBox2 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.circularPictureBox3 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.circularPictureBox4 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.circularPictureBox5 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.circularPictureBox7 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.circularPictureBox9 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.circularPictureBox6 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.circularPictureBox2 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
             this.circularPictureBox1 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.panel1.SuspendLayout();
+            this.panel_central.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox5)).BeginInit();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox9)).BeginInit();
+            this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox6)).BeginInit();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel4
+            // panel_izquierdo
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(888, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(40, 650);
-            this.panel4.TabIndex = 5;
+            this.panel_izquierdo.AutoScroll = true;
+            this.panel_izquierdo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_izquierdo.Location = new System.Drawing.Point(888, 0);
+            this.panel_izquierdo.Name = "panel_izquierdo";
+            this.panel_izquierdo.Size = new System.Drawing.Size(40, 520);
+            this.panel_izquierdo.TabIndex = 5;
             // 
-            // panel5
+            // panel_derecho
             // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(40, 650);
-            this.panel5.TabIndex = 6;
+            this.panel_derecho.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_derecho.Location = new System.Drawing.Point(0, 0);
+            this.panel_derecho.Name = "panel_derecho";
+            this.panel_derecho.Size = new System.Drawing.Size(40, 520);
+            this.panel_derecho.TabIndex = 6;
             // 
             // label22
             // 
@@ -137,18 +138,19 @@
             this.label23.TabIndex = 18;
             this.label23.Text = "Profesores";
             // 
-            // panel1
+            // panel_central
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel_central.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Location = new System.Drawing.Point(46, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(836, 650);
-            this.panel1.TabIndex = 19;
+            this.panel_central.AutoScroll = true;
+            this.panel_central.BackColor = System.Drawing.Color.Transparent;
+            this.panel_central.Controls.Add(this.panel2);
+            this.panel_central.Controls.Add(this.panel9);
+            this.panel_central.Location = new System.Drawing.Point(46, 0);
+            this.panel_central.Name = "panel_central";
+            this.panel_central.Size = new System.Drawing.Size(836, 520);
+            this.panel_central.TabIndex = 19;
             // 
             // panel2
             // 
@@ -157,7 +159,7 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel11);
-            this.panel2.Location = new System.Drawing.Point(432, 3);
+            this.panel2.Location = new System.Drawing.Point(414, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 644);
             this.panel2.TabIndex = 19;
@@ -171,7 +173,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.circularPictureBox3);
-            this.panel3.Location = new System.Drawing.Point(3, 541);
+            this.panel3.Location = new System.Drawing.Point(4, 541);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(385, 100);
             this.panel3.TabIndex = 26;
@@ -205,6 +207,23 @@
             this.label6.Size = new System.Drawing.Size(171, 31);
             this.label6.TabIndex = 8;
             this.label6.Text = "Perez, Juan";
+            // 
+            // circularPictureBox3
+            // 
+            this.circularPictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox3.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox3.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.circularPictureBox3.BordeSize = 2;
+            this.circularPictureBox3.GradientAngle = 50F;
+            this.circularPictureBox3.Location = new System.Drawing.Point(282, 0);
+            this.circularPictureBox3.Name = "circularPictureBox3";
+            this.circularPictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox3.TabIndex = 0;
+            this.circularPictureBox3.TabStop = false;
             // 
             // panel6
             // 
@@ -250,6 +269,23 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Perez, Juan";
             // 
+            // circularPictureBox4
+            // 
+            this.circularPictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox4.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox4.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.circularPictureBox4.BordeSize = 2;
+            this.circularPictureBox4.GradientAngle = 50F;
+            this.circularPictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.circularPictureBox4.Name = "circularPictureBox4";
+            this.circularPictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox4.TabIndex = 0;
+            this.circularPictureBox4.TabStop = false;
+            // 
             // panel10
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -293,6 +329,23 @@
             this.label16.Size = new System.Drawing.Size(171, 31);
             this.label16.TabIndex = 8;
             this.label16.Text = "Perez, Juan";
+            // 
+            // circularPictureBox5
+            // 
+            this.circularPictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox5.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox5.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.circularPictureBox5.BordeSize = 2;
+            this.circularPictureBox5.GradientAngle = 50F;
+            this.circularPictureBox5.Location = new System.Drawing.Point(282, 0);
+            this.circularPictureBox5.Name = "circularPictureBox5";
+            this.circularPictureBox5.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox5.TabIndex = 0;
+            this.circularPictureBox5.TabStop = false;
             // 
             // panel11
             // 
@@ -338,6 +391,23 @@
             this.label19.TabIndex = 11;
             this.label19.Text = "Perez, Juan";
             // 
+            // circularPictureBox7
+            // 
+            this.circularPictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularPictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox7.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox7.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.circularPictureBox7.BordeSize = 2;
+            this.circularPictureBox7.GradientAngle = 50F;
+            this.circularPictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.circularPictureBox7.Name = "circularPictureBox7";
+            this.circularPictureBox7.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox7.TabIndex = 0;
+            this.circularPictureBox7.TabStop = false;
+            // 
             // panel9
             // 
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -347,7 +417,7 @@
             this.panel9.Controls.Add(this.panel8);
             this.panel9.Controls.Add(this.panel7);
             this.panel9.Controls.Add(this.label23);
-            this.panel9.Location = new System.Drawing.Point(8, 3);
+            this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(392, 644);
             this.panel9.TabIndex = 18;
@@ -374,15 +444,33 @@
             this.label27.TabIndex = 7;
             this.label27.Text = "germanevelez@hotmail.com";
             // 
+            // circularPictureBox9
+            // 
+            this.circularPictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularPictureBox9.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox9.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox9.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox9.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.circularPictureBox9.BordeSize = 2;
+            this.circularPictureBox9.GradientAngle = 50F;
+            this.circularPictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox9.Image")));
+            this.circularPictureBox9.Location = new System.Drawing.Point(282, 0);
+            this.circularPictureBox9.Name = "circularPictureBox9";
+            this.circularPictureBox9.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox9.TabIndex = 0;
+            this.circularPictureBox9.TabStop = false;
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(111, 57);
+            this.label28.Location = new System.Drawing.Point(71, 56);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(162, 19);
+            this.label28.Size = new System.Drawing.Size(204, 19);
             this.label28.TabIndex = 6;
-            this.label28.Text = "Diseño de Sistemas";
+            this.label28.Text = "Jefe de Trabajo Practico";
             // 
             // label29
             // 
@@ -407,6 +495,23 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(385, 100);
             this.panel13.TabIndex = 16;
+            // 
+            // circularPictureBox6
+            // 
+            this.circularPictureBox6.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox6.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox6.BorderColor2 = System.Drawing.Color.Crimson;
+            this.circularPictureBox6.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox6.BordeSize = 2;
+            this.circularPictureBox6.GradientAngle = 50F;
+            this.circularPictureBox6.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.spiderman_perfil;
+            this.circularPictureBox6.InitialImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.spiderman_perfil;
+            this.circularPictureBox6.Location = new System.Drawing.Point(0, 0);
+            this.circularPictureBox6.Name = "circularPictureBox6";
+            this.circularPictureBox6.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox6.TabIndex = 25;
+            this.circularPictureBox6.TabStop = false;
             // 
             // label15
             // 
@@ -482,6 +587,23 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Perez, Juan";
             // 
+            // circularPictureBox2
+            // 
+            this.circularPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.circularPictureBox2.BordeSize = 2;
+            this.circularPictureBox2.GradientAngle = 50F;
+            this.circularPictureBox2.Location = new System.Drawing.Point(282, 0);
+            this.circularPictureBox2.Name = "circularPictureBox2";
+            this.circularPictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox2.TabIndex = 0;
+            this.circularPictureBox2.TabStop = false;
+            // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -526,126 +648,6 @@
             this.label26.TabIndex = 11;
             this.label26.Text = "Perez, Juan";
             // 
-            // circularPictureBox3
-            // 
-            this.circularPictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox3.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox3.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.circularPictureBox3.BordeSize = 2;
-            this.circularPictureBox3.GradientAngle = 50F;
-            this.circularPictureBox3.Location = new System.Drawing.Point(282, 0);
-            this.circularPictureBox3.Name = "circularPictureBox3";
-            this.circularPictureBox3.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox3.TabIndex = 0;
-            this.circularPictureBox3.TabStop = false;
-            // 
-            // circularPictureBox4
-            // 
-            this.circularPictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox4.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox4.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.circularPictureBox4.BordeSize = 2;
-            this.circularPictureBox4.GradientAngle = 50F;
-            this.circularPictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.circularPictureBox4.Name = "circularPictureBox4";
-            this.circularPictureBox4.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox4.TabIndex = 0;
-            this.circularPictureBox4.TabStop = false;
-            // 
-            // circularPictureBox5
-            // 
-            this.circularPictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox5.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox5.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.circularPictureBox5.BordeSize = 2;
-            this.circularPictureBox5.GradientAngle = 50F;
-            this.circularPictureBox5.Location = new System.Drawing.Point(282, 0);
-            this.circularPictureBox5.Name = "circularPictureBox5";
-            this.circularPictureBox5.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox5.TabIndex = 0;
-            this.circularPictureBox5.TabStop = false;
-            // 
-            // circularPictureBox7
-            // 
-            this.circularPictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularPictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox7.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox7.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.circularPictureBox7.BordeSize = 2;
-            this.circularPictureBox7.GradientAngle = 50F;
-            this.circularPictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.circularPictureBox7.Name = "circularPictureBox7";
-            this.circularPictureBox7.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox7.TabIndex = 0;
-            this.circularPictureBox7.TabStop = false;
-            // 
-            // circularPictureBox9
-            // 
-            this.circularPictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularPictureBox9.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox9.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox9.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox9.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.circularPictureBox9.BordeSize = 2;
-            this.circularPictureBox9.GradientAngle = 50F;
-            this.circularPictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox9.Image")));
-            this.circularPictureBox9.Location = new System.Drawing.Point(282, 0);
-            this.circularPictureBox9.Name = "circularPictureBox9";
-            this.circularPictureBox9.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox9.TabIndex = 0;
-            this.circularPictureBox9.TabStop = false;
-            // 
-            // circularPictureBox6
-            // 
-            this.circularPictureBox6.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox6.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox6.BorderColor2 = System.Drawing.Color.Crimson;
-            this.circularPictureBox6.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox6.BordeSize = 2;
-            this.circularPictureBox6.GradientAngle = 50F;
-            this.circularPictureBox6.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.spiderman_perfil;
-            this.circularPictureBox6.InitialImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.spiderman_perfil;
-            this.circularPictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.circularPictureBox6.Name = "circularPictureBox6";
-            this.circularPictureBox6.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox6.TabIndex = 25;
-            this.circularPictureBox6.TabStop = false;
-            // 
-            // circularPictureBox2
-            // 
-            this.circularPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.circularPictureBox2.BordeSize = 2;
-            this.circularPictureBox2.GradientAngle = 50F;
-            this.circularPictureBox2.Location = new System.Drawing.Point(282, 0);
-            this.circularPictureBox2.Name = "circularPictureBox2";
-            this.circularPictureBox2.Size = new System.Drawing.Size(100, 100);
-            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox2.TabIndex = 0;
-            this.circularPictureBox2.TabStop = false;
-            // 
             // circularPictureBox1
             // 
             this.circularPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -668,53 +670,53 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(928, 650);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(229)))));
+            this.ClientSize = new System.Drawing.Size(928, 520);
+            this.Controls.Add(this.panel_central);
+            this.Controls.Add(this.panel_derecho);
+            this.Controls.Add(this.panel_izquierdo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Informacion";
             this.Text = "Informacion";
             this.Load += new System.EventHandler(this.frm_Informacion_Load);
-            this.panel1.ResumeLayout(false);
+            this.panel_central.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox5)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox9)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox6)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel_izquierdo;
+        private System.Windows.Forms.Panel panel_derecho;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_central;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label15;

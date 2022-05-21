@@ -14,9 +14,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
     {
         public frm_Informacion()
         {
-            InitializeComponent();
-        }
-
+            InitializeComponent();            
+        }        
+        
         private void frm_Informacion_Load(object sender, EventArgs e)
         {
 
