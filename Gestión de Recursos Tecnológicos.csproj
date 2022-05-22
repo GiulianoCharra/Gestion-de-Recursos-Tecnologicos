@@ -95,6 +95,12 @@
     <Compile Include="Ventanas\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Informacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Informacion.resx">
       <DependentUpon>Informacion.cs</DependentUpon>
@@ -192,6 +201,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UTN_LOGO-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gato_cientifico_00-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gato_central_cientifico-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gato_central_cientifico-removebg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gato_señalando-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

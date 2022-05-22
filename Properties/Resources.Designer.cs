@@ -63,6 +63,46 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gato_central_cientifico_removebg {
+            get {
+                object obj = ResourceManager.GetObject("gato_central_cientifico-removebg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gato_central_cientifico_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("gato_central_cientifico-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gato_cientifico_00_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("gato_cientifico_00-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gato_señalando_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("gato_señalando-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_homero {
             get {
                 object obj = ResourceManager.GetObject("Logo_homero", resourceCulture);
