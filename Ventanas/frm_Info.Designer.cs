@@ -1,6 +1,6 @@
 ﻿namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 {
-    partial class Frm_Info
+    partial class frm_Info
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Info));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Info));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_texto = new System.Windows.Forms.Label();
+            this.lbl_Info = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
@@ -73,29 +96,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.circularPictureBox7 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_texto = new System.Windows.Forms.Label();
-            this.lbl_Info = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox9)).BeginInit();
@@ -114,14 +121,259 @@
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox5)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.panel12);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.lbl_texto);
+            this.panel1.Controls.Add(this.lbl_Info);
+            this.panel1.Location = new System.Drawing.Point(48, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 351);
+            this.panel1.TabIndex = 0;
+            // 
+            // lbl_texto
+            // 
+            this.lbl_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_texto.AutoSize = true;
+            this.lbl_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_texto.Location = new System.Drawing.Point(16, 66);
+            this.lbl_texto.Name = "lbl_texto";
+            this.lbl_texto.Size = new System.Drawing.Size(453, 16);
+            this.lbl_texto.TabIndex = 3;
+            this.lbl_texto.Text = "Nosotros somos CompuMundo HiperMegaRed y realizaremos lo siguiente";
+            // 
+            // lbl_Info
+            // 
+            this.lbl_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Info.AutoSize = true;
+            this.lbl_Info.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Info.Location = new System.Drawing.Point(16, 16);
+            this.lbl_Info.Name = "lbl_Info";
+            this.lbl_Info.Size = new System.Drawing.Size(372, 24);
+            this.lbl_Info.TabIndex = 2;
+            this.lbl_Info.Text = "Informacion en General del Grupo";
+            // 
+            // panel12
+            // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel12.Controls.Add(this.pictureBox3);
+            this.panel12.Controls.Add(this.label40);
+            this.panel12.Controls.Add(this.label39);
+            this.panel12.Controls.Add(this.label38);
+            this.panel12.Controls.Add(this.label37);
+            this.panel12.Location = new System.Drawing.Point(357, 101);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(436, 115);
+            this.panel12.TabIndex = 30;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_señalando_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(298, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(85, 100);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(19, 77);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(133, 16);
+            this.label40.TabIndex = 28;
+            this.label40.Text = "Diagrama de Estado";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(19, 61);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(154, 16);
+            this.label39.TabIndex = 27;
+            this.label39.Text = "Diagrama de Secuencia";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(19, 45);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(132, 16);
+            this.label38.TabIndex = 26;
+            this.label38.Text = "Diagrama de Clases";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(18, 12);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(274, 19);
+            this.label37.TabIndex = 25;
+            this.label37.Text = "Hasta esta parte hemos realizado";
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Controls.Add(this.label36);
+            this.panel5.Controls.Add(this.label35);
+            this.panel5.Controls.Add(this.label34);
+            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.label32);
+            this.panel5.Location = new System.Drawing.Point(3, 231);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(729, 116);
+            this.panel5.TabIndex = 29;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_central_cientifico_removebg;
+            this.pictureBox2.Location = new System.Drawing.Point(483, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(214, 116);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(14, 93);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(377, 16);
+            this.label36.TabIndex = 29;
+            this.label36.Text = "plazo de mantenimiento y las notificaciones correspondientes.";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(14, 77);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(435, 16);
+            this.label35.TabIndex = 28;
+            this.label35.Text = "generando las cancelaciones de las reservas de turnos existentes en el";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(14, 61);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(463, 16);
+            this.label34.TabIndex = 27;
+            this.label34.Text = "Objetivo: Registrar el en mantenimiento correctivo de un recurso tecnológico,";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(14, 45);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(421, 16);
+            this.label33.TabIndex = 26;
+            this.label33.Text = "Nombre del CU: Registrar Ingreso de RT en mantenimiento correctivo";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(13, 12);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(253, 19);
+            this.label32.TabIndex = 25;
+            this.label32.Text = "Ofrecemos soporte al CU N°36";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label31);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Location = new System.Drawing.Point(3, 100);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(348, 116);
+            this.panel4.TabIndex = 28;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(5, 12);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(193, 19);
+            this.label31.TabIndex = 24;
+            this.label31.Text = "El problema a resolver";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_cientifico_00_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(270, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(76, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(5, 92);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(156, 16);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "centros de investigación.";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(5, 76);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(156, 16);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "existente en el ámbito de";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(5, 60);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(259, 16);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "desea gestionar los recursos ternológicos";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(5, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(242, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "El proyecto de la Universidad Nacional";
             // 
             // panel9
             // 
@@ -132,7 +384,7 @@
             this.panel9.Controls.Add(this.panel8);
             this.panel9.Controls.Add(this.panel7);
             this.panel9.Controls.Add(this.label23);
-            this.panel9.Location = new System.Drawing.Point(4, 414);
+            this.panel9.Location = new System.Drawing.Point(48, 439);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(392, 644);
             this.panel9.TabIndex = 19;
@@ -411,7 +663,7 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel11);
-            this.panel2.Location = new System.Drawing.Point(479, 414);
+            this.panel2.Location = new System.Drawing.Point(469, 439);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 644);
             this.panel2.TabIndex = 20;
@@ -660,270 +912,29 @@
             this.circularPictureBox7.TabIndex = 0;
             this.circularPictureBox7.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.lbl_texto);
-            this.panel1.Controls.Add(this.lbl_Info);
-            this.panel1.Location = new System.Drawing.Point(15, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 351);
-            this.panel1.TabIndex = 21;
-            // 
-            // panel12
-            // 
-            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel12.Controls.Add(this.pictureBox3);
-            this.panel12.Controls.Add(this.label40);
-            this.panel12.Controls.Add(this.label39);
-            this.panel12.Controls.Add(this.label38);
-            this.panel12.Controls.Add(this.label37);
-            this.panel12.Location = new System.Drawing.Point(431, 106);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(416, 115);
-            this.panel12.TabIndex = 27;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_señalando_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(298, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(85, 100);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(19, 77);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(133, 16);
-            this.label40.TabIndex = 28;
-            this.label40.Text = "Diagrama de Estado";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(19, 61);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(154, 16);
-            this.label39.TabIndex = 27;
-            this.label39.Text = "Diagrama de Secuencia";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(19, 45);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(132, 16);
-            this.label38.TabIndex = 26;
-            this.label38.Text = "Diagrama de Clases";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(18, 12);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(274, 19);
-            this.label37.TabIndex = 25;
-            this.label37.Text = "Hasta esta parte hemos realizado";
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.label36);
-            this.panel5.Controls.Add(this.label35);
-            this.panel5.Controls.Add(this.label34);
-            this.panel5.Controls.Add(this.label33);
-            this.panel5.Controls.Add(this.label32);
-            this.panel5.Location = new System.Drawing.Point(77, 227);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(687, 116);
-            this.panel5.TabIndex = 26;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_central_cientifico_removebg;
-            this.pictureBox2.Location = new System.Drawing.Point(483, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(185, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(14, 93);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(377, 16);
-            this.label36.TabIndex = 29;
-            this.label36.Text = "plazo de mantenimiento y las notificaciones correspondientes.";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(14, 77);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(435, 16);
-            this.label35.TabIndex = 28;
-            this.label35.Text = "generando las cancelaciones de las reservas de turnos existentes en el";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(14, 61);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(463, 16);
-            this.label34.TabIndex = 27;
-            this.label34.Text = "Objetivo: Registrar el en mantenimiento correctivo de un recurso tecnológico,";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(14, 45);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(421, 16);
-            this.label33.TabIndex = 26;
-            this.label33.Text = "Nombre del CU: Registrar Ingreso de RT en mantenimiento correctivo";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(13, 12);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(253, 19);
-            this.label32.TabIndex = 25;
-            this.label32.Text = "Ofrecemos soporte al CU N°36";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label31);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.label30);
-            this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Location = new System.Drawing.Point(14, 105);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(348, 116);
-            this.panel4.TabIndex = 25;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(5, 12);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(193, 19);
-            this.label31.TabIndex = 24;
-            this.label31.Text = "El problema a resolver";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_cientifico_00_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(270, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(76, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(5, 92);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(156, 16);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "centros de investigación.";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(5, 76);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(156, 16);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "existente en el ámbito de";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(5, 60);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(259, 16);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "desea gestionar los recursos ternológicos";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(5, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(242, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "El proyecto de la Universidad Nacional";
-            // 
-            // lbl_texto
-            // 
-            this.lbl_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_texto.AutoSize = true;
-            this.lbl_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_texto.Location = new System.Drawing.Point(11, 67);
-            this.lbl_texto.Name = "lbl_texto";
-            this.lbl_texto.Size = new System.Drawing.Size(453, 16);
-            this.lbl_texto.TabIndex = 1;
-            this.lbl_texto.Text = "Nosotros somos CompuMundo HiperMegaRed y realizaremos lo siguiente";
-            // 
-            // lbl_Info
-            // 
-            this.lbl_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Info.AutoSize = true;
-            this.lbl_Info.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Info.Location = new System.Drawing.Point(11, 17);
-            this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(372, 24);
-            this.lbl_Info.TabIndex = 0;
-            this.lbl_Info.Text = "Informacion en General del Grupo";
-            // 
-            // Frm_Info
+            // frm_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 520);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(928, 520);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frm_Info";
-            this.Text = "Info";
+            this.Name = "frm_Info";
+            this.Text = "frm_Info";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -951,23 +962,35 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_texto;
+        private System.Windows.Forms.Label lbl_Info;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label27;
@@ -1012,28 +1035,5 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private CircularPictureBox circularPictureBox7;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_texto;
-        private System.Windows.Forms.Label lbl_Info;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label10;
     }
 }
