@@ -171,6 +171,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
+            openChildForm(new Form3());
             /*
              escribir codigo
              */
