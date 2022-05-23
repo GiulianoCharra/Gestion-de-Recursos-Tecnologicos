@@ -13,6 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,11 +28,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +50,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Gestión_de_Recursos_Tecnológicos.Principal</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -57,21 +60,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
->>>>>>> Stashed changes
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
-<<<<<<< Updated upstream
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-=======
-=======
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -84,9 +83,7 @@
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
->>>>>>> Stashed changes
     <Reference Include="System.Xaml" />
->>>>>>> Stashed changes
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,17 +95,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
     <Compile Include="Gestión_de_Recursos_TecnológicosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gestión_de_Recursos_TecnológicosDataSet.xsd</DependentUpon>
     </Compile>
->>>>>>> Stashed changes
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="src\clases\Caracteristica.cs" />
     <Compile Include="src\clases\CaracteristicaRecursoTecnologico.cs" />
     <Compile Include="src\clases\CentroInvestigacion.cs" />
@@ -228,29 +219,8 @@
       <DependentUpon>gestionModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\soporte\Conexion.cs" />
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-    <Compile Include="Ventanas\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< Updated upstream
-    <EmbeddedResource Include="obj\Debug\Gestión_de_Recursos_Tecnológicos.Properties.Resources.resources" />
-=======
-<<<<<<< Updated upstream
-    <Compile Include="Ventanas\VentanaPrueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\VentanaPrueba.Designer.cs">
-      <DependentUpon>VentanaPrueba.cs</DependentUpon>
-    </Compile>
-=======
     <Compile Include="Ventanas\Marca\AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +233,6 @@
     <Compile Include="Ventanas\Modelo\Modelo.Designer.cs">
       <DependentUpon>Modelo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="obj\Debug\Gestión_de_Recursos_Tecnológicos.Properties.Resources.resources" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -274,27 +241,15 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< Updated upstream
     <None Include=".gitattributes" />
-    <None Include=".gitignore" />
-    <None Include="bin\Debug\Gestión de Recursos Tecnológicos.exe.config" />
-=======
-<<<<<<< Updated upstream
-    <EmbeddedResource Include="Ventanas\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\VentanaPrueba.resx">
-      <DependentUpon>VentanaPrueba.cs</DependentUpon>
-    </EmbeddedResource>
-=======
     <EmbeddedResource Include="Ventanas\Marca\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Modelo\Modelo.resx">
       <DependentUpon>Modelo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="bin\Debug\Gestión de Recursos Tecnológicos.exe.config" />
     <None Include="Gestión_de_Recursos_TecnológicosDataSet.xsc">
@@ -308,17 +263,12 @@
     <None Include="Gestión_de_Recursos_TecnológicosDataSet.xss">
       <DependentUpon>Gestión_de_Recursos_TecnológicosDataSet.xsd</DependentUpon>
     </None>
->>>>>>> Stashed changes
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.GenerateResource.cache" />
     <None Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.SuggestedBindingRedirects.cache" />
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -341,34 +291,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="src\db\" />
-=======
-<<<<<<< Updated upstream
-    <Folder Include="Clases\Clases\" />
-    <Folder Include="Clases\Entidades\" />
-    <Folder Include="Clases\Soporte\" />
-=======
-    <Folder Include="bin\Release\" />
-    <Folder Include="DataBase\" />
-    <Folder Include="src\db\" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\FontAwesome.Sharp.dll" />
     <Content Include="bin\Debug\Gestión de Recursos Tecnológicos.exe" />
     <Content Include="bin\Debug\Gestión de Recursos Tecnológicos.pdb" />
+    <Content Include="bin\Debug\System.Data.SqlClient.dll" />
+    <Content Include="bin\Debug\System.Data.SqlClient.xml" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.exe" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.pdb" />
-    <Content Include="obj\Debug\TempPE\Clases.Entidades.Database1.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Clases.Entidades.DataClasses1.designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\DataSet1.Designer.cs.dll" />
     <Content Include="src\entities\gestionModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>gestionModel.edmx</DependentUpon>

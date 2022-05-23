@@ -28,27 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tx_nombre = new System.Windows.Forms.TextBox();
             this.tx_descripcion = new System.Windows.Forms.TextBox();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idmodeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mODELOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gestión_de_Recursos_TecnológicosDataSet = new Gestión_de_Recursos_Tecnológicos.Gestión_de_Recursos_TecnológicosDataSet();
-            this.mODELOSTableAdapter = new Gestión_de_Recursos_Tecnológicos.Gestión_de_Recursos_TecnológicosDataSetTableAdapters.MODELOSTableAdapter();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.gestióndeRecursosTecnológicosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mODELOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestión_de_Recursos_TecnológicosDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestióndeRecursosTecnológicosDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,53 +90,19 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idmodeloDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.mODELOSBindingSource;
+            this.dataGridViewTextBoxColumn7});
             this.dataGridView1.Location = new System.Drawing.Point(419, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(540, 201);
             this.dataGridView1.TabIndex = 6;
             // 
-            // idmodeloDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.idmodeloDataGridViewTextBoxColumn.DataPropertyName = "id_modelo";
-            this.idmodeloDataGridViewTextBoxColumn.HeaderText = "id_modelo";
-            this.idmodeloDataGridViewTextBoxColumn.Name = "idmodeloDataGridViewTextBoxColumn";
-            this.idmodeloDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mODELOSBindingSource
-            // 
-            this.mODELOSBindingSource.DataMember = "MODELOS";
-            this.mODELOSBindingSource.DataSource = this.gestión_de_Recursos_TecnológicosDataSet;
-            // 
-            // gestión_de_Recursos_TecnológicosDataSet
-            // 
-            this.gestión_de_Recursos_TecnológicosDataSet.DataSetName = "Gestión_de_Recursos_TecnológicosDataSet";
-            this.gestión_de_Recursos_TecnológicosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mODELOSTableAdapter
-            // 
-            this.mODELOSTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // label3
             // 
@@ -159,11 +115,13 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "nombre";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(112, 127);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(260, 21);
             this.comboBox1.TabIndex = 8;
+            this.comboBox1.ValueMember = "id_marca";
             // 
             // button1
             // 
@@ -173,11 +131,6 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // gestióndeRecursosTecnológicosDataSetBindingSource
-            // 
-            this.gestióndeRecursosTecnológicosDataSetBindingSource.DataSource = this.gestión_de_Recursos_TecnológicosDataSet;
-            this.gestióndeRecursosTecnológicosDataSetBindingSource.Position = 0;
             // 
             // Modelo
             // 
@@ -197,9 +150,6 @@
             this.Text = "Modelo";
             this.Load += new System.EventHandler(this.Modelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mODELOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestión_de_Recursos_TecnológicosDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestióndeRecursosTecnológicosDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,15 +163,19 @@
         private System.Windows.Forms.TextBox tx_descripcion;
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Gestión_de_Recursos_TecnológicosDataSet gestión_de_Recursos_TecnológicosDataSet;
-        private System.Windows.Forms.BindingSource mODELOSBindingSource;
-        private Gestión_de_Recursos_TecnológicosDataSetTableAdapters.MODELOSTableAdapter mODELOSTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmodeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource gestióndeRecursosTecnológicosDataSetBindingSource;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmarcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

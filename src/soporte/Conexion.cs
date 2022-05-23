@@ -32,10 +32,10 @@ public class Conexion
 		SqlConnection conexion = Conectar();
 		SqlCommand command = new SqlCommand();
 
-		return EjecutarComando(consulta, command);
+		return EjecutarComando(command, consulta);
 	}
 
-	public static DataTable EjecutarComando(string consulta, SqlCommand command)
+	public static DataTable EjecutarComando(SqlCommand command, string consulta)
 	{
 		//Llama al metodo conectar para abrir la coneccion con la base de datos
 		SqlConnection conexion = Conectar();
@@ -46,6 +46,7 @@ public class Conexion
 
 		DataTable resultados = new DataTable();
 
+		Console.WriteLine(command.CommandText);
 		SqlDataAdapter adapter = new SqlDataAdapter(command);
 		adapter.Fill(resultados);
 

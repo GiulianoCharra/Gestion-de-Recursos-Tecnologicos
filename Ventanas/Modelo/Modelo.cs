@@ -19,8 +19,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void Modelo_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'gestión_de_Recursos_TecnológicosDataSet.MODELOS' Puede moverla o quitarla según sea necesario.
-            this.mODELOSTableAdapter.Fill(this.gestión_de_Recursos_TecnológicosDataSet.MODELOS);
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)

@@ -40,6 +40,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
             {
                 agregarMarca();
             }
+            else
+                modificarMarca();
+
         }
 
         private void cancelar(object sender, EventArgs e)
@@ -47,9 +50,11 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
             this.Close();
         }
 
-        private void dgv_Marcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_Marcas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             estado = Estados.MODIFICAR;
+            btn_agregar_modificar.Text = "Modificar";
 
             txt_nombre.Text = dgv_Marcas.SelectedCells[1].Value.ToString();
             txt_descripcion.Text = dgv_Marcas.SelectedCells[2].Value.ToString();
@@ -62,42 +67,76 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 
         private void agregarMarca()
         {
+            if (txt_nombre.Text.TrimStart().Length == 0)
+            {
+                return;
+            }
             string nombre = txt_nombre.Text;
             string descripcion = txt_descripcion.Text;
 
-            string nuevo = "INSERT INTO [dbo].[MARCAS] ([nombre] ,[descripcion]) VALUES ('@nombre', @descripcion )";
+            string nuevo = "INSERT INTO [dbo].[MARCAS] ([nombre] ,[descripcion]) VALUES (@NOMBRE, @DESCRIPCION )";
 
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@NOMBRE", nombre);
             cmd.Parameters.AddWithValue("@DESCRIPCION", descripcion);
 
-            Conexion.EjecutarComando(nuevo, cmd);
+            Conexion.EjecutarComando(cmd, nuevo);
+            limpiar();
+            cargarTabla();
         }
 
         private void modificarMarca()
         {
-            int id = int.Parse(dgv_Marcas.SelectedCells[0].Value.ToString());
+            if (txt_nombre.Text.TrimStart().Length == 0)
+            {
+                return;
+            }
+
+            int id_marca = int.Parse(dgv_Marcas.SelectedCells[0].Value.ToString());
             string nombre = txt_nombre.Text;
             string descripcion = txt_descripcion.Text;
 
-            string update = "UPDATE [dbo].[MARCAS] SET [nombre] = @NOMBRE ,[descripcion] = @DESCRIPCION WHERE id = @ID";
-            
-            cmd.Parameters.AddWithValue("@ID", id);
+            string update = "UPDATE [dbo].[MARCAS] SET [nombre] = @NOMBRE ,[descripcion] = @DESCRIPCION WHERE [id_marca] = @ID";
+
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@ID", id_marca);
             cmd.Parameters.AddWithValue("@NOMBRE", nombre);
             cmd.Parameters.AddWithValue("@DESCRIPCION", descripcion);
 
 
-            Conexion.EjecutarComando(update, cmd);
+            ejecutarComando(cmd, update);
+            limpiar();
+            cargarTabla();
+            estado = Estados.AGREGAR;
+            btn_agregar_modificar.Text = "Agregar"; 
         }
 
         private void eliminarMarca()
         {
             string eliminar = "DELETE FROM [dbo].[MODELOS] WHERE id = @ID";
+            ejecutarComando(eliminar);
             
         }
 
         private void ejecutarComando(string query)
         {
             Conexion.EjecutarComando(query);
+        }
+
+        private void ejecutarComando(SqlCommand com , string query)
+        {
+            Conexion.EjecutarComando(cmd, query);
+        }
+
+        private void limpiar()
+        {
+            txt_nombre.Text = "";
+            txt_descripcion.Text = "";
+        }
+
+        private void cargarTabla()
+        {
+            this.mARCASTableAdapter.Fill(this.gestión_de_Recursos_TecnológicosDataSet.MARCAS);
         }
     }
 }

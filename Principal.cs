@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.Ventanas;
+using Gestión_de_Recursos_Tecnológicos.Ventanas.Marca;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Gestión_de_Recursos_Tecnológicos
 {
-    internal static class Program
+    internal static class Principal
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -16,15 +18,7 @@ namespace Gestión_de_Recursos_Tecnológicos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< Updated upstream
-            Application.Run(new Form1());
-=======
-<<<<<<< Updated upstream
-            Application.Run(new VentanaPrueba());
-=======
-            Application.Run(new Modelo());
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+            Application.Run(new AgregarMarca());
         }
     }
 }
