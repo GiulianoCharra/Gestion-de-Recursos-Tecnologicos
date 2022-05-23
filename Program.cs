@@ -16,7 +16,15 @@ namespace Gestión_de_Recursos_Tecnológicos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new Form1());
+=======
+<<<<<<< Updated upstream
+            Application.Run(new VentanaPrueba());
+=======
+            Application.Run(new Modelo());
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         }
     }
 }
