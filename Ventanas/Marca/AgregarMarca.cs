@@ -89,6 +89,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         {
             if (txt_nombre.Text.TrimStart().Length == 0)
             {
+                Console.WriteLine("Falta ingresar nombre");
                 return;
             }
 
