@@ -23,7 +23,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 
         public static bool existeUsuario(string user, string pass)
         {
-            string consultarUsuario = "SELECT * FROM [db].[Usuario] WHERE usuario=@USUARIO AND contraseña=@CONTRASEÑA";
+            string consultarUsuario = "SELECT * FROM [dbo].[USUARIOS] WHERE usuario=@USUARIO AND contraseña=@CONTRASEÑA";
 
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("@USUARIO", user);   

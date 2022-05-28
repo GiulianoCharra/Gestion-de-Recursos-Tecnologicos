@@ -16,6 +16,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
         public IniciarSesion()
         {
             InitializeComponent();
+            txt_contraseña.UseSystemPasswordChar = true;
         }
 
         private void lbl_recuperar_contraseña_Click(object sender, EventArgs e)
@@ -30,10 +31,21 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
 
         private void btn_iniciar_Click(object sender, EventArgs e)
         {
+            if (txt_usuario.Text.Trim() == "" || txt_contraseña.Text.Trim() == "")
+            {
+                lbl_datos_incorrectos.Text = "Ingrese usuario y contraseña para poder iniciar";
+                return;
+            }
+
             if (!GestorIniciarSesion.iniciarSesion(txt_usuario.Text, txt_contraseña.Text))
             {
                 lbl_datos_incorrectos.Text = "Alguno de los datos ingresados es incorrecto";
             }
+        }
+
+        private void IniciarSesion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
