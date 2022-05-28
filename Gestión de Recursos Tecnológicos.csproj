@@ -218,6 +218,9 @@
     <Compile Include="src\entities\USUARIO.cs">
       <DependentUpon>gestionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\Gestores\GestorIIngresoRecursoTecnologicoMantenimientoCorrectivo.cs" />
+    <Compile Include="src\Gestores\GestorIniciarSesion.cs" />
+    <Compile Include="src\Gestores\GestorPrincipal.cs" />
     <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -233,6 +236,12 @@
     <Compile Include="Ventanas\Modelo\Modelo.Designer.cs">
       <DependentUpon>Modelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Sesion\IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Sesion\IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -243,6 +252,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\Sesion\IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include=".gitattributes" />
     <EmbeddedResource Include="Ventanas\Marca\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>

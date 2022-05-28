@@ -31,7 +31,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         private void AgregarMarca_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'gestión_de_Recursos_TecnológicosDataSet.MARCAS' Puede moverla o quitarla según sea necesario.
-            this.mARCASTableAdapter.Fill(this.gestión_de_Recursos_TecnológicosDataSet.MARCAS);
+            cargarTabla();
         }
 
         private void agregarModificarMarca(object sender, EventArgs e)
