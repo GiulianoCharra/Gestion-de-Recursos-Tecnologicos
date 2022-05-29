@@ -12,14 +12,18 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION
+    public partial class AMBITOS
     {
-        public int id_centro_investigacion { get; set; }
-        public int id_personal_cientifico { get; set; }
-        public System.DateTime fecha_desde { get; set; }
-        public Nullable<System.DateTime> fecha_hasta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AMBITOS()
+        {
+            this.ESTADOS = new HashSet<ESTADOS>();
+        }
     
-        public virtual CENTRO_INVESTIGACION CENTRO_INVESTIGACION { get; set; }
-        public virtual PERSONAL_CIENTIFICO PERSONAL_CIENTIFICO { get; set; }
+        public int id_ambito { get; set; }
+        public string nombre { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ESTADOS> ESTADOS { get; set; }
     }
 }

@@ -42,10 +42,5 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
                 lbl_datos_incorrectos.Text = "Alguno de los datos ingresados es incorrecto";
             }
         }
-
-        private void IniciarSesion_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

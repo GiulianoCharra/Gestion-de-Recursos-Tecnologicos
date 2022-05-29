@@ -17,10 +17,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         public int id_historial_recurso_tecnologico { get; set; }
         public int id_recurso_tecnologico { get; set; }
         public int id_estado { get; set; }
-        public System.DateTime fecha_hora_desde { get; set; }
-        public Nullable<System.DateTime> fecha_hora_hasta { get; set; }
+        public System.DateTime fecha_hora_inicio { get; set; }
+        public Nullable<System.DateTime> fecha_hora_fin { get; set; }
     
-        public virtual ESTADO ESTADO { get; set; }
+        public virtual ESTADOS ESTADOS { get; set; }
         public virtual RECURSOS_TECNOLOGICOS RECURSOS_TECNOLOGICOS { get; set; }
     }
 }

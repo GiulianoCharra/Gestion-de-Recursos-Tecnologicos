@@ -12,13 +12,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class HISTORIAL_DIRECTORES
+    public partial class PERMISOS
     {
-        public int id_historial_director { get; set; }
-        public int id_director { get; set; }
-        public System.DateTime fecha_desde { get; set; }
-        public Nullable<System.DateTime> fecha_hasta { get; set; }
-    
-        public virtual DIRECTORE DIRECTORE { get; set; }
+        public int id_permisos { get; set; }
     }
 }

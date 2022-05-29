@@ -14,13 +14,22 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     
     public partial class MANTENIMIENTO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MANTENIMIENTO()
+        {
+            this.EXTENSION_MANTENIMIENTO = new HashSet<EXTENSION_MANTENIMIENTO>();
+        }
+    
         public int id_mantenimiento { get; set; }
-        public System.DateTime fecha { get; set; }
-        public System.TimeSpan hora_inicio { get; set; }
-        public System.TimeSpan hora_fin { get; set; }
+        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
+        public System.DateTime fecha_hora_fin_prevista { get; set; }
+        public Nullable<System.DateTime> fecha_hora_fin_real { get; set; }
         public int id_tipo_mantenimiento { get; set; }
         public int id_recurso_tecnologico { get; set; }
+        public string motivo { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EXTENSION_MANTENIMIENTO> EXTENSION_MANTENIMIENTO { get; set; }
         public virtual RECURSOS_TECNOLOGICOS RECURSOS_TECNOLOGICOS { get; set; }
         public virtual TIPOS_MANTENIMIENTOS TIPOS_MANTENIMIENTOS { get; set; }
     }

@@ -17,7 +17,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TIPOS_MANTENIMIENTOS()
         {
-            this.MANTENIMIENTOes = new HashSet<MANTENIMIENTO>();
+            this.MANTENIMIENTO = new HashSet<MANTENIMIENTO>();
         }
     
         public int id_tipo_mantenimiento { get; set; }
@@ -25,6 +25,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MANTENIMIENTO> MANTENIMIENTOes { get; set; }
+        public virtual ICollection<MANTENIMIENTO> MANTENIMIENTO { get; set; }
     }
 }

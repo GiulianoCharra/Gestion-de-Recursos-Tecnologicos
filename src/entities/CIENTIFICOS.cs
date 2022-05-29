@@ -12,12 +12,17 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class USUARIO
+    public partial class CIENTIFICOS
     {
-        public string usuario1 { get; set; }
-        public string contraseña { get; set; }
-        public int id_estado { get; set; }
+        public int id_cientifico { get; set; }
+        public int id_personal_cientifico { get; set; }
+        public int id_centro_investigacion { get; set; }
+        public string usuario { get; set; }
+        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
+        public Nullable<System.DateTime> fecha_hora_fin { get; set; }
     
-        public virtual ESTADO ESTADO { get; set; }
+        public virtual CENTRO_INVESTIGACION CENTRO_INVESTIGACION { get; set; }
+        public virtual PERSONAL_CIENTIFICO PERSONAL_CIENTIFICO { get; set; }
+        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

@@ -14,15 +14,21 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     
     public partial class TURNO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TURNO()
+        {
+            this.HISTORIALES_ESTADOS = new HashSet<HISTORIALES_ESTADOS>();
+        }
+    
         public int id_turno { get; set; }
         public int id_recurso_tecnologico { get; set; }
         public Nullable<int> id_cientifico { get; set; }
-        public int id_estado { get; set; }
+        public int id_historial_estado { get; set; }
         public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
         public Nullable<System.DateTime> fecha_hora_fin { get; set; }
     
-        public virtual CIENTIFICO CIENTIFICO { get; set; }
-        public virtual ESTADO ESTADO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HISTORIALES_ESTADOS> HISTORIALES_ESTADOS { get; set; }
         public virtual RECURSOS_TECNOLOGICOS RECURSOS_TECNOLOGICOS { get; set; }
     }
 }

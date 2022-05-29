@@ -17,10 +17,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PERSONAL_CIENTIFICO()
         {
-            this.CIENTIFICOS = new HashSet<CIENTIFICO>();
-            this.DIRECTORES = new HashSet<DIRECTORE>();
-            this.FACULTADs = new HashSet<FACULTAD>();
-            this.PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION = new HashSet<PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION>();
+            this.CIENTIFICOS = new HashSet<CIENTIFICOS>();
+            this.DIRECTORES = new HashSet<DIRECTORES>();
             this.RESPONSABLES_TECNICOS = new HashSet<RESPONSABLES_TECNICOS>();
         }
     
@@ -31,17 +29,11 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         public string email_institucional { get; set; }
         public string email_personal { get; set; }
         public string telefono { get; set; }
-        public Nullable<int> id_rol_personal_cientifico { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CIENTIFICO> CIENTIFICOS { get; set; }
+        public virtual ICollection<CIENTIFICOS> CIENTIFICOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DIRECTORE> DIRECTORES { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACULTAD> FACULTADs { get; set; }
-        public virtual ROL_PERSONAL_CIENTIFICO ROL_PERSONAL_CIENTIFICO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION> PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION { get; set; }
+        public virtual ICollection<DIRECTORES> DIRECTORES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RESPONSABLES_TECNICOS> RESPONSABLES_TECNICOS { get; set; }
     }

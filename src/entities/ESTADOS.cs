@@ -12,19 +12,24 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class ROL_PERSONAL_CIENTIFICO
+    public partial class ESTADOS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ROL_PERSONAL_CIENTIFICO()
+        public ESTADOS()
         {
-            this.PERSONAL_CIENTIFICO = new HashSet<PERSONAL_CIENTIFICO>();
+            this.HISTORIAL_RECURSO_TECNOLOGICO = new HashSet<HISTORIAL_RECURSO_TECNOLOGICO>();
+            this.HISTORIALES_ESTADOS = new HashSet<HISTORIALES_ESTADOS>();
         }
     
-        public int id_rol_personal_cientifico { get; set; }
+        public int id_estado { get; set; }
+        public int id_ambito { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
     
+        public virtual AMBITOS AMBITOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PERSONAL_CIENTIFICO> PERSONAL_CIENTIFICO { get; set; }
+        public virtual ICollection<HISTORIAL_RECURSO_TECNOLOGICO> HISTORIAL_RECURSO_TECNOLOGICO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HISTORIALES_ESTADOS> HISTORIALES_ESTADOS { get; set; }
     }
 }

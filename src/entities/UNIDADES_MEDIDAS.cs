@@ -17,14 +17,15 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UNIDADES_MEDIDAS()
         {
-            this.CARACTERISTICAS = new HashSet<CARACTERISTICA>();
+            this.CARACTERISTICAS = new HashSet<CARACTERISTICAS>();
         }
     
         public int id_unidad_medida { get; set; }
+        public string sigla { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CARACTERISTICA> CARACTERISTICAS { get; set; }
+        public virtual ICollection<CARACTERISTICAS> CARACTERISTICAS { get; set; }
     }
 }

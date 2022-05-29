@@ -100,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gestión_de_Recursos_TecnológicosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="src\clases\Ambito.cs" />
     <Compile Include="src\clases\Caracteristica.cs" />
     <Compile Include="src\clases\CaracteristicaRecursoTecnologico.cs" />
     <Compile Include="src\clases\CentroInvestigacion.cs" />
@@ -122,101 +123,101 @@
     <Compile Include="src\clases\Turno.cs" />
     <Compile Include="src\clases\UnidadMedida.cs" />
     <Compile Include="src\clases\Usuario.cs" />
-    <Compile Include="src\entities\CARACTERISTICA.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\AMBITOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\CARACTERISTICAS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\CENTRO_INVESTIGACION.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\CIENTIFICO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\CIENTIFICOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\DIRECTORE.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\DIRECTORES.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\DISPONIBILIDAD.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\ESTADO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\ESTADOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\FACULTAD.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\EXTENSION_MANTENIMIENTO.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\gestionModel.Context.cs">
+    <Compile Include="src\entities\FACULTADES.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\GestionRTModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>gestionModel.Context.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\gestionModel.cs">
+    <Compile Include="src\entities\GestionRTModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\gestionModel.Designer.cs">
+    <Compile Include="src\entities\GestionRTModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>gestionModel.edmx</DependentUpon>
+      <DependentUpon>GestionRTModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\HISTORIAL_DIRECTORES.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\HISTORIALES_ESTADOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\HISTORIAL_RECURSO_TECNOLOGICO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\MANTENIMIENTO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\MARCA.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\MARCAS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\MODELO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\MODELOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\PERMISO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\PERFILES.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\PERMISOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\PERSONAL_CIENTIFICO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="src\entities\PERSONAL_CIENTIFICO_X_CENTRO_INVESTIGACION.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\RECURSOS_TECNOLOGICOS.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\RECURSO_TECNOLOGICO_X_CARACTERISTICA.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\RESPONSABLES_TECNICOS.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\ROL_PERSONAL_CIENTIFICO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\SESIONES.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="src\entities\sp_helpdiagrams_Result.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="src\entities\sysdiagram.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\sysdiagrams.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\TIPOS_MANTENIMIENTOS.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\TIPOS_RECURSOS_TECNOLOGICOS.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\TURNO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\UNIDADES_MEDIDAS.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\USUARIO.cs">
-      <DependentUpon>gestionModel.tt</DependentUpon>
+    <Compile Include="src\entities\USUARIOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\Gestores\GestorIIngresoRecursoTecnologicoMantenimientoCorrectivo.cs" />
     <Compile Include="src\Gestores\GestorIniciarSesion.cs" />
@@ -291,12 +292,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="src\entities\gestionModel.edmx">
+    <EntityDeploy Include="src\entities\GestionRTModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>gestionModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>GestionRTModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="src\entities\gestionModel.edmx.diagram">
-      <DependentUpon>gestionModel.edmx</DependentUpon>
+    <None Include="src\entities\GestionRTModel.edmx.diagram">
+      <DependentUpon>GestionRTModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -323,15 +324,15 @@
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.exe" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.pdb" />
-    <Content Include="src\entities\gestionModel.Context.tt">
+    <Content Include="src\entities\GestionRTModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>gestionModel.edmx</DependentUpon>
-      <LastGenOutput>gestionModel.Context.cs</LastGenOutput>
+      <DependentUpon>GestionRTModel.edmx</DependentUpon>
+      <LastGenOutput>GestionRTModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="src\entities\gestionModel.tt">
+    <Content Include="src\entities\GestionRTModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>gestionModel.edmx</DependentUpon>
-      <LastGenOutput>gestionModel.cs</LastGenOutput>
+      <DependentUpon>GestionRTModel.edmx</DependentUpon>
+      <LastGenOutput>GestionRTModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

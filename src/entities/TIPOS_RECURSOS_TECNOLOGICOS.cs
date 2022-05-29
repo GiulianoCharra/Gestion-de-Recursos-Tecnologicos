@@ -18,7 +18,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         public TIPOS_RECURSOS_TECNOLOGICOS()
         {
             this.RECURSOS_TECNOLOGICOS = new HashSet<RECURSOS_TECNOLOGICOS>();
-            this.CARACTERISTICAS = new HashSet<CARACTERISTICA>();
+            this.CARACTERISTICAS = new HashSet<CARACTERISTICAS>();
         }
     
         public int id_tipo_recurso_tecnologico { get; set; }
@@ -28,6 +28,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RECURSOS_TECNOLOGICOS> RECURSOS_TECNOLOGICOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CARACTERISTICA> CARACTERISTICAS { get; set; }
+        public virtual ICollection<CARACTERISTICAS> CARACTERISTICAS { get; set; }
     }
 }

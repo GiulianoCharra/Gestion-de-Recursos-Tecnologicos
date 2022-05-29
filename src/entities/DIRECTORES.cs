@@ -12,19 +12,17 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class DIRECTORE
+    public partial class DIRECTORES
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DIRECTORE()
-        {
-            this.HISTORIAL_DIRECTORES = new HashSet<HISTORIAL_DIRECTORES>();
-        }
-    
         public int id_director { get; set; }
-        public Nullable<int> id_personal_cientifico { get; set; }
+        public int id_personal_cientifico { get; set; }
+        public int id_centro_investigacion { get; set; }
+        public string usuario { get; set; }
+        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
+        public Nullable<System.DateTime> fecha_hora_fin { get; set; }
     
+        public virtual CENTRO_INVESTIGACION CENTRO_INVESTIGACION { get; set; }
         public virtual PERSONAL_CIENTIFICO PERSONAL_CIENTIFICO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HISTORIAL_DIRECTORES> HISTORIAL_DIRECTORES { get; set; }
+        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

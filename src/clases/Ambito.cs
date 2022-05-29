@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
-    internal class Caracteristica
+    internal class Ambito
     {
-        private int id_caracteristica { get; set; }
+        private int id_ambito { get; set; }
         private string nombre { get; set; }
-        private string descripcion { get; set; }
-        private UnidadMedida unidadMedida { get; set; }
     }
 }

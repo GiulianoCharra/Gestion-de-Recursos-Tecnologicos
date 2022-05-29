@@ -145,7 +145,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.IniciarSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

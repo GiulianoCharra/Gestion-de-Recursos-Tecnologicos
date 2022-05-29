@@ -12,19 +12,19 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class MODELO
+    public partial class MARCAS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MODELO()
+        public MARCAS()
         {
-            this.RECURSOS_TECNOLOGICOS = new HashSet<RECURSOS_TECNOLOGICOS>();
+            this.MODELOS = new HashSet<MODELOS>();
         }
     
-        public int id_modelo { get; set; }
+        public int id_marca { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RECURSOS_TECNOLOGICOS> RECURSOS_TECNOLOGICOS { get; set; }
+        public virtual ICollection<MODELOS> MODELOS { get; set; }
     }
 }

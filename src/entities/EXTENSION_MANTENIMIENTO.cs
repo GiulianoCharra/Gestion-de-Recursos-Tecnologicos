@@ -12,8 +12,14 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PERMISO
+    public partial class EXTENSION_MANTENIMIENTO
     {
-        public int id_permisos { get; set; }
+        public int id_extension_mantenimiento { get; set; }
+        public Nullable<System.DateTime> fecha_hora { get; set; }
+        public Nullable<System.DateTime> fecha_fin_prevista { get; set; }
+        public string motivo { get; set; }
+        public Nullable<int> id_mantenimiento { get; set; }
+    
+        public virtual MANTENIMIENTO MANTENIMIENTO { get; set; }
     }
 }

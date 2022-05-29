@@ -12,13 +12,15 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RECURSO_TECNOLOGICO_X_CARACTERISTICA
+    public partial class HISTORIALES_ESTADOS
     {
-        public int id_recurso_tecnologico { get; set; }
-        public int id_caracteristica { get; set; }
-        public Nullable<int> valor { get; set; }
+        public int id_historial_estado { get; set; }
+        public int id_turno { get; set; }
+        public int id_estado { get; set; }
+        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
+        public Nullable<System.DateTime> fecha_hora_fin { get; set; }
     
-        public virtual CARACTERISTICAS CARACTERISTICAS { get; set; }
-        public virtual RECURSOS_TECNOLOGICOS RECURSOS_TECNOLOGICOS { get; set; }
+        public virtual ESTADOS ESTADOS { get; set; }
+        public virtual TURNO TURNO { get; set; }
     }
 }

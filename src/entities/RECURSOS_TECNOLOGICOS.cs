@@ -17,37 +17,39 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RECURSOS_TECNOLOGICOS()
         {
-            this.DISPONIBILIDADs = new HashSet<DISPONIBILIDAD>();
+            this.DISPONIBILIDAD = new HashSet<DISPONIBILIDAD>();
             this.HISTORIAL_RECURSO_TECNOLOGICO = new HashSet<HISTORIAL_RECURSO_TECNOLOGICO>();
-            this.MANTENIMIENTOes = new HashSet<MANTENIMIENTO>();
+            this.MANTENIMIENTO = new HashSet<MANTENIMIENTO>();
             this.RECURSO_TECNOLOGICO_X_CARACTERISTICA = new HashSet<RECURSO_TECNOLOGICO_X_CARACTERISTICA>();
-            this.TURNOes = new HashSet<TURNO>();
+            this.TURNO = new HashSet<TURNO>();
             this.CENTRO_INVESTIGACION = new HashSet<CENTRO_INVESTIGACION>();
         }
     
         public int codigo { get; set; }
         public string nombre { get; set; }
         public System.DateTime fecha_alta { get; set; }
-        public int id_modelo { get; set; }
-        public int id_marca { get; set; }
         public byte[] imagen { get; set; }
         public int id_tipo_recurso_tecnologico { get; set; }
         public Nullable<int> id_responsable_tecnico { get; set; }
+        public string descripcion { get; set; }
+        public int id_modelo { get; set; }
+        public int id_marca { get; set; }
+        public Nullable<int> id_personal_cientifico { get; set; }
+        public Nullable<int> id_centro_investigacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DISPONIBILIDAD> DISPONIBILIDADs { get; set; }
+        public virtual ICollection<DISPONIBILIDAD> DISPONIBILIDAD { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HISTORIAL_RECURSO_TECNOLOGICO> HISTORIAL_RECURSO_TECNOLOGICO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MANTENIMIENTO> MANTENIMIENTOes { get; set; }
-        public virtual MARCA MARCA { get; set; }
-        public virtual MODELO MODELO { get; set; }
+        public virtual ICollection<MANTENIMIENTO> MANTENIMIENTO { get; set; }
+        public virtual MODELOS MODELOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RECURSO_TECNOLOGICO_X_CARACTERISTICA> RECURSO_TECNOLOGICO_X_CARACTERISTICA { get; set; }
         public virtual RESPONSABLES_TECNICOS RESPONSABLES_TECNICOS { get; set; }
         public virtual TIPOS_RECURSOS_TECNOLOGICOS TIPOS_RECURSOS_TECNOLOGICOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TURNO> TURNOes { get; set; }
+        public virtual ICollection<TURNO> TURNO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CENTRO_INVESTIGACION> CENTRO_INVESTIGACION { get; set; }
     }

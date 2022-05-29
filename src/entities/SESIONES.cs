@@ -10,10 +10,15 @@
 namespace Gestión_de_Recursos_Tecnológicos.src.entities
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class SESIONES
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id_sesion { get; set; }
+        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
+        public System.DateTime fecha_hora_fin { get; set; }
+        public string id_usuario { get; set; }
+    
+        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

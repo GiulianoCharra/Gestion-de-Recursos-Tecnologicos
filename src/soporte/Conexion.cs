@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-public class Conexion
+public abstract class Conexion
 {
 
     public Conexion()

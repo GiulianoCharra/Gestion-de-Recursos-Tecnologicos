@@ -12,10 +12,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class CARACTERISTICA
+    public partial class CARACTERISTICAS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CARACTERISTICA()
+        public CARACTERISTICAS()
         {
             this.RECURSO_TECNOLOGICO_X_CARACTERISTICA = new HashSet<RECURSO_TECNOLOGICO_X_CARACTERISTICA>();
             this.TIPOS_RECURSOS_TECNOLOGICOS = new HashSet<TIPOS_RECURSOS_TECNOLOGICOS>();
