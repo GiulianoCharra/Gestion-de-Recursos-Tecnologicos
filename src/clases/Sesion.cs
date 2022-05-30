@@ -9,10 +9,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Sesion
     {
-        private int id_sesion;
-        private Usuario usuario;
-        private DateTime fecha_hora_inicio;
-        private DateTime fecha_hora_fin;
+        private int id_sesion { get; set; }
+        private DateTime fecha_hora_inicio { get; set; }
+        private DateTime fecha_hora_fin { get; set; }
+        private Usuario usuario { get; set; }
 
         public Sesion()
         {

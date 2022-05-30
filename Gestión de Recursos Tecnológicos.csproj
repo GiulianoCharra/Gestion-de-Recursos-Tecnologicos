@@ -108,11 +108,12 @@
     <Compile Include="src\clases\Director.cs" />
     <Compile Include="src\clases\Estado.cs" />
     <Compile Include="src\clases\Facultad.cs" />
-    <Compile Include="src\clases\HistorialDirector.cs" />
     <Compile Include="src\clases\HistorialRecursoTecnologico.cs" />
+    <Compile Include="src\clases\HistorialTurno.cs" />
     <Compile Include="src\clases\Mantenimiento.cs" />
     <Compile Include="src\clases\Marca.cs" />
     <Compile Include="src\clases\Modelo.cs" />
+    <Compile Include="src\clases\Perfil.cs" />
     <Compile Include="src\clases\Permiso.cs" />
     <Compile Include="src\clases\PersonalCientifico.cs" />
     <Compile Include="src\clases\RecursoTecnologico.cs" />
@@ -133,6 +134,9 @@
       <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\CIENTIFICOS.cs">
+      <DependentUpon>GestionRTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\entities\DIAS_SEMANA.cs">
       <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\DIRECTORES.cs">
@@ -165,10 +169,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionRTModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\HISTORIALES_ESTADOS.cs">
+    <Compile Include="src\entities\HISTORIALES_RECURSOS_TECNOLOGICOS.cs">
       <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\entities\HISTORIAL_RECURSO_TECNOLOGICO.cs">
+    <Compile Include="src\entities\HISTORIALES_TURNOS.cs">
       <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\entities\MANTENIMIENTO.cs">

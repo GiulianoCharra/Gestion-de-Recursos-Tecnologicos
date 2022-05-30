@@ -8,8 +8,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Modelo
     {
-        private int id_modelo;
-        private string nombre;
-        private string descripcion;
+        private int id_modelo { get; set; }
+        private Marca marca { get; set; }
+        private string nombre { get; set; }
+        private string descripcion { get; set; }
     }
 }

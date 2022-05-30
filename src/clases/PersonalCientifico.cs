@@ -8,12 +8,12 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class PersonalCientifico
     {
-        private int legajo;
-        private string nombres;
-        private string apellidos;
-        private string dni;
-        private string email_personal;
-        private string email_institucional;
-        private int telefono;
+        private int legajo { get; set; }
+        private string apellidos { get; set; }
+        private string nombres { get; set; }
+        private string dni { get; set; }
+        private string email_personal { get; set; }
+        private string email_institucional { get; set; }
+        private int telefono { get; set; }
     }
 }

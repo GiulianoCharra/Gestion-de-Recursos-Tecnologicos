@@ -12,12 +12,11 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class HISTORIALES_ESTADOS
+    public partial class HISTORIALES_TURNOS
     {
-        public int id_historial_estado { get; set; }
         public int id_turno { get; set; }
         public int id_estado { get; set; }
-        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
+        public System.DateTime fecha_hora_inicio { get; set; }
         public Nullable<System.DateTime> fecha_hora_fin { get; set; }
     
         public virtual ESTADOS ESTADOS { get; set; }

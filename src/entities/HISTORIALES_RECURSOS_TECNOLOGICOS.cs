@@ -12,9 +12,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class HISTORIAL_RECURSO_TECNOLOGICO
+    public partial class HISTORIALES_RECURSOS_TECNOLOGICOS
     {
-        public int id_historial_recurso_tecnologico { get; set; }
         public int id_recurso_tecnologico { get; set; }
         public int id_estado { get; set; }
         public System.DateTime fecha_hora_inicio { get; set; }

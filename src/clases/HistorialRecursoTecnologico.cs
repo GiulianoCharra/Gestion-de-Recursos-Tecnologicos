@@ -8,9 +8,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class HistorialRecursoTecnologico
     {
-        private int id_hitorial_recurso_tecnologico;
-        private DateTime fecha_inicio;
-        private DateTime fecha_fin;   
-        private Estado estado;
+        private RecursoTecnologico recurso_tecnologico { set; get; }
+        private Estado estado { get; set; }
+        private DateTime fecha_inicio { get; set; }
+        private DateTime fecha_fin { get; set; }
     }
 }

@@ -67,6 +67,13 @@
           <Property Name="fecha_hora_inicio" Type="smalldatetime" />
           <Property Name="fecha_hora_fin" Type="smalldatetime" />
         </EntityType>
+        <EntityType Name="DIAS_SEMANA">
+          <Key>
+            <PropertyRef Name="id_dia_semana" />
+          </Key>
+          <Property Name="id_dia_semana" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="DIRECTORES">
           <Key>
             <PropertyRef Name="id_director" />
@@ -83,12 +90,14 @@
         <EntityType Name="DISPONIBILIDAD">
           <Key>
             <PropertyRef Name="id_recurso_tecnologico" />
-            <PropertyRef Name="fecha" />
+            <PropertyRef Name="id_dia_semana" />
           </Key>
           <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="date" Nullable="false" />
-          <Property Name="hora_inicio" Type="time" Precision="7" />
-          <Property Name="hora_fin" Type="time" Precision="7" />
+          <Property Name="id_dia_semana" Type="int" Nullable="false" />
+          <Property Name="hora_inicio" Type="time" Precision="0" Nullable="false" />
+          <Property Name="hora_fin" Type="time" Precision="0" Nullable="false" />
+          <Property Name="fecha_hora_desde" Type="smalldatetime" Nullable="false" />
+          <Property Name="fecha_hora_hasta" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="ESTADOS">
           <Key>
@@ -118,28 +127,26 @@
           <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_responsable_cyt" Type="int" />
         </EntityType>
-        <EntityType Name="HISTORIAL_RECURSO_TECNOLOGICO">
+        <EntityType Name="HISTORIALES_RECURSOS_TECNOLOGICOS">
           <Key>
-            <PropertyRef Name="id_historial_recurso_tecnologico" />
             <PropertyRef Name="id_recurso_tecnologico" />
             <PropertyRef Name="id_estado" />
+            <PropertyRef Name="fecha_hora_inicio" />
           </Key>
-          <Property Name="id_historial_recurso_tecnologico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
           <Property Name="id_estado" Type="int" Nullable="false" />
           <Property Name="fecha_hora_inicio" Type="smalldatetime" Nullable="false" />
           <Property Name="fecha_hora_fin" Type="smalldatetime" />
         </EntityType>
-        <EntityType Name="HISTORIALES_ESTADOS">
+        <EntityType Name="HISTORIALES_TURNOS">
           <Key>
-            <PropertyRef Name="id_historial_estado" />
             <PropertyRef Name="id_turno" />
             <PropertyRef Name="id_estado" />
+            <PropertyRef Name="fecha_hora_inicio" />
           </Key>
-          <Property Name="id_historial_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_turno" Type="int" Nullable="false" />
           <Property Name="id_estado" Type="int" Nullable="false" />
-          <Property Name="fecha_hora_inicio" Type="smalldatetime" />
+          <Property Name="fecha_hora_inicio" Type="smalldatetime" Nullable="false" />
           <Property Name="fecha_hora_fin" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="MANTENIMIENTO">
@@ -147,11 +154,12 @@
             <PropertyRef Name="id_mantenimiento" />
           </Key>
           <Property Name="id_mantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_hora_inicio" Type="smalldatetime" />
-          <Property Name="fecha_hora_fin_prevista" Type="smalldatetime" Nullable="false" />
-          <Property Name="fecha_hora_fin_real" Type="smalldatetime" />
-          <Property Name="id_tipo_mantenimiento" Type="int" Nullable="false" />
           <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_tipo_mantenimiento" Type="int" Nullable="false" />
+          <Property Name="fecha_hora" Type="smalldatetime" Nullable="false" />
+          <Property Name="fecha_hora_inicio_mantenimiento" Type="smalldatetime" />
+          <Property Name="fecha_hora_fin_mantenimiento_prevista" Type="smalldatetime" Nullable="false" />
+          <Property Name="fecha_hora_fin_mantenimiento_real" Type="smalldatetime" />
           <Property Name="motivo" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MARCAS">
@@ -208,19 +216,19 @@
         </EntityType>
         <EntityType Name="RECURSOS_TECNOLOGICOS">
           <Key>
-            <PropertyRef Name="codigo" />
+            <PropertyRef Name="id_recurso_tecnologico" />
           </Key>
-          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tipo_recurso_tecnologico" Type="int" Nullable="false" />
+          <Property Name="id_marca" Type="int" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
           <Property Name="fecha_alta" Type="smalldatetime" Nullable="false" />
           <Property Name="imagen" Type="image" />
-          <Property Name="id_tipo_recurso_tecnologico" Type="int" Nullable="false" />
-          <Property Name="id_responsable_tecnico" Type="int" />
           <Property Name="descripcion" Type="varchar" MaxLength="100" />
-          <Property Name="id_modelo" Type="int" Nullable="false" />
-          <Property Name="id_marca" Type="int" Nullable="false" />
-          <Property Name="id_personal_cientifico" Type="int" />
-          <Property Name="id_centro_investigacion" Type="int" />
+          <Property Name="id_responsable_tecnico" Type="int" Nullable="false" />
+          <Property Name="id_centro_investigacion" Type="int" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="int" Nullable="false" />
+          <Property Name="fraccionamiento" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="RESPONSABLES_TECNICOS">
           <Key>
@@ -277,7 +285,6 @@
           <Property Name="id_turno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_recurso_tecnologico" Type="int" Nullable="false" />
           <Property Name="id_cientifico" Type="int" />
-          <Property Name="id_historial_estado" Type="int" Nullable="false" />
           <Property Name="fecha_hora_inicio" Type="smalldatetime" />
           <Property Name="fecha_hora_fin" Type="smalldatetime" />
         </EntityType>
@@ -364,7 +371,7 @@
           <End Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Type="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -443,12 +450,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DISPONIBILIDAD_DIAS_SEMANA">
+          <End Role="DIAS_SEMANA" Type="Self.DIAS_SEMANA" Multiplicity="1" />
+          <End Role="DISPONIBILIDAD" Type="Self.DISPONIBILIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIAS_SEMANA">
+              <PropertyRef Name="id_dia_semana" />
+            </Principal>
+            <Dependent Role="DISPONIBILIDAD">
+              <PropertyRef Name="id_dia_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS">
           <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
           <End Role="DISPONIBILIDAD" Type="Self.DISPONIBILIDAD" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="DISPONIBILIDAD">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -481,48 +500,48 @@
         </Association>
         <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS">
           <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
-          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" Type="Self.HISTORIALES_RECURSOS_TECNOLOGICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESTADOS">
               <PropertyRef Name="id_estado" />
             </Principal>
-            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+            <Dependent Role="HISTORIALES_RECURSOS_TECNOLOGICOS">
               <PropertyRef Name="id_estado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
           <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
-          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" Type="Self.HISTORIALES_RECURSOS_TECNOLOGICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
-            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+            <Dependent Role="HISTORIALES_RECURSOS_TECNOLOGICOS">
               <PropertyRef Name="id_recurso_tecnologico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HISTORIALES_ESTADOS_ESTADOS1">
           <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
-          <End Role="HISTORIALES_ESTADOS" Type="Self.HISTORIALES_ESTADOS" Multiplicity="*" />
+          <End Role="HISTORIALES_TURNOS" Type="Self.HISTORIALES_TURNOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESTADOS">
               <PropertyRef Name="id_estado" />
             </Principal>
-            <Dependent Role="HISTORIALES_ESTADOS">
+            <Dependent Role="HISTORIALES_TURNOS">
               <PropertyRef Name="id_estado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HISTORIALES_ESTADOS_TURNO">
           <End Role="TURNO" Type="Self.TURNO" Multiplicity="1" />
-          <End Role="HISTORIALES_ESTADOS" Type="Self.HISTORIALES_ESTADOS" Multiplicity="*" />
+          <End Role="HISTORIALES_TURNOS" Type="Self.HISTORIALES_TURNOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TURNO">
               <PropertyRef Name="id_turno" />
             </Principal>
-            <Dependent Role="HISTORIALES_ESTADOS">
+            <Dependent Role="HISTORIALES_TURNOS">
               <PropertyRef Name="id_turno" />
             </Dependent>
           </ReferentialConstraint>
@@ -532,7 +551,7 @@
           <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="MANTENIMIENTO">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -580,7 +599,7 @@
           <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Type="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -601,8 +620,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1">
-          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="0..1" />
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
+          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="1" />
           <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RESPONSABLES_TECNICOS">
@@ -682,7 +701,7 @@
           <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="TURNO">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -708,13 +727,14 @@
           <EntitySet Name="CENTRO_INVESTIGACION" EntityType="Self.CENTRO_INVESTIGACION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" EntityType="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CIENTIFICOS" EntityType="Self.CIENTIFICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIAS_SEMANA" EntityType="Self.DIAS_SEMANA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIRECTORES" EntityType="Self.DIRECTORES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DISPONIBILIDAD" EntityType="Self.DISPONIBILIDAD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ESTADOS" EntityType="Self.ESTADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EXTENSION_MANTENIMIENTO" EntityType="Self.EXTENSION_MANTENIMIENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FACULTADES" EntityType="Self.FACULTADES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HISTORIAL_RECURSO_TECNOLOGICO" EntityType="Self.HISTORIAL_RECURSO_TECNOLOGICO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HISTORIALES_ESTADOS" EntityType="Self.HISTORIALES_ESTADOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIALES_RECURSOS_TECNOLOGICOS" EntityType="Self.HISTORIALES_RECURSOS_TECNOLOGICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIALES_TURNOS" EntityType="Self.HISTORIALES_TURNOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MANTENIMIENTO" EntityType="Self.MANTENIMIENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MARCAS" EntityType="Self.MARCAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MODELOS" EntityType="Self.MODELOS" Schema="dbo" store:Type="Tables" />
@@ -779,6 +799,10 @@
             <End Role="USUARIOS" EntitySet="USUARIOS" />
             <End Role="DIRECTORES" EntitySet="DIRECTORES" />
           </AssociationSet>
+          <AssociationSet Name="FK_DISPONIBILIDAD_DIAS_SEMANA" Association="Self.FK_DISPONIBILIDAD_DIAS_SEMANA">
+            <End Role="DIAS_SEMANA" EntitySet="DIAS_SEMANA" />
+            <End Role="DISPONIBILIDAD" EntitySet="DISPONIBILIDAD" />
+          </AssociationSet>
           <AssociationSet Name="FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" Association="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS">
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
             <End Role="DISPONIBILIDAD" EntitySet="DISPONIBILIDAD" />
@@ -793,19 +817,19 @@
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS">
             <End Role="ESTADOS" EntitySet="ESTADOS" />
-            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+            <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" EntitySet="HISTORIALES_RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
-            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+            <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" EntitySet="HISTORIALES_RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIALES_ESTADOS_ESTADOS1" Association="Self.FK_HISTORIALES_ESTADOS_ESTADOS1">
             <End Role="ESTADOS" EntitySet="ESTADOS" />
-            <End Role="HISTORIALES_ESTADOS" EntitySet="HISTORIALES_ESTADOS" />
+            <End Role="HISTORIALES_TURNOS" EntitySet="HISTORIALES_TURNOS" />
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIALES_ESTADOS_TURNO" Association="Self.FK_HISTORIALES_ESTADOS_TURNO">
             <End Role="TURNO" EntitySet="TURNO" />
-            <End Role="HISTORIALES_ESTADOS" EntitySet="HISTORIALES_ESTADOS" />
+            <End Role="HISTORIALES_TURNOS" EntitySet="HISTORIALES_TURNOS" />
           </AssociationSet>
           <AssociationSet Name="FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" Association="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS">
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
@@ -831,7 +855,7 @@
             <End Role="MODELOS" EntitySet="MODELOS" />
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
-          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1" Association="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1">
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
             <End Role="RESPONSABLES_TECNICOS" EntitySet="RESPONSABLES_TECNICOS" />
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
@@ -927,6 +951,14 @@
           <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_CIENTIFICOS_PERSONAL_CIENTIFICO" FromRole="CIENTIFICOS" ToRole="PERSONAL_CIENTIFICO" />
           <NavigationProperty Name="USUARIOS" Relationship="Self.FK_CIENTIFICOS_USUARIOS" FromRole="CIENTIFICOS" ToRole="USUARIOS" />
         </EntityType>
+        <EntityType Name="DIAS_SEMANA">
+          <Key>
+            <PropertyRef Name="id_dia_semana" />
+          </Key>
+          <Property Name="id_dia_semana" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DISPONIBILIDAD" Relationship="Self.FK_DISPONIBILIDAD_DIAS_SEMANA" FromRole="DIAS_SEMANA" ToRole="DISPONIBILIDAD" />
+        </EntityType>
         <EntityType Name="DIRECTORES">
           <Key>
             <PropertyRef Name="id_director" />
@@ -946,12 +978,15 @@
         <EntityType Name="DISPONIBILIDAD">
           <Key>
             <PropertyRef Name="id_recurso_tecnologico" />
-            <PropertyRef Name="fecha" />
+            <PropertyRef Name="id_dia_semana" />
           </Key>
           <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
-          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="hora_inicio" Type="Time" Precision="7" />
-          <Property Name="hora_fin" Type="Time" Precision="7" />
+          <Property Name="id_dia_semana" Type="Int32" Nullable="false" />
+          <Property Name="hora_inicio" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="hora_fin" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="fecha_hora_desde" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_hora_hasta" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="DIAS_SEMANA" Relationship="Self.FK_DISPONIBILIDAD_DIAS_SEMANA" FromRole="DISPONIBILIDAD" ToRole="DIAS_SEMANA" />
           <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" FromRole="DISPONIBILIDAD" ToRole="RECURSOS_TECNOLOGICOS" />
         </EntityType>
         <EntityType Name="ESTADOS">
@@ -963,8 +998,8 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="AMBITOS" Relationship="Self.FK_ESTADOS_AMBITOS" FromRole="ESTADOS" ToRole="AMBITOS" />
-          <NavigationProperty Name="HISTORIAL_RECURSO_TECNOLOGICO" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS" FromRole="ESTADOS" ToRole="HISTORIAL_RECURSO_TECNOLOGICO" />
-          <NavigationProperty Name="HISTORIALES_ESTADOS" Relationship="Self.FK_HISTORIALES_ESTADOS_ESTADOS1" FromRole="ESTADOS" ToRole="HISTORIALES_ESTADOS" />
+          <NavigationProperty Name="HISTORIALES_RECURSOS_TECNOLOGICOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS" FromRole="ESTADOS" ToRole="HISTORIALES_RECURSOS_TECNOLOGICOS" />
+          <NavigationProperty Name="HISTORIALES_TURNOS" Relationship="Self.FK_HISTORIALES_ESTADOS_ESTADOS1" FromRole="ESTADOS" ToRole="HISTORIALES_TURNOS" />
         </EntityType>
         <EntityType Name="EXTENSION_MANTENIMIENTO">
           <Key>
@@ -987,44 +1022,43 @@
           <Property Name="id_responsable_cyt" Type="Int32" />
           <NavigationProperty Name="CENTRO_INVESTIGACION" Relationship="Self.FK_CENTRO_INVESTIGACION_FACULTADES" FromRole="FACULTADES" ToRole="CENTRO_INVESTIGACION" />
         </EntityType>
-        <EntityType Name="HISTORIAL_RECURSO_TECNOLOGICO">
+        <EntityType Name="HISTORIALES_RECURSOS_TECNOLOGICOS">
           <Key>
-            <PropertyRef Name="id_historial_recurso_tecnologico" />
             <PropertyRef Name="id_recurso_tecnologico" />
             <PropertyRef Name="id_estado" />
+            <PropertyRef Name="fecha_hora_inicio" />
           </Key>
-          <Property Name="id_historial_recurso_tecnologico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
           <Property Name="id_estado" Type="Int32" Nullable="false" />
           <Property Name="fecha_hora_inicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fecha_hora_fin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="ESTADOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS" FromRole="HISTORIAL_RECURSO_TECNOLOGICO" ToRole="ESTADOS" />
-          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" FromRole="HISTORIAL_RECURSO_TECNOLOGICO" ToRole="RECURSOS_TECNOLOGICOS" />
+          <NavigationProperty Name="ESTADOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS" FromRole="HISTORIALES_RECURSOS_TECNOLOGICOS" ToRole="ESTADOS" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" FromRole="HISTORIALES_RECURSOS_TECNOLOGICOS" ToRole="RECURSOS_TECNOLOGICOS" />
         </EntityType>
-        <EntityType Name="HISTORIALES_ESTADOS">
+        <EntityType Name="HISTORIALES_TURNOS">
           <Key>
-            <PropertyRef Name="id_historial_estado" />
             <PropertyRef Name="id_turno" />
             <PropertyRef Name="id_estado" />
+            <PropertyRef Name="fecha_hora_inicio" />
           </Key>
-          <Property Name="id_historial_estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_turno" Type="Int32" Nullable="false" />
           <Property Name="id_estado" Type="Int32" Nullable="false" />
-          <Property Name="fecha_hora_inicio" Type="DateTime" Precision="0" />
+          <Property Name="fecha_hora_inicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fecha_hora_fin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="ESTADOS" Relationship="Self.FK_HISTORIALES_ESTADOS_ESTADOS1" FromRole="HISTORIALES_ESTADOS" ToRole="ESTADOS" />
-          <NavigationProperty Name="TURNO" Relationship="Self.FK_HISTORIALES_ESTADOS_TURNO" FromRole="HISTORIALES_ESTADOS" ToRole="TURNO" />
+          <NavigationProperty Name="ESTADOS" Relationship="Self.FK_HISTORIALES_ESTADOS_ESTADOS1" FromRole="HISTORIALES_TURNOS" ToRole="ESTADOS" />
+          <NavigationProperty Name="TURNO" Relationship="Self.FK_HISTORIALES_ESTADOS_TURNO" FromRole="HISTORIALES_TURNOS" ToRole="TURNO" />
         </EntityType>
         <EntityType Name="MANTENIMIENTO">
           <Key>
             <PropertyRef Name="id_mantenimiento" />
           </Key>
           <Property Name="id_mantenimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_hora_inicio" Type="DateTime" Precision="0" />
-          <Property Name="fecha_hora_fin_prevista" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="fecha_hora_fin_real" Type="DateTime" Precision="0" />
-          <Property Name="id_tipo_mantenimiento" Type="Int32" Nullable="false" />
           <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo_mantenimiento" Type="Int32" Nullable="false" />
+          <Property Name="fecha_hora" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_hora_inicio_mantenimiento" Type="DateTime" Precision="0" />
+          <Property Name="fecha_hora_fin_mantenimiento_prevista" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_hora_fin_mantenimiento_real" Type="DateTime" Precision="0" />
           <Property Name="motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="EXTENSION_MANTENIMIENTO" Relationship="Self.FK_EXTENSION_MANTENIMIENTO_MANTENIMIENTO" FromRole="MANTENIMIENTO" ToRole="EXTENSION_MANTENIMIENTO" />
           <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" FromRole="MANTENIMIENTO" ToRole="RECURSOS_TECNOLOGICOS" />
@@ -1093,25 +1127,25 @@
         </EntityType>
         <EntityType Name="RECURSOS_TECNOLOGICOS">
           <Key>
-            <PropertyRef Name="codigo" />
+            <PropertyRef Name="id_recurso_tecnologico" />
           </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tipo_recurso_tecnologico" Type="Int32" Nullable="false" />
+          <Property Name="id_marca" Type="Int32" Nullable="false" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
           <Property Name="fecha_alta" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="id_tipo_recurso_tecnologico" Type="Int32" Nullable="false" />
-          <Property Name="id_responsable_tecnico" Type="Int32" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="id_modelo" Type="Int32" Nullable="false" />
-          <Property Name="id_marca" Type="Int32" Nullable="false" />
-          <Property Name="id_personal_cientifico" Type="Int32" />
-          <Property Name="id_centro_investigacion" Type="Int32" />
+          <Property Name="id_responsable_tecnico" Type="Int32" Nullable="false" />
+          <Property Name="id_centro_investigacion" Type="Int32" Nullable="false" />
+          <Property Name="id_personal_cientifico" Type="Int32" Nullable="false" />
+          <Property Name="fraccionamiento" Type="Time" Nullable="false" Precision="0" />
           <NavigationProperty Name="DISPONIBILIDAD" Relationship="Self.FK_DISPONIBILIDAD_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="DISPONIBILIDAD" />
-          <NavigationProperty Name="HISTORIAL_RECURSO_TECNOLOGICO" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="HISTORIAL_RECURSO_TECNOLOGICO" />
+          <NavigationProperty Name="HISTORIALES_RECURSOS_TECNOLOGICOS" Relationship="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="HISTORIALES_RECURSOS_TECNOLOGICOS" />
           <NavigationProperty Name="MANTENIMIENTO" Relationship="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="MANTENIMIENTO" />
           <NavigationProperty Name="MODELOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_MODELOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="MODELOS" />
           <NavigationProperty Name="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Relationship="Self.FK_RECURSO_TECNOLOGICO_X_CARACTERISTICA_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
-          <NavigationProperty Name="RESPONSABLES_TECNICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1" FromRole="RECURSOS_TECNOLOGICOS" ToRole="RESPONSABLES_TECNICOS" />
+          <NavigationProperty Name="RESPONSABLES_TECNICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="RESPONSABLES_TECNICOS" />
           <NavigationProperty Name="TIPOS_RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_TIPOS_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="TIPOS_RECURSOS_TECNOLOGICOS" />
           <NavigationProperty Name="TURNO" Relationship="Self.FK_TURNO_RECURSOS_TECNOLOGICOS" FromRole="RECURSOS_TECNOLOGICOS" ToRole="TURNO" />
           <NavigationProperty Name="CENTRO_INVESTIGACION" Relationship="Self.CENTRO_INVESTIGACION_X_RECURSO_TECNOLOGICO" FromRole="RECURSOS_TECNOLOGICOS" ToRole="CENTRO_INVESTIGACION" />
@@ -1130,7 +1164,7 @@
           <Property Name="fecha_hora_fin" Type="DateTime" Precision="0" />
           <NavigationProperty Name="CENTRO_INVESTIGACION" Relationship="Self.FK_RESPONSABLES_TECNICOS_CENTRO_INVESTIGACION" FromRole="RESPONSABLES_TECNICOS" ToRole="CENTRO_INVESTIGACION" />
           <NavigationProperty Name="PERSONAL_CIENTIFICO" Relationship="Self.FK_RESPONSABLES_TECNICOS_PERSONAL_CIENTIFICO" FromRole="RESPONSABLES_TECNICOS" ToRole="PERSONAL_CIENTIFICO" />
-          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1" FromRole="RESPONSABLES_TECNICOS" ToRole="RECURSOS_TECNOLOGICOS" />
+          <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" FromRole="RESPONSABLES_TECNICOS" ToRole="RECURSOS_TECNOLOGICOS" />
           <NavigationProperty Name="USUARIOS" Relationship="Self.FK_RESPONSABLES_TECNICOS_USUARIOS" FromRole="RESPONSABLES_TECNICOS" ToRole="USUARIOS" />
         </EntityType>
         <EntityType Name="SESIONES">
@@ -1179,10 +1213,9 @@
           <Property Name="id_turno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_recurso_tecnologico" Type="Int32" Nullable="false" />
           <Property Name="id_cientifico" Type="Int32" />
-          <Property Name="id_historial_estado" Type="Int32" Nullable="false" />
           <Property Name="fecha_hora_inicio" Type="DateTime" Precision="0" />
           <Property Name="fecha_hora_fin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="HISTORIALES_ESTADOS" Relationship="Self.FK_HISTORIALES_ESTADOS_TURNO" FromRole="TURNO" ToRole="HISTORIALES_ESTADOS" />
+          <NavigationProperty Name="HISTORIALES_TURNOS" Relationship="Self.FK_HISTORIALES_ESTADOS_TURNO" FromRole="TURNO" ToRole="HISTORIALES_TURNOS" />
           <NavigationProperty Name="RECURSOS_TECNOLOGICOS" Relationship="Self.FK_TURNO_RECURSOS_TECNOLOGICOS" FromRole="TURNO" ToRole="RECURSOS_TECNOLOGICOS" />
         </EntityType>
         <EntityType Name="UNIDADES_MEDIDAS">
@@ -1317,6 +1350,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DISPONIBILIDAD_DIAS_SEMANA">
+          <End Role="DIAS_SEMANA" Type="Self.DIAS_SEMANA" Multiplicity="1" />
+          <End Role="DISPONIBILIDAD" Type="Self.DISPONIBILIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIAS_SEMANA">
+              <PropertyRef Name="id_dia_semana" />
+            </Principal>
+            <Dependent Role="DISPONIBILIDAD">
+              <PropertyRef Name="id_dia_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DIRECTORES_PERSONAL_CIENTIFICO">
           <End Role="PERSONAL_CIENTIFICO" Type="Self.PERSONAL_CIENTIFICO" Multiplicity="1" />
           <End Role="DIRECTORES" Type="Self.DIRECTORES" Multiplicity="*" />
@@ -1346,7 +1391,7 @@
           <End Role="DISPONIBILIDAD" Type="Self.DISPONIBILIDAD" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="DISPONIBILIDAD">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -1355,24 +1400,24 @@
         </Association>
         <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS">
           <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
-          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" Type="Self.HISTORIALES_RECURSOS_TECNOLOGICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESTADOS">
               <PropertyRef Name="id_estado" />
             </Principal>
-            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+            <Dependent Role="HISTORIALES_RECURSOS_TECNOLOGICOS">
               <PropertyRef Name="id_estado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HISTORIALES_ESTADOS_ESTADOS1">
           <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
-          <End Role="HISTORIALES_ESTADOS" Type="Self.HISTORIALES_ESTADOS" Multiplicity="*" />
+          <End Role="HISTORIALES_TURNOS" Type="Self.HISTORIALES_TURNOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESTADOS">
               <PropertyRef Name="id_estado" />
             </Principal>
-            <Dependent Role="HISTORIALES_ESTADOS">
+            <Dependent Role="HISTORIALES_TURNOS">
               <PropertyRef Name="id_estado" />
             </Dependent>
           </ReferentialConstraint>
@@ -1391,24 +1436,24 @@
         </Association>
         <Association Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
           <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="1" />
-          <End Role="HISTORIAL_RECURSO_TECNOLOGICO" Type="Self.HISTORIAL_RECURSO_TECNOLOGICO" Multiplicity="*" />
+          <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" Type="Self.HISTORIALES_RECURSOS_TECNOLOGICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
-            <Dependent Role="HISTORIAL_RECURSO_TECNOLOGICO">
+            <Dependent Role="HISTORIALES_RECURSOS_TECNOLOGICOS">
               <PropertyRef Name="id_recurso_tecnologico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HISTORIALES_ESTADOS_TURNO">
           <End Role="TURNO" Type="Self.TURNO" Multiplicity="1" />
-          <End Role="HISTORIALES_ESTADOS" Type="Self.HISTORIALES_ESTADOS" Multiplicity="*" />
+          <End Role="HISTORIALES_TURNOS" Type="Self.HISTORIALES_TURNOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TURNO">
               <PropertyRef Name="id_turno" />
             </Principal>
-            <Dependent Role="HISTORIALES_ESTADOS">
+            <Dependent Role="HISTORIALES_TURNOS">
               <PropertyRef Name="id_turno" />
             </Dependent>
           </ReferentialConstraint>
@@ -1418,7 +1463,7 @@
           <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="MANTENIMIENTO">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -1492,15 +1537,15 @@
           <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" Type="Self.RECURSO_TECNOLOGICO_X_CARACTERISTICA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA">
               <PropertyRef Name="id_recurso_tecnologico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1">
-          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="0..1" />
+        <Association Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
+          <End Role="RESPONSABLES_TECNICOS" Type="Self.RESPONSABLES_TECNICOS" Multiplicity="1" />
           <End Role="RECURSOS_TECNOLOGICOS" Type="Self.RECURSOS_TECNOLOGICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RESPONSABLES_TECNICOS">
@@ -1532,7 +1577,7 @@
           <End Role="TURNO" Type="Self.TURNO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RECURSOS_TECNOLOGICOS">
-              <PropertyRef Name="codigo" />
+              <PropertyRef Name="id_recurso_tecnologico" />
             </Principal>
             <Dependent Role="TURNO">
               <PropertyRef Name="id_recurso_tecnologico" />
@@ -1576,13 +1621,14 @@
           <EntitySet Name="CARACTERISTICAS" EntityType="Self.CARACTERISTICAS" />
           <EntitySet Name="CENTRO_INVESTIGACION" EntityType="Self.CENTRO_INVESTIGACION" />
           <EntitySet Name="CIENTIFICOS" EntityType="Self.CIENTIFICOS" />
+          <EntitySet Name="DIAS_SEMANA" EntityType="Self.DIAS_SEMANA" />
           <EntitySet Name="DIRECTORES" EntityType="Self.DIRECTORES" />
           <EntitySet Name="DISPONIBILIDAD" EntityType="Self.DISPONIBILIDAD" />
           <EntitySet Name="ESTADOS" EntityType="Self.ESTADOS" />
           <EntitySet Name="EXTENSION_MANTENIMIENTO" EntityType="Self.EXTENSION_MANTENIMIENTO" />
           <EntitySet Name="FACULTADES" EntityType="Self.FACULTADES" />
-          <EntitySet Name="HISTORIAL_RECURSO_TECNOLOGICO" EntityType="Self.HISTORIAL_RECURSO_TECNOLOGICO" />
-          <EntitySet Name="HISTORIALES_ESTADOS" EntityType="Self.HISTORIALES_ESTADOS" />
+          <EntitySet Name="HISTORIALES_RECURSOS_TECNOLOGICOS" EntityType="Self.HISTORIALES_RECURSOS_TECNOLOGICOS" />
+          <EntitySet Name="HISTORIALES_TURNOS" EntityType="Self.HISTORIALES_TURNOS" />
           <EntitySet Name="MANTENIMIENTO" EntityType="Self.MANTENIMIENTO" />
           <EntitySet Name="MARCAS" EntityType="Self.MARCAS" />
           <EntitySet Name="MODELOS" EntityType="Self.MODELOS" />
@@ -1635,6 +1681,10 @@
             <End Role="USUARIOS" EntitySet="USUARIOS" />
             <End Role="CIENTIFICOS" EntitySet="CIENTIFICOS" />
           </AssociationSet>
+          <AssociationSet Name="FK_DISPONIBILIDAD_DIAS_SEMANA" Association="Self.FK_DISPONIBILIDAD_DIAS_SEMANA">
+            <End Role="DIAS_SEMANA" EntitySet="DIAS_SEMANA" />
+            <End Role="DISPONIBILIDAD" EntitySet="DISPONIBILIDAD" />
+          </AssociationSet>
           <AssociationSet Name="FK_DIRECTORES_PERSONAL_CIENTIFICO" Association="Self.FK_DIRECTORES_PERSONAL_CIENTIFICO">
             <End Role="PERSONAL_CIENTIFICO" EntitySet="PERSONAL_CIENTIFICO" />
             <End Role="DIRECTORES" EntitySet="DIRECTORES" />
@@ -1649,11 +1699,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_ESTADOS">
             <End Role="ESTADOS" EntitySet="ESTADOS" />
-            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+            <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" EntitySet="HISTORIALES_RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIALES_ESTADOS_ESTADOS1" Association="Self.FK_HISTORIALES_ESTADOS_ESTADOS1">
             <End Role="ESTADOS" EntitySet="ESTADOS" />
-            <End Role="HISTORIALES_ESTADOS" EntitySet="HISTORIALES_ESTADOS" />
+            <End Role="HISTORIALES_TURNOS" EntitySet="HISTORIALES_TURNOS" />
           </AssociationSet>
           <AssociationSet Name="FK_EXTENSION_MANTENIMIENTO_MANTENIMIENTO" Association="Self.FK_EXTENSION_MANTENIMIENTO_MANTENIMIENTO">
             <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTO" />
@@ -1661,11 +1711,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS" Association="Self.FK_HISTORIAL_RECURSO_TECNOLOGICO_RECURSOS_TECNOLOGICOS">
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
-            <End Role="HISTORIAL_RECURSO_TECNOLOGICO" EntitySet="HISTORIAL_RECURSO_TECNOLOGICO" />
+            <End Role="HISTORIALES_RECURSOS_TECNOLOGICOS" EntitySet="HISTORIALES_RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
           <AssociationSet Name="FK_HISTORIALES_ESTADOS_TURNO" Association="Self.FK_HISTORIALES_ESTADOS_TURNO">
             <End Role="TURNO" EntitySet="TURNO" />
-            <End Role="HISTORIALES_ESTADOS" EntitySet="HISTORIALES_ESTADOS" />
+            <End Role="HISTORIALES_TURNOS" EntitySet="HISTORIALES_TURNOS" />
           </AssociationSet>
           <AssociationSet Name="FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS" Association="Self.FK_MANTENIMIENTO_RECURSOS_TECNOLOGICOS">
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
@@ -1695,7 +1745,7 @@
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
             <End Role="RECURSO_TECNOLOGICO_X_CARACTERISTICA" EntitySet="RECURSO_TECNOLOGICO_X_CARACTERISTICA" />
           </AssociationSet>
-          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1" Association="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS1">
+          <AssociationSet Name="FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS" Association="Self.FK_RECURSOS_TECNOLOGICOS_RESPONSABLES_TECNICOS">
             <End Role="RESPONSABLES_TECNICOS" EntitySet="RESPONSABLES_TECNICOS" />
             <End Role="RECURSOS_TECNOLOGICOS" EntitySet="RECURSOS_TECNOLOGICOS" />
           </AssociationSet>
@@ -1778,6 +1828,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DIAS_SEMANA">
+            <EntityTypeMapping TypeName="Model.DIAS_SEMANA">
+              <MappingFragment StoreEntitySet="DIAS_SEMANA">
+                <ScalarProperty Name="id_dia_semana" ColumnName="id_dia_semana" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DIRECTORES">
             <EntityTypeMapping TypeName="Model.DIRECTORES">
               <MappingFragment StoreEntitySet="DIRECTORES">
@@ -1794,9 +1852,11 @@
             <EntityTypeMapping TypeName="Model.DISPONIBILIDAD">
               <MappingFragment StoreEntitySet="DISPONIBILIDAD">
                 <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_dia_semana" ColumnName="id_dia_semana" />
                 <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
                 <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="fecha_hora_desde" ColumnName="fecha_hora_desde" />
+                <ScalarProperty Name="fecha_hora_hasta" ColumnName="fecha_hora_hasta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1831,10 +1891,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HISTORIAL_RECURSO_TECNOLOGICO">
-            <EntityTypeMapping TypeName="Model.HISTORIAL_RECURSO_TECNOLOGICO">
-              <MappingFragment StoreEntitySet="HISTORIAL_RECURSO_TECNOLOGICO">
-                <ScalarProperty Name="id_historial_recurso_tecnologico" ColumnName="id_historial_recurso_tecnologico" />
+          <EntitySetMapping Name="HISTORIALES_RECURSOS_TECNOLOGICOS">
+            <EntityTypeMapping TypeName="Model.HISTORIALES_RECURSOS_TECNOLOGICOS">
+              <MappingFragment StoreEntitySet="HISTORIALES_RECURSOS_TECNOLOGICOS">
                 <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
                 <ScalarProperty Name="id_estado" ColumnName="id_estado" />
                 <ScalarProperty Name="fecha_hora_inicio" ColumnName="fecha_hora_inicio" />
@@ -1842,10 +1901,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HISTORIALES_ESTADOS">
-            <EntityTypeMapping TypeName="Model.HISTORIALES_ESTADOS">
-              <MappingFragment StoreEntitySet="HISTORIALES_ESTADOS">
-                <ScalarProperty Name="id_historial_estado" ColumnName="id_historial_estado" />
+          <EntitySetMapping Name="HISTORIALES_TURNOS">
+            <EntityTypeMapping TypeName="Model.HISTORIALES_TURNOS">
+              <MappingFragment StoreEntitySet="HISTORIALES_TURNOS">
                 <ScalarProperty Name="id_turno" ColumnName="id_turno" />
                 <ScalarProperty Name="id_estado" ColumnName="id_estado" />
                 <ScalarProperty Name="fecha_hora_inicio" ColumnName="fecha_hora_inicio" />
@@ -1857,11 +1915,12 @@
             <EntityTypeMapping TypeName="Model.MANTENIMIENTO">
               <MappingFragment StoreEntitySet="MANTENIMIENTO">
                 <ScalarProperty Name="id_mantenimiento" ColumnName="id_mantenimiento" />
-                <ScalarProperty Name="fecha_hora_inicio" ColumnName="fecha_hora_inicio" />
-                <ScalarProperty Name="fecha_hora_fin_prevista" ColumnName="fecha_hora_fin_prevista" />
-                <ScalarProperty Name="fecha_hora_fin_real" ColumnName="fecha_hora_fin_real" />
-                <ScalarProperty Name="id_tipo_mantenimiento" ColumnName="id_tipo_mantenimiento" />
                 <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+                <ScalarProperty Name="id_tipo_mantenimiento" ColumnName="id_tipo_mantenimiento" />
+                <ScalarProperty Name="fecha_hora" ColumnName="fecha_hora" />
+                <ScalarProperty Name="fecha_hora_inicio_mantenimiento" ColumnName="fecha_hora_inicio_mantenimiento" />
+                <ScalarProperty Name="fecha_hora_fin_mantenimiento_prevista" ColumnName="fecha_hora_fin_mantenimiento_prevista" />
+                <ScalarProperty Name="fecha_hora_fin_mantenimiento_real" ColumnName="fecha_hora_fin_mantenimiento_real" />
                 <ScalarProperty Name="motivo" ColumnName="motivo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1925,17 +1984,17 @@
           <EntitySetMapping Name="RECURSOS_TECNOLOGICOS">
             <EntityTypeMapping TypeName="Model.RECURSOS_TECNOLOGICOS">
               <MappingFragment StoreEntitySet="RECURSOS_TECNOLOGICOS">
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
+                <ScalarProperty Name="id_tipo_recurso_tecnologico" ColumnName="id_tipo_recurso_tecnologico" />
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
                 <ScalarProperty Name="fecha_alta" ColumnName="fecha_alta" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
-                <ScalarProperty Name="id_tipo_recurso_tecnologico" ColumnName="id_tipo_recurso_tecnologico" />
-                <ScalarProperty Name="id_responsable_tecnico" ColumnName="id_responsable_tecnico" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
-                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
-                <ScalarProperty Name="id_personal_cientifico" ColumnName="id_personal_cientifico" />
+                <ScalarProperty Name="id_responsable_tecnico" ColumnName="id_responsable_tecnico" />
                 <ScalarProperty Name="id_centro_investigacion" ColumnName="id_centro_investigacion" />
+                <ScalarProperty Name="id_personal_cientifico" ColumnName="id_personal_cientifico" />
+                <ScalarProperty Name="fraccionamiento" ColumnName="fraccionamiento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1996,7 +2055,6 @@
                 <ScalarProperty Name="id_turno" ColumnName="id_turno" />
                 <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
                 <ScalarProperty Name="id_cientifico" ColumnName="id_cientifico" />
-                <ScalarProperty Name="id_historial_estado" ColumnName="id_historial_estado" />
                 <ScalarProperty Name="fecha_hora_inicio" ColumnName="fecha_hora_inicio" />
                 <ScalarProperty Name="fecha_hora_fin" ColumnName="fecha_hora_fin" />
               </MappingFragment>
@@ -2035,7 +2093,7 @@
               <ScalarProperty Name="id_centro_investigacion" ColumnName="id_centro_investigacion" />
             </EndProperty>
             <EndProperty Name="RECURSOS_TECNOLOGICOS">
-              <ScalarProperty Name="codigo" ColumnName="id_recurso_tecnologico" />
+              <ScalarProperty Name="id_recurso_tecnologico" ColumnName="id_recurso_tecnologico" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

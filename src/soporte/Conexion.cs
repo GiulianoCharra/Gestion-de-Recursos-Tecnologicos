@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 
 public abstract class Conexion
 {
+	private static SqlConnection conexion { get; set; }
+	private static SqlCommand comando { get; set; }
 
     public Conexion()
 	{

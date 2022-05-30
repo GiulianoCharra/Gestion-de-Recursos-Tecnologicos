@@ -12,22 +12,18 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class TURNO
+    public partial class DIAS_SEMANA
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TURNO()
+        public DIAS_SEMANA()
         {
-            this.HISTORIALES_TURNOS = new HashSet<HISTORIALES_TURNOS>();
+            this.DISPONIBILIDAD = new HashSet<DISPONIBILIDAD>();
         }
     
-        public int id_turno { get; set; }
-        public int id_recurso_tecnologico { get; set; }
-        public Nullable<int> id_cientifico { get; set; }
-        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
-        public Nullable<System.DateTime> fecha_hora_fin { get; set; }
+        public int id_dia_semana { get; set; }
+        public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HISTORIALES_TURNOS> HISTORIALES_TURNOS { get; set; }
-        public virtual RECURSOS_TECNOLOGICOS RECURSOS_TECNOLOGICOS { get; set; }
+        public virtual ICollection<DISPONIBILIDAD> DISPONIBILIDAD { get; set; }
     }
 }

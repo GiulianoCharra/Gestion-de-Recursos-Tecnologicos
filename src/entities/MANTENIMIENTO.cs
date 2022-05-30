@@ -21,11 +21,12 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         }
     
         public int id_mantenimiento { get; set; }
-        public Nullable<System.DateTime> fecha_hora_inicio { get; set; }
-        public System.DateTime fecha_hora_fin_prevista { get; set; }
-        public Nullable<System.DateTime> fecha_hora_fin_real { get; set; }
-        public int id_tipo_mantenimiento { get; set; }
         public int id_recurso_tecnologico { get; set; }
+        public int id_tipo_mantenimiento { get; set; }
+        public System.DateTime fecha_hora { get; set; }
+        public Nullable<System.DateTime> fecha_hora_inicio_mantenimiento { get; set; }
+        public System.DateTime fecha_hora_fin_mantenimiento_prevista { get; set; }
+        public Nullable<System.DateTime> fecha_hora_fin_mantenimiento_real { get; set; }
         public string motivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

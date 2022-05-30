@@ -8,8 +8,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Usuario
     {
-        private string nombre;
-        private string contraseña;
+        private string nombre { get; set; }
+        private string contraseña { get; set; }
+        private Perfil perfil { get; set; }
+        private bool habilidato { get; set; }
 
         public Usuario(string nombre, string contraseña)
         {

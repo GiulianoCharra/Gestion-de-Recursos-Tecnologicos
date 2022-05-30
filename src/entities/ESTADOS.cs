@@ -17,8 +17,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ESTADOS()
         {
-            this.HISTORIAL_RECURSO_TECNOLOGICO = new HashSet<HISTORIAL_RECURSO_TECNOLOGICO>();
-            this.HISTORIALES_ESTADOS = new HashSet<HISTORIALES_ESTADOS>();
+            this.HISTORIALES_RECURSOS_TECNOLOGICOS = new HashSet<HISTORIALES_RECURSOS_TECNOLOGICOS>();
+            this.HISTORIALES_TURNOS = new HashSet<HISTORIALES_TURNOS>();
         }
     
         public int id_estado { get; set; }
@@ -28,8 +28,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     
         public virtual AMBITOS AMBITOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HISTORIAL_RECURSO_TECNOLOGICO> HISTORIAL_RECURSO_TECNOLOGICO { get; set; }
+        public virtual ICollection<HISTORIALES_RECURSOS_TECNOLOGICOS> HISTORIALES_RECURSOS_TECNOLOGICOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HISTORIALES_ESTADOS> HISTORIALES_ESTADOS { get; set; }
+        public virtual ICollection<HISTORIALES_TURNOS> HISTORIALES_TURNOS { get; set; }
     }
 }

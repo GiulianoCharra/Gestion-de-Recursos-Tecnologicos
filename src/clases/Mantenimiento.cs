@@ -8,13 +8,14 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Mantenimiento
     {
-        private int id_matenimiento;
-        private RecursoTecnologico recursoTecnologico;
-        private TipoMantenimiento tipoMantenimiento;
-        private Estado estado;
-        private DateTime fecha_hora_inicio;
-        private DateTime fecha_hora_fin_estimado;
-        private DateTime fecha_hora_fin_real;
-
+        private int id_matenimiento { get; set; }
+        private RecursoTecnologico recurso_tecnologico { get; set; }
+        private TipoMantenimiento tipo_mantenimiento { get; set; }
+        private Estado estado { get; set; }
+        private DateTime fecha_hora { get; set; }
+        private DateTime fecha_hora_inicio_mantenimiento { get; set; }
+        private DateTime fecha_hora_fin_mantenimiento_estimado { get; set; }
+        private DateTime fecha_hora_fin_mantenimiento_real { get; set; }
+        private string motivo { get; set; }
     }
 }

@@ -8,9 +8,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Facultad
     {
-        private int id_facultad;
-        private string nombre;
-        private string direccion;
-        private CentroInvestigacion[] centroInvestigaciones;
+        private int id_facultad { get; set; }
+        private string nombre { get; set; }
+        private string direccion { get; set; }
+        private CentroInvestigacion[] centros_investigacion { get; set; }
     }
 }

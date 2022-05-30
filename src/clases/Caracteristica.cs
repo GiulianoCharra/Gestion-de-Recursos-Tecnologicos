@@ -10,7 +10,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
     {
         private int id_caracteristica { get; set; }
         private string nombre { get; set; }
+        private UnidadMedida unidad_medida { get; set; }
         private string descripcion { get; set; }
-        private UnidadMedida unidadMedida { get; set; }
     }
 }

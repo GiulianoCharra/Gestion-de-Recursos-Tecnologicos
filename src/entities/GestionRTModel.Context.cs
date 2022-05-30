@@ -29,13 +29,14 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
         public virtual DbSet<CARACTERISTICAS> CARACTERISTICAS { get; set; }
         public virtual DbSet<CENTRO_INVESTIGACION> CENTRO_INVESTIGACION { get; set; }
         public virtual DbSet<CIENTIFICOS> CIENTIFICOS { get; set; }
+        public virtual DbSet<DIAS_SEMANA> DIAS_SEMANA { get; set; }
         public virtual DbSet<DIRECTORES> DIRECTORES { get; set; }
         public virtual DbSet<DISPONIBILIDAD> DISPONIBILIDAD { get; set; }
         public virtual DbSet<ESTADOS> ESTADOS { get; set; }
         public virtual DbSet<EXTENSION_MANTENIMIENTO> EXTENSION_MANTENIMIENTO { get; set; }
         public virtual DbSet<FACULTADES> FACULTADES { get; set; }
-        public virtual DbSet<HISTORIAL_RECURSO_TECNOLOGICO> HISTORIAL_RECURSO_TECNOLOGICO { get; set; }
-        public virtual DbSet<HISTORIALES_ESTADOS> HISTORIALES_ESTADOS { get; set; }
+        public virtual DbSet<HISTORIALES_RECURSOS_TECNOLOGICOS> HISTORIALES_RECURSOS_TECNOLOGICOS { get; set; }
+        public virtual DbSet<HISTORIALES_TURNOS> HISTORIALES_TURNOS { get; set; }
         public virtual DbSet<MANTENIMIENTO> MANTENIMIENTO { get; set; }
         public virtual DbSet<MARCAS> MARCAS { get; set; }
         public virtual DbSet<MODELOS> MODELOS { get; set; }

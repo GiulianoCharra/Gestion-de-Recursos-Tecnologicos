@@ -15,10 +15,13 @@ namespace Gestión_de_Recursos_Tecnológicos.src.entities
     public partial class DISPONIBILIDAD
     {
         public int id_recurso_tecnologico { get; set; }
-        public System.DateTime fecha { get; set; }
-        public Nullable<System.TimeSpan> hora_inicio { get; set; }
-        public Nullable<System.TimeSpan> hora_fin { get; set; }
+        public int id_dia_semana { get; set; }
+        public System.TimeSpan hora_inicio { get; set; }
+        public System.TimeSpan hora_fin { get; set; }
+        public System.DateTime fecha_hora_desde { get; set; }
+        public Nullable<System.DateTime> fecha_hora_hasta { get; set; }
     
+        public virtual DIAS_SEMANA DIAS_SEMANA { get; set; }
         public virtual RECURSOS_TECNOLOGICOS RECURSOS_TECNOLOGICOS { get; set; }
     }
 }
