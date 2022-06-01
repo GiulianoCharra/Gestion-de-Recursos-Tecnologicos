@@ -124,6 +124,7 @@
     <Compile Include="src\clases\Turno.cs" />
     <Compile Include="src\clases\UnidadMedida.cs" />
     <Compile Include="src\clases\Usuario.cs" />
+    <Compile Include="src\Comun\Cache.cs" />
     <Compile Include="src\entities\AMBITOS.cs">
       <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
@@ -223,28 +224,34 @@
     <Compile Include="src\entities\USUARIOS.cs">
       <DependentUpon>GestionRTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\Gestores\GestorIIngresoRecursoTecnologicoMantenimientoCorrectivo.cs" />
+    <Compile Include="src\Gestores\GestorIngresoRecursoTecnologicoMantenimientoCorrectivo.cs" />
     <Compile Include="src\Gestores\GestorIniciarSesion.cs" />
     <Compile Include="src\Gestores\GestorPrincipal.cs" />
     <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanas\Marca\AgregarMarca.cs">
+    <Compile Include="src\ventanas\Mantenimiento\IngresoMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Marca\AgregarMarca.Designer.cs">
+    <Compile Include="src\ventanas\Mantenimiento\IngresoMantenimiento.Designer.cs">
+      <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ventanas\Marca\AgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ventanas\Marca\AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Modelo\Modelo.cs">
+    <Compile Include="src\ventanas\Modelo\Modelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Modelo\Modelo.Designer.cs">
+    <Compile Include="src\ventanas\Modelo\Modelo.Designer.cs">
       <DependentUpon>Modelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Sesion\IniciarSesion.cs">
+    <Compile Include="src\ventanas\Sesion\IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Sesion\IniciarSesion.Designer.cs">
+    <Compile Include="src\ventanas\Sesion\IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -257,14 +264,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ventanas\Sesion\IniciarSesion.resx">
+    <EmbeddedResource Include="src\ventanas\Mantenimiento\IngresoMantenimiento.resx">
+      <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ventanas\Sesion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".gitattributes" />
-    <EmbeddedResource Include="Ventanas\Marca\AgregarMarca.resx">
+    <EmbeddedResource Include="src\ventanas\Marca\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Modelo\Modelo.resx">
+    <EmbeddedResource Include="src\ventanas\Modelo\Modelo.resx">
       <DependentUpon>Modelo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".gitignore" />

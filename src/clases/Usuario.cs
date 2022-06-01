@@ -8,19 +8,17 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Usuario
     {
-        private string nombre { get; set; }
-        private string contraseña { get; set; }
-        private Perfil perfil { get; set; }
-        private bool habilidato { get; set; }
+        public string user { get; set; }
+        public string pass { get; set; }
+        public Perfil perfil { get; set; }
+        public bool habilidato { get; set; }
 
-        public Usuario(string nombre, string contraseña)
+        public Usuario(string user, string pass)
         {
-            this.nombre = nombre;
-            this.contraseña = contraseña;
+            this.user = nombre;
+            this.pass = contraseña;
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Contraseña { get => contraseña; set => contraseña = value; }
 
 
         public static bool existeUsuario(string user, string pass)
@@ -41,9 +39,13 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             return false;
         }
 
-        internal bool esUsuarioHabilitado(string user, string pass)
+        internal static bool esUsuarioHabilitado(string user, string pass)
         {
             return true;
+        }
+        internal bool esUsuarioResponsableTecnico()
+        {
+            return perfil.esResponsableTecnico();
         }
     }
 }

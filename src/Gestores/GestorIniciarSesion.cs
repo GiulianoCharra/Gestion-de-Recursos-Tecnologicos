@@ -1,4 +1,5 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.clases;
+using Gestión_de_Recursos_Tecnológicos.src.Comun;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         {
             if (Usuario.existeUsuario(usuario, contraseña))
             {
-
+                Cache.sesion = new Sesion(1 ,new Usuario(usuario, contraseña), DateTime.Now); 
+                return true;
             }
+
             return false;
         }
     }

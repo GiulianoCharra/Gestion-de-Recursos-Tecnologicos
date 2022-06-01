@@ -30,13 +30,13 @@
         {
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.lbl_contraseña = new System.Windows.Forms.Label();
-            this.lbl_recuperar_contraseña = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.btn_iniciar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_titulo = new System.Windows.Forms.Label();
             this.lbl_datos_incorrectos = new System.Windows.Forms.Label();
+            this.llbl_recuperar_contraseña = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lbl_usuario
@@ -58,17 +58,6 @@
             this.lbl_contraseña.Size = new System.Drawing.Size(70, 15);
             this.lbl_contraseña.TabIndex = 1;
             this.lbl_contraseña.Text = "Contraseña";
-            // 
-            // lbl_recuperar_contraseña
-            // 
-            this.lbl_recuperar_contraseña.AutoSize = true;
-            this.lbl_recuperar_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_recuperar_contraseña.Location = new System.Drawing.Point(109, 132);
-            this.lbl_recuperar_contraseña.Name = "lbl_recuperar_contraseña";
-            this.lbl_recuperar_contraseña.Size = new System.Drawing.Size(110, 13);
-            this.lbl_recuperar_contraseña.TabIndex = 2;
-            this.lbl_recuperar_contraseña.Text = "Recuperar contraseña";
-            this.lbl_recuperar_contraseña.Click += new System.EventHandler(this.lbl_recuperar_contraseña_Click);
             // 
             // txt_usuario
             // 
@@ -106,15 +95,15 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // label1
+            // lbl_titulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 31);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Iniciar Sesion";
+            this.lbl_titulo.AutoSize = true;
+            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo.Location = new System.Drawing.Point(45, 5);
+            this.lbl_titulo.Name = "lbl_titulo";
+            this.lbl_titulo.Size = new System.Drawing.Size(177, 31);
+            this.lbl_titulo.TabIndex = 7;
+            this.lbl_titulo.Text = "Iniciar Sesion";
             // 
             // lbl_datos_incorrectos
             // 
@@ -125,19 +114,31 @@
             this.lbl_datos_incorrectos.Size = new System.Drawing.Size(0, 13);
             this.lbl_datos_incorrectos.TabIndex = 8;
             // 
+            // llbl_recuperar_contraseña
+            // 
+            this.llbl_recuperar_contraseña.AutoSize = true;
+            this.llbl_recuperar_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbl_recuperar_contraseña.Location = new System.Drawing.Point(109, 128);
+            this.llbl_recuperar_contraseña.Name = "llbl_recuperar_contraseña";
+            this.llbl_recuperar_contraseña.Size = new System.Drawing.Size(112, 13);
+            this.llbl_recuperar_contraseña.TabIndex = 9;
+            this.llbl_recuperar_contraseña.TabStop = true;
+            this.llbl_recuperar_contraseña.Text = "Recuperar Contraseña";
+            this.llbl_recuperar_contraseña.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_recuperar_contraseña_LinkClicked);
+            // 
             // IniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(258, 196);
             this.ControlBox = false;
+            this.Controls.Add(this.llbl_recuperar_contraseña);
             this.Controls.Add(this.lbl_datos_incorrectos);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_iniciar);
             this.Controls.Add(this.txt_contraseña);
             this.Controls.Add(this.txt_usuario);
-            this.Controls.Add(this.lbl_recuperar_contraseña);
             this.Controls.Add(this.lbl_contraseña);
             this.Controls.Add(this.lbl_usuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -154,12 +155,12 @@
 
         private System.Windows.Forms.Label lbl_usuario;
         private System.Windows.Forms.Label lbl_contraseña;
-        private System.Windows.Forms.Label lbl_recuperar_contraseña;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.TextBox txt_contraseña;
         private System.Windows.Forms.Button btn_iniciar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Label lbl_datos_incorrectos;
+        private System.Windows.Forms.LinkLabel llbl_recuperar_contraseña;
     }
 }

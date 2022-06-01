@@ -19,16 +19,11 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
             txt_contraseña.UseSystemPasswordChar = true;
         }
 
-        private void lbl_recuperar_contraseña_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        /// <summary>
+        /// Intenta iniar sesion mediante el usuario y contraseña ingresados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_iniciar_Click(object sender, EventArgs e)
         {
             if (txt_usuario.Text.Trim() == "" || txt_contraseña.Text.Trim() == "")
@@ -41,6 +36,26 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
             {
                 lbl_datos_incorrectos.Text = "Alguno de los datos ingresados es incorrecto";
             }
+            this.Hide();
+        }
+        /// <summary>
+        /// Cancela y cierra el inicio de sesion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        /// <summary>
+        /// Permite recuperar la contraseña enviando un mail al personal cientifico
+        /// asociado al usuario ingresado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void llbl_recuperar_contraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

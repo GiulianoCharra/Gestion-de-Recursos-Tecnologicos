@@ -17,7 +17,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         private string actividad { get; set; }
         private string reglamento { get; set; }
         private DateTime tiempo_antelacion { get; set; }
-        private HistorialDirector[] directores { get; set; }
+        private Director[] directores { get; set; }
         private PersonalCientifico[] personales_cientificos { get; set; }
         private ResponsableTecnico[] responsables_tecnicos { get; set; }
         private DateTime fecha_baja { get; set; }
