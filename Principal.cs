@@ -1,6 +1,7 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.clases;
 using Gestión_de_Recursos_Tecnológicos.Ventanas;
 using Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento;
+using Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Gestión_de_Recursos_Tecnológicos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IngresoMantenimiento());
+            Application.Run(new IniciarSesion());
         }
     }
 }

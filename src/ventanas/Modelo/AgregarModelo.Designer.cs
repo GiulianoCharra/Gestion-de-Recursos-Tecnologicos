@@ -1,6 +1,6 @@
 ﻿namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 {
-    partial class Modelo
+    partial class AgregarModelo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tx_nombre = new System.Windows.Forms.TextBox();
             this.tx_descripcion = new System.Windows.Forms.TextBox();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_modelos = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_marcas = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gestión_de_Recursos_TecnológicosDataSet = new Gestión_de_Recursos_Tecnológicos.Gestión_de_Recursos_TecnológicosDataSet();
+            this.mARCASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mARCASTableAdapter = new Gestión_de_Recursos_Tecnológicos.Gestión_de_Recursos_TecnológicosDataSetTableAdapters.MARCASTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_modelos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestión_de_Recursos_TecnológicosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mARCASBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,23 +91,16 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // dataGridView1
+            // dgv_modelos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7});
-            this.dataGridView1.Location = new System.Drawing.Point(419, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 201);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dgv_modelos.AllowUserToAddRows = false;
+            this.dgv_modelos.AllowUserToDeleteRows = false;
+            this.dgv_modelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_modelos.Location = new System.Drawing.Point(419, 33);
+            this.dgv_modelos.Name = "dgv_modelos";
+            this.dgv_modelos.ReadOnly = true;
+            this.dgv_modelos.Size = new System.Drawing.Size(540, 201);
+            this.dgv_modelos.TabIndex = 6;
             // 
             // label3
             // 
@@ -113,15 +111,16 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Marca";
             // 
-            // comboBox1
+            // cmb_marcas
             // 
-            this.comboBox1.DisplayMember = "nombre";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.ValueMember = "id_marca";
+            this.cmb_marcas.DataSource = this.mARCASBindingSource;
+            this.cmb_marcas.DisplayMember = "nombre";
+            this.cmb_marcas.FormattingEnabled = true;
+            this.cmb_marcas.Location = new System.Drawing.Point(112, 127);
+            this.cmb_marcas.Name = "cmb_marcas";
+            this.cmb_marcas.Size = new System.Drawing.Size(260, 21);
+            this.cmb_marcas.TabIndex = 8;
+            this.cmb_marcas.ValueMember = "id_marca";
             // 
             // button1
             // 
@@ -132,24 +131,40 @@
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Modelo
+            // gestión_de_Recursos_TecnológicosDataSet
+            // 
+            this.gestión_de_Recursos_TecnológicosDataSet.DataSetName = "Gestión_de_Recursos_TecnológicosDataSet";
+            this.gestión_de_Recursos_TecnológicosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mARCASBindingSource
+            // 
+            this.mARCASBindingSource.DataMember = "MARCAS";
+            this.mARCASBindingSource.DataSource = this.gestión_de_Recursos_TecnológicosDataSet;
+            // 
+            // mARCASTableAdapter
+            // 
+            this.mARCASTableAdapter.ClearBeforeFill = true;
+            // 
+            // AgregarModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 246);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_marcas);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_modelos);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tx_descripcion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tx_nombre);
-            this.Name = "Modelo";
+            this.Name = "AgregarModelo";
             this.Text = "Modelo";
             this.Load += new System.EventHandler(this.Modelo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_modelos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestión_de_Recursos_TecnológicosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mARCASBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,12 +177,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tx_descripcion;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_modelos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmodeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_marcas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmarcaDataGridViewTextBoxColumn;
@@ -176,6 +191,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private Gestión_de_Recursos_TecnológicosDataSet gestión_de_Recursos_TecnológicosDataSet;
+        private System.Windows.Forms.BindingSource mARCASBindingSource;
+        private Gestión_de_Recursos_TecnológicosDataSetTableAdapters.MARCASTableAdapter mARCASTableAdapter;
     }
 }

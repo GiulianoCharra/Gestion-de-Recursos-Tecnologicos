@@ -21,7 +21,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         }
 
         private Estados estado = Estados.AGREGAR;
-        private SqlCommand cmd = new SqlCommand();
 
         public AgregarMarca()
         {
@@ -76,11 +75,13 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 
             string nuevo = "INSERT INTO [dbo].[MARCAS] ([nombre] ,[descripcion]) VALUES (@NOMBRE, @DESCRIPCION )";
 
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@NOMBRE", nombre);
-            cmd.Parameters.AddWithValue("@DESCRIPCION", descripcion);
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+            {
+                {"@NOMBRE", nombre},
+                {"@DESCRIPCION", descripcion}
+            };
 
-            Conexion.EjecutarComando(cmd, nuevo);
+            Conexion.EjecutarComando(parametros, nuevo);
             limpiar();
             cargarTabla();
         }
@@ -99,13 +100,15 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 
             string update = "UPDATE [dbo].[MARCAS] SET [nombre] = @NOMBRE ,[descripcion] = @DESCRIPCION WHERE [id_marca] = @ID";
 
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@ID", id_marca);
-            cmd.Parameters.AddWithValue("@NOMBRE", nombre);
-            cmd.Parameters.AddWithValue("@DESCRIPCION", descripcion);
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+            {
+                {"@ID", id_marca},
+                {"@NOMBRE", nombre},
+                {"@DESCRIPCION", descripcion}
+            }; 
 
 
-            ejecutarComando(cmd, update);
+            Conexion.EjecutarComando(parametros, update);
             limpiar();
             cargarTabla();
             estado = Estados.AGREGAR;
@@ -115,18 +118,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         private void eliminarMarca()
         {
             string eliminar = "DELETE FROM [dbo].[MODELOS] WHERE id = @ID";
-            ejecutarComando(eliminar);
+            Conexion.EjecutarComando(eliminar);
             
-        }
-
-        private void ejecutarComando(string query)
-        {
-            Conexion.EjecutarComando(query);
-        }
-
-        private void ejecutarComando(SqlCommand com , string query)
-        {
-            Conexion.EjecutarComando(cmd, query);
         }
 
         private void limpiar()

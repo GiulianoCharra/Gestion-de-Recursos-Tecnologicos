@@ -242,11 +242,17 @@
     <Compile Include="src\ventanas\Marca\AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ventanas\Modelo\Modelo.cs">
+    <Compile Include="src\ventanas\Modelo\AgregarModelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ventanas\Modelo\Modelo.Designer.cs">
-      <DependentUpon>Modelo.cs</DependentUpon>
+    <Compile Include="src\ventanas\Modelo\AgregarModelo.Designer.cs">
+      <DependentUpon>AgregarModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ventanas\VentanaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ventanas\VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="src\ventanas\Sesion\IniciarSesion.cs">
       <SubType>Form</SubType>
@@ -267,6 +273,9 @@
     <EmbeddedResource Include="src\ventanas\Mantenimiento\IngresoMantenimiento.resx">
       <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\ventanas\VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\ventanas\Sesion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,8 +283,8 @@
     <EmbeddedResource Include="src\ventanas\Marca\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ventanas\Modelo\Modelo.resx">
-      <DependentUpon>Modelo.cs</DependentUpon>
+    <EmbeddedResource Include="src\ventanas\Modelo\AgregarModelo.resx">
+      <DependentUpon>AgregarModelo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".gitignore" />
     <None Include="bin\Debug\Gestión de Recursos Tecnológicos.exe.config" />

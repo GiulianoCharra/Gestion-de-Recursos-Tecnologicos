@@ -9,6 +9,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Comun
 {
     internal class Cache
     {
-        public static Sesion sesion { get; set; }
+        public static Sesion sesionActual { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.Gestores;
+using Gestión_de_Recursos_Tecnológicos.src.ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,10 +37,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
             {
                 lbl_datos_incorrectos.Text = "Alguno de los datos ingresados es incorrecto";
             }
+
+            VentanaPrincipal.habilitar();
             this.Hide();
         }
         /// <summary>
-        /// Cancela y cierra el inicio de sesion
+        /// Cancela el inicio de sesion
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

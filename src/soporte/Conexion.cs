@@ -6,38 +6,28 @@ using System.Data.SqlClient;
 public abstract class Conexion
 {
 	private static SqlConnection conexion { get; set; }
-	private static SqlCommand comando { get; set; }
+    private static SqlCommand comando = new SqlCommand();
+    public static SqlCommand Comando { get => comando; set => comando = value; }
+
 
     public Conexion()
 	{
 
 	}
 
-
-    public static SqlConnection Conectar()
+    public static void Conectar()
     {
-		//string url = System.Configuration.ConfigurationManager.AppSettings["CadenaDB"];
+		//string url = System.Configuration.ConfigurationManager.AppSettings["GestionRTDB"];
 		string url = "data source=chongopc\\sqlexpress;initial catalog=\"gestión de recursos tecnológicos\";integrated security=true";
-		SqlConnection con = new SqlConnection(url);
-		con = new SqlConnection(url);
-		con.Open();
-		return con;
+		//SqlConnection con = new SqlConnection(url);
+		conexion = new SqlConnection(url);
+		conexion.Open();
+		//return conexion;
     }
-
-    public static void cerrar(SqlConnection con)
+    public static void cerrar()
     {
-        con.Close();
+        conexion.Close();
     }
-
-	public static DataTable EjecutarComando(string consulta)
-    {
-		//Llama al metodo conectar para abrir la coneccion con la base de datos
-		SqlConnection conexion = Conectar();
-		SqlCommand command = new SqlCommand();
-
-		return EjecutarComando(command, consulta);
-	}
-
 
 	/// <summary>
 	/// Ejecuta una query en la base de datos con ciertos parametros
@@ -47,32 +37,28 @@ public abstract class Conexion
 	/// <returns></returns>
 	public static DataTable EjecutarComando(Dictionary<string, object> parametros, string consulta)
 	{
-		SqlConnection conexion = Conectar();
-		SqlCommand command = new SqlCommand();
-
+		comando.Parameters.Clear();
         foreach (var item in parametros)
         {
-			command.Parameters.AddWithValue(item.Key, item.Value);
+			agregarParametro(item.Key, item.Value);
         }
 
-		return EjecutarComando(command, consulta);
+		return EjecutarComando(consulta);
 	}
-
-	public static DataTable EjecutarComando(SqlCommand command, string consulta)
+	public static DataTable EjecutarComando(string consulta)
 	{
 		//Llama al metodo conectar para abrir la coneccion con la base de datos
-		SqlConnection conexion = Conectar();
-
-		command.CommandType = CommandType.Text;
-		command.CommandText = consulta;
-		command.Connection = conexion;
+		Conectar();
+		comando.CommandType = CommandType.Text;
+		comando.CommandText = consulta;
+		comando.Connection = conexion;
 
 		DataTable resultados = new DataTable();
-		SqlDataAdapter adapter = new SqlDataAdapter(command);
+		SqlDataAdapter adapter = new SqlDataAdapter(comando);
 		adapter.Fill(resultados);
 
-		//Cierra la conexion con la base de datos abierta
-		cerrar(conexion);
+		//Cierra la conexion
+		cerrar();
 		return resultados;
 	}
 
@@ -80,25 +66,15 @@ public abstract class Conexion
 	/// Agrega una serie de parametros que seran cargados
 	/// cuando se ejecute el comando en la base de datos
 	/// </summary>
-	public static SqlCommand agregarParametro(string parametro, Object valor)
-    {
-		return agregarParametro(new SqlCommand(), parametro, valor);
-    }
-
-	public static SqlCommand agregarParametro(SqlCommand comando, string parametro, Object valor)
+	public static void agregarParametro(Dictionary<string, object> dict)
 	{
-		comando.Parameters.AddWithValue(parametro, valor);
-		return comando;
-	}
-
-	public static SqlCommand agregarParametro(Dictionary<string, object> dict)
-	{
-		SqlCommand comando = new SqlCommand();
-
 		foreach (var item in dict)
         {
-			comando.Parameters.AddWithValue(item.Key, item.Value);
+			agregarParametro(item.Key, item.Value);
         }
-		return comando;
 	}
+	public static void agregarParametro(string parametro, Object valor)
+    {
+		comando.Parameters.AddWithValue(parametro, valor);
+    }
 }
