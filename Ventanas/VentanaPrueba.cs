@@ -111,6 +111,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             {
                 ajustarAnchoBoton(this.MenuVertical, 90);
                 this.MenuVertical.Width = 95;
+                btn_menu.Location= new Point(50,3);
                 btn_menu.IconChar = IconChar.AngleDoubleRight;
                 btn_Inicio.Text = "";
                 btn_actividad1.Text = "";
@@ -127,6 +128,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             {
                 ajustarAnchoBoton(this.MenuVertical, 245);
                 this.MenuVertical.Width = 250;
+                btn_menu.Location = new Point(200,3);
                 btn_menu.IconChar = IconChar.AngleDoubleLeft;
                 btn_Inicio.Text = "Inicio";
                 btn_actividad1.Text = "Actividad";
@@ -148,7 +150,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //
-            adjuntar();            
+            //adjuntar();            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -184,7 +186,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //            
-            adjuntar();
+            //adjuntar();
         }
 
         private void btn_actividad3_Click(object sender, EventArgs e)
@@ -193,7 +195,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //            
-            adjuntar();
+            //adjuntar();
         }
         
         private void btn_integrantes_Click(object sender, EventArgs e)
@@ -205,10 +207,10 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //            
-            adjuntar();                      
+            //adjuntar();                      
         }
         
-        private void adjuntar()
+        /*private void adjuntar()
         {
             if (panelSubActividad1.Visible == false)
             {
@@ -241,7 +243,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 btn_actividad3.Location = new Point(3, 326);
                 btn_integrantes.Location = new Point(3, 361);
             }
-        }
+        }*/
 
         private Form activeForm=null;
         private void openChildForm(Form childForm)
