@@ -156,14 +156,13 @@
             // 
             this.MenuVertical.AutoScroll = true;
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
-            this.MenuVertical.Controls.Add(this.panelListIntegrantes);
             this.MenuVertical.Controls.Add(this.panelSubActividad3);
-            this.MenuVertical.Controls.Add(this.panelSubActividad2);
-            this.MenuVertical.Controls.Add(this.btn_menu);
-            this.MenuVertical.Controls.Add(this.panelSubActividad1);
-            this.MenuVertical.Controls.Add(this.btn_integrantes);
             this.MenuVertical.Controls.Add(this.btn_actividad3);
+            this.MenuVertical.Controls.Add(this.panelSubActividad2);
             this.MenuVertical.Controls.Add(this.btn_activivdad2);
+            this.MenuVertical.Controls.Add(this.panelListIntegrantes);
+            this.MenuVertical.Controls.Add(this.btn_integrantes);
+            this.MenuVertical.Controls.Add(this.panelSubActividad1);
             this.MenuVertical.Controls.Add(this.btn_actividad1);
             this.MenuVertical.Controls.Add(this.btn_Inicio);
             this.MenuVertical.Controls.Add(this.PanelLogo);
@@ -177,7 +176,7 @@
             // 
             this.panelListIntegrantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(116)))), ((int)(((byte)(117)))));
             this.panelListIntegrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelListIntegrantes.Location = new System.Drawing.Point(0, 551);
+            this.panelListIntegrantes.Location = new System.Drawing.Point(0, 523);
             this.panelListIntegrantes.Name = "panelListIntegrantes";
             this.panelListIntegrantes.Size = new System.Drawing.Size(233, 5);
             this.panelListIntegrantes.TabIndex = 3;
@@ -188,9 +187,10 @@
             this.panelSubActividad3.Controls.Add(this.iconButton11);
             this.panelSubActividad3.Controls.Add(this.iconButton12);
             this.panelSubActividad3.Controls.Add(this.iconButton13);
-            this.panelSubActividad3.Location = new System.Drawing.Point(3, 455);
+            this.panelSubActividad3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubActividad3.Location = new System.Drawing.Point(0, 427);
             this.panelSubActividad3.Name = "panelSubActividad3";
-            this.panelSubActividad3.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad3.Size = new System.Drawing.Size(233, 96);
             this.panelSubActividad3.TabIndex = 4;
             // 
             // iconButton11
@@ -207,7 +207,7 @@
             this.iconButton11.Location = new System.Drawing.Point(0, 60);
             this.iconButton11.Name = "iconButton11";
             this.iconButton11.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton11.Size = new System.Drawing.Size(227, 30);
+            this.iconButton11.Size = new System.Drawing.Size(233, 30);
             this.iconButton11.TabIndex = 5;
             this.iconButton11.Text = "Inicio";
             this.iconButton11.UseVisualStyleBackColor = true;
@@ -226,7 +226,7 @@
             this.iconButton12.Location = new System.Drawing.Point(0, 30);
             this.iconButton12.Name = "iconButton12";
             this.iconButton12.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton12.Size = new System.Drawing.Size(227, 30);
+            this.iconButton12.Size = new System.Drawing.Size(233, 30);
             this.iconButton12.TabIndex = 5;
             this.iconButton12.Text = "Inicio";
             this.iconButton12.UseVisualStyleBackColor = true;
@@ -245,7 +245,7 @@
             this.iconButton13.Location = new System.Drawing.Point(0, 0);
             this.iconButton13.Name = "iconButton13";
             this.iconButton13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton13.Size = new System.Drawing.Size(227, 30);
+            this.iconButton13.Size = new System.Drawing.Size(233, 30);
             this.iconButton13.TabIndex = 5;
             this.iconButton13.Text = "Inicio";
             this.iconButton13.UseVisualStyleBackColor = true;
@@ -256,9 +256,10 @@
             this.panelSubActividad2.Controls.Add(this.iconButton8);
             this.panelSubActividad2.Controls.Add(this.iconButton9);
             this.panelSubActividad2.Controls.Add(this.iconButton10);
-            this.panelSubActividad2.Location = new System.Drawing.Point(3, 321);
+            this.panelSubActividad2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubActividad2.Location = new System.Drawing.Point(0, 301);
             this.panelSubActividad2.Name = "panelSubActividad2";
-            this.panelSubActividad2.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad2.Size = new System.Drawing.Size(233, 96);
             this.panelSubActividad2.TabIndex = 9;
             // 
             // iconButton8
@@ -275,7 +276,7 @@
             this.iconButton8.Location = new System.Drawing.Point(0, 60);
             this.iconButton8.Name = "iconButton8";
             this.iconButton8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton8.Size = new System.Drawing.Size(227, 30);
+            this.iconButton8.Size = new System.Drawing.Size(233, 30);
             this.iconButton8.TabIndex = 5;
             this.iconButton8.Text = "Inicio";
             this.iconButton8.UseVisualStyleBackColor = true;
@@ -294,7 +295,7 @@
             this.iconButton9.Location = new System.Drawing.Point(0, 30);
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton9.Size = new System.Drawing.Size(227, 30);
+            this.iconButton9.Size = new System.Drawing.Size(233, 30);
             this.iconButton9.TabIndex = 5;
             this.iconButton9.Text = "Inicio";
             this.iconButton9.UseVisualStyleBackColor = true;
@@ -313,7 +314,7 @@
             this.iconButton10.Location = new System.Drawing.Point(0, 0);
             this.iconButton10.Name = "iconButton10";
             this.iconButton10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton10.Size = new System.Drawing.Size(227, 30);
+            this.iconButton10.Size = new System.Drawing.Size(233, 30);
             this.iconButton10.TabIndex = 5;
             this.iconButton10.Text = "Inicio";
             this.iconButton10.UseVisualStyleBackColor = true;
@@ -326,11 +327,10 @@
             this.btn_menu.IconColor = System.Drawing.Color.White;
             this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_menu.IconSize = 30;
-            this.btn_menu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_menu.Location = new System.Drawing.Point(3, 0);
+            this.btn_menu.Location = new System.Drawing.Point(200, 3);
             this.btn_menu.Name = "btn_menu";
             this.btn_menu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_menu.Size = new System.Drawing.Size(227, 30);
+            this.btn_menu.Size = new System.Drawing.Size(30, 30);
             this.btn_menu.TabIndex = 3;
             this.btn_menu.UseVisualStyleBackColor = true;
             this.btn_menu.Click += new System.EventHandler(this.btn_Click);
@@ -341,9 +341,10 @@
             this.panelSubActividad1.Controls.Add(this.iconButton7);
             this.panelSubActividad1.Controls.Add(this.iconButton6);
             this.panelSubActividad1.Controls.Add(this.iconButton5);
-            this.panelSubActividad1.Location = new System.Drawing.Point(3, 188);
+            this.panelSubActividad1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubActividad1.Location = new System.Drawing.Point(0, 175);
             this.panelSubActividad1.Name = "panelSubActividad1";
-            this.panelSubActividad1.Size = new System.Drawing.Size(227, 96);
+            this.panelSubActividad1.Size = new System.Drawing.Size(233, 96);
             this.panelSubActividad1.TabIndex = 3;
             // 
             // iconButton7
@@ -360,7 +361,7 @@
             this.iconButton7.Location = new System.Drawing.Point(0, 60);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton7.Size = new System.Drawing.Size(227, 30);
+            this.iconButton7.Size = new System.Drawing.Size(233, 30);
             this.iconButton7.TabIndex = 5;
             this.iconButton7.Text = "Inicio";
             this.iconButton7.UseVisualStyleBackColor = true;
@@ -380,7 +381,7 @@
             this.iconButton6.Location = new System.Drawing.Point(0, 30);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton6.Size = new System.Drawing.Size(227, 30);
+            this.iconButton6.Size = new System.Drawing.Size(233, 30);
             this.iconButton6.TabIndex = 5;
             this.iconButton6.Text = "Inicio";
             this.iconButton6.UseVisualStyleBackColor = true;
@@ -400,7 +401,7 @@
             this.iconButton5.Location = new System.Drawing.Point(0, 0);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(227, 30);
+            this.iconButton5.Size = new System.Drawing.Size(233, 30);
             this.iconButton5.TabIndex = 5;
             this.iconButton5.Text = "Inicio";
             this.iconButton5.UseVisualStyleBackColor = true;
@@ -416,7 +417,7 @@
             this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_integrantes.IconSize = 30;
             this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_integrantes.Location = new System.Drawing.Point(0, 556);
+            this.btn_integrantes.Location = new System.Drawing.Point(0, 528);
             this.btn_integrantes.Name = "btn_integrantes";
             this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_integrantes.Size = new System.Drawing.Size(233, 30);
@@ -427,6 +428,7 @@
             // 
             // btn_actividad3
             // 
+            this.btn_actividad3.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_actividad3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actividad3.ForeColor = System.Drawing.Color.White;
             this.btn_actividad3.IconChar = FontAwesome.Sharp.IconChar.Cat;
@@ -434,10 +436,10 @@
             this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad3.IconSize = 30;
             this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividad3.Location = new System.Drawing.Point(3, 423);
+            this.btn_actividad3.Location = new System.Drawing.Point(0, 397);
             this.btn_actividad3.Name = "btn_actividad3";
             this.btn_actividad3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_actividad3.Size = new System.Drawing.Size(227, 30);
+            this.btn_actividad3.Size = new System.Drawing.Size(233, 30);
             this.btn_actividad3.TabIndex = 7;
             this.btn_actividad3.Text = "actividad 3";
             this.btn_actividad3.UseVisualStyleBackColor = true;
@@ -445,6 +447,7 @@
             // 
             // btn_activivdad2
             // 
+            this.btn_activivdad2.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_activivdad2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_activivdad2.ForeColor = System.Drawing.Color.White;
             this.btn_activivdad2.IconChar = FontAwesome.Sharp.IconChar.Spider;
@@ -452,10 +455,10 @@
             this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_activivdad2.IconSize = 30;
             this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_activivdad2.Location = new System.Drawing.Point(3, 290);
+            this.btn_activivdad2.Location = new System.Drawing.Point(0, 271);
             this.btn_activivdad2.Name = "btn_activivdad2";
             this.btn_activivdad2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_activivdad2.Size = new System.Drawing.Size(227, 30);
+            this.btn_activivdad2.Size = new System.Drawing.Size(233, 30);
             this.btn_activivdad2.TabIndex = 6;
             this.btn_activivdad2.Text = "actividad 2";
             this.btn_activivdad2.UseVisualStyleBackColor = true;
@@ -463,6 +466,7 @@
             // 
             // btn_actividad1
             // 
+            this.btn_actividad1.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_actividad1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actividad1.ForeColor = System.Drawing.Color.White;
             this.btn_actividad1.IconChar = FontAwesome.Sharp.IconChar.Hippo;
@@ -470,10 +474,10 @@
             this.btn_actividad1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_actividad1.IconSize = 30;
             this.btn_actividad1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividad1.Location = new System.Drawing.Point(3, 158);
+            this.btn_actividad1.Location = new System.Drawing.Point(0, 145);
             this.btn_actividad1.Name = "btn_actividad1";
             this.btn_actividad1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_actividad1.Size = new System.Drawing.Size(227, 30);
+            this.btn_actividad1.Size = new System.Drawing.Size(233, 30);
             this.btn_actividad1.TabIndex = 5;
             this.btn_actividad1.Text = "Actividad 1";
             this.btn_actividad1.UseVisualStyleBackColor = true;
@@ -481,6 +485,7 @@
             // 
             // btn_Inicio
             // 
+            this.btn_Inicio.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Inicio.ForeColor = System.Drawing.Color.White;
             this.btn_Inicio.IconChar = FontAwesome.Sharp.IconChar.Home;
@@ -488,10 +493,10 @@
             this.btn_Inicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Inicio.IconSize = 30;
             this.btn_Inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Inicio.Location = new System.Drawing.Point(3, 122);
+            this.btn_Inicio.Location = new System.Drawing.Point(0, 115);
             this.btn_Inicio.Name = "btn_Inicio";
             this.btn_Inicio.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_Inicio.Size = new System.Drawing.Size(227, 30);
+            this.btn_Inicio.Size = new System.Drawing.Size(233, 30);
             this.btn_Inicio.TabIndex = 4;
             this.btn_Inicio.Text = "Inicio";
             this.btn_Inicio.UseVisualStyleBackColor = true;
@@ -500,18 +505,20 @@
             // PanelLogo
             // 
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Controls.Add(this.pictureBox3);
             this.PanelLogo.Controls.Add(this.label2);
+            this.PanelLogo.Controls.Add(this.btn_menu);
+            this.PanelLogo.Controls.Add(this.pictureBox3);
             this.PanelLogo.Controls.Add(this.label1);
-            this.PanelLogo.Location = new System.Drawing.Point(3, 31);
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(227, 85);
+            this.PanelLogo.Size = new System.Drawing.Size(233, 115);
             this.PanelLogo.TabIndex = 2;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_solo_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 30);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(85, 85);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -523,7 +530,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(91, 42);
+            this.label2.Location = new System.Drawing.Point(104, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 1;
@@ -534,7 +541,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(91, 16);
+            this.label1.Location = new System.Drawing.Point(104, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 0;
