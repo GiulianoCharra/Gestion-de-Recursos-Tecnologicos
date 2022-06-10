@@ -42,7 +42,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
             this.Hide();
         }
         /// <summary>
-        /// Cancela el inicio de sesion
+        /// Cancela el inicio de sesion y cierra la ventana
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -51,6 +51,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
             this.Close();
         }
         /// <summary>
+        /// CONTRUYENDO
         /// Permite recuperar la contraseña enviando un mail al personal cientifico
         /// asociado al usuario ingresado
         /// </summary>

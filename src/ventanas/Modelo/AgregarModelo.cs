@@ -68,9 +68,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void limpiar()
         {
-            foreach (TextBox item in this.Controls)
+            foreach (Control c in this.Controls)
             {
-                item.Text = "";
+                if (c is TextBox)
+                {
+                    c.Text = "";
+                }
             }
         }
 

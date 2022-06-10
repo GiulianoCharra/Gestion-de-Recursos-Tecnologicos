@@ -38,7 +38,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             DataTable ds = Conexion.EjecutarComando(parametros, consultarUsuario);
             DataRowCollection dwc = ds.Rows;
 
-            if (dwc.Count > 0)
+            if (dwc.Count == 1)
             {
                 string username = (string)dwc[0][0];
                 string password = (string)dwc[0][1];
