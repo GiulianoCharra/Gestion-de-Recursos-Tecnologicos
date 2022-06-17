@@ -164,7 +164,7 @@
             this.panel1.Controls.Add(this.lbl_Info);
             this.panel1.Location = new System.Drawing.Point(48, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 914);
+            this.panel1.Size = new System.Drawing.Size(822, 1477);
             this.panel1.TabIndex = 0;
             // 
             // panel12
@@ -179,13 +179,13 @@
             this.panel12.Controls.Add(this.label37);
             this.panel12.Location = new System.Drawing.Point(402, 95);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(375, 117);
+            this.panel12.Size = new System.Drawing.Size(389, 117);
             this.panel12.TabIndex = 33;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_señalando_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(298, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(298, 14);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(85, 100);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -244,7 +244,7 @@
             this.panel5.Controls.Add(this.label32);
             this.panel5.Location = new System.Drawing.Point(45, 218);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(706, 119);
+            this.panel5.Size = new System.Drawing.Size(732, 119);
             this.panel5.TabIndex = 32;
             // 
             // pictureBox2
@@ -319,7 +319,7 @@
             this.panel4.Controls.Add(this.label10);
             this.panel4.Location = new System.Drawing.Point(47, 94);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(332, 118);
+            this.panel4.Size = new System.Drawing.Size(349, 118);
             this.panel4.TabIndex = 31;
             // 
             // label31
@@ -417,7 +417,7 @@
             this.panel9.Controls.Add(this.panel8);
             this.panel9.Controls.Add(this.panel7);
             this.panel9.Controls.Add(this.label23);
-            this.panel9.Location = new System.Drawing.Point(39, 439);
+            this.panel9.Location = new System.Drawing.Point(30, 439);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(392, 644);
             this.panel9.TabIndex = 19;
@@ -859,7 +859,7 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel11);
-            this.panel2.Location = new System.Drawing.Point(460, 439);
+            this.panel2.Location = new System.Drawing.Point(451, 439);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 644);
             this.panel2.TabIndex = 20;

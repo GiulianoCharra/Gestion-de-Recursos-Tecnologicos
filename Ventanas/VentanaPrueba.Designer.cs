@@ -34,33 +34,33 @@
             this.btn_minimizar = new FontAwesome.Sharp.IconButton();
             this.btn_close = new FontAwesome.Sharp.IconButton();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panelListIntegrantes = new System.Windows.Forms.Panel();
             this.panelSubActividad3 = new System.Windows.Forms.Panel();
             this.iconButton11 = new FontAwesome.Sharp.IconButton();
             this.iconButton12 = new FontAwesome.Sharp.IconButton();
             this.iconButton13 = new FontAwesome.Sharp.IconButton();
+            this.btn_actividad3 = new FontAwesome.Sharp.IconButton();
             this.panelSubActividad2 = new System.Windows.Forms.Panel();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.btn_menu = new FontAwesome.Sharp.IconButton();
+            this.btn_activivdad2 = new FontAwesome.Sharp.IconButton();
+            this.panelListIntegrantes = new System.Windows.Forms.Panel();
+            this.btn_integrantes = new FontAwesome.Sharp.IconButton();
             this.panelSubActividad1 = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.btn_integrantes = new FontAwesome.Sharp.IconButton();
-            this.btn_actividad3 = new FontAwesome.Sharp.IconButton();
-            this.btn_activivdad2 = new FontAwesome.Sharp.IconButton();
             this.btn_actividad1 = new FontAwesome.Sharp.IconButton();
             this.btn_Inicio = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_menu = new FontAwesome.Sharp.IconButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelFromInferior = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -172,15 +172,6 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 528);
             this.MenuVertical.TabIndex = 1;
             // 
-            // panelListIntegrantes
-            // 
-            this.panelListIntegrantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(116)))), ((int)(((byte)(117)))));
-            this.panelListIntegrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelListIntegrantes.Location = new System.Drawing.Point(0, 523);
-            this.panelListIntegrantes.Name = "panelListIntegrantes";
-            this.panelListIntegrantes.Size = new System.Drawing.Size(233, 5);
-            this.panelListIntegrantes.TabIndex = 3;
-            // 
             // panelSubActividad3
             // 
             this.panelSubActividad3.BackColor = System.Drawing.Color.Transparent;
@@ -250,6 +241,25 @@
             this.iconButton13.Text = "Inicio";
             this.iconButton13.UseVisualStyleBackColor = true;
             // 
+            // btn_actividad3
+            // 
+            this.btn_actividad3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_actividad3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actividad3.ForeColor = System.Drawing.Color.White;
+            this.btn_actividad3.IconChar = FontAwesome.Sharp.IconChar.Cat;
+            this.btn_actividad3.IconColor = System.Drawing.Color.White;
+            this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_actividad3.IconSize = 30;
+            this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_actividad3.Location = new System.Drawing.Point(0, 397);
+            this.btn_actividad3.Name = "btn_actividad3";
+            this.btn_actividad3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_actividad3.Size = new System.Drawing.Size(233, 30);
+            this.btn_actividad3.TabIndex = 7;
+            this.btn_actividad3.Text = "actividad 3";
+            this.btn_actividad3.UseVisualStyleBackColor = true;
+            this.btn_actividad3.Click += new System.EventHandler(this.btn_actividad3_Click);
+            // 
             // panelSubActividad2
             // 
             this.panelSubActividad2.BackColor = System.Drawing.Color.Transparent;
@@ -299,6 +309,7 @@
             this.iconButton9.TabIndex = 5;
             this.iconButton9.Text = "Inicio";
             this.iconButton9.UseVisualStyleBackColor = true;
+            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
             // 
             // iconButton10
             // 
@@ -318,22 +329,54 @@
             this.iconButton10.TabIndex = 5;
             this.iconButton10.Text = "Inicio";
             this.iconButton10.UseVisualStyleBackColor = true;
+            this.iconButton10.Click += new System.EventHandler(this.iconButton10_Click);
             // 
-            // btn_menu
+            // btn_activivdad2
             // 
-            this.btn_menu.FlatAppearance.BorderSize = 0;
-            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
-            this.btn_menu.IconColor = System.Drawing.Color.White;
-            this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_menu.IconSize = 30;
-            this.btn_menu.Location = new System.Drawing.Point(200, 3);
-            this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btn_menu.Size = new System.Drawing.Size(30, 30);
-            this.btn_menu.TabIndex = 3;
-            this.btn_menu.UseVisualStyleBackColor = true;
-            this.btn_menu.Click += new System.EventHandler(this.btn_Click);
+            this.btn_activivdad2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_activivdad2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_activivdad2.ForeColor = System.Drawing.Color.White;
+            this.btn_activivdad2.IconChar = FontAwesome.Sharp.IconChar.Spider;
+            this.btn_activivdad2.IconColor = System.Drawing.Color.White;
+            this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_activivdad2.IconSize = 30;
+            this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_activivdad2.Location = new System.Drawing.Point(0, 271);
+            this.btn_activivdad2.Name = "btn_activivdad2";
+            this.btn_activivdad2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_activivdad2.Size = new System.Drawing.Size(233, 30);
+            this.btn_activivdad2.TabIndex = 6;
+            this.btn_activivdad2.Text = "actividad 2";
+            this.btn_activivdad2.UseVisualStyleBackColor = true;
+            this.btn_activivdad2.Click += new System.EventHandler(this.btn_activivdad2_Click);
+            // 
+            // panelListIntegrantes
+            // 
+            this.panelListIntegrantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(116)))), ((int)(((byte)(117)))));
+            this.panelListIntegrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelListIntegrantes.Location = new System.Drawing.Point(0, 523);
+            this.panelListIntegrantes.Name = "panelListIntegrantes";
+            this.panelListIntegrantes.Size = new System.Drawing.Size(233, 5);
+            this.panelListIntegrantes.TabIndex = 3;
+            // 
+            // btn_integrantes
+            // 
+            this.btn_integrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_integrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_integrantes.ForeColor = System.Drawing.Color.White;
+            this.btn_integrantes.IconChar = FontAwesome.Sharp.IconChar.Cat;
+            this.btn_integrantes.IconColor = System.Drawing.Color.White;
+            this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_integrantes.IconSize = 30;
+            this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_integrantes.Location = new System.Drawing.Point(0, 528);
+            this.btn_integrantes.Name = "btn_integrantes";
+            this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_integrantes.Size = new System.Drawing.Size(233, 30);
+            this.btn_integrantes.TabIndex = 8;
+            this.btn_integrantes.Text = "Informacion";
+            this.btn_integrantes.UseVisualStyleBackColor = true;
+            this.btn_integrantes.Click += new System.EventHandler(this.btn_integrantes_Click);
             // 
             // panelSubActividad1
             // 
@@ -407,63 +450,6 @@
             this.iconButton5.UseVisualStyleBackColor = true;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
-            // btn_integrantes
-            // 
-            this.btn_integrantes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_integrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_integrantes.ForeColor = System.Drawing.Color.White;
-            this.btn_integrantes.IconChar = FontAwesome.Sharp.IconChar.Cat;
-            this.btn_integrantes.IconColor = System.Drawing.Color.White;
-            this.btn_integrantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_integrantes.IconSize = 30;
-            this.btn_integrantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_integrantes.Location = new System.Drawing.Point(0, 528);
-            this.btn_integrantes.Name = "btn_integrantes";
-            this.btn_integrantes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_integrantes.Size = new System.Drawing.Size(233, 30);
-            this.btn_integrantes.TabIndex = 8;
-            this.btn_integrantes.Text = "Informacion";
-            this.btn_integrantes.UseVisualStyleBackColor = true;
-            this.btn_integrantes.Click += new System.EventHandler(this.btn_integrantes_Click);
-            // 
-            // btn_actividad3
-            // 
-            this.btn_actividad3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_actividad3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_actividad3.ForeColor = System.Drawing.Color.White;
-            this.btn_actividad3.IconChar = FontAwesome.Sharp.IconChar.Cat;
-            this.btn_actividad3.IconColor = System.Drawing.Color.White;
-            this.btn_actividad3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_actividad3.IconSize = 30;
-            this.btn_actividad3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividad3.Location = new System.Drawing.Point(0, 397);
-            this.btn_actividad3.Name = "btn_actividad3";
-            this.btn_actividad3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_actividad3.Size = new System.Drawing.Size(233, 30);
-            this.btn_actividad3.TabIndex = 7;
-            this.btn_actividad3.Text = "actividad 3";
-            this.btn_actividad3.UseVisualStyleBackColor = true;
-            this.btn_actividad3.Click += new System.EventHandler(this.btn_actividad3_Click);
-            // 
-            // btn_activivdad2
-            // 
-            this.btn_activivdad2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_activivdad2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_activivdad2.ForeColor = System.Drawing.Color.White;
-            this.btn_activivdad2.IconChar = FontAwesome.Sharp.IconChar.Spider;
-            this.btn_activivdad2.IconColor = System.Drawing.Color.White;
-            this.btn_activivdad2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_activivdad2.IconSize = 30;
-            this.btn_activivdad2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_activivdad2.Location = new System.Drawing.Point(0, 271);
-            this.btn_activivdad2.Name = "btn_activivdad2";
-            this.btn_activivdad2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_activivdad2.Size = new System.Drawing.Size(233, 30);
-            this.btn_activivdad2.TabIndex = 6;
-            this.btn_activivdad2.Text = "actividad 2";
-            this.btn_activivdad2.UseVisualStyleBackColor = true;
-            this.btn_activivdad2.Click += new System.EventHandler(this.btn_activivdad2_Click);
-            // 
             // btn_actividad1
             // 
             this.btn_actividad1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -515,16 +501,6 @@
             this.PanelLogo.Size = new System.Drawing.Size(233, 115);
             this.PanelLogo.TabIndex = 2;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_solo_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 30);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(85, 85);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -535,6 +511,32 @@
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "HiperMegaRed";
+            // 
+            // btn_menu
+            // 
+            this.btn_menu.FlatAppearance.BorderSize = 0;
+            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
+            this.btn_menu.IconColor = System.Drawing.Color.White;
+            this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_menu.IconSize = 30;
+            this.btn_menu.Location = new System.Drawing.Point(200, 3);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btn_menu.Size = new System.Drawing.Size(30, 30);
+            this.btn_menu.TabIndex = 3;
+            this.btn_menu.UseVisualStyleBackColor = true;
+            this.btn_menu.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_solo_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
@@ -551,49 +553,49 @@
             // 
             this.panelCentral.AutoScroll = true;
             this.panelCentral.BackColor = System.Drawing.Color.Transparent;
-            this.panelCentral.Controls.Add(this.label3);
-            this.panelCentral.Controls.Add(this.label4);
             this.panelCentral.Controls.Add(this.pictureBox1);
+            this.panelCentral.Controls.Add(this.label4);
+            this.panelCentral.Controls.Add(this.label3);
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentral.Location = new System.Drawing.Point(250, 33);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(934, 456);
             this.panelCentral.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(458, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 39);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "HiperMegaRed";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(223, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(244, 39);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "CompuMundo";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.Logo_homero_solo_removebg_preview;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(267, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(256, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(429, 299);
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(214, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(244, 39);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "CompuMundo";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(460, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(261, 39);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "HiperMegaRed";
             // 
             // panelFromInferior
             // 
@@ -727,6 +729,7 @@
             this.Controls.Add(this.panelBarra);
             this.DoubleBuffered = true;
             this.Name = "VentanaPrueba";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaPrueba";
             this.Load += new System.EventHandler(this.VentanaPrueba_Load);
             this.panelBarra.ResumeLayout(false);
@@ -755,7 +758,6 @@
         private System.Windows.Forms.Panel MenuVertical;
         private System.Windows.Forms.Panel PanelLogo;
         private FontAwesome.Sharp.IconButton btn_Inicio;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btn_actividad3;
         private FontAwesome.Sharp.IconButton btn_activivdad2;
         private FontAwesome.Sharp.IconButton btn_actividad1;
@@ -792,7 +794,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

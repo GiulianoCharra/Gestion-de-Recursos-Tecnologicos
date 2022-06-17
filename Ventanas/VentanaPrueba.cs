@@ -173,7 +173,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form3());
+            //openChildForm(new Form3());
             /*
              escribir codigo
              */
@@ -186,9 +186,21 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             //
             //
             //            
-            //adjuntar();
+            //adjuntar();            
         }
 
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+            sension ventana = new sension();
+            ventana.ShowDialog();
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            frmIniciaSesion ventana = new frmIniciaSesion();
+            ventana.ShowDialog();
+        }
+        
         private void btn_actividad3_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubActividad3);
@@ -287,7 +299,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             mx = e.X;
             my = e.Y;
         }
-
+                
         private void panelBarra_MouseMove(object sender, MouseEventArgs e)
         {
             if (m == 1)

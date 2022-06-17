@@ -51,6 +51,9 @@
     <StartupObject>Gestión_de_Recursos_Tecnológicos.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -70,6 +73,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Soporte\RedondeadoTextBox.cs">
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="Clases\Soporte\RedondeadoTextBox.Designer.cs">
       <DependentUpon>RedondeadoTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Bienvenido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Bienvenido.Designer.cs">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\CircularPictureBox.cs">
       <SubType>Component</SubType>
@@ -95,12 +107,6 @@
     <Compile Include="Ventanas\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventanas\frm_Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,18 @@
     </Compile>
     <Compile Include="Ventanas\Informacion.Designer.cs">
       <DependentUpon>Informacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\IniciaSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\IniciaSesion.Designer.cs">
+      <DependentUpon>IniciaSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\sension.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\sension.Designer.cs">
+      <DependentUpon>sension.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\VentanaPrueba.cs">
       <SubType>Form</SubType>
@@ -132,20 +150,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\Bienvenido.resx">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\frm_Info.resx">
       <DependentUpon>frm_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Informacion.resx">
       <DependentUpon>Informacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\IniciaSesion.resx">
+      <DependentUpon>IniciaSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\sension.resx">
+      <DependentUpon>sension.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\VentanaPrueba.resx">
       <DependentUpon>VentanaPrueba.cs</DependentUpon>
