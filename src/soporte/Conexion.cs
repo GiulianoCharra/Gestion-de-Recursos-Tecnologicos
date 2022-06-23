@@ -18,8 +18,8 @@ public abstract class Conexion
     public static void Conectar()
     {
 		//string url = System.Configuration.ConfigurationManager.AppSettings["GestionRTDB"];
-		//string url = "data source=chongopc\\sqlexpress;initial catalog=\"gestión de recursos tecnológicos\";integrated security=true";
-		string url = "Data Source=utnfrc63162.database.windows.net;Initial Catalog=\"Gestion Recursos Tecnologicos\";Persist Security Info=True;User ID=giuliano;Password=djbgme5coD1";
+		string url = "data source=chongopc\\sqlexpress;initial catalog=\"gestión de recursos tecnológicos\";integrated security=true";
+		//string url = "Data Source=utnfrc63162.database.windows.net;Initial Catalog=\"Gestion Recursos Tecnologicos\";Persist Security Info=True;User ID=giuliano;Password=djbgme5coD1";
 		//SqlConnection con = new SqlConnection(url);
 		conexion = new SqlConnection(url);
 		conexion.Open();

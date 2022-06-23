@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.Comun
 {
-    internal class Cache
+    static class Cache
     {
         public static Sesion sesionActual { get; set; }
     }

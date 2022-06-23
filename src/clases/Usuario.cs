@@ -55,6 +55,12 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         {
             return user.habilitado;
         }
+
+        internal static Usuario findById(string usuario)
+        {
+            throw new NotImplementedException();
+        }
+
         internal bool esUsuarioResponsableTecnico()
         {
             return perfil.esResponsableTecnico();

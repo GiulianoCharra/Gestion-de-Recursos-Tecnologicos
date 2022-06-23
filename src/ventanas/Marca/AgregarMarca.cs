@@ -82,6 +82,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
             };
 
             Conexion.EjecutarComando(parametros, nuevo);
+
             limpiar();
             cargarTabla();
         }
@@ -105,10 +106,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
                 {"@ID", id_marca},
                 {"@NOMBRE", nombre},
                 {"@DESCRIPCION", descripcion}
-            }; 
+            };
 
 
             Conexion.EjecutarComando(parametros, update);
+
+
             limpiar();
             cargarTabla();
             estado = Estados.AGREGAR;

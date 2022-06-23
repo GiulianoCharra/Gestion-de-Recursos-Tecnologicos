@@ -15,5 +15,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         private string email_personal { get; set; }
         private string email_institucional { get; set; }
         private int telefono { get; set; }
+
+        internal static PersonalCientifico findById(int id_personal_cientifico)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

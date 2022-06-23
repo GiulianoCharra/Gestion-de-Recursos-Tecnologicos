@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,5 +23,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         private ResponsableTecnico[] responsables_tecnicos { get; set; }
         private DateTime fecha_baja { get; set; }
         private string motivo_baja { get; set; }
+
+        internal static CentroInvestigacion findById(int id_centro_investigacion)
+        {
+            return DBCentroInvestigacion.findById(id_centro_investigacion);
+        }
     }
 }

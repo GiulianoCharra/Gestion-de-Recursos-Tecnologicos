@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Ambito">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>src\clases\Ambito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Usuario">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAACBAAEUAAAAAAEAEAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>src\clases\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.UnidadMedida">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>src\clases\UnidadMedida.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Turno">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAIABQAAAAAAAAAQAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>src\clases\Turno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.TipoRecursoTecnologico">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAEAAAEgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\TipoRecursoTecnologico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.TipoMantenimiento">
+    <Position X="9.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>src\clases\TipoMantenimiento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Sesion">
+    <Position X="14.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEIABAAAAAAAAAAAAIAQAQAAAAAAAAAg=</HashCode>
+      <FileName>src\clases\Sesion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.ResponsableTecnico">
+    <Position X="6" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAABAAAAAAkAAAAAAAwAQAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\ResponsableTecnico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.RecursoTecnologico">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAQABAAAAEABIiAEAAAgAAAAAAAAAAIAAA=</HashCode>
+      <FileName>src\clases\RecursoTecnologico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.PersonalCientifico">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAQAAQAAAAAgAAFAAAQAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>src\clases\PersonalCientifico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Permiso">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\Permiso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Perfil">
+    <Position X="11.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAACAAACAAAAAAEAAAAAIAAAAAAAACAAAAAA=</HashCode>
+      <FileName>src\clases\Perfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Modelo">
+    <Position X="5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAACAAAEAAAFAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\Modelo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Marca">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAACAAAEAEAEAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\Marca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Mantenimiento">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAADABAAAAAgAAAAAAAAAAgAAQAAACAQAAAAAABAAA=</HashCode>
+      <FileName>src\clases\Mantenimiento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.HistorialTurno">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAABAAAAAAAAAAAAAAAAQAAAAAAAAAQ=</HashCode>
+      <FileName>src\clases\HistorialTurno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.HistorialRecursoTecnologico">
+    <Position X="9.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAIIAAA=</HashCode>
+      <FileName>src\clases\HistorialRecursoTecnologico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Facultad">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAQAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\Facultad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Estado">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAACCAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\Estado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Director">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAABAAAAAAAAAAAAAAQAQAAAAAIAAIA=</HashCode>
+      <FileName>src\clases\Director.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Cientifico">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAABAAAAAAgAAAAAAAQAQAAAAAAAAgA=</HashCode>
+      <FileName>src\clases\Cientifico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.CentroInvestigacion">
+    <Position X="1" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAAAAEIBCgDAAEABEAAAAAAQAIAAAAQAAAAAA=</HashCode>
+      <FileName>src\clases\CentroInvestigacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.CaracteristicaRecursoTecnologico">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQABAAAAEAAAAAAAAA=</HashCode>
+      <FileName>src\clases\CaracteristicaRecursoTecnologico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestión_de_Recursos_Tecnológicos.src.clases.Caracteristica">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAABEAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\clases\Caracteristica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
