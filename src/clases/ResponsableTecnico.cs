@@ -30,15 +30,22 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.id_responsable_tecnico = id_responsable_tecnico;
             this.personal_cientifico = PersonalCientifico.findById(id_personal_cientifico);
             this.centro_investigacion = CentroInvestigacion.findById(id_centro_investigacion);
-            this.usuario = Usuario.findById(usuario);
+            this.usuario = Usuario.buscarUsuario(usuario);
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;
         }
 
-        internal static ResponsableTecnico findById(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
+        internal static ResponsableTecnico buscarResponsableTecnicoPorUsuario(Usuario user)
+        {
+            return DBResponsableTecnico.findByUser(user);
+        }
+
+        internal static ResponsableTecnico buscarResponsableTecnico(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
         {
             return DBResponsableTecnico.findById(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
         }
+
+
 
     }
 }

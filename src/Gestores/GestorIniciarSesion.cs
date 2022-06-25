@@ -10,29 +10,49 @@ using System.Windows.Forms;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
 {
-    internal class GestorIniciarSesion
+    internal static class GestorIniciarSesion
     {
-        private Sesion sesion;
-
-        public GestorIniciarSesion()
+        /// <summary>
+        /// Intenta iniciar sesion con los datos ingresados,
+        /// si el ususario existe se crea una nueva sesion y decuelve true,
+        /// si el ususario no se sncuentra se devuelve un false
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        public static bool iniciarSesion(String user, string pass)
         {
+            Usuario usuario = buscarUsuario(user, pass);
 
+            if (usuario == null || !usuario.esHabilitado())
+            {
+                return false;
+            }
+
+            guardarSesionCache(usuario);
+
+            return true;
         }
 
-        public static bool iniciarSesion(String usuario, string contraseña)
+        /// <summary>
+        /// Se guarda la sesion con el usuario que ingreso
+        /// </summary>
+        /// <param name="user"></param>
+        private static void guardarSesionCache(Usuario user)
         {
-            Usuario user = Usuario.existeUsuario(usuario, contraseña);
+            Cache.sesionActual = Sesion.iniciarSesion(user);
+        }
 
-            if (user != null)
-            {
-                if (user.habilitado)
-                {
-                    Sesion sesion = new Sesion(user, DateTime.Now);
-                    Cache.sesionActual = sesion;
-                    return true;
-                }
-            }
-            return false;
+        /// <summary>
+        /// Llama a la clase usuario para verificar si el user y pass
+        /// ingresado existe
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        public static Usuario buscarUsuario(String user, String pass)
+        {
+            return Usuario.buscarUsuario(user, pass);
         }
     }
 }

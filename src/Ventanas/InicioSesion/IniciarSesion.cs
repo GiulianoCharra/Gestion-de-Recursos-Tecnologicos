@@ -38,7 +38,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion
                 lbl_datos_incorrectos.Text = "Alguno de los datos ingresados es incorrecto";
             }
 
-            VentanaPrincipal.habilitar();
+            Bienvenido bienvenido = new Bienvenido();
+            bienvenido.ShowDialog();
+            
             this.Hide();
         }
         /// <summary>

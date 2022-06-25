@@ -23,7 +23,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         private CentroInvestigacion centro_investigacion { get; set; }
         private List<HistorialRecursoTecnologico> historiales_recurso_tecnologico { get; set; }
 
-      
+        public RecursoTecnologico()
+        {
+        }
+
         public RecursoTecnologico(int id_recurso_tecnologico,
             TipoRecursoTecnologico tipo_recurso_tecnologico,
             Marca marca,
@@ -72,7 +75,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.fraccionamiento = fraccionamiento;
             this.imagen = imagen;
             this.descripcion = descripcion;
-            this.responsable_tecnico = ResponsableTecnico.findById(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
+            this.responsable_tecnico = ResponsableTecnico.buscarResponsableTecnico(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
             this.centro_investigacion = CentroInvestigacion.findById(id_centro_investigacion);
             this.historiales_recurso_tecnologico = HistorialRecursoTecnologico.findByIdRecursoTecnologico(id_recurso_tecnologico);
         }
@@ -80,9 +83,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 
         internal void actualizarEstadoMantenimientoCorrectivo()
         {
-            Ambito recurso_tecnologico = Ambito.buscarAmbitoRecursoTecnologico();
-            Estado estadoMantenimiento = Estado.buscarEstadoRecursoTecnologicoMantenimiento(recurso_tecnologico);
-            HistorialRecursoTecnologico nuevo = new HistorialRecursoTecnologico(this, estadoMantenimiento, DateTime.Now);
+            //Ambito recurso_tecnologico = Ambito.buscarAmbitoRecursoTecnologico();
+            //Estado estadoMantenimiento = Estado.buscarEstadoRecursoTecnologicoMantenimiento(recurso_tecnologico);
+            //HistorialRecursoTecnologico nuevo = new HistorialRecursoTecnologico(this, estadoMantenimiento, DateTime.Now);
         }
     }
 }

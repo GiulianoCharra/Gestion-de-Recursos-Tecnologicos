@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Gestión de Recursos Tecnológicos.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +55,9 @@
     <StartupObject>Gestión_de_Recursos_Tecnológicos.Principal</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -98,6 +102,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gestión_de_Recursos_TecnológicosDataSet.Designer.cs">
@@ -110,10 +117,11 @@
     <Compile Include="src\clases\CaracteristicaRecursoTecnologico.cs" />
     <Compile Include="src\clases\CentroInvestigacion.cs" />
     <Compile Include="src\clases\Cientifico.cs" />
-    <Compile Include="src\persistencia\DBCentroInvestigacion.cs" />
-    <Compile Include="src\persistencia\DBHistorialRecursoTecnologico.cs" />
-    <Compile Include="src\persistencia\DBResponsableTecnico.cs" />
-    <Compile Include="src\persistencia\DBTipoRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBCentroInvestigacion.cs" />
+    <Compile Include="src\Persistencia\DBHistorialRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBResponsableTecnico.cs" />
+    <Compile Include="src\Persistencia\DBSesion.cs" />
+    <Compile Include="src\Persistencia\DBTipoRecursoTecnologico.cs" />
     <Compile Include="src\clases\Director.cs" />
     <Compile Include="src\clases\Estado.cs" />
     <Compile Include="src\clases\Facultad.cs" />
@@ -137,41 +145,75 @@
     <Compile Include="src\Gestores\GestorIngresoRecursoTecnologicoMantenimientoCorrectivo.cs" />
     <Compile Include="src\Gestores\GestorIniciarSesion.cs" />
     <Compile Include="src\Gestores\GestorPrincipal.cs" />
-    <Compile Include="src\persistencia\DBMarca.cs" />
-    <Compile Include="src\persistencia\DBModelo.cs" />
-    <Compile Include="src\persistencia\DBRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBMarca.cs" />
+    <Compile Include="src\Persistencia\DBModelo.cs" />
+    <Compile Include="src\Persistencia\DBRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBUsuario.cs" />
     <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\ventanas\Mantenimiento\IngresoMantenimiento.cs">
+    <Compile Include="src\Ventanas\Contacto\CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Ventanas\Contacto\frm_Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ventanas\Mantenimiento\IngresoMantenimiento.Designer.cs">
+    <Compile Include="src\Ventanas\Contacto\frm_Info.designer.cs">
+      <DependentUpon>frm_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Ventanas\InicioSesion\Bienvenido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Ventanas\InicioSesion\Bienvenido.designer.cs">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Ventanas\InicioSesion\RedondeadoTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\Ventanas\InicioSesion\RedondeadoTextBox.designer.cs">
+      <DependentUpon>RedondeadoTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Ventanas\InicioSesion\sension.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Ventanas\InicioSesion\sension.designer.cs">
+      <DependentUpon>sension.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.Designer.cs">
       <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ventanas\Marca\AgregarMarca.cs">
+    <Compile Include="src\Ventanas\Marca\AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ventanas\Marca\AgregarMarca.Designer.cs">
+    <Compile Include="src\Ventanas\Marca\AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ventanas\Modelo\AgregarModelo.cs">
+    <Compile Include="src\Ventanas\Modelo\AgregarModelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ventanas\Modelo\AgregarModelo.Designer.cs">
+    <Compile Include="src\Ventanas\Modelo\AgregarModelo.Designer.cs">
       <DependentUpon>AgregarModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ventanas\VentanaPrincipal.cs">
+    <Compile Include="src\Ventanas\VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ventanas\VentanaPrincipal.Designer.cs">
+    <Compile Include="src\Ventanas\VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ventanas\Sesion\IniciarSesion.cs">
+    <Compile Include="src\Ventanas\InicioSesion\IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ventanas\Sesion\IniciarSesion.Designer.cs">
+    <Compile Include="src\Ventanas\InicioSesion\IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Ventanas\VentanaPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Ventanas\VentanaPrueba.designer.cs">
+      <DependentUpon>VentanaPrueba.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,20 +225,35 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\ventanas\Mantenimiento\IngresoMantenimiento.resx">
+    <EmbeddedResource Include="src\Ventanas\Contacto\frm_Info.resx">
+      <DependentUpon>frm_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Ventanas\InicioSesion\Bienvenido.resx">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Ventanas\InicioSesion\RedondeadoTextBox.resx">
+      <DependentUpon>RedondeadoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Ventanas\InicioSesion\sension.resx">
+      <DependentUpon>sension.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.resx">
       <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ventanas\VentanaPrincipal.resx">
+    <EmbeddedResource Include="src\Ventanas\VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ventanas\Sesion\IniciarSesion.resx">
+    <EmbeddedResource Include="src\Ventanas\InicioSesion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\Ventanas\VentanaPrueba.resx">
+      <DependentUpon>VentanaPrueba.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include=".gitattributes" />
-    <EmbeddedResource Include="src\ventanas\Marca\AgregarMarca.resx">
+    <EmbeddedResource Include="src\Ventanas\Marca\AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ventanas\Modelo\AgregarModelo.resx">
+    <EmbeddedResource Include="src\Ventanas\Modelo\AgregarModelo.resx">
       <DependentUpon>AgregarModelo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".gitignore" />
@@ -255,6 +312,19 @@
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.exe" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.pdb" />
+    <Content Include="src\Resources\gato_central_cientifico-removebg-preview.png" />
+    <Content Include="src\Resources\gato_central_cientifico-removebg.png" />
+    <Content Include="src\Resources\gato_cientifico_00-removebg-preview.png" />
+    <Content Include="src\Resources\gato_señalando-removebg-preview.png" />
+    <Content Include="src\Resources\Logo_homero-removebg-preview.png" />
+    <Content Include="src\Resources\Logo_homero.png" />
+    <Content Include="src\Resources\Logo_homero_solo-removebg-preview.png" />
+    <Content Include="src\Resources\profe_german.jpg" />
+    <Content Include="src\Resources\spiderman_perfil.png" />
+    <Content Include="src\Resources\utn_frc_logo-removebg-preview.png" />
+    <Content Include="src\Resources\utn_frc_logo.png" />
+    <Content Include="src\Resources\UTN_LOGO-removebg-preview.png" />
+    <Content Include="src\Resources\UTN_LOGO.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

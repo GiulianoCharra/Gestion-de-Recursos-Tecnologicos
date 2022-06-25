@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.Comun;
+using Gestión_de_Recursos_Tecnológicos.src.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,45 +20,55 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         {
         }
 
+        public Sesion(Usuario usuario):this(usuario, DateTime.Now)
+        {
+        }
         public Sesion(Usuario usuario, DateTime fecha_hora_inicio)
         {
             this.usuario = usuario;
             this.fecha_hora_inicio = fecha_hora_inicio;
-            agregarSesion(usuario.user);
+        }        
+        public Sesion(int id_sesion, String usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
+            : this(id_sesion, Usuario.buscarUsuario(usuario), fecha_hora_inicio, fecha_hora_fin)
+        {
         }
-        public Sesion(int id_sesion, Usuario usuario, DateTime fecha_hora_inicio)
+        public Sesion(int id_sesion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_sesion = id_sesion;
             this.usuario = usuario;
             this.fecha_hora_inicio = fecha_hora_inicio;
+            this.fecha_hora_fin = fecha_hora_fin;
         }
 
+        /// <summary>
+        /// Cierra la sesion
+        /// </summary>
         public void cerrarSesion()
         {
             fecha_hora_fin = DateTime.Now;
-            string actualizar = "UPDATE INTO [dbo].[SESIONES] SET ([fecha_hora_fin] = @FECHA_HORA_FIN) WHERE id_sesion = @ID_SESION";
-            
-            Dictionary<string, object> parametros = new Dictionary<string, object>() { 
-                {"@ID_SESION", id_sesion } 
-            };
-            Conexion.EjecutarComando(parametros, actualizar);
+            DBSesion.singOff(id_sesion, fecha_hora_fin);
         }
 
-        public void agregarSesion(string user)
+        /// <summary>
+        /// Crea una nueva sesion y la guarda en la DB
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static Sesion iniciarSesion(Usuario user)
         {
-            string crear = "INSERT INTO [dbo].[SESIONES]([fecha_hora_inicio],[id_usuario]) VALUES(@FECHA_HORA_INICIO,@ID_USUARIO)";
-
-            Dictionary<string, object> parametros = new Dictionary<string, object>() { 
-                {"@FECHA_HORA_INICIO", fecha_hora_inicio},
-                {"@ID_USUARIO", user} 
-            };
-
-            Conexion.EjecutarComando(parametros, crear);
+            Sesion nueva = new Sesion(user);
+            int id_sesion = DBSesion.insert(user.user,nueva.fecha_hora_inicio);
+            nueva.id_sesion = id_sesion;
+            return nueva;
         }
 
+        /// <summary>
+        /// Devuelve la sesion actual
+        /// </summary>
+        /// <returns></returns>
         internal static Sesion sesionActual()
         {
-            throw new NotImplementedException();
+            return Cache.sesionActual;
         }
 
     }

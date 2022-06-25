@@ -24,7 +24,7 @@ namespace Gestión_de_Recursos_Tecnológicos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IniciarSesion());
+            Application.Run(new sension());
         }
     }
 }

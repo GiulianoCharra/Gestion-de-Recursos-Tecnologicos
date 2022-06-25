@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks;
+using Gestión_de_Recursos_Tecnológicos.src.Persistencia;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
@@ -14,53 +15,47 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public Perfil perfil { get; set; }
         public bool habilitado { get; set; }
 
-        public Usuario(string user, string pass)
+        public Usuario(string user, string pass, int perfil, bool habilidato)
+            :this(user, pass, Perfil.buscarPerfil(perfil), habilidato)
+        {
+        }
+        public Usuario(string user, string pass, Perfil perfil, bool habilidato)
         {
             this.user = user;
             this.pass = pass;
-        }
-
-        public Usuario(string user, string pass, Perfil perfil, bool habilidato) : this(user, pass)
-        {
             this.perfil = perfil;
             this.habilitado = habilidato;
         }
 
-        public static Usuario existeUsuario(string user, string pass)
+        internal static Usuario buscarUsuario(string usuario)
         {
-            string consultarUsuario = "SELECT * FROM [dbo].[USUARIOS] WHERE [usuario]=@USUARIO AND [contraseña]=@CONTRASEÑA";
-            Dictionary<string, object> parametros = new Dictionary<string, object>()
-            {
-                {"@USUARIO", user},
-                {"@CONTRASEÑA", pass}
-            };
-
-            DataTable ds = Conexion.EjecutarComando(parametros, consultarUsuario);
-            DataRowCollection dwc = ds.Rows;
-
-            if (dwc.Count == 1)
-            {
-                string username = (string)dwc[0][0];
-                string password = (string)dwc[0][1];
-                Perfil perfil = Perfil.buscarPerfil((int)dwc[0][2]);
-                bool habilidato = (bool)dwc[0][3];
-
-                return new Usuario(username, password, perfil, habilidato);
-            }
-
-            return null;
+            return DBUsuario.findByUser(usuario);
         }
 
-        internal static bool esUsuarioHabilitado(Usuario user)
+        /// <summary>
+        /// Busca si el usuario ingresado existe
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        public static Usuario buscarUsuario(string user, string pass)
         {
-            return user.habilitado;
+            return DBUsuario.findByUserAndPass(user, pass);
         }
 
-        internal static Usuario findById(string usuario)
+        /// <summary>
+        /// Devuelver true si el usuario esta habilitado y false si no lo esta
+        /// </summary>
+        /// <returns></returns>
+        internal bool esHabilitado()
         {
-            throw new NotImplementedException();
+            return habilitado;
         }
 
+        /// <summary>
+        /// Pregunta si el usuario actual es Personal Tecnico
+        /// </summary>
+        /// <returns></returns>
         internal bool esUsuarioResponsableTecnico()
         {
             return perfil.esResponsableTecnico();

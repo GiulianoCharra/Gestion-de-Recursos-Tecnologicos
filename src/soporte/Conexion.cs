@@ -39,11 +39,7 @@ public abstract class Conexion
 	public static DataTable EjecutarComando(Dictionary<string, object> parametros, string consulta)
 	{
 		comando.Parameters.Clear();
-        foreach (var item in parametros)
-        {
-			agregarParametro(item.Key, item.Value);
-        }
-
+		agregarParametros(parametros);
 		return EjecutarComando(consulta);
 	}
 	public static DataTable EjecutarComando(string consulta)
@@ -63,11 +59,32 @@ public abstract class Conexion
 		return resultados;
 	}
 
+	public static int EjecutarInsercion(string consulta)
+	{
+		//Llama al metodo conectar para abrir la coneccion con la base de datos
+		Conectar();
+		comando.CommandType = CommandType.Text;
+		comando.CommandText = consulta;
+		comando.Connection = conexion;
+
+		int id = Convert.ToInt32(comando.ExecuteScalar());
+
+		//Cierra la conexion
+		cerrar();
+		return id;
+	}
+	public static int EjecutarInsercion(Dictionary<string, object> parametros, string consulta)
+	{
+		comando.Parameters.Clear();
+		agregarParametros(parametros);
+		return EjecutarInsercion(consulta);
+	}
+
 	/// <summary>
 	/// Agrega una serie de parametros que seran cargados
 	/// cuando se ejecute el comando en la base de datos
 	/// </summary>
-	public static void agregarParametro(Dictionary<string, object> dict)
+	public static void agregarParametros(Dictionary<string, object> dict)
 	{
 		foreach (var item in dict)
         {
@@ -78,4 +95,5 @@ public abstract class Conexion
     {
 		comando.Parameters.AddWithValue(parametro, valor);
     }
+
 }
