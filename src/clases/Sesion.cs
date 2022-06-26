@@ -29,7 +29,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.fecha_hora_inicio = fecha_hora_inicio;
         }        
         public Sesion(int id_sesion, String usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
-            : this(id_sesion, Usuario.buscarUsuario(usuario), fecha_hora_inicio, fecha_hora_fin)
+            : this(id_sesion, Usuario.buscarPorUsuario(usuario), fecha_hora_inicio, fecha_hora_fin)
         {
         }
         public Sesion(int id_sesion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)

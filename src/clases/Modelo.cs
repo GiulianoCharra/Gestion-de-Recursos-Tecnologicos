@@ -24,7 +24,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public Modelo(int id_modelo, int id_marca, string nombre, string descripcion)
         {
             this.id_modelo = id_modelo;
-            this.marca = Marca.findById(id_marca);
+            this.marca = Marca.busrcarPorId(id_marca);
             this.nombre = nombre;
             this.descripcion = descripcion;
         }

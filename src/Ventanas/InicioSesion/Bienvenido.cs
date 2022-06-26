@@ -47,8 +47,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void Bienvenido_Load(object sender, EventArgs e)
         {
-            Usuario user = Cache.sesionActual.usuario;
-            ResponsableTecnico.buscarResponsableTecnicoPorUsuario(user);
+            
+            
 
             string name = 
             lblUsuario.Text = "";//Seleccionar usario logueado

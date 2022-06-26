@@ -10,7 +10,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
 {
     internal class DBSesion
     {
-        private readonly static String query_insert = "INSERT INTO [dbo].[SESIONES]([fecha_hora_inicio],[id_usuario]) output INSERTED.id_sesion VALUES(@FECHA_HORA_INICIO,@ID_USUARIO)";
+        private readonly static string query_insert = "INSERT INTO [dbo].[SESIONES]([fecha_hora_inicio],[id_usuario]) output INSERTED.id_sesion VALUES(@FECHA_HORA_INICIO,@ID_USUARIO)";
         private readonly static string query_singOff = "UPDATE INTO [dbo].[SESIONES] SET ([fecha_hora_fin] = @FECHA_HORA_FIN) WHERE id_sesion = @ID_SESION";
 
 

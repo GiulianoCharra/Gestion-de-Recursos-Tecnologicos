@@ -10,9 +10,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
 {
     internal class DBUsuario
     {
-        private readonly static String query_findByUser = "SELECT * FROM [dbo].[USUARIOS] WHERE [usuario]=@USUARIO";
-        private readonly static String query_findByUserAndPass = "SELECT * FROM [dbo].[USUARIOS] WHERE [usuario]=@USUARIO AND [contraseña]=@CONTRASEÑA";
-
+        private readonly static string query_findByUser = "SELECT * FROM [dbo].[USUARIOS] WHERE [usuario]=@USUARIO";
+        private readonly static string query_findByUserAndPass = "SELECT * FROM [dbo].[USUARIOS] WHERE [usuario]=@USUARIO AND [contraseña]=@CONTRASEÑA";
 
         private static Usuario buildUser(DataRow rs)
         {
@@ -38,7 +37,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
             DataRow dr = dwc[0];
             return buildUser(dr);
         }
-
         internal static Usuario findByUser(string usuario)
         {
             Conexion.agregarParametro("@USUARIO", usuario);

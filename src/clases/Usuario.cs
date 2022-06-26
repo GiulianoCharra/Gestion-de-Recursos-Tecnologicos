@@ -16,7 +16,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public bool habilitado { get; set; }
 
         public Usuario(string user, string pass, int perfil, bool habilidato)
-            :this(user, pass, Perfil.buscarPerfil(perfil), habilidato)
+            :this(user, pass, Perfil.buscarById(perfil), habilidato)
         {
         }
         public Usuario(string user, string pass, Perfil perfil, bool habilidato)
@@ -27,7 +27,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.habilitado = habilidato;
         }
 
-        internal static Usuario buscarUsuario(string usuario)
+        internal static Usuario buscarPorUsuario(string usuario)
         {
             return DBUsuario.findByUser(usuario);
         }
@@ -38,7 +38,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         /// <param name="user"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public static Usuario buscarUsuario(string user, string pass)
+        public static Usuario buscarByUsuarioAndPass(string user, string pass)
         {
             return DBUsuario.findByUserAndPass(user, pass);
         }
@@ -59,6 +59,22 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         internal bool esUsuarioResponsableTecnico()
         {
             return perfil.esResponsableTecnico();
+        }
+        /// <summary>
+        /// Pregunta si el usuario actual es Personal Tecnico
+        /// </summary>
+        /// <returns></returns>
+        internal bool esUsuarioDirector()
+        {
+            return perfil.esDirector();
+        }
+        /// <summary>
+        /// Pregunta si el usuario actual es Personal Tecnico
+        /// </summary>
+        /// <returns></returns>
+        internal bool esUsuarioCientifico()
+        {
+            return perfil.esCientifico();
         }
 
         public StringBuilder mostrarDatos()

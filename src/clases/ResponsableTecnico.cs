@@ -9,12 +9,12 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class ResponsableTecnico
     {
-        private int id_responsable_tecnico { get; set; }
-        private PersonalCientifico personal_cientifico { set; get; }
-        private CentroInvestigacion centro_investigacion { set; get; }
-        private Usuario usuario { get; set; }
-        private DateTime fecha_hora_inicio { get; set; }
-        private DateTime fecha_hora_fin { get; set; }
+        public int id_responsable_tecnico { get; set; }
+        public PersonalCientifico personal_cientifico { set; get; }
+        public CentroInvestigacion centro_investigacion { set; get; }
+        public Usuario usuario { get; set; }
+        public DateTime fecha_hora_inicio { get; set; }
+        public DateTime fecha_hora_fin { get; set; }
 
         public ResponsableTecnico(int id_responsable_tecnico, PersonalCientifico personal_cientifico, CentroInvestigacion centro_investigacion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
@@ -28,24 +28,26 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public ResponsableTecnico(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion, string usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_responsable_tecnico = id_responsable_tecnico;
-            this.personal_cientifico = PersonalCientifico.findById(id_personal_cientifico);
-            this.centro_investigacion = CentroInvestigacion.findById(id_centro_investigacion);
-            this.usuario = Usuario.buscarUsuario(usuario);
+            this.personal_cientifico = PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico);
+            this.centro_investigacion = CentroInvestigacion.buscarPorCentroInvestigacion(id_centro_investigacion);
+            this.usuario = Usuario.buscarPorUsuario(usuario);
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;
         }
 
-        internal static ResponsableTecnico buscarResponsableTecnicoPorUsuario(Usuario user)
+        internal static ResponsableTecnico buscarPorUsuario(string user)
         {
             return DBResponsableTecnico.findByUser(user);
         }
 
-        internal static ResponsableTecnico buscarResponsableTecnico(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
+        internal static List<ResponsableTecnico> buscarPorCentroInvestigacion(int id_centro_investigacion)
+        {
+            return DBResponsableTecnico.findByCentroInvestigacion(id_centro_investigacion);
+        }
+
+        internal static ResponsableTecnico buscarPorId(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
         {
             return DBResponsableTecnico.findById(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
         }
-
-
-
     }
 }

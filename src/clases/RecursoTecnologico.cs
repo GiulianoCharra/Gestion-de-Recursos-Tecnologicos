@@ -69,14 +69,14 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         {
             this.id_recurso_tecnologico = id_recurso_tecnologico;
             this.tipo_recurso_tecnologico = TipoRecursoTecnologico.findById(id_tipo_recurso_tecnologico);
-            this.marca = Marca.findById(id_marca);
+            this.marca = Marca.busrcarPorId(id_marca);
             this.modelo = Modelo.findById(id_modelo, id_marca);
             this.fecha_alta = fecha_alta;
             this.fraccionamiento = fraccionamiento;
             this.imagen = imagen;
             this.descripcion = descripcion;
-            this.responsable_tecnico = ResponsableTecnico.buscarResponsableTecnico(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
-            this.centro_investigacion = CentroInvestigacion.findById(id_centro_investigacion);
+            this.responsable_tecnico = ResponsableTecnico.buscarPorId(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
+            this.centro_investigacion = CentroInvestigacion.buscarPorCentroInvestigacion(id_centro_investigacion);
             this.historiales_recurso_tecnologico = HistorialRecursoTecnologico.findByIdRecursoTecnologico(id_recurso_tecnologico);
         }
 

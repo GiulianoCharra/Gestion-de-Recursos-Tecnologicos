@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -7,8 +8,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Perfil
     {
-        private int id_perfil { get; set; }
-        private string nombre { get; set; }
+        public int id_perfil { get; set; }
+        public string nombre { get; set; }
 
         public Perfil(int id_perfil, string nombre)
         {
@@ -32,20 +33,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             return nombre.Equals("Director") ? true : false;
         }
 
-        internal static Perfil buscarPerfil(int id_perfil)
+        internal static Perfil buscarById(int id_perfil)
         {
-            string consultar = "SELECT [id_perfil],[nombre] FROM[dbo].[PERFILES] WHERE [id_perfil]=@ID_PERFIL";
-
-            Dictionary<string, object> parametros = new Dictionary<string, object> {
-                { "@ID_PERFIL", id_perfil } 
-            };
-            
-            DataTable dt = Conexion.EjecutarComando(parametros,consultar);
-            Perfil perfil = new Perfil(
-                (int)dt.Rows[0][0],
-                (string)dt.Rows[0][1]);
-
-            return perfil;
+            return DBPerfil.findById(id_perfil);
         }
 
         public StringBuilder mostrarDatos()

@@ -22,6 +22,12 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.descripcion = descripcion;
             this.modelos = modelos;
         }
+
+        internal static void guardarNuevo(string nombre, string descripcion)
+        {
+            DBMarca.insert(nombre, descripcion);
+        }
+
         public Marca(int id_marca, string nombre, string descripcion)
         {
             this.id_marca = id_marca;
@@ -30,15 +36,17 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.modelos = Modelo.findByIdMarca(id_marca);
         }
 
-        public ArrayList findAll()
+        public static List<Marca> buscarTodas()
         {
             return DBMarca.findAll();
         }
 
-        internal static Marca findById(int id_marca)
+        internal static Marca busrcarPorId(int id_marca)
         {
             return DBMarca.findById(id_marca);
         }
+
+
     }
 
 }

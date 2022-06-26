@@ -22,7 +22,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// <returns></returns>
         public static bool iniciarSesion(String user, string pass)
         {
-            Usuario usuario = buscarUsuario(user, pass);
+            Usuario usuario = buscarUsuarioAndPass(user, pass);
 
             if (usuario == null || !usuario.esHabilitado())
             {
@@ -40,7 +40,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// <param name="user"></param>
         private static void guardarSesionCache(Usuario user)
         {
-            Cache.sesionActual = Sesion.iniciarSesion(user);
+            Cache.guardarDatos(Sesion.iniciarSesion(user));
         }
 
         /// <summary>
@@ -50,9 +50,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// <param name="user"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public static Usuario buscarUsuario(String user, String pass)
+        public static Usuario buscarUsuarioAndPass(String user, String pass)
         {
-            return Usuario.buscarUsuario(user, pass);
+            return Usuario.buscarByUsuarioAndPass(user, pass);
         }
     }
 }

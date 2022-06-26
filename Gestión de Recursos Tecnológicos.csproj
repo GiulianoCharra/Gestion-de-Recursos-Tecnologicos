@@ -117,8 +117,16 @@
     <Compile Include="src\clases\CaracteristicaRecursoTecnologico.cs" />
     <Compile Include="src\clases\CentroInvestigacion.cs" />
     <Compile Include="src\clases\Cientifico.cs" />
+    <Compile Include="src\Gestores\GestorRegistrarMarca.cs" />
+    <Compile Include="src\Persistencia\DBAmbito.cs" />
     <Compile Include="src\Persistencia\DBCentroInvestigacion.cs" />
+    <Compile Include="src\Persistencia\DBCientifico.cs" />
+    <Compile Include="src\Persistencia\DBDirector.cs" />
+    <Compile Include="src\Persistencia\DBEstado.cs" />
+    <Compile Include="src\Persistencia\DBFacultad.cs" />
     <Compile Include="src\Persistencia\DBHistorialRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBPerfil.cs" />
+    <Compile Include="src\Persistencia\DBPersonalCientifico.cs" />
     <Compile Include="src\Persistencia\DBResponsableTecnico.cs" />
     <Compile Include="src\Persistencia\DBSesion.cs" />
     <Compile Include="src\Persistencia\DBTipoRecursoTecnologico.cs" />

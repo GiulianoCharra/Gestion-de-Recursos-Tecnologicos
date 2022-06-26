@@ -83,6 +83,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 
             Conexion.EjecutarComando(parametros, nuevo);
 
+            Marca.agregar();
+
             limpiar();
             cargarTabla();
         }
