@@ -14,9 +14,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
             return Marca.buscarTodas();
         }
 
-        public static void registrarNuevaMarca(string nombre, string descripcion)
+        internal static void registrarMarca(string nombre, string descripcion)
         {
-            Marca.guardarNuevo(nombre, descripcion);
+            Marca.registrar(nombre, descripcion);
         }
     }
 }

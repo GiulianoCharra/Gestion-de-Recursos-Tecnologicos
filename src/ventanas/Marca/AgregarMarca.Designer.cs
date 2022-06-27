@@ -91,7 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Marcas.AutoGenerateColumns = false;
             this.dgv_Marcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Marcas.BackgroundColor = System.Drawing.Color.Azure;
+            this.dgv_Marcas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_Marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Marcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -102,7 +102,7 @@
             this.dgv_Marcas.Name = "dgv_Marcas";
             this.dgv_Marcas.ReadOnly = true;
             this.dgv_Marcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Marcas.Size = new System.Drawing.Size(345, 218);
+            this.dgv_Marcas.Size = new System.Drawing.Size(345, 227);
             this.dgv_Marcas.TabIndex = 4;
             this.dgv_Marcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Marcas_CellClick);
             // 
@@ -159,7 +159,7 @@
             // 
             // btn_agregar_modelo
             // 
-            this.btn_agregar_modelo.Location = new System.Drawing.Point(78, 272);
+            this.btn_agregar_modelo.Location = new System.Drawing.Point(78, 274);
             this.btn_agregar_modelo.Name = "btn_agregar_modelo";
             this.btn_agregar_modelo.Size = new System.Drawing.Size(90, 23);
             this.btn_agregar_modelo.TabIndex = 7;
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 300);
+            this.ClientSize = new System.Drawing.Size(630, 309);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_agregar_modelo);
             this.Controls.Add(this.btn_cancelar);

@@ -33,14 +33,18 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
 
             DataTable ds = Conexion.EjecutarComando(parametros, query_findByUserAndPass);
             DataRowCollection dwc = ds.Rows;
-            
+
+            if (dwc.Count == 0)
+            {
+                return null;
+            }
             DataRow dr = dwc[0];
             return buildUser(dr);
         }
         internal static Usuario findByUser(string usuario)
         {
+            Conexion.limpiarParametros();
             Conexion.agregarParametro("@USUARIO", usuario);
-
             DataTable ds = Conexion.EjecutarComando(query_findByUser);
             DataRowCollection dwc = ds.Rows;
 

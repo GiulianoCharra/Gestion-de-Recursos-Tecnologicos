@@ -9,13 +9,13 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class PersonalCientifico
     {
-        private int legajo { get; set; }
-        private string apellidos { get; set; }
-        private string nombres { get; set; }
-        private string dni { get; set; }
-        private string email_personal { get; set; }
-        private string email_institucional { get; set; }
-        private string telefono { get; set; }
+        public int legajo { get; set; }
+        public string apellidos { get; set; }
+        public string nombres { get; set; }
+        public string dni { get; set; }
+        public string email_personal { get; set; }
+        public string email_institucional { get; set; }
+        public string telefono { get; set; }
 
         public PersonalCientifico(int legajo, string apellidos, string nombres, string dni, string email_personal, string email_institucional, string telefono)
         {

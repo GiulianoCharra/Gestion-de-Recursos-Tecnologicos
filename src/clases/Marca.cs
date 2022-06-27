@@ -10,10 +10,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class Marca
     {
-        private int id_marca { get; set; }
-        private string nombre { get; set; }
-        private string descripcion { get; set; }
-        private List<Modelo> modelos { get; set; }
+        public int id_marca { get; set; }
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public List<Modelo> modelos { get; set; }
 
         public Marca(int id_marca, string nombre, string descripcion, List<Modelo> modelos)
         {
@@ -23,9 +23,15 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.modelos = modelos;
         }
 
-        internal static void guardarNuevo(string nombre, string descripcion)
+
+        internal static void registrar(string nombre, string descripcion)
         {
             DBMarca.insert(nombre, descripcion);
+        }
+
+        internal static void actualizar(int id_marca, string nombre, string descripcion)
+        {
+            DBMarca.update(id_marca, nombre, descripcion);
         }
 
         public Marca(int id_marca, string nombre, string descripcion)
@@ -41,12 +47,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             return DBMarca.findAll();
         }
 
-        internal static Marca busrcarPorId(int id_marca)
+        internal static Marca buscarPorId(int id_marca)
         {
             return DBMarca.findById(id_marca);
         }
-
-
     }
 
 }

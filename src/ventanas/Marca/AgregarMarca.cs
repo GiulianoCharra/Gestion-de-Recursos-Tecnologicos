@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.Gestores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 {
     public partial class AgregarMarca : Form
     {
-
         private enum Estados
         {
             AGREGAR,
-            MODIFICAR
+            MODIFICAR,
+            BORRAR
         }
-
         private Estados estado = Estados.AGREGAR;
 
         public AgregarMarca()
@@ -53,7 +53,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         {
 
             estado = Estados.MODIFICAR;
-            btn_agregar_modificar.Text = "Modificar";
+            cambiarTextoBoton();
 
             txt_nombre.Text = dgv_Marcas.SelectedCells[1].Value.ToString();
             txt_descripcion.Text = dgv_Marcas.SelectedCells[2].Value.ToString();
@@ -61,7 +61,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 
         private void btn_agregar_modelo_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void agregarMarca()
@@ -73,17 +73,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
             string nombre = txt_nombre.Text;
             string descripcion = txt_descripcion.Text;
 
-            string nuevo = "INSERT INTO [dbo].[MARCAS] ([nombre] ,[descripcion]) VALUES (@NOMBRE, @DESCRIPCION )";
-
-            Dictionary<string, object> parametros = new Dictionary<string, object>()
-            {
-                {"@NOMBRE", nombre},
-                {"@DESCRIPCION", descripcion}
-            };
-
-            Conexion.EjecutarComando(parametros, nuevo);
-
-            Marca.agregar();
+            GestorRegistrarMarca.registrarMarca(nombre, descripcion);
 
             limpiar();
             cargarTabla();
@@ -101,23 +91,12 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
             string nombre = txt_nombre.Text;
             string descripcion = txt_descripcion.Text;
 
-            string update = "UPDATE [dbo].[MARCAS] SET [nombre] = @NOMBRE ,[descripcion] = @DESCRIPCION WHERE [id_marca] = @ID";
-
-            Dictionary<string, object> parametros = new Dictionary<string, object>()
-            {
-                {"@ID", id_marca},
-                {"@NOMBRE", nombre},
-                {"@DESCRIPCION", descripcion}
-            };
-
-
-            Conexion.EjecutarComando(parametros, update);
-
+            GestorActualizarMarca.actualizarMarca(id_marca, nombre, descripcion);
 
             limpiar();
             cargarTabla();
             estado = Estados.AGREGAR;
-            btn_agregar_modificar.Text = "Agregar"; 
+            cambiarTextoBoton(); 
         }
 
         private void eliminarMarca()
@@ -125,6 +104,26 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
             string eliminar = "DELETE FROM [dbo].[MODELOS] WHERE id = @ID";
             Conexion.EjecutarComando(eliminar);
             
+        }
+
+        private void cambiarTextoBoton()
+        {
+            string text = string.Empty;
+
+            if (estado == Estados.AGREGAR)
+            {
+                text = "Agregar";
+            }
+            if (estado == Estados.MODIFICAR)
+            {
+                text = "Modificar";
+            }
+            if (estado == Estados.BORRAR)
+            {
+                text = "Borrar";
+            }
+
+            btn_agregar_modificar.Text = text;
         }
 
         private void limpiar()

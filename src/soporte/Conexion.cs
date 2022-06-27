@@ -18,7 +18,7 @@ public abstract class Conexion
     public static void Conectar()
     {
 		//string url = System.Configuration.ConfigurationManager.AppSettings["GestionRTDB"];
-		string url = "data source=chongopc\\sqlexpress;initial catalog=\"gestión de recursos tecnológicos\";integrated security=true";
+		string url = "Data Source=CHONGOPC\\SQLEXPRESS;Initial Catalog=Gestión de Recursos Tecnológicos;Integrated Security=True";
 		//string url = "Data Source=utnfrc63162.database.windows.net;Initial Catalog=\"Gestion Recursos Tecnologicos\";Persist Security Info=True;User ID=giuliano;Password=djbgme5coD1";
 		//SqlConnection con = new SqlConnection(url);
 		conexion = new SqlConnection(url);
@@ -29,6 +29,10 @@ public abstract class Conexion
     {
         conexion.Close();
     }
+    internal static void limpiarParametros()
+    {
+		comando.Parameters.Clear();
+    }
 
 	/// <summary>
 	/// Ejecuta una query en la base de datos con ciertos parametros
@@ -38,7 +42,7 @@ public abstract class Conexion
 	/// <returns></returns>
 	public static DataTable EjecutarComando(Dictionary<string, object> parametros, string consulta)
 	{
-		comando.Parameters.Clear();
+		limpiarParametros();
 		agregarParametros(parametros);
 		return EjecutarComando(consulta);
 	}
@@ -59,7 +63,7 @@ public abstract class Conexion
 		return resultados;
 	}
 
-	public static int EjecutarInsercion(string consulta)
+    public static int EjecutarInsercion(string consulta)
 	{
 		//Llama al metodo conectar para abrir la coneccion con la base de datos
 		Conectar();
@@ -75,7 +79,7 @@ public abstract class Conexion
 	}
 	public static int EjecutarInsercion(Dictionary<string, object> parametros, string consulta)
 	{
-		comando.Parameters.Clear();
+		limpiarParametros();
 		agregarParametros(parametros);
 		return EjecutarInsercion(consulta);
 	}

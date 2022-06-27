@@ -1,6 +1,5 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.clases;
 using Gestión_de_Recursos_Tecnológicos.src.Comun;
-using Gestión_de_Recursos_Tecnológicos.src.ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,11 +46,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void Bienvenido_Load(object sender, EventArgs e)
         {
-            
-            
 
-            string name = 
-            lblUsuario.Text = "";//Seleccionar usario logueado
+            string name = Cache.personalCientifico.nombres;
+            lblUsuario.Text = name;//Seleccionar usario logueado
             this.Opacity = 0.0;
             circularProgressBar1.Value = 0;
             circularProgressBar1.Minimum = 0;

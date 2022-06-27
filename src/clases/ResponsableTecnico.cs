@@ -11,26 +11,27 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
     {
         public int id_responsable_tecnico { get; set; }
         public PersonalCientifico personal_cientifico { set; get; }
-        public CentroInvestigacion centro_investigacion { set; get; }
+        public int id_centro_investigacion { get; set; }
         public Usuario usuario { get; set; }
         public DateTime fecha_hora_inicio { get; set; }
         public DateTime fecha_hora_fin { get; set; }
 
-        public ResponsableTecnico(int id_responsable_tecnico, PersonalCientifico personal_cientifico, CentroInvestigacion centro_investigacion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
+
+        public ResponsableTecnico(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion, string usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
+        :this(id_responsable_tecnico,
+             PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico),
+             id_centro_investigacion,
+             Usuario.buscarPorUsuario(usuario),
+             fecha_hora_inicio,
+             fecha_hora_fin)
+        {
+        }
+        public ResponsableTecnico(int id_responsable_tecnico, PersonalCientifico personal_cientifico,int id_centro_investigacion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_responsable_tecnico = id_responsable_tecnico;
             this.personal_cientifico = personal_cientifico;
-            this.centro_investigacion = centro_investigacion;
+            this.id_centro_investigacion = id_centro_investigacion;
             this.usuario = usuario;
-            this.fecha_hora_inicio = fecha_hora_inicio;
-            this.fecha_hora_fin = fecha_hora_fin;
-        }
-        public ResponsableTecnico(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion, string usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
-        {
-            this.id_responsable_tecnico = id_responsable_tecnico;
-            this.personal_cientifico = PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico);
-            this.centro_investigacion = CentroInvestigacion.buscarPorCentroInvestigacion(id_centro_investigacion);
-            this.usuario = Usuario.buscarPorUsuario(usuario);
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;
         }

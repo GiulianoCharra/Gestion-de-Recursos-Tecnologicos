@@ -370,7 +370,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(259, 16);
             this.label20.TabIndex = 1;
-            this.label20.Text = "desea gestionar los recursos ternológicos";
+            this.label20.Text = "desea gestionar los recursosAsignados ternológicos";
             // 
             // label10
             // 

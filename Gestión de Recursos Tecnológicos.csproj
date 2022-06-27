@@ -41,6 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Gestión de Recursos Tecnológicos.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -80,9 +85,6 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
-      <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -102,6 +104,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
     <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
     </Reference>
@@ -117,7 +120,9 @@
     <Compile Include="src\clases\CaracteristicaRecursoTecnologico.cs" />
     <Compile Include="src\clases\CentroInvestigacion.cs" />
     <Compile Include="src\clases\Cientifico.cs" />
+    <Compile Include="src\Gestores\GestorActualizarMarca.cs" />
     <Compile Include="src\Gestores\GestorRegistrarMarca.cs" />
+    <Compile Include="src\Gestores\GestorRegistrarModelo.cs" />
     <Compile Include="src\Persistencia\DBAmbito.cs" />
     <Compile Include="src\Persistencia\DBCentroInvestigacion.cs" />
     <Compile Include="src\Persistencia\DBCientifico.cs" />
@@ -160,6 +165,7 @@
     <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\soporte\ImageConverter.cs" />
     <Compile Include="src\Ventanas\Contacto\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -193,6 +199,8 @@
     <Compile Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.Designer.cs">
       <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Ventanas\Mantenimiento\ViewRecursoTecnologico.cs" />
+    <Compile Include="src\Ventanas\Mantenimiento\ViewTurnosMantenimiento.cs" />
     <Compile Include="src\Ventanas\Marca\AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,23 +213,17 @@
     <Compile Include="src\Ventanas\Modelo\AgregarModelo.Designer.cs">
       <DependentUpon>AgregarModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Ventanas\VentanaPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\Ventanas\VentanaPrincipal.Designer.cs">
-      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Ventanas\InicioSesion\IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\Ventanas\InicioSesion\IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Ventanas\VentanaPrueba.cs">
+    <Compile Include="src\Ventanas\VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Ventanas\VentanaPrueba.designer.cs">
-      <DependentUpon>VentanaPrueba.cs</DependentUpon>
+    <Compile Include="src\Ventanas\VentanaPrincipal.designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -248,14 +250,11 @@
     <EmbeddedResource Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.resx">
       <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Ventanas\VentanaPrincipal.resx">
-      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="src\Ventanas\InicioSesion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Ventanas\VentanaPrueba.resx">
-      <DependentUpon>VentanaPrueba.cs</DependentUpon>
+    <EmbeddedResource Include="src\Ventanas\VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".gitattributes" />
     <EmbeddedResource Include="src\Ventanas\Marca\AgregarMarca.resx">

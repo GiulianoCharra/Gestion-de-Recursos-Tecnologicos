@@ -48,7 +48,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         
         /// <summary>
         ///   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-        ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+        ///   búsquedas de recursosAsignados mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {

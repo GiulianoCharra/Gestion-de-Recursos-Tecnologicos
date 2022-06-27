@@ -12,7 +12,9 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
     internal class DBMarca
     {
         private readonly static string query_findAll = "SELECT * FROM [dbo].[MARCAS]";
+        private readonly static string query_findById = "SELECT * FROM [dbo].[MARCAS] WHERE [id_marca] = @ID_MARCA";
         private readonly static string query_insert = "INSERT INTO [dbo].[MARCAS] ([nombre] ,[descripcion]) VALUES (@NOMBRE, @DESCRIPCION )";
+        private readonly static string query_update = "UPDATE [dbo].[MARCAS] SET [nombre] = @NOMBRE ,[descripcion] = @DESCRIPCION WHERE [id_marca] = @ID_MARCA";
 
 
         private static List<Marca> buildMarcas(DataRowCollection drc)
@@ -24,7 +26,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
             }
             return marcas;
         }
-
         private static Marca buildMarca(DataRow dr)
         {
             int id_marca = Convert.ToInt32(dr["id_marca"]);
@@ -35,9 +36,37 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
 
         internal static void insert(string nombre, string descripcion)
         {
-            throw new NotImplementedException();
+            Dictionary<string, object> parametros = new Dictionary<string, object>() {
+                {"@NOMBRE", nombre},
+                {"@DESCRIPCION", descripcion}
+            };
+
+            Conexion.EjecutarInsercion(parametros, query_insert);
+        }
+        internal static void update(int id_marca, string nombre, string descripcion)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+            {
+                {"@ID_MARCA", id_marca},
+                {"@NOMBRE", nombre},
+                {"@DESCRIPCION", descripcion}
+            };
+
+            Conexion.EjecutarInsercion(parametros, query_update);
         }
 
+
+
+        internal static Marca findById(int id_marca)
+        {
+            Conexion.agregarParametro("@ID_MARCA", id_marca);
+
+            DataTable ds = Conexion.EjecutarComando(query_findById);
+            DataRowCollection dwc = ds.Rows;
+
+            DataRow dr = dwc[0];
+            return buildMarca(dr);
+        }
         internal static List<Marca> findAll()
         {
             DataTable ds = Conexion.EjecutarComando(query_findAll);
@@ -45,12 +74,5 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
 
             return buildMarcas(drc);
         }
-
-        internal static Marca findById(int id_marca)
-        {
-            throw new NotImplementedException();
-        }
-
-
     }
 }

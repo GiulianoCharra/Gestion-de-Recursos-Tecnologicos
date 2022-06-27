@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.Gestores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             InitializeComponent();
         }
 
+        public void habilitar()
+        {
+        }
         private void Modelo_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'gestión_de_Recursos_TecnológicosDataSet.MARCAS' Puede moverla o quitarla según sea necesario.
@@ -33,17 +37,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             int id_marca = (int)cmb_marcas.SelectedValue;
             string nombre = tx_nombre.Text;
             string descripcion = tx_descripcion.Text;
+                        
+            GestorRegistrarModelo.registrarModelo(id_marca, nombre, descripcion);
 
-            string nuevo = "INSERT INTO [dbo].[MODELOS] ([id_marca], [nombre], [descripcion]) VALUES (@ID_MARCA,@NOMRE,@DESCRIPCION)";
-
-            Dictionary<string, object> parametros = new Dictionary<string, object>()
-            {
-                {"@ID_MARCA", id_marca},
-                {"@NOMRE", nombre},
-                {"@DESCRIPCION", descripcion}
-            };
-
-            Conexion.EjecutarComando(parametros, nuevo);
             limpiar();
             cargarTabla();
         }
@@ -56,7 +52,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 tx_nombre.Text = "";
             }
         }
-
         private void tx_nombre_Leave(object sender, EventArgs e)
         {
             if (tx_nombre.Text.Length == 0)
@@ -65,7 +60,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
                 tx_nombre.Text = "Ingrese nombre...";
             }
         }
-
         private void limpiar()
         {
             foreach (Control c in this.Controls)
@@ -79,8 +73,13 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
 
         private void cargarTabla()
         {
-            string cargarTabla = "SELECT mod.id_modelo, mar.nombre as Marca, mod.nombre, mod.descripcion FROM MODELOS mod JOIN MARCAS mar ON mod.id_marca = mar.id_marca";
+            string cargarTabla = "SELECT [mod].[id_modelo] as \'id\', [mar].[nombre] as \'Marca\', [mod].[nombre] as \'Modelo\', [mod].[descripcion] as \'Descripcion\' FROM [MODELOS] mod JOIN [MARCAS] mar ON [mod].[id_marca] = [mar].[id_marca]";
             dgv_modelos.DataSource = Conexion.EjecutarComando(cargarTabla);
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

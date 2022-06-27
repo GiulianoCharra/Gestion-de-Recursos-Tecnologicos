@@ -18,24 +18,27 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.nombre = nombre;
         }
 
-        internal static Ambito buscarById(int id_ambito)
-        {
-            return DBAmbito.findById(id_ambito);
-        }
 
         internal bool esTurno()
         {
             return nombre.Equals("Turno");
         }
-
         internal bool esMantenimiento()
         {
             return nombre.Equals("Mantenimiento");
         }
-
         internal bool esRecursoTecnologico()
         {
             return nombre.Equals("Recurso Tecnologico");
+        }
+
+        internal static Ambito buscarById(int id_ambito)
+        {
+            return DBAmbito.findById(id_ambito);
+        }
+        internal static Ambito buscarByNombre(string nombre)
+        {
+            return DBAmbito.findByNombre(nombre);
         }
     }
 }

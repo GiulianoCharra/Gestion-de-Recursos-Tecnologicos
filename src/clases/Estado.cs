@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             :this(id_estado, Ambito.buscarById(id_ambito),nombre, descripcion)
         {
         }
-
         public Estado(int id_estado, Ambito ambito, string nombre, string descripcion)
         {
             this.id_estado = id_estado;
@@ -29,7 +29,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public bool esAmbitoTurno()
         {
             return ambito.esTurno();
-
         }
         public bool esAmbitoMantenimiento()
         {
@@ -39,6 +38,33 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public bool esAmbitoRecursoTecnologico()
         {
             return ambito.esRecursoTecnologico();
+        }
+
+        internal static List<Estado> buscarByAmbitoMantenimiento()
+        {
+            return buscarByAmbito("Mantenimiento");
+        }
+        internal static List<Estado> buscarByAmbitoTurno()
+        {            
+            return buscarByAmbito("Turno");
+        }
+        internal static List<Estado> buscarByAmbitoRecursoTecnologico()
+        {
+            return buscarByAmbito("Recurso Tecnologico");
+        }
+        internal static List<Estado> buscarByAmbito(string ambito)
+        {
+            int id_ambito = Ambito.buscarByNombre(ambito).id_ambito;
+            return DBEstado.findByIdAmbito(id_ambito);
+        }
+        internal static Estado buscarByIdEstado(int id_estado)
+        {
+            return DBEstado.findById(id_estado);
+        }
+
+        internal bool esDisponible()
+        {
+            return nombre.Equals("Disponible");
         }
     }
 }

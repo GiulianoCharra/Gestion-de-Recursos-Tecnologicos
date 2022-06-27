@@ -2,16 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
 {
     internal class DBAmbito
     {
 
+        private readonly static string query_findAll = "SELECT * FROM [dbo].[AMBITOS]";
         private readonly static string query_findById = "SELECT * FROM [dbo].[AMBITOS] WHERE [id_ambito]=@ID_AMBITO";
+        private readonly static string query_findByNombre = "SELECT * FROM [dbo].[AMBITOS] WHERE [nombre]=@NOMBRE";
 
 
         private static List<Ambito> buildAmbitos(DataRowCollection drc)
@@ -32,15 +31,31 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
         }
 
 
+        internal static List<Ambito> findAll()
+        {
+            DataTable ds = Conexion.EjecutarComando(query_findById);
+            DataRowCollection drc = ds.Rows;
 
+            return buildAmbitos(drc);
+        }
         internal static Ambito findById(int id_ambito)
         {
             Conexion.agregarParametro("@ID_AMBITO", id_ambito);
 
             DataTable ds = Conexion.EjecutarComando(query_findById);
-            DataRowCollection dwc = ds.Rows;
+            DataRowCollection drc = ds.Rows;
 
-            DataRow dr = dwc[0];
+            DataRow dr = drc[0];
+            return buildAmbito(dr);
+        }
+        internal static Ambito findByNombre(string nombre)
+        {
+            Conexion.agregarParametro("@NOMBRE", nombre);
+
+            DataTable ds = Conexion.EjecutarComando(query_findByNombre);
+            DataRowCollection drc = ds.Rows;
+
+            DataRow dr = drc[0];
             return buildAmbito(dr);
         }
     }

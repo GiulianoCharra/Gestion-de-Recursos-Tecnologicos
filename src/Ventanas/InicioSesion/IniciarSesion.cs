@@ -1,5 +1,4 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.Gestores;
-using Gestión_de_Recursos_Tecnológicos.src.ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

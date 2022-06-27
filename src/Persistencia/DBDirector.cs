@@ -11,10 +11,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
     internal class DBDirector
     {
         private readonly static string query_findAll = "SELECT * FROM [dbo].[DIRECTORES]";
-        private readonly static string query_findById = "SELECT * FROM [dbo].[DIRECTORES] WHERE [id_director]=@ID_DIRECTOR AND [id_personal_cientifico]=@ID_PERSONAL_CIENTIFICO AND [id_centro_investigacion]=@ID_CENTRO_INVESTIGACION";
-        private readonly static string query_findByIdDirector = "SELECT * FROM [dbo].[DIRECTORES] WHERE [id_director]=@ID_DIRECTOR";
         private readonly static string query_findByUser = "SELECT * FROM [dbo].[DIRECTORES] WHERE [usuario] = @USUARIO";
+        private readonly static string query_findByIdDirector = "SELECT * FROM [dbo].[DIRECTORES] WHERE [id_director]=@ID_DIRECTOR";
         private readonly static string query_findByIdCentroInvestigacion = "SELECT * FROM [dbo].[DIRECTORES] WHERE [id_centro_investigacion]=@ID_CENTRO_INVESTIGACION";
+        private readonly static string query_findById = "SELECT * FROM [dbo].[DIRECTORES] WHERE [id_director]=@ID_DIRECTOR AND [id_personal_cientifico]=@ID_PERSONAL_CIENTIFICO AND [id_centro_investigacion]=@ID_CENTRO_INVESTIGACION";
 
 
         private static List<Director> buildDirectores(DataRowCollection dwc)
@@ -38,38 +38,21 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
             return new Director(id_director, id_personal_cientifico, id_centro_investigacion, usuario, fecha_hora_inicio, fecha_hora_fin);
         }
 
-
         internal static List<Director> findAll()
         {
-            DataTable ds = Conexion.EjecutarComando(query_findByUser);
+            DataTable ds = Conexion.EjecutarComando(query_findAll);
             DataRowCollection drc = ds.Rows;
 
             return buildDirectores(drc);
         }
-        internal static Director findById(int id_cientifico, int id_personal_cientifico, int id_centro_investigacion)
+        internal static List<Director> findByCentroInvestigacion(int id_centro_investigacion)
         {
-            Dictionary<string, object> parametros = new Dictionary<string, object>()
-            {
-                {"@ID_DIRECTOR", id_cientifico},
-                {"@ID_PERSONAL_CIENTIFICO", id_personal_cientifico},
-                {"@ID_CENTRO_INVESTIGACION", id_centro_investigacion}
-            };
+            Conexion.agregarParametro("@ID_CENTRO_INVESTIGACION", id_centro_investigacion);
 
-            DataTable dt = Conexion.EjecutarComando(parametros, query_findByIdDirector);
-            DataRowCollection drc = dt.Rows;
-
-            DataRow dr = drc[0];
-            return buildDirector(dr);
-        }
-        internal static Director findByIdCientifico(int id_cientifico)
-        {
-            Conexion.agregarParametro("@ID_DIRECTOR", id_cientifico);
-
-            DataTable ds = Conexion.EjecutarComando(query_findByIdDirector);
+            DataTable ds = Conexion.EjecutarComando(query_findByIdCentroInvestigacion);
             DataRowCollection drc = ds.Rows;
 
-            DataRow dr = drc[0];
-            return buildDirector(dr);
+            return buildDirectores(drc);
         }
         internal static Director findByUser(string user)
         {
@@ -81,14 +64,30 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
             DataRow dr = drc[0];
             return buildDirector(dr);
         }
-        internal static List<Director> findByCentroInvestigacion(int id_centro_investigacion)
+        internal static Director findByIdDirector(int id_director)
         {
-            Conexion.agregarParametro("@ID_CENTRO_INVESTIGACION", id_centro_investigacion);
+            Conexion.agregarParametro("@ID_DIRECTOR", id_director);
 
-            DataTable ds = Conexion.EjecutarComando(query_findByIdCentroInvestigacion);
+            DataTable ds = Conexion.EjecutarComando(query_findByIdDirector);
             DataRowCollection drc = ds.Rows;
 
-            return buildDirectores(drc);
+            DataRow dr = drc[0];
+            return buildDirector(dr);
+        }
+        internal static Director findById(int id_director, int id_personal_cientifico, int id_centro_investigacion)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+            {
+                {"@ID_DIRECTOR", id_director},
+                {"@ID_PERSONAL_CIENTIFICO", id_personal_cientifico},
+                {"@ID_CENTRO_INVESTIGACION", id_centro_investigacion}
+            };
+
+            DataTable dt = Conexion.EjecutarComando(parametros, query_findById);
+            DataRowCollection drc = dt.Rows;
+
+            DataRow dr = drc[0];
+            return buildDirector(dr);
         }
 
     }

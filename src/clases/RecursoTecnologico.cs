@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Gestión_de_Recursos_Tecnológicos.src.persistencia;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,35 +13,36 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 {
     internal class RecursoTecnologico
     {
-        private int id_recurso_tecnologico { get; set; }
-        private TipoRecursoTecnologico tipo_recurso_tecnologico { get; set; }
-        private Marca marca { get; set; }
-        private Modelo modelo { get; set; }
-        private DateTime fecha_alta { get; set; }
-        private DateTime fraccionamiento { get; set; }
-        private Image imagen { get; set; }
-        private string descripcion { get; set; }
-        private ResponsableTecnico responsable_tecnico { get; set; }
-        private PersonalCientifico personal_cientifico { get; set; }
-        private CentroInvestigacion centro_investigacion { get; set; }
-        private List<HistorialRecursoTecnologico> historiales_recurso_tecnologico { get; set; }
+        public int id_recurso_tecnologico { get; set; }
+        public TipoRecursoTecnologico tipo_recurso_tecnologico { get; set; }
+        public Marca marca { get; set; }
+        public Modelo modelo { get; set; }
+        public DateTime fecha_alta { get; set; }
+        public TimeSpan fraccionamiento { get; set; }
+        public byte[] imagen { get; set; }
+        public string descripcion { get; set; }
+        public int id_responsable_tecnico { get; set; }
+        public int id_personal_cientifico { get; set; }
+        public int id_centro_investigacion { get; set; }
+        public List<HistorialRecursoTecnologico> historiales_recurso_tecnologico { get; set; }
 
         public RecursoTecnologico()
         {
         }
 
-        public RecursoTecnologico(int id_recurso_tecnologico,
+        public RecursoTecnologico(
+            int id_recurso_tecnologico,
             TipoRecursoTecnologico tipo_recurso_tecnologico,
             Marca marca,
             Modelo modelo,
             DateTime fecha_alta,
-            DateTime fraccionamiento,
-            Image imagen,
+            TimeSpan fraccionamiento,
+            byte[] imagen,
             string descripcion,
-            ResponsableTecnico responsable_tecnico,
-            PersonalCientifico personal_cientifico,
-            CentroInvestigacion centro_investigacion,
-            HistorialRecursoTecnologico[] historial_recurso_tecnologico)
+            int id_responsable_tecnico,
+            int id_personal_cientifico,
+            int id_centro_investigacion,
+            List<HistorialRecursoTecnologico> historial_recurso_tecnologico)
         {
             this.id_recurso_tecnologico = id_recurso_tecnologico;
             this.tipo_recurso_tecnologico = tipo_recurso_tecnologico;
@@ -48,36 +52,53 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.fraccionamiento = fraccionamiento;
             this.imagen = imagen;
             this.descripcion = descripcion;
-            this.responsable_tecnico = responsable_tecnico;
-            this.personal_cientifico = personal_cientifico;
-            this.centro_investigacion = centro_investigacion;
-            this.historiales_recurso_tecnologico = historiales_recurso_tecnologico;
+            this.id_responsable_tecnico = id_responsable_tecnico;
+            this.id_personal_cientifico = id_personal_cientifico;
+            this.id_centro_investigacion = id_centro_investigacion;
+            this.historiales_recurso_tecnologico = historial_recurso_tecnologico;
         }
-
 
         public RecursoTecnologico(int id_recurso_tecnologico,
             int id_tipo_recurso_tecnologico,
             int id_marca,
             int id_modelo,
             DateTime fecha_alta,
-            DateTime fraccionamiento,
-            Image imagen,
+            TimeSpan fraccionamiento,
+            byte[] imagen,
             string descripcion,
             int id_responsable_tecnico,
             int id_personal_cientifico,
             int id_centro_investigacion)
+        :this(
+            id_recurso_tecnologico,
+            TipoRecursoTecnologico.findById(id_tipo_recurso_tecnologico),
+            Marca.buscarPorId(id_marca),
+            Modelo.buscarPorId(id_modelo, id_marca),
+            fecha_alta,
+            fraccionamiento,
+            imagen,
+            descripcion,
+            id_responsable_tecnico,
+            id_personal_cientifico,
+            id_centro_investigacion,
+            HistorialRecursoTecnologico.buscarByIdRecursoTecnologico(id_recurso_tecnologico))
         {
-            this.id_recurso_tecnologico = id_recurso_tecnologico;
-            this.tipo_recurso_tecnologico = TipoRecursoTecnologico.findById(id_tipo_recurso_tecnologico);
-            this.marca = Marca.busrcarPorId(id_marca);
-            this.modelo = Modelo.findById(id_modelo, id_marca);
-            this.fecha_alta = fecha_alta;
-            this.fraccionamiento = fraccionamiento;
-            this.imagen = imagen;
-            this.descripcion = descripcion;
-            this.responsable_tecnico = ResponsableTecnico.buscarPorId(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
-            this.centro_investigacion = CentroInvestigacion.buscarPorCentroInvestigacion(id_centro_investigacion);
-            this.historiales_recurso_tecnologico = HistorialRecursoTecnologico.findByIdRecursoTecnologico(id_recurso_tecnologico);
+        }
+
+        public bool esDisponible()
+        {
+            return historiales_recurso_tecnologico.Last().esDisponible();
+        }
+
+        internal static List<RecursoTecnologico> buscarPorResponsable(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
+        {
+            return DBRecursoTecnologico.findByIdResponsableTecnicoAndIdPersonalCientificoAndIdCentroInvestigacionOrderByNombreTipoRecurso(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
+        }
+
+
+        internal static DataTable buscarParaMostrarPorResponsable(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
+        {
+            return DBRecursoTecnologico.findByIdResponsableTecnicoAndIdPersonalCientificoAndIdCentroInvestigacionToShow(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
         }
 
 

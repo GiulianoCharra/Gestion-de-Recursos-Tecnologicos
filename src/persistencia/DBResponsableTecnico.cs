@@ -33,8 +33,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
             int id_centro_investigacion = Convert.ToInt32(dr["id_centro_investigacion"]);
             string usuario = Convert.ToString(dr["usuario"]);
             DateTime fecha_hora_inicio = Convert.ToDateTime(dr["fecha_hora_inicio"]);
-            DateTime fecha_hora_fin = Convert.ToDateTime(dr["fecha_hora_fin"]);
-
+            DateTime fecha_hora_fin = Convert.ToDateTime(dr["fecha_hora_fin"] == DBNull.Value? null: dr["fecha_hora_fin"]);
             return new ResponsableTecnico(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion, usuario, fecha_hora_inicio, fecha_hora_fin);
         }
 
@@ -72,6 +71,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
         }
         internal static ResponsableTecnico findByUser(string user)
         {
+            Conexion.limpiarParametros();
             Conexion.agregarParametro("@USUARIO", user);
 
             DataTable ds = Conexion.EjecutarComando(query_findByUser);

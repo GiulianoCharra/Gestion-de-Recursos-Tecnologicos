@@ -11,16 +11,14 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
     {
         public int id_director { get; set; }
         public PersonalCientifico personal_cientifico { set; get; }
-        public CentroInvestigacion centro_investigacion { set; get; }
         public Usuario usuario { get; set; }
         public DateTime fecha_hora_inicio { get; set; }
         public DateTime fecha_hora_fin { get; set; }
 
-        public Director(int id_director, PersonalCientifico personalCientifico, CentroInvestigacion centroInvestigacion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
+        public Director(int id_director, PersonalCientifico personalCientifico, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_director = id_director;
             this.personal_cientifico = personalCientifico;
-            this.centro_investigacion = centroInvestigacion;
             this.usuario = usuario;
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;
@@ -29,7 +27,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         {
             this.id_director = id_director;
             this.personal_cientifico = PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico);
-            this.centro_investigacion = CentroInvestigacion.buscarPorCentroInvestigacion(id_centro_investigacion);
             this.usuario = Usuario.buscarPorUsuario(usuario);
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;
