@@ -40,18 +40,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             return ambito.esRecursoTecnologico();
         }
 
-        internal static List<Estado> buscarByAmbitoMantenimiento()
-        {
-            return buscarByAmbito("Mantenimiento");
-        }
-        internal static List<Estado> buscarByAmbitoTurno()
-        {            
-            return buscarByAmbito("Turno");
-        }
-        internal static List<Estado> buscarByAmbitoRecursoTecnologico()
-        {
-            return buscarByAmbito("Recurso Tecnologico");
-        }
+
         internal static List<Estado> buscarByAmbito(string ambito)
         {
             int id_ambito = Ambito.buscarByNombre(ambito).id_ambito;
@@ -62,9 +51,40 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             return DBEstado.findById(id_estado);
         }
 
+
+
+        internal static List<Estado> buscarByAmbitoMantenimiento()
+        {
+            return buscarByAmbito("Mantenimiento");
+        }
+        internal static List<Estado> buscarByAmbitoTurno()
+        {
+            return buscarByAmbito("Turno");
+        }
+        internal static List<Estado> buscarByAmbitoRecursoTecnologico()
+        {
+            return buscarByAmbito("Recurso Tecnologico");
+        }
+
+        internal bool esPendiente()
+        {
+            return nombre.Equals("Pendiente");
+        }
+        internal bool esReservado()
+        {
+            return nombre.Equals("Reservado");
+        }
         internal bool esDisponible()
         {
             return nombre.Equals("Disponible");
+        }
+        internal bool esCanceladoPorMantenimientoCorrectivo()
+        {
+            return nombre.Equals("Cancelado por Mantenimiento Correctivo");
+        }
+        internal bool esConIngresoEnMantenimientoCorrectivo()
+        {
+            return nombre.Equals("Con Ingreso en Mantenimiento Correctivo");
         }
     }
 }

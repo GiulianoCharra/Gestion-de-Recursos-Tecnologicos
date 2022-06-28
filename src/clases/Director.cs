@@ -26,7 +26,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public Director(int id_director, int id_personal_cientifico, int id_centro_investigacion, string usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_director = id_director;
-            this.personal_cientifico = PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico);
+            this.personal_cientifico = PersonalCientifico.buscarPorIdPersonalCientifico(id_personal_cientifico);
             this.usuario = Usuario.buscarPorUsuario(usuario);
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;

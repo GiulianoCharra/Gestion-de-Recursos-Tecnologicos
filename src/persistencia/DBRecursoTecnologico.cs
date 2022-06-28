@@ -37,7 +37,6 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
             int id_modelo = Convert.ToInt32(dr["id_modelo"]);
             DateTime fecha_alta = Convert.ToDateTime(dr["fecha_alta"]);
             TimeSpan fraccionamiento = TimeSpan.Parse(Convert.ToString(dr["fraccionamiento"]));
-            //TimeSpan fraccionamiento = time == DateTime.MinValue ? TimeSpan.MinValue: new TimeSpan(time.Hour, time.Minute, time.Second);
             byte[] image = dr["imagen"] == DBNull.Value?null: soporte.ImageConverter.convertImageToBytes((Image)dr["imagen"]);
             string descripcion = Convert.ToString(dr["descripcion"]);
             int id_responsable_tecnico = Convert.ToInt32(dr["id_responsable_tecnico"]);

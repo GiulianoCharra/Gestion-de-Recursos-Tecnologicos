@@ -130,6 +130,8 @@
     <Compile Include="src\Persistencia\DBEstado.cs" />
     <Compile Include="src\Persistencia\DBFacultad.cs" />
     <Compile Include="src\Persistencia\DBHistorialRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBHistorialTurno.cs" />
+    <Compile Include="src\Persistencia\DBMantenimiento.cs" />
     <Compile Include="src\Persistencia\DBPerfil.cs" />
     <Compile Include="src\Persistencia\DBPersonalCientifico.cs" />
     <Compile Include="src\Persistencia\DBResponsableTecnico.cs" />
@@ -155,13 +157,15 @@
     <Compile Include="src\clases\UnidadMedida.cs" />
     <Compile Include="src\clases\Usuario.cs" />
     <Compile Include="src\Comun\Cache.cs" />
-    <Compile Include="src\Gestores\GestorIngresoRecursoTecnologicoMantenimientoCorrectivo.cs" />
+    <Compile Include="src\Gestores\GestorMantenimientoCorrectivo.cs" />
     <Compile Include="src\Gestores\GestorIniciarSesion.cs" />
     <Compile Include="src\Gestores\GestorPrincipal.cs" />
     <Compile Include="src\Persistencia\DBMarca.cs" />
     <Compile Include="src\Persistencia\DBModelo.cs" />
     <Compile Include="src\Persistencia\DBRecursoTecnologico.cs" />
+    <Compile Include="src\Persistencia\DBTurno.cs" />
     <Compile Include="src\Persistencia\DBUsuario.cs" />
+    <Compile Include="src\Persistencia\DBTipoMantenimiento.cs" />
     <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,11 +197,11 @@
     <Compile Include="src\Ventanas\InicioSesion\sension.designer.cs">
       <DependentUpon>sension.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.cs">
+    <Compile Include="src\Ventanas\Mantenimiento\PantallaMantenimientoCorrectivo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.Designer.cs">
-      <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
+    <Compile Include="src\Ventanas\Mantenimiento\PantallaMantenimientoCorrectivo.Designer.cs">
+      <DependentUpon>PantallaMantenimientoCorrectivo.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Ventanas\Mantenimiento\ViewRecursoTecnologico.cs" />
     <Compile Include="src\Ventanas\Mantenimiento\ViewTurnosMantenimiento.cs" />
@@ -247,8 +251,8 @@
     <EmbeddedResource Include="src\Ventanas\InicioSesion\sension.resx">
       <DependentUpon>sension.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Ventanas\Mantenimiento\IngresoMantenimiento.resx">
-      <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
+    <EmbeddedResource Include="src\Ventanas\Mantenimiento\PantallaMantenimientoCorrectivo.resx">
+      <DependentUpon>PantallaMantenimientoCorrectivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Ventanas\InicioSesion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>

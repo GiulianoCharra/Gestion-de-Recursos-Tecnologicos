@@ -11,43 +11,73 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
     {
         public int id_recurso_tecnologico { set; get; }
         public Estado estado { get; set; }
-        public DateTime fecha_inicio { get; set; }
-        public DateTime fecha_fin { get; set; }
+        public DateTime fecha_hora_inicio { get; set; }
+        public DateTime fecha_hora_fin { get; set; }
 
 
         public HistorialRecursoTecnologico(int id_recurso_tecnologico, Estado estado)
             :this(id_recurso_tecnologico, estado, DateTime.Now, DateTime.MinValue)
         {
         }
-        public HistorialRecursoTecnologico(int id_recurso_tecnologico, int id_estado, DateTime fecha_inicio)
-            :this(id_recurso_tecnologico, Estado.buscarByIdEstado(id_estado), fecha_inicio)
+        public HistorialRecursoTecnologico(int id_recurso_tecnologico, int id_estado, DateTime fecha_hora_inicio)
+            :this(id_recurso_tecnologico, Estado.buscarByIdEstado(id_estado), fecha_hora_inicio)
         {
         }
-        public HistorialRecursoTecnologico(int id_recurso_tecnologico, Estado estado, DateTime fecha_inicio)
-            :this(id_recurso_tecnologico, estado, fecha_inicio, DateTime.MinValue)
+        public HistorialRecursoTecnologico(int id_recurso_tecnologico, Estado estado, DateTime fecha_hora_inicio)
+            :this(id_recurso_tecnologico, estado, fecha_hora_inicio, DateTime.MinValue)
         {
         }
-        public HistorialRecursoTecnologico(int id_recurso_tecnologico, int id_estado, DateTime fecha_inicio, DateTime fecha_fin)
-            :this(id_recurso_tecnologico, Estado.buscarByIdEstado(id_estado), fecha_inicio, fecha_fin)
+        public HistorialRecursoTecnologico(int id_recurso_tecnologico, int id_estado, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
+            :this(id_recurso_tecnologico, Estado.buscarByIdEstado(id_estado), fecha_hora_inicio, fecha_hora_fin)
         {
         }
-        public HistorialRecursoTecnologico(int id_recurso_tecnologico, Estado estado, DateTime fecha_inicio, DateTime fecha_fin)
+        public HistorialRecursoTecnologico(int id_recurso_tecnologico, Estado estado, DateTime fecha_hora_inicio, DateTime fecha_hora_fin
+            )
         {
             this.id_recurso_tecnologico = id_recurso_tecnologico;
             this.estado = estado;
-            this.fecha_inicio = fecha_inicio;
-            this.fecha_fin = fecha_fin;
+            this.fecha_hora_inicio = fecha_hora_inicio;
+            this.fecha_hora_fin = fecha_hora_fin;
         }
 
+
+
+        internal bool esEnEstadoDisponible()
+        {
+            return estado.esDisponible();
+        }
+        internal void finalizar(DateTime fecha_hora_actual)
+        {
+            fecha_hora_fin = fecha_hora_actual;
+        }
+        internal static HistorialRecursoTecnologico getLast(List<HistorialRecursoTecnologico> historial_recursos)
+        {
+            foreach (HistorialRecursoTecnologico hr in historial_recursos)
+            {
+                if (hr.esAtual())
+                {
+                    return hr;
+                }
+            }
+            return null;
+        }
+        private bool esAtual()
+        {
+            return fecha_hora_fin == DateTime.MinValue;
+        }
 
         internal static List<HistorialRecursoTecnologico> buscarByIdRecursoTecnologico(int id_recurso_tecnologico)
         {
             return DBHistorialRecursoTecnologico.findByIdRecursoTecnologico(id_recurso_tecnologico);
         }
-
-        internal bool esDisponible()
+        internal static void insertarNuevo(HistorialRecursoTecnologico nuevo)
         {
-            return estado.esDisponible();
+            DBHistorialRecursoTecnologico.insert(nuevo.id_recurso_tecnologico, nuevo.estado.id_estado, nuevo.fecha_hora_inicio);
+        }
+        internal static void actualizar(HistorialRecursoTecnologico actual)
+        {
+            DBHistorialRecursoTecnologico.update(actual.id_recurso_tecnologico, actual.estado.id_estado, actual.fecha_hora_inicio, actual.fecha_hora_fin);
+
         }
     }
 }

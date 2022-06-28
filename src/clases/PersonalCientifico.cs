@@ -28,7 +28,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.telefono = telefono;
         }
 
-        internal static PersonalCientifico buscarPorPersonalCientifico(int id_personal_cientifico)
+        internal static PersonalCientifico buscarPorIdPersonalCientifico(int id_personal_cientifico)
         {
             return DBPersonalCientifico.findById(id_personal_cientifico);
         }

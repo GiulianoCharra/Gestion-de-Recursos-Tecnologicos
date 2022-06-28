@@ -51,7 +51,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
 
         private void dgv_Marcas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             estado = Estados.MODIFICAR;
             cambiarTextoBoton();
 

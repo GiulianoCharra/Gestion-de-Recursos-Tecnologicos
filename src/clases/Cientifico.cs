@@ -11,14 +11,16 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
     {
         public int id_cientifico { get; set; }
         public PersonalCientifico personal_cientifico { set; get; }
+        public int id_centro_investigacion { get; set; }
         public Usuario usuario { get; set; }
         public DateTime fecha_hora_inicio { get; set; }
         public DateTime fecha_hora_fin { get; set; }
 
-        public Cientifico(int id_cientifico, PersonalCientifico personal_cientifico, CentroInvestigacion centro_investigacion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
+        public Cientifico(int id_cientifico, PersonalCientifico personal_cientifico, int centro_investigacion, Usuario usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_cientifico = id_cientifico;
             this.personal_cientifico = personal_cientifico;
+            this.id_centro_investigacion = centro_investigacion;
             this.usuario = usuario;
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;
@@ -27,7 +29,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public Cientifico(int id_cientifico, int id_personal_cientifico, int id_centro_investigacion, string usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             this.id_cientifico = id_cientifico;
-            this.personal_cientifico = PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico);
+            this.personal_cientifico = PersonalCientifico.buscarPorIdPersonalCientifico(id_personal_cientifico);
+            this.id_centro_investigacion = id_centro_investigacion;
             this.usuario = Usuario.buscarPorUsuario(usuario);
             this.fecha_hora_inicio = fecha_hora_inicio;
             this.fecha_hora_fin = fecha_hora_fin;

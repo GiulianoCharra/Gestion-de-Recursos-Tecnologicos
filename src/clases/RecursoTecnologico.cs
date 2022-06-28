@@ -85,28 +85,42 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         {
         }
 
-        public bool esDisponible()
+
+        internal static List<RecursoTecnologico> buscarRTAsociadosDisponibles(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
         {
-            return historiales_recurso_tecnologico.Last().esDisponible();
+            List<RecursoTecnologico> rs =  buscarPorResponsable(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
+            List<RecursoTecnologico> rsd = new List<RecursoTecnologico>();
+
+            foreach (RecursoTecnologico rt in rs)
+            {
+                if (rt.esEnEstadoDisponible())
+                {
+                    rsd.Add(rt);
+                }
+            }
+            return rsd;
         }
+
+
+        public bool esEnEstadoDisponible()
+        {
+            return historiales_recurso_tecnologico.Last().esEnEstadoDisponible();
+        }
+
 
         internal static List<RecursoTecnologico> buscarPorResponsable(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
         {
             return DBRecursoTecnologico.findByIdResponsableTecnicoAndIdPersonalCientificoAndIdCentroInvestigacionOrderByNombreTipoRecurso(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
         }
 
-
-        internal static DataTable buscarParaMostrarPorResponsable(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
+        internal void actualizarEstado(Estado estadoRecursoConIngresoEnMC, DateTime fecha_hora_actual)
         {
-            return DBRecursoTecnologico.findByIdResponsableTecnicoAndIdPersonalCientificoAndIdCentroInvestigacionToShow(id_responsable_tecnico, id_personal_cientifico, id_centro_investigacion);
-        }
-
-
-        internal void actualizarEstadoMantenimientoCorrectivo()
-        {
-            //Ambito recurso_tecnologico = Ambito.buscarAmbitoRecursoTecnologico();
-            //Estado estadoMantenimiento = Estado.buscarEstadoRecursoTecnologicoMantenimiento(recurso_tecnologico);
-            //HistorialRecursoTecnologico nuevo = new HistorialRecursoTecnologico(this, estadoMantenimiento, DateTime.Now);
+            HistorialRecursoTecnologico actual = HistorialRecursoTecnologico.getLast(historiales_recurso_tecnologico);
+            actual.finalizar(fecha_hora_actual);
+            HistorialRecursoTecnologico.actualizar(actual);
+            HistorialRecursoTecnologico nuevo = new HistorialRecursoTecnologico(id_recurso_tecnologico, estadoRecursoConIngresoEnMC, fecha_hora_actual, DateTime.MinValue);
+            historiales_recurso_tecnologico.Add(nuevo);
+            HistorialRecursoTecnologico.insertarNuevo(nuevo);
         }
     }
 }

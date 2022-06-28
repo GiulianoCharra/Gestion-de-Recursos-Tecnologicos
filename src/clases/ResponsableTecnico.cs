@@ -19,7 +19,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
 
         public ResponsableTecnico(int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion, string usuario, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         :this(id_responsable_tecnico,
-             PersonalCientifico.buscarPorPersonalCientifico(id_personal_cientifico),
+             PersonalCientifico.buscarPorIdPersonalCientifico(id_personal_cientifico),
              id_centro_investigacion,
              Usuario.buscarPorUsuario(usuario),
              fecha_hora_inicio,
@@ -36,6 +36,10 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.fecha_hora_fin = fecha_hora_fin;
         }
 
+        internal static ResponsableTecnico buscarPorUsuario(Usuario user)
+        {
+            return DBResponsableTecnico.findByUser(user.user);
+        }
         internal static ResponsableTecnico buscarPorUsuario(string user)
         {
             return DBResponsableTecnico.findByUser(user);

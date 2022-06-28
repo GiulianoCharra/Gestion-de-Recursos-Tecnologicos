@@ -34,28 +34,29 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
             return new HistorialRecursoTecnologico(id_recurso_tecnologico, id_estado, fecha_hora_inicio, fecha_hora_fin);
         }
 
-        internal static void insert(string nombre, string descripcion)
+        internal static void insert(int id_recurso_tecnologico, int id_estado, DateTime fecha_hora_inicio)
         {
-            Dictionary<string, object> parametros = new Dictionary<string, object>() {
-                {"@NOMBRE", nombre},
-                {"@DESCRIPCION", descripcion}
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+            {
+                {"@ID_RECURSO_TECNOLOGICO", id_recurso_tecnologico},
+                {"@ID_ESTADO", id_estado},
+                {"@FECHA_HORA_INICIO", fecha_hora_inicio}
             };
 
             Conexion.EjecutarInsercion(parametros, query_insert);
         }
-        internal static void update(int id_marca, string nombre, string descripcion)
+        internal static void update(int id_recurso_tecnologico, int id_estado, DateTime fecha_hora_inicio, DateTime fecha_hora_fin)
         {
             Dictionary<string, object> parametros = new Dictionary<string, object>()
             {
-                {"@ID_MARCA", id_marca},
-                {"@NOMBRE", nombre},
-                {"@DESCRIPCION", descripcion}
+                {"@ID_RECURSO_TECNOLOGICO", id_recurso_tecnologico},
+                {"@ID_ESTADO", id_estado},
+                {"@FECHA_HORA_INICIO", fecha_hora_inicio},
+                {"@FECHA_HORA_FIN", fecha_hora_fin}
             };
 
             Conexion.EjecutarInsercion(parametros, query_update);
         }
-
-
 
         internal static HistorialRecursoTecnologico findById(int id_marca)
         {

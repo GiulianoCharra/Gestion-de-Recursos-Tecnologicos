@@ -63,7 +63,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         /// Reajusta el ancho de los botoner de un contenedor
         /// </summary>
         /// <param name="container">Contenedor que contiene botones</param>
-        /// <param name="w">el nuevo ancho que tendran los botones</param>
+        /// <param name="w">el insertarNuevo ancho que tendran los botones</param>
         private void ajustarAnchoBoton(Control container, int w)
         {
             foreach (Control b in container.Controls)
@@ -151,7 +151,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             childForm.Dock = DockStyle.Fill;
             panelCentral.Controls.Add(childForm);
             childForm.BringToFront();
-            childForm.Show();
+            //childForm.Show();
         }
         private void fechaActual_Tick(object sender, EventArgs e)
         {
@@ -210,7 +210,9 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         }
         private void btn_act1_sub1_Click(object sender, EventArgs e)
         {
-            openChildForm(new IngresoMantenimiento());
+            activeForm = new PantallaMantenimientoCorrectivo();
+            openChildForm(activeForm);
+            ((PantallaMantenimientoCorrectivo)activeForm).opcionIngresarEnMC();
         }
         private void btn_act1_sub2_Click(object sender, EventArgs e)
         {
