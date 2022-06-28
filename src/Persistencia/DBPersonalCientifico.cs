@@ -38,6 +38,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
 
         internal static PersonalCientifico findById(int id_personal_cientifico)
         {
+            Conexion.limpiarParametros();
             Conexion.agregarParametro("@LEGAJO", id_personal_cientifico);
 
             DataTable ds = Conexion.EjecutarComando(query_findById);

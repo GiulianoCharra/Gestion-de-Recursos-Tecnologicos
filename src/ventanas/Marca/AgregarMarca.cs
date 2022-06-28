@@ -26,6 +26,14 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         {
             InitializeComponent();
         }
+        internal void opcionABMMarca()
+        {
+            habilitar();
+        }
+        public void habilitar()
+        {
+            this.Show();
+        }
 
         private void AgregarMarca_Load(object sender, EventArgs e)
         {
@@ -135,5 +143,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Marca
         {
             this.mARCASTableAdapter.Fill(this.gestión_de_Recursos_TecnológicosDataSet.MARCAS);
         }
+
     }
 }

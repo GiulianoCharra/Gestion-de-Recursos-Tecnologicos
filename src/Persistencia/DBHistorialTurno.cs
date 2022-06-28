@@ -40,8 +40,8 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
             int id_turno = Convert.ToInt32(dr["id_turno"]);
             int id_estado = Convert.ToInt32(dr["id_estado"]);
             DateTime fecha_hora_inicio = DateTime.Parse(Convert.ToString(dr["fecha_hora_inicio"]));
-            DateTime fecha_hora_fin = DateTime.Parse(Convert.ToString(dr["fecha_hora_fin"]));
-            return new HistorialTurno(id_turno, id_estado, fecha_hora_inicio, fecha_hora_fin);
+            //DateTime fecha_hora_fin = DateTime.Parse(Convert.ToString(dr["fecha_hora_fin"]));
+            return new HistorialTurno(id_turno, id_estado, fecha_hora_inicio, DateTime.MinValue);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
         internal static List<HistorialTurno> findByIdTurno(int id_turno)
         {
             Conexion.agregarParametro("@ID_TURNO", id_turno);
-            DataTable dt = Conexion.EjecutarComando(query_findByIdRecursoTecnologico);
+            DataTable dt = Conexion.EjecutarComando(query_findByIdTurno);
             DataRowCollection drc = dt.Rows;
             return buildHistorialesTurnos(drc);
         }

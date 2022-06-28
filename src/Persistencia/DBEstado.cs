@@ -47,6 +47,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
         }
         internal static List<Estado> findByIdAmbito(int id_ambito)
         {
+            Conexion.limpiarParametros();
             Conexion.agregarParametro("@ID_AMBITO", id_ambito);
 
             DataTable ds = Conexion.EjecutarComando(query_findByIdAmbito);

@@ -48,7 +48,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         
         /// <summary>
         ///   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-        ///   búsquedas de recursosAsignados mediante esta clase de recurso fuertemente tipado.
+        ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -57,6 +57,26 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAuYxZQUUAAh35w {
+            get {
+                object obj = ResourceManager.GetObject("CAuYxZQUUAAh35w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gatito {
+            get {
+                object obj = ResourceManager.GetObject("gatito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -103,6 +123,16 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap half {
+            get {
+                object obj = ResourceManager.GetObject("half", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_homero {
             get {
                 object obj = ResourceManager.GetObject("Logo_homero", resourceCulture);
@@ -126,6 +156,16 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         internal static System.Drawing.Bitmap Logo_homero_solo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Logo_homero_solo_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OI7WIZAY6NDH7AQHHZ2NLXTCX4 {
+            get {
+                object obj = ResourceManager.GetObject("OI7WIZAY6NDH7AQHHZ2NLXTCX4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +226,16 @@ namespace Gestión_de_Recursos_Tecnológicos.Properties {
         internal static System.Drawing.Bitmap UTN_LOGO_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("UTN_LOGO_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wow_nerd {
+            get {
+                object obj = ResourceManager.GetObject("wow_nerd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

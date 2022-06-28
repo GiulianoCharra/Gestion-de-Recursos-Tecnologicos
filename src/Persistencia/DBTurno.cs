@@ -15,7 +15,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
         private readonly static string query_findByIdRecursoTecnologico = "SELECT * FROM [dbo].[TURNOS] WHERE [id_recurso_tecnologico]=@ID_RECURSO_TECNOLOGICO";
         private readonly static string query_findByIdRecursoTecnologicoAndMenorFechaInicio = "SELECT [t].* " +
             "FROM [dbo].[TURNOS] t JOIN [dbo].[PERSONAL_CIENTIFICO] pc ON [t].[id_personal_cientifico]=[pc].[legajo] " +
-            "WHERE [id_recurso_tecnologico]=@ID_RECURSO_TECNOLOGICO AND [fecha_hora_inicio]<=@FECHA_FIN_PREVISTA " +
+            "WHERE [id_recurso_tecnologico]=@ID_RECURSO_TECNOLOGICO AND [fecha_inicio]<=@FECHA_FIN_PREVISTA " +
             "ORDER BY [pc].[apellidos]";
 
         private static List<Turno> buildTurnos(DataRowCollection drc)
@@ -34,11 +34,11 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
             int id_cientifico = Convert.ToInt32(dr["id_cientifico"]);
             int id_personal_cientifico = Convert.ToInt32(dr["id_personal_cientifico"]);
             int id_centro_investigacion = Convert.ToInt32(dr["id_centro_investigacion"]);
-            TimeSpan fecha_inicio = TimeSpan.Parse(Convert.ToString(dr["fecha_hora_inicio"]));
+            DateTime fecha_inicio = DateTime.Parse(Convert.ToDateTime(dr["fecha_inicio"]).Date.ToString());
             TimeSpan hora_inicio = TimeSpan.Parse(Convert.ToString(dr["hora_inicio"]));
-            TimeSpan fecha_fin = TimeSpan.Parse(Convert.ToString(dr["fecha_hora_fin"]));
-            TimeSpan hora_fin = TimeSpan.Parse(Convert.ToString(dr["hora_fin"]));
-            return new Turno(id_turno , id_recurso_tecnologico, id_cientifico, id_personal_cientifico, id_centro_investigacion, fecha_inicio, hora_inicio, fecha_fin, hora_fin);
+            //DateTime fecha_fin = DateTime.Parse(dr["fecha_fin"] == DBNull.Value? null: Convert.ToDateTime(dr["fecha_fin"]).Date.ToString());
+            TimeSpan hora_fin = dr["hora_fin"]== DBNull.Value ? TimeSpan.MinValue :TimeSpan.Parse(Convert.ToString(dr["hora_fin"]));
+            return new Turno(id_turno , id_recurso_tecnologico, id_cientifico, id_personal_cientifico, id_centro_investigacion, fecha_inicio, hora_inicio, DateTime.MinValue, hora_fin);
         }
 
         internal static List<Turno> findAll()
@@ -55,7 +55,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Persistencia
             DataRow dr = dt.Rows[0];
             return buildTurno(dr);
         }
-        internal static List<Turno> findByIdRecursoTecnologicoAndMenorFechaInicio(int id_recurso_tecnologico, TimeSpan fecha_fin_prevista)
+        internal static List<Turno> findByIdRecursoTecnologicoAndMenorFechaInicio(int id_recurso_tecnologico, DateTime fecha_fin_prevista)
         {
             Dictionary<string, object> parametros = new Dictionary<string, object>()
             {

@@ -14,13 +14,13 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
         public int id_cientifico { get; set; }
         public PersonalCientifico id_personal_cientifico { get; set; }
         public int id_centro_investigacion { get; set; }
-        public TimeSpan fecha_inicio { get; set; }
+        public DateTime fecha_inicio { get; set; }
         public TimeSpan hora_inicio { get; set; }
-        public TimeSpan fecha_fin { get; set; }
+        public DateTime fecha_fin { get; set; }
         public TimeSpan hora_fin { get; set; }
         public List<HistorialTurno> historiales_turnos { get; set; }
 
-        public Turno(int id_turno, int id_recurso_tecnologico, int id_cientifico, PersonalCientifico personal_cientifico, int id_centro_investigacion, TimeSpan fecha_inicio, TimeSpan hora_inicio, TimeSpan fecha_fin, TimeSpan hora_fin, List<HistorialTurno> historiales_turnos)
+        public Turno(int id_turno, int id_recurso_tecnologico, int id_cientifico, PersonalCientifico personal_cientifico, int id_centro_investigacion, DateTime fecha_inicio, TimeSpan hora_inicio, DateTime fecha_fin, TimeSpan hora_fin, List<HistorialTurno> historiales_turnos)
         {
             this.id_turno = id_turno;
             this.id_recurso_tecnologico = id_recurso_tecnologico;
@@ -34,7 +34,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.historiales_turnos = historiales_turnos;
         }
 
-        public Turno(int id_turno, int id_recurso_tecnologico, int id_cientifico, int id_personal_cientifico, int id_centro_investigacion, TimeSpan fecha_inicio, TimeSpan hora_inicio, TimeSpan fecha_fin, TimeSpan hora_fin)
+        public Turno(int id_turno, int id_recurso_tecnologico, int id_cientifico, int id_personal_cientifico, int id_centro_investigacion, DateTime fecha_inicio, TimeSpan hora_inicio, DateTime fecha_fin, TimeSpan hora_fin)
         : this(
             id_turno,
             id_recurso_tecnologico,
@@ -49,21 +49,24 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             {
         }
 
-        internal static List<Turno> buscarTurnosReservadosPendientes(int id_recurso_tecnologico, TimeSpan fecha_fin_prevista)
+        internal static List<Turno> buscarTurnosReservadosPendientes(int id_recurso_tecnologico, DateTime fecha_fin_prevista)
         {
             List<Turno> turnos = buscarByIdRecursoTecnologicoAndFechaInicio(id_recurso_tecnologico, fecha_fin_prevista);
             List<Turno> turnosReservadosPendientes = new List<Turno>();
             turnos.ForEach(t =>
             {
                 HistorialTurno actual = buscarHistorialActual(t.historiales_turnos);
-                if (actual.esEnEstadoPendiente() || actual.esEnEstadoReservado())
+                if (actual != null)
                 {
-                    turnosReservadosPendientes.Add(t);
+                    if (actual.esEnEstadoPendiente() || actual.esEnEstadoReservado())
+                    {
+                        turnosReservadosPendientes.Add(t);
+                    }
                 }
             });
             return turnosReservadosPendientes;
         }
-        internal static List<Turno> buscarByIdRecursoTecnologicoAndFechaInicio(int id_recurso_tecnologico, TimeSpan fecha_fin_prevista)
+        internal static List<Turno> buscarByIdRecursoTecnologicoAndFechaInicio(int id_recurso_tecnologico, DateTime fecha_fin_prevista)
         {
             return DBTurno.findByIdRecursoTecnologicoAndMenorFechaInicio(id_recurso_tecnologico, fecha_fin_prevista);
         }

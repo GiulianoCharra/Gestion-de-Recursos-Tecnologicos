@@ -323,19 +323,25 @@
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.exe" />
     <Content Include="obj\Debug\Gestión de Recursos Tecnológicos.pdb" />
+    <None Include="src\Resources\CAuYxZQUUAAh35w.png" />
+    <None Include="src\Resources\gatito.jpg" />
     <Content Include="src\Resources\gato_central_cientifico-removebg-preview.png" />
     <Content Include="src\Resources\gato_central_cientifico-removebg.png" />
     <Content Include="src\Resources\gato_cientifico_00-removebg-preview.png" />
     <Content Include="src\Resources\gato_señalando-removebg-preview.png" />
+    <None Include="src\Resources\half.png" />
     <Content Include="src\Resources\Logo_homero-removebg-preview.png" />
     <Content Include="src\Resources\Logo_homero.png" />
     <Content Include="src\Resources\Logo_homero_solo-removebg-preview.png" />
+    <None Include="src\Resources\OI7WIZAY6NDH7AQHHZ2NLXTCX4.jpg" />
     <Content Include="src\Resources\profe_german.jpg" />
     <Content Include="src\Resources\spiderman_perfil.png" />
+    <None Include="src\Resources\tenor.gif" />
     <Content Include="src\Resources\utn_frc_logo-removebg-preview.png" />
     <Content Include="src\Resources\utn_frc_logo.png" />
     <Content Include="src\Resources\UTN_LOGO-removebg-preview.png" />
     <Content Include="src\Resources\UTN_LOGO.png" />
+    <None Include="src\Resources\wow-nerd.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -26,7 +26,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
 
         public void opcionIngresarEnMC()
         {
-            habilidar();
+            habilitar();
             GestorMantenimientoCorrectivo.opcionIngresarEnMC();
             cargarTablaRecursos();
         }
@@ -39,6 +39,8 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         {
             int idRT = (int)dgv_recursos_asignados.SelectedCells[1].Value;
             GestorMantenimientoCorrectivo.RTSeleccionado(idRT);
+            btn_buscar_turnos.Enabled = true;
+            dtp_fecha_fin_prevista.Enabled = true;
         }
         /// <summary>
         /// Toma la fecha prevista de fin 
@@ -47,8 +49,15 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// <param name="e"></param>
         private void tomarFechaFinPrevista(object sender, EventArgs e)
         {
-            TimeSpan fechaFinPrevista = TimeSpan.Parse(dtp_fecha_fin_prevista.Value.Date.ToString());
+            DateTime fechaFinPrevista = DateTime.Parse(dtp_fecha_fin_prevista.Value.ToShortDateString());
+            if (fechaFinPrevista == DateTime.Today)
+            {
+                MessageBox.Show("Por favor seleccione una fecha mayor a la actual", "Para continuar");
+                return;
+            }
             GestorMantenimientoCorrectivo.tomarFechaFinPrevista(fechaFinPrevista);
+            cargarTablaTurnos();
+            btn_aceptar.Enabled = true;
         }
         /// <summary>
         /// Toma la confirmacion del registro del ingreso del recurso en 
@@ -59,13 +68,15 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         private void tomarConfirmacion(object sender, EventArgs e)
         {
             GestorMantenimientoCorrectivo.tomarConfirmacion();
+            MessageBox.Show("FIN");
+            this.Close();
         }
 
         /// <summary>
         /// Muestra la pantalla
         /// </summary>
         /// 
-        private void habilidar()
+        private void habilitar()
         {
             this.Show();
         }
@@ -93,7 +104,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// </summary>
         internal static void solicitarSeleccionRT()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Por favor seleccione un Recurso", "Para continuar");
         }
         /// <summary>
         /// Muestra un mensaje solicitando se ingrese una fecha de fin 
@@ -101,7 +112,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// </summary>
         internal static void solicitarFechaFinPrevista()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Ahora si es tan amable de seleccionar una fecha", "Para continuar");
         }
         /// <summary>
         /// Muestra un mensaje solicitando la confirmacion del registro del
@@ -109,7 +120,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// </summary>
         internal static void solicitarConfirmacionMantenimiento()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Ahora solo tiene que apretar en el boton aceptar, HAGALO", "Para Finalizar");
         }
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
@@ -122,7 +133,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         }
         private void cargarTablaTurnos()
         {
-            dgv_recursos_asignados.DataSource = recursos;
+            dgv_turnos.DataSource = turnos;
         }
 
     }

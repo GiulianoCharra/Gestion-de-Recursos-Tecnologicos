@@ -45,6 +45,7 @@
             this.chb_email = new System.Windows.Forms.CheckBox();
             this.chb_whatsapp = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_buscar_turnos = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turnos)).BeginInit();
@@ -84,10 +85,12 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.39074F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.60926F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_buscar_turnos, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtp_fecha_fin_prevista, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -103,12 +106,12 @@
             // 
             this.dtp_fecha_fin_prevista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_fecha_fin_prevista.Checked = false;
-            this.dtp_fecha_fin_prevista.Location = new System.Drawing.Point(213, 7);
+            this.dtp_fecha_fin_prevista.Enabled = false;
+            this.dtp_fecha_fin_prevista.Location = new System.Drawing.Point(184, 7);
             this.dtp_fecha_fin_prevista.MinDate = new System.DateTime(2022, 6, 1, 0, 0, 0, 0);
             this.dtp_fecha_fin_prevista.Name = "dtp_fecha_fin_prevista";
-            this.dtp_fecha_fin_prevista.Size = new System.Drawing.Size(475, 20);
+            this.dtp_fecha_fin_prevista.Size = new System.Drawing.Size(409, 20);
             this.dtp_fecha_fin_prevista.TabIndex = 3;
-            this.dtp_fecha_fin_prevista.ValueChanged += new System.EventHandler(this.tomarFechaFinPrevista);
             // 
             // label2
             // 
@@ -117,7 +120,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(204, 34);
+            this.label2.Size = new System.Drawing.Size(175, 34);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha de finalizacion prevista";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,7 +174,6 @@
             this.dgv_turnos.ReadOnly = true;
             this.dgv_turnos.Size = new System.Drawing.Size(691, 246);
             this.dgv_turnos.TabIndex = 14;
-            this.dgv_turnos.Visible = false;
             // 
             // dgv_recursos_asignados
             // 
@@ -208,6 +210,7 @@
             // btn_aceptar
             // 
             this.btn_aceptar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_aceptar.Enabled = false;
             this.btn_aceptar.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.btn_aceptar.IconColor = System.Drawing.Color.DarkGreen;
             this.btn_aceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -301,6 +304,23 @@
             this.label3.Text = "Notificar via:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btn_buscar_turnos
+            // 
+            this.btn_buscar_turnos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_buscar_turnos.Enabled = false;
+            this.btn_buscar_turnos.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btn_buscar_turnos.IconColor = System.Drawing.Color.DarkBlue;
+            this.btn_buscar_turnos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_buscar_turnos.IconSize = 20;
+            this.btn_buscar_turnos.Location = new System.Drawing.Point(599, 3);
+            this.btn_buscar_turnos.Name = "btn_buscar_turnos";
+            this.btn_buscar_turnos.Size = new System.Drawing.Size(89, 28);
+            this.btn_buscar_turnos.TabIndex = 11;
+            this.btn_buscar_turnos.Text = "Buscar";
+            this.btn_buscar_turnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_buscar_turnos.UseVisualStyleBackColor = true;
+            this.btn_buscar_turnos.Click += new System.EventHandler(this.tomarFechaFinPrevista);
+            // 
             // PantallaMantenimientoCorrectivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,5 +365,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv_recursos_asignados;
         private System.Windows.Forms.DateTimePicker dtp_fecha_fin_prevista;
+        private FontAwesome.Sharp.IconButton btn_buscar_turnos;
     }
 }

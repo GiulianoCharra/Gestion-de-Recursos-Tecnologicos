@@ -16,7 +16,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         private static ResponsableTecnico responsable { get; set; }
         private static List<RecursoTecnologico> recursosAsignadosDisponibles { get; set; }
         private static RecursoTecnologico recursoSeleccionado { get; set; }
-        private static TimeSpan fecha_fin_prevista { get; set; }
+        private static DateTime fecha_fin_prevista { get; set; }
         private static List<Turno> turnos { get; set; }
 
 
@@ -62,7 +62,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// Toma la fecha de fin prevista y se procede a buscar los turnos
         /// </summary>
         /// <param name="fechaFinPrevista"></param>
-        internal static void tomarFechaFinPrevista(TimeSpan fechaFinPrevista)
+        internal static void tomarFechaFinPrevista(DateTime fechaFinPrevista)
         {
             fecha_fin_prevista = fechaFinPrevista;
             verificarTurnosRTSeleccionado();
@@ -135,6 +135,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// </summary>
         private static void verificarTurnosRTSeleccionado()
         {
+            turnos = new List<Turno>();
             turnos = Turno.buscarTurnosReservadosPendientes(recursoSeleccionado.id_recurso_tecnologico, fecha_fin_prevista);
             buildTurnosParaMostrar();
         }

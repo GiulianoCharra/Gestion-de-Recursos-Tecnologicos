@@ -192,35 +192,27 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         private void btn_integrantes_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_Info());
-            panelCentral.AutoScroll = true;
-
-            //
-            //
-            //            
-            //adjuntar();                      
+            ((frm_Info)activeForm).habilitar();
+            panelCentral.AutoScroll = true;                 
         }
         private void btn_actividad1_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubActividad1);
-            //
-            //
-            //
-            //
-            //adjuntar();
         }
         private void btn_act1_sub1_Click(object sender, EventArgs e)
         {
-            activeForm = new PantallaMantenimientoCorrectivo();
-            openChildForm(activeForm);
+            openChildForm(new PantallaMantenimientoCorrectivo());
             ((PantallaMantenimientoCorrectivo)activeForm).opcionIngresarEnMC();
         }
         private void btn_act1_sub2_Click(object sender, EventArgs e)
         {
             openChildForm(new AgregarMarca());
+            ((AgregarMarca)activeForm).opcionABMMarca();
         }
         private void btn_act1_sub3_Click(object sender, EventArgs e)
         {
             openChildForm(new AgregarModelo());
+            ((AgregarModelo)activeForm).opcionABMModelo();
         }
 
     }

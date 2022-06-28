@@ -30,28 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Info));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_texto = new System.Windows.Forms.Label();
-            this.lbl_Info = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
@@ -124,13 +102,29 @@
             this.iconButton12 = new FontAwesome.Sharp.IconButton();
             this.label17 = new System.Windows.Forms.Label();
             this.circularPictureBox7 = new Gestión_de_Recursos_Tecnológicos.Ventanas.CircularPictureBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_texto = new System.Windows.Forms.Label();
+            this.lbl_Info = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox9)).BeginInit();
@@ -149,264 +143,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox5)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).BeginInit();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel12);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.lbl_texto);
             this.panel1.Controls.Add(this.lbl_Info);
-            this.panel1.Location = new System.Drawing.Point(48, 22);
+            this.panel1.Location = new System.Drawing.Point(71, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 1477);
+            this.panel1.Size = new System.Drawing.Size(788, 928);
             this.panel1.TabIndex = 0;
-            // 
-            // panel12
-            // 
-            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel12.BackColor = System.Drawing.Color.Transparent;
-            this.panel12.Controls.Add(this.pictureBox3);
-            this.panel12.Controls.Add(this.label40);
-            this.panel12.Controls.Add(this.label39);
-            this.panel12.Controls.Add(this.label38);
-            this.panel12.Controls.Add(this.label37);
-            this.panel12.Location = new System.Drawing.Point(402, 95);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(389, 117);
-            this.panel12.TabIndex = 33;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_señalando_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(298, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(85, 100);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(19, 77);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(133, 16);
-            this.label40.TabIndex = 28;
-            this.label40.Text = "Diagrama de Estado";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(19, 61);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(154, 16);
-            this.label39.TabIndex = 27;
-            this.label39.Text = "Diagrama de Secuencia";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(19, 45);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(132, 16);
-            this.label38.TabIndex = 26;
-            this.label38.Text = "Diagrama de Clases";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(18, 12);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(274, 19);
-            this.label37.TabIndex = 25;
-            this.label37.Text = "Hasta esta parte hemos realizado";
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.label36);
-            this.panel5.Controls.Add(this.label35);
-            this.panel5.Controls.Add(this.label34);
-            this.panel5.Controls.Add(this.label33);
-            this.panel5.Controls.Add(this.label32);
-            this.panel5.Location = new System.Drawing.Point(45, 218);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(732, 119);
-            this.panel5.TabIndex = 32;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_central_cientifico_removebg;
-            this.pictureBox2.Location = new System.Drawing.Point(540, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(171, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(14, 93);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(377, 16);
-            this.label36.TabIndex = 29;
-            this.label36.Text = "plazo de mantenimiento y las notificaciones correspondientes.";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(14, 77);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(435, 16);
-            this.label35.TabIndex = 28;
-            this.label35.Text = "generando las cancelaciones de las reservas de turnos existentes en el";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(14, 61);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(463, 16);
-            this.label34.TabIndex = 27;
-            this.label34.Text = "Objetivo: Registrar el en mantenimiento correctivo de un recurso tecnológico,";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(14, 45);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(421, 16);
-            this.label33.TabIndex = 26;
-            this.label33.Text = "Nombre del CU: Registrar Ingreso de RT en mantenimiento correctivo";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(13, 12);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(253, 19);
-            this.label32.TabIndex = 25;
-            this.label32.Text = "Ofrecemos soporte al CU N°36";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.label31);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.label30);
-            this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Location = new System.Drawing.Point(47, 94);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(349, 118);
-            this.panel4.TabIndex = 31;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(5, 12);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(193, 19);
-            this.label31.TabIndex = 24;
-            this.label31.Text = "El problema a resolver";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_cientifico_00_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(270, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(76, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(5, 92);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(156, 16);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "centros de investigación.";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(5, 76);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(156, 16);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "existente en el ámbito de";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(5, 60);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(259, 16);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "desea gestionar los recursosAsignados ternológicos";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(5, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(242, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "El proyecto de la Universidad Nacional";
-            // 
-            // lbl_texto
-            // 
-            this.lbl_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_texto.AutoSize = true;
-            this.lbl_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_texto.Location = new System.Drawing.Point(52, 63);
-            this.lbl_texto.Name = "lbl_texto";
-            this.lbl_texto.Size = new System.Drawing.Size(453, 16);
-            this.lbl_texto.TabIndex = 3;
-            this.lbl_texto.Text = "Nosotros somos CompuMundo HiperMegaRed y realizaremos lo siguiente";
-            // 
-            // lbl_Info
-            // 
-            this.lbl_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Info.AutoSize = true;
-            this.lbl_Info.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Info.Location = new System.Drawing.Point(52, 13);
-            this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(372, 24);
-            this.lbl_Info.TabIndex = 2;
-            this.lbl_Info.Text = "Informacion en General del Grupo";
             // 
             // panel9
             // 
@@ -417,7 +175,7 @@
             this.panel9.Controls.Add(this.panel8);
             this.panel9.Controls.Add(this.panel7);
             this.panel9.Controls.Add(this.label23);
-            this.panel9.Location = new System.Drawing.Point(30, 439);
+            this.panel9.Location = new System.Drawing.Point(3, 343);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(392, 644);
             this.panel9.TabIndex = 19;
@@ -429,7 +187,7 @@
             this.panel17.Controls.Add(this.circularPictureBox9);
             this.panel17.Controls.Add(this.label28);
             this.panel17.Controls.Add(this.label29);
-            this.panel17.Location = new System.Drawing.Point(2, 541);
+            this.panel17.Location = new System.Drawing.Point(3, 470);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(385, 100);
             this.panel17.TabIndex = 24;
@@ -683,7 +441,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 38;
-            this.label2.Text = "99999";
+            this.label2.Text = "59247";
             // 
             // label3
             // 
@@ -691,19 +449,19 @@
             this.label3.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(85, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 15);
+            this.label3.Size = new System.Drawing.Size(192, 15);
             this.label3.TabIndex = 37;
-            this.label3.Text = "99999@sistemas.utn.frc.ar";
+            this.label3.Text = "augustobarzola@gmail.com";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(137, 5);
+            this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 24);
+            this.label1.Size = new System.Drawing.Size(290, 24);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Perez, Juan";
+            this.label1.Text = "Barzola Augusto, Eduardo";
             // 
             // circularPictureBox2
             // 
@@ -715,6 +473,7 @@
             this.circularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.circularPictureBox2.BordeSize = 2;
             this.circularPictureBox2.GradientAngle = 50F;
+            this.circularPictureBox2.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.CAuYxZQUUAAh35w;
             this.circularPictureBox2.Location = new System.Drawing.Point(282, 0);
             this.circularPictureBox2.Name = "circularPictureBox2";
             this.circularPictureBox2.Size = new System.Drawing.Size(100, 100);
@@ -759,9 +518,9 @@
             this.label25.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(107, 46);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(184, 15);
+            this.label25.Size = new System.Drawing.Size(192, 15);
             this.label25.TabIndex = 34;
-            this.label25.Text = "99999@sistemas.utn.frc.ar";
+            this.label25.Text = "giulianocharra@gmail.com";
             // 
             // iconButton22
             // 
@@ -784,10 +543,11 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(47, 15);
             this.label26.TabIndex = 33;
-            this.label26.Text = "99999";
+            this.label26.Text = "63162";
             // 
             // iconButton23
             // 
+            this.iconButton23.BackgroundImage = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.utn_frc_logo_removebg_preview;
             this.iconButton23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton23.IconChar = FontAwesome.Sharp.IconChar.Google;
             this.iconButton23.IconColor = System.Drawing.Color.Black;
@@ -818,9 +578,9 @@
             this.label24.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(106, 5);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(132, 24);
+            this.label24.Size = new System.Drawing.Size(284, 24);
             this.label24.TabIndex = 15;
-            this.label24.Text = "Perez, Juan";
+            this.label24.Text = "Charra Marquez, Giuliano";
             // 
             // circularPictureBox1
             // 
@@ -832,6 +592,7 @@
             this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.circularPictureBox1.BordeSize = 2;
             this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.wow_nerd;
             this.circularPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.circularPictureBox1.Name = "circularPictureBox1";
             this.circularPictureBox1.Size = new System.Drawing.Size(100, 100);
@@ -845,7 +606,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(7, 501);
+            this.label23.Location = new System.Drawing.Point(7, 437);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(123, 24);
             this.label23.TabIndex = 18;
@@ -859,7 +620,7 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel11);
-            this.panel2.Location = new System.Drawing.Point(451, 439);
+            this.panel2.Location = new System.Drawing.Point(394, 343);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 644);
             this.panel2.TabIndex = 20;
@@ -877,7 +638,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.circularPictureBox3);
-            this.panel3.Location = new System.Drawing.Point(4, 541);
+            this.panel3.Location = new System.Drawing.Point(3, 470);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(385, 100);
             this.panel3.TabIndex = 26;
@@ -950,19 +711,19 @@
             this.label5.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(84, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 15);
+            this.label5.Size = new System.Drawing.Size(165, 15);
             this.label5.TabIndex = 37;
-            this.label5.Text = "99999@sistemas.utn.frc.ar";
+            this.label5.Text = "mfcattaneo@gmail.com";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(136, 5);
+            this.label6.Location = new System.Drawing.Point(3, 5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 24);
+            this.label6.Size = new System.Drawing.Size(290, 24);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Perez, Juan";
+            this.label6.Text = "Cattaneo, Marcela Fabiana";
             // 
             // circularPictureBox3
             // 
@@ -1018,9 +779,9 @@
             this.label7.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(108, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(184, 15);
+            this.label7.Size = new System.Drawing.Size(214, 15);
             this.label7.TabIndex = 13;
-            this.label7.Text = "99999@sistemas.utn.frc.ar";
+            this.label7.Text = "simonluiscarrasco@gmail.com";
             // 
             // iconButton6
             // 
@@ -1043,7 +804,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 15);
             this.label8.TabIndex = 12;
-            this.label8.Text = "99999";
+            this.label8.Text = "38617";
             // 
             // iconButton7
             // 
@@ -1064,9 +825,9 @@
             this.label9.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(106, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 24);
+            this.label9.Size = new System.Drawing.Size(233, 24);
             this.label9.TabIndex = 11;
-            this.label9.Text = "Perez, Juan";
+            this.label9.Text = "Carrasco, Simón Luis";
             // 
             // iconButton8
             // 
@@ -1091,6 +852,7 @@
             this.circularPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.circularPictureBox4.BordeSize = 2;
             this.circularPictureBox4.GradientAngle = 50F;
+            this.circularPictureBox4.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gatito;
             this.circularPictureBox4.Location = new System.Drawing.Point(0, 0);
             this.circularPictureBox4.Name = "circularPictureBox4";
             this.circularPictureBox4.Size = new System.Drawing.Size(100, 100);
@@ -1176,27 +938,27 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 15);
             this.label12.TabIndex = 14;
-            this.label12.Text = "99999";
+            this.label12.Text = "83462";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(138, 5);
+            this.label16.Location = new System.Drawing.Point(3, 5);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 24);
+            this.label16.Size = new System.Drawing.Size(204, 24);
             this.label16.TabIndex = 13;
-            this.label16.Text = "Perez, Juan";
+            this.label16.Text = "Ruiz Diaz, Ignacio ";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(86, 44);
+            this.label11.Location = new System.Drawing.Point(71, 44);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(184, 15);
+            this.label11.Size = new System.Drawing.Size(205, 15);
             this.label11.TabIndex = 10;
-            this.label11.Text = "99999@sistemas.utn.frc.ar";
+            this.label11.Text = "ruizdiazignacio2@gmail.com";
             // 
             // circularPictureBox5
             // 
@@ -1208,6 +970,7 @@
             this.circularPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.circularPictureBox5.BordeSize = 2;
             this.circularPictureBox5.GradientAngle = 50F;
+            this.circularPictureBox5.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.OI7WIZAY6NDH7AQHHZ2NLXTCX4;
             this.circularPictureBox5.Location = new System.Drawing.Point(282, 0);
             this.circularPictureBox5.Name = "circularPictureBox5";
             this.circularPictureBox5.Size = new System.Drawing.Size(100, 100);
@@ -1252,9 +1015,9 @@
             this.label18.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(108, 46);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(184, 15);
+            this.label18.Size = new System.Drawing.Size(191, 15);
             this.label18.TabIndex = 34;
-            this.label18.Text = "99999@sistemas.utn.frc.ar";
+            this.label18.Text = "yamiliyarbouh@gmail.com";
             // 
             // iconButton10
             // 
@@ -1277,7 +1040,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(47, 15);
             this.label19.TabIndex = 33;
-            this.label19.Text = "99999";
+            this.label19.Text = "81841";
             // 
             // iconButton11
             // 
@@ -1311,9 +1074,9 @@
             this.label17.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(106, 5);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(132, 24);
+            this.label17.Size = new System.Drawing.Size(183, 24);
             this.label17.TabIndex = 12;
-            this.label17.Text = "Perez, Juan";
+            this.label17.Text = "Yarbouh, Yamili";
             // 
             // circularPictureBox7
             // 
@@ -1325,6 +1088,7 @@
             this.circularPictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.circularPictureBox7.BordeSize = 2;
             this.circularPictureBox7.GradientAngle = 50F;
+            this.circularPictureBox7.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.half;
             this.circularPictureBox7.Location = new System.Drawing.Point(0, 0);
             this.circularPictureBox7.Name = "circularPictureBox7";
             this.circularPictureBox7.Size = new System.Drawing.Size(100, 100);
@@ -1332,29 +1096,259 @@
             this.circularPictureBox7.TabIndex = 0;
             this.circularPictureBox7.TabStop = false;
             // 
+            // panel12
+            // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
+            this.panel12.Controls.Add(this.pictureBox3);
+            this.panel12.Controls.Add(this.label40);
+            this.panel12.Controls.Add(this.label39);
+            this.panel12.Controls.Add(this.label38);
+            this.panel12.Controls.Add(this.label37);
+            this.panel12.Location = new System.Drawing.Point(402, 95);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(372, 117);
+            this.panel12.TabIndex = 33;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_señalando_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(275, 34);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(77, 83);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(19, 77);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(132, 16);
+            this.label40.TabIndex = 28;
+            this.label40.Text = "Diagrama de Estado";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(19, 61);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(153, 16);
+            this.label39.TabIndex = 27;
+            this.label39.Text = "Diagrama de Secuencia";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(19, 45);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(131, 16);
+            this.label38.TabIndex = 26;
+            this.label38.Text = "Diagrama de Clases";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(18, 12);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(274, 19);
+            this.label37.TabIndex = 25;
+            this.label37.Text = "Hasta esta parte hemos realizado";
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Controls.Add(this.label36);
+            this.panel5.Controls.Add(this.label35);
+            this.panel5.Controls.Add(this.label34);
+            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.label32);
+            this.panel5.Location = new System.Drawing.Point(45, 218);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(715, 119);
+            this.panel5.TabIndex = 32;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_central_cientifico_removebg;
+            this.pictureBox2.Location = new System.Drawing.Point(540, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(171, 116);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(14, 93);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(376, 16);
+            this.label36.TabIndex = 29;
+            this.label36.Text = "plazo de mantenimiento y las notificaciones correspondientes.";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(14, 77);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(434, 16);
+            this.label35.TabIndex = 28;
+            this.label35.Text = "generando las cancelaciones de las reservas de turnos existentes en el";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(14, 61);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(462, 16);
+            this.label34.TabIndex = 27;
+            this.label34.Text = "Objetivo: Registrar el en mantenimiento correctivo de un recurso tecnológico,";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(14, 45);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(420, 16);
+            this.label33.TabIndex = 26;
+            this.label33.Text = "Nombre del CU: Registrar Ingreso de RT en mantenimiento correctivo";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(13, 12);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(253, 19);
+            this.label32.TabIndex = 25;
+            this.label32.Text = "Ofrecemos soporte al CU N°36";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.label31);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Location = new System.Drawing.Point(47, 94);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(332, 118);
+            this.panel4.TabIndex = 31;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(5, 12);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(193, 19);
+            this.label31.TabIndex = 24;
+            this.label31.Text = "El problema a resolver";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gestión_de_Recursos_Tecnológicos.Properties.Resources.gato_cientifico_00_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(270, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(76, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(5, 92);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(155, 16);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "centros de investigación.";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(5, 76);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(155, 16);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "existente en el ámbito de";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(5, 60);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(323, 16);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "desea gestionar los recursosAsignados ternológicos";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(5, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(241, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "El proyecto de la Universidad Nacional";
+            // 
+            // lbl_texto
+            // 
+            this.lbl_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_texto.AutoSize = true;
+            this.lbl_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_texto.Location = new System.Drawing.Point(52, 63);
+            this.lbl_texto.Name = "lbl_texto";
+            this.lbl_texto.Size = new System.Drawing.Size(452, 16);
+            this.lbl_texto.TabIndex = 3;
+            this.lbl_texto.Text = "Nosotros somos CompuMundo HiperMegaRed y realizaremos lo siguiente";
+            // 
+            // lbl_Info
+            // 
+            this.lbl_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Info.AutoSize = true;
+            this.lbl_Info.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Info.Location = new System.Drawing.Point(52, 13);
+            this.lbl_Info.Name = "lbl_Info";
+            this.lbl_Info.Size = new System.Drawing.Size(372, 24);
+            this.lbl_Info.TabIndex = 2;
+            this.lbl_Info.Text = "Informacion en General del Grupo";
+            // 
             // frm_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(928, 520);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel9);
+            this.ClientSize = new System.Drawing.Size(962, 520);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Info";
             this.Text = "frm_Info";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -1382,6 +1376,15 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox7)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

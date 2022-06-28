@@ -16,5 +16,10 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             InitializeComponent();
         }
+
+        internal void habilitar()
+        {
+            this.Show();
+        }
     }
 }

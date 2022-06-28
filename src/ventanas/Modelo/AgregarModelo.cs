@@ -18,8 +18,14 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
             InitializeComponent();
         }
 
+        internal void opcionABMModelo()
+        {
+            habilitar();
+        }
+
         public void habilitar()
         {
+            this.Show();
         }
         private void Modelo_Load(object sender, EventArgs e)
         {
@@ -81,5 +87,6 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         {
             this.Close();
         }
+
     }
 }
