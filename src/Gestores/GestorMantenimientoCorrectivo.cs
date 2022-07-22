@@ -1,4 +1,5 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.clases;
+using Gestión_de_Recursos_Tecnológicos.src.soporte;
 using Gestión_de_Recursos_Tecnológicos.src.Ventanas.Mantenimiento;
 using Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento;
 using System;
@@ -26,6 +27,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         private static Estado estadoTurnoCanceladoPorMC { get; set; }
         private static Estado estadoRecursoConIngresoEnMC { get; set; }
         private static DateTime fecha_hora_actual { get; set; }
+        private static string motivo { get; set; }
 
         public GestorMantenimientoCorrectivo()
         {
@@ -35,18 +37,18 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// Inicia el cu, iniciando por la busqueda de los datos del usuarios logueado y asi poder
         /// encontrar los recursos que tenga asiganados
         /// </summary>
-        internal static void opcionIngresarEnMC()
+        internal static void opcionIngresarEnMantenimientoCorrectivo()
         {
             buscarResponsable();
             buscarRecursosAsociadosDisponibles();
-            PantallaMantenimientoCorrectivo.mostrarRT(vistaResultados);
-            PantallaMantenimientoCorrectivo.solicitarSeleccionRT();
+            PantallaMantenimientoCorrectivo.mostrarRecursoTecnologico(vistaResultados);
+            PantallaMantenimientoCorrectivo.solicitarSeleccionRecursoTecnologico();
         }
         /// <summary>
         /// Guardo el Recurso Tecnologico seleccionado
         /// </summary>
         /// <param name="idRT"></param>
-        internal static void RTSeleccionado(int idRT)
+        internal static void RecursoTecnologicoSeleccionado(int idRT)
         {
             foreach (RecursoTecnologico rt in recursosAsignadosDisponibles)
             {
@@ -65,23 +67,34 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         internal static void tomarFechaFinPrevista(DateTime fechaFinPrevista)
         {
             fecha_fin_prevista = fechaFinPrevista;
-            verificarTurnosRTSeleccionado();
+            verificarTurnosRecursoTecnologicoSeleccionado();
             PantallaMantenimientoCorrectivo.mostrarTurnos(vistaTurnos);
             PantallaMantenimientoCorrectivo.solicitarConfirmacionMantenimiento();
         }
         /// <summary>
+        /// Toma y guarda el motivo por el cual se realiza el mantenimiento correctivo
+        /// </summary>
+        /// <param name="motivo"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        internal static void tomarMotivo(string motivo_mantenimiento)
+        {
+            motivo  = motivo_mantenimiento;
+        }
+        /// <summary>
         /// Toma la confirmacion del registro y procede a realizar las tareas necesaria
         /// para poder registrar
-        internal static void tomarConfirmacion()
+        /// </summary>
+        /// <param name="notificarMail"></param>
+        /// <param name="notificarWwhatsApp"></param>
+        internal static void tomarConfirmacion(bool notificarMail, bool notificarWwhatsApp)
         {
-            generarMantenimiento();
+            generarMantenimiento(notificarMail, notificarWwhatsApp);
         }
-
         /// <summary>
         /// Se realiza tanto el registro del mantenimiento como la actualizacion de los
         /// turnos y el recurso
         /// </summary>
-        private static void generarMantenimiento()
+        private static void generarMantenimiento(bool notificarMail, bool notificarWwhatsApp)
         {
             List<Estado> estadosTurno = Estado.buscarByAmbitoTurno();
             List<Estado> estadoRecurso = Estado.buscarByAmbitoRecursoTecnologico();
@@ -103,12 +116,45 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
 
             getFechaActual();
             actualizarEstadoTurnos();
-            actualizarEstadoRT();
+            actualizarEstadoRecursoTecnologico();
+
+            Mantenimiento.insertarNuevoMantenimientoCorrectivo(recursoSeleccionado.id_recurso_tecnologico, fecha_hora_actual, fecha_fin_prevista, motivo);
+            if (notificarMail) notificarViaMail();
+            if (notificarWwhatsApp) notificarViaWhatsApp();
         }
+
+        private static void notificarViaWhatsApp()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void notificarViaMail()
+        {
+            string titulo = "Notificacion cancelacion turno";
+            string recurso = recursoSeleccionado.tipo_recurso_tecnologico.nombre;
+
+            var mailservice = new Mail();
+            foreach (Turno turno in turnos)
+            {
+                PersonalCientifico pc = turno.id_personal_cientifico;
+                string email = pc.email_personal;
+                String fullname = pc.nombres  + " " + pc.apellidos;
+
+                mailservice.sendMail(
+                subject: titulo,
+                body: $"Hola {fullname} le mandamos esta notificacion para avisarle que el turno del {turno.fecha_inicio:d} a las {turno.hora_inicio} solicitado" +
+                $" para el recurso tecnologico: {recurso} ah sido cancelado por motivos de mantenimiento. " +
+                $"\nEn caso de querer continuar con el turno, debera volver a sacar el turno." +
+                $"\nDisculpe las molestias causadas y muchas gracias.",
+                mail: email
+                );
+            }
+        }
+
         /// <summary>
         /// Se encarga de actualizar el estado del Recurso Tecnologico seleccionado
         /// </summary>
-        private static void actualizarEstadoRT()
+        private static void actualizarEstadoRecursoTecnologico()
         {
             recursoSeleccionado.actualizarEstado(estadoRecursoConIngresoEnMC, fecha_hora_actual);
         }
@@ -133,7 +179,7 @@ namespace Gestión_de_Recursos_Tecnológicos.src.Gestores
         /// Busca los Turnos Pendientes/Reservados del recurso seleccionado y que esten 
         /// dentro de la fecha fin prevista
         /// </summary>
-        private static void verificarTurnosRTSeleccionado()
+        private static void verificarTurnosRecursoTecnologicoSeleccionado()
         {
             turnos = new List<Turno>();
             turnos = Turno.buscarTurnosReservadosPendientes(recursoSeleccionado.id_recurso_tecnologico, fecha_fin_prevista);

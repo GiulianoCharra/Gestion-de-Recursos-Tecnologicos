@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_buscar_turnos = new FontAwesome.Sharp.IconButton();
             this.dtp_fecha_fin_prevista = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,9 @@
             this.chb_email = new System.Windows.Forms.CheckBox();
             this.chb_whatsapp = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_buscar_turnos = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_motivo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turnos)).BeginInit();
@@ -53,6 +56,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -67,50 +71,67 @@
             this.tableLayoutPanel3.Controls.Add(this.dgv_recursos_asignados, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(10, 10);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.tableLayoutPanel3.RowCount = 8;
+            this.tableLayoutPanel3.RowCount = 9;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(697, 744);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(697, 722);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.39074F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.60926F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel1.Controls.Add(this.btn_buscar_turnos, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtp_fecha_fin_prevista, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 335);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 339);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(691, 34);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
+            // btn_buscar_turnos
+            // 
+            this.btn_buscar_turnos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_buscar_turnos.Enabled = false;
+            this.btn_buscar_turnos.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btn_buscar_turnos.IconColor = System.Drawing.Color.DarkBlue;
+            this.btn_buscar_turnos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_buscar_turnos.IconSize = 20;
+            this.btn_buscar_turnos.Location = new System.Drawing.Point(576, 3);
+            this.btn_buscar_turnos.Name = "btn_buscar_turnos";
+            this.btn_buscar_turnos.Size = new System.Drawing.Size(112, 28);
+            this.btn_buscar_turnos.TabIndex = 11;
+            this.btn_buscar_turnos.Text = "Buscar";
+            this.btn_buscar_turnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_buscar_turnos.UseVisualStyleBackColor = true;
+            this.btn_buscar_turnos.Click += new System.EventHandler(this.tomarFechaFinPrevista);
+            // 
             // dtp_fecha_fin_prevista
             // 
-            this.dtp_fecha_fin_prevista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_fecha_fin_prevista.Checked = false;
+            this.dtp_fecha_fin_prevista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtp_fecha_fin_prevista.Enabled = false;
-            this.dtp_fecha_fin_prevista.Location = new System.Drawing.Point(184, 7);
-            this.dtp_fecha_fin_prevista.MinDate = new System.DateTime(2022, 6, 1, 0, 0, 0, 0);
+            this.dtp_fecha_fin_prevista.Location = new System.Drawing.Point(208, 6);
+            this.dtp_fecha_fin_prevista.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.dtp_fecha_fin_prevista.MinDate = new System.DateTime(2022, 7, 21, 0, 0, 0, 0);
             this.dtp_fecha_fin_prevista.Name = "dtp_fecha_fin_prevista";
-            this.dtp_fecha_fin_prevista.Size = new System.Drawing.Size(409, 20);
+            this.dtp_fecha_fin_prevista.Size = new System.Drawing.Size(362, 20);
             this.dtp_fecha_fin_prevista.TabIndex = 3;
             // 
             // label2
@@ -120,7 +141,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 34);
+            this.label2.Size = new System.Drawing.Size(199, 34);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha de finalizacion prevista";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 372);
+            this.label4.Location = new System.Drawing.Point(3, 376);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(691, 30);
             this.label4.TabIndex = 15;
@@ -169,10 +190,10 @@
             this.dgv_turnos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_turnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_turnos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_turnos.Location = new System.Drawing.Point(3, 405);
+            this.dgv_turnos.Location = new System.Drawing.Point(3, 409);
             this.dgv_turnos.Name = "dgv_turnos";
             this.dgv_turnos.ReadOnly = true;
-            this.dgv_turnos.Size = new System.Drawing.Size(691, 246);
+            this.dgv_turnos.Size = new System.Drawing.Size(691, 220);
             this.dgv_turnos.TabIndex = 14;
             // 
             // dgv_recursos_asignados
@@ -187,7 +208,7 @@
             this.dgv_recursos_asignados.Name = "dgv_recursos_asignados";
             this.dgv_recursos_asignados.ReadOnly = true;
             this.dgv_recursos_asignados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_recursos_asignados.Size = new System.Drawing.Size(691, 246);
+            this.dgv_recursos_asignados.Size = new System.Drawing.Size(691, 220);
             this.dgv_recursos_asignados.TabIndex = 12;
             this.dgv_recursos_asignados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RTSeleccionado);
             // 
@@ -199,7 +220,7 @@
             this.tableLayoutPanel4.Controls.Add(this.btn_aceptar, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_cancelar, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 707);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 685);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -243,15 +264,15 @@
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 657);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 635);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(413, 44);
             this.tableLayoutPanel5.TabIndex = 18;
             // 
@@ -262,7 +283,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.chb_email, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.chb_whatsapp, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(209, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(208, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.tableLayoutPanel2.RowCount = 1;
@@ -299,33 +320,50 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 44);
+            this.label3.Size = new System.Drawing.Size(199, 44);
             this.label3.TabIndex = 8;
             this.label3.Text = "Notificar via:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btn_buscar_turnos
+            // tableLayoutPanel6
             // 
-            this.btn_buscar_turnos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_buscar_turnos.Enabled = false;
-            this.btn_buscar_turnos.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btn_buscar_turnos.IconColor = System.Drawing.Color.DarkBlue;
-            this.btn_buscar_turnos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_buscar_turnos.IconSize = 20;
-            this.btn_buscar_turnos.Location = new System.Drawing.Point(599, 3);
-            this.btn_buscar_turnos.Name = "btn_buscar_turnos";
-            this.btn_buscar_turnos.Size = new System.Drawing.Size(89, 28);
-            this.btn_buscar_turnos.TabIndex = 11;
-            this.btn_buscar_turnos.Text = "Buscar";
-            this.btn_buscar_turnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_buscar_turnos.UseVisualStyleBackColor = true;
-            this.btn_buscar_turnos.Click += new System.EventHandler(this.tomarFechaFinPrevista);
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.txt_motivo, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 309);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(688, 24);
+            this.tableLayoutPanel6.TabIndex = 19;
+            // 
+            // txt_motivo
+            // 
+            this.txt_motivo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_motivo.Location = new System.Drawing.Point(208, 3);
+            this.txt_motivo.Name = "txt_motivo";
+            this.txt_motivo.Size = new System.Drawing.Size(477, 20);
+            this.txt_motivo.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 24);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Motivo del Mantenimiento";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PantallaMantenimientoCorrectivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 764);
+            this.ClientSize = new System.Drawing.Size(717, 742);
             this.Controls.Add(this.tableLayoutPanel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PantallaMantenimientoCorrectivo";
@@ -342,6 +380,8 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -366,5 +406,8 @@
         private System.Windows.Forms.DataGridView dgv_recursos_asignados;
         private System.Windows.Forms.DateTimePicker dtp_fecha_fin_prevista;
         private FontAwesome.Sharp.IconButton btn_buscar_turnos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TextBox txt_motivo;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Gestión_de_Recursos_Tecnológicos.src.clases;
+using Gestión_de_Recursos_Tecnológicos.src.soporte;
 using Gestión_de_Recursos_Tecnológicos.Ventanas;
 using Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento;
 using Gestión_de_Recursos_Tecnológicos.Ventanas.Sesion;
@@ -15,9 +16,7 @@ namespace Gestión_de_Recursos_Tecnológicos
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        /// 
 
-        private static Sesion sesion;
 
         [STAThread]
         static void Main()

@@ -169,7 +169,10 @@
     <Compile Include="src\soporte\Conexion.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\soporte\MailServices\Mail.cs" />
+    <Compile Include="src\soporte\MailServices\MailService.cs" />
     <Compile Include="src\soporte\ImageConverter.cs" />
+    <Compile Include="src\soporte\WhatsAppService.cs" />
     <Compile Include="src\Ventanas\Contacto\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

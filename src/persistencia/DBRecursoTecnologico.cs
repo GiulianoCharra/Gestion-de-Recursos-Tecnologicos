@@ -71,6 +71,23 @@ namespace Gestión_de_Recursos_Tecnológicos.src.persistencia
             DataRow dr = dwc[0];
             return buildRecursoTecnologico(dr);
         }
+        internal static RecursoTecnologico findByIdRecursoTecnologicoAndIdResponsableTecnicoAndIdPersonalCientificoAndIdCentroInvestigacion(int id_recurso_tecnologico, int id_responsable_tecnico, int id_personal_cientifico, int id_centro_investigacion)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>() {
+                {"@ID_RECURSO_TECNOLOGICO", id_recurso_tecnologico},
+                {"@ID_RESPONSABLE_TECNICO", id_responsable_tecnico},
+                {"@ID_PERSONAL_CIENTIFICO", id_personal_cientifico},
+                {"@ID_CENTRO_INVESTIGACION", id_centro_investigacion}
+            };
+            DataTable ds = Conexion.EjecutarComando(query_findIdRecursoTecnologico);
+            DataRowCollection dwc = ds.Rows;
+            if (dwc.Count == 0)
+            {
+                return null;
+            }
+            DataRow dr = dwc[0];
+            return buildRecursoTecnologico(dr);
+        }
         internal static List<RecursoTecnologico> findAll()
         {
             DataTable ds = Conexion.EjecutarComando(query_findAll);

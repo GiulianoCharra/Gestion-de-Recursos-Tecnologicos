@@ -58,6 +58,11 @@ namespace Gestión_de_Recursos_Tecnológicos.src.clases
             this.historiales_recurso_tecnologico = historial_recurso_tecnologico;
         }
 
+        internal static RecursoTecnologico buscarPorId(int id_recurso_tecnologico)
+        {
+            return DBRecursoTecnologico.findById(id_recurso_tecnologico);
+        }
+
         public RecursoTecnologico(int id_recurso_tecnologico,
             int id_tipo_recurso_tecnologico,
             int id_marca,

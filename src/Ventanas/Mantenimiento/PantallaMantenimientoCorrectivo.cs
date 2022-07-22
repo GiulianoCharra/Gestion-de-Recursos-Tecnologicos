@@ -27,7 +27,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         public void opcionIngresarEnMC()
         {
             habilitar();
-            GestorMantenimientoCorrectivo.opcionIngresarEnMC();
+            GestorMantenimientoCorrectivo.opcionIngresarEnMantenimientoCorrectivo();
             cargarTablaRecursos();
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         private void RTSeleccionado(object sender, DataGridViewCellEventArgs e)
         {
             int idRT = (int)dgv_recursos_asignados.SelectedCells[1].Value;
-            GestorMantenimientoCorrectivo.RTSeleccionado(idRT);
+            GestorMantenimientoCorrectivo.RecursoTecnologicoSeleccionado(idRT);
             btn_buscar_turnos.Enabled = true;
             dtp_fecha_fin_prevista.Enabled = true;
         }
@@ -49,6 +49,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// <param name="e"></param>
         private void tomarFechaFinPrevista(object sender, EventArgs e)
         {
+            tomarMotivo();
             DateTime fechaFinPrevista = DateTime.Parse(dtp_fecha_fin_prevista.Value.ToShortDateString());
             if (fechaFinPrevista == DateTime.Today)
             {
@@ -60,6 +61,21 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
             btn_aceptar.Enabled = true;
         }
         /// <summary>
+        /// Toma el motivo del mantenimiento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tomarMotivo()
+        {
+            string motivo = txt_motivo.Text;
+            if (motivo.Equals(" ") || motivo.Equals(""))
+            {
+                MessageBox.Show("Por favor seleccione una fecha mayor a la actual", "Para continuar");
+                return;
+            }
+            GestorMantenimientoCorrectivo.tomarMotivo(motivo);
+        }
+        /// <summary>
         /// Toma la confirmacion del registro del ingreso del recurso en 
         /// mantenimiento correctivo
         /// </summary>
@@ -67,7 +83,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// <param name="e"></param>
         private void tomarConfirmacion(object sender, EventArgs e)
         {
-            GestorMantenimientoCorrectivo.tomarConfirmacion();
+            GestorMantenimientoCorrectivo.tomarConfirmacion(chb_email.Checked, chb_whatsapp.Checked);
             MessageBox.Show("FIN");
             this.Close();
         }
@@ -84,7 +100,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// Muestra los recursos tecnologicos asignados
         /// </summary>
         /// <param name="vistaResultados"></param>
-        internal static void mostrarRT(List<ViewRecursoTecnologico> vistaResultados)
+        internal static void mostrarRecursoTecnologico(List<ViewRecursoTecnologico> vistaResultados)
         {
             recursos = vistaResultados;
         }
@@ -102,7 +118,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas.Mantenimiento
         /// Muestra un mensaje solicitando se selseccione un recurso
         /// tecnologico de la grilla
         /// </summary>
-        internal static void solicitarSeleccionRT()
+        internal static void solicitarSeleccionRecursoTecnologico()
         {
             MessageBox.Show("Por favor seleccione un Recurso", "Para continuar");
         }

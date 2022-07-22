@@ -63,7 +63,7 @@ namespace Gestión_de_Recursos_Tecnológicos.Ventanas
         /// Reajusta el ancho de los botoner de un contenedor
         /// </summary>
         /// <param name="container">Contenedor que contiene botones</param>
-        /// <param name="w">el insertarNuevo ancho que tendran los botones</param>
+        /// <param name="w">el insertarNuevoMantenimientoCorrectivo ancho que tendran los botones</param>
         private void ajustarAnchoBoton(Control container, int w)
         {
             foreach (Control b in container.Controls)
